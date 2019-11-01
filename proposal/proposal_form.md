@@ -2,34 +2,35 @@
 
 # CA326 Year 3 Project Proposal Form
 
-**Project Title:** ​TastyTravel
+**Project Title:** TastyTravel
 
 **Student 1 Name:** Michael Savage <br/>
-**ID Number:** ​ 17313526
+**ID Number:** 17313526
 
-**Student 2 Name:** ​ Gerard Slowey <br/>
-**ID Number:** ​ 17349433
+**Student 2 Name:** Gerard Slowey <br/>
+**ID Number:** 17349433
 
-**Staff Member Consulted:** ​ Mark Roantree
+**Staff Member Consulted:** Mark Roantree
 
 ## Project Description:
 **An android app that allows two users to view food and drink amenities located equally
-close to both parties based on travel time (e.g. bus, tram, train, walking, cycling etc.).**
+close to both parties based on travel time (e.g. bus, luas, train, walking, cycling etc.).**
 
-The app will implement a ​ **search and sort algorithm** ​which interacts with​ ​the transport for
-Ireland ​ **(TFI) API** ​ for public transport options. The algorithm will retrieve the public transport
+The app will implement a **search and sort algorithm** which interacts with the transport for
+Ireland **(TFI) API** for public transport options. The algorithm will retrieve the public transport
 options offered by TFI along with walking and cycling options to offer to the user a number of
 travel options (probably a top three recommended selection) relevant to the location of both
 locations of the user of the app and their friend.
-We will use the ​ **OpenStreetMap API** ​ to calculate walking and cycling times as well as
+We will use the **OpenStreetMap API** to calculate walking and cycling times as well as
 displaying the relevant food and drink available at the supplied locations from our search and
 sort algorithm. <br/>
 
 To refine the users search for food and drink further, we will allow the user to have a
-**predefined list** ​ of food and drink that they prefer which will affect the search results and
+**predefined list** of food and drink that they prefer which will affect the search results and
 display to the user only the relevant results which match their search requirements, therefore
-saving them time and preventing frustration.
-Furthermore the user will have the option of ​ **specifying the method of travel** ​they prefer to
+saving them time and preventing frustration. <br/>
+
+Furthermore the user will have the option of **specifying the method of travel** they prefer to
 use at a specific time, for example, if it is raining and they want to meet their friends, they
 may prefer to travel by bus instead of walking. However, their friend may have their bike with
 them and they prefer to cycle. One or more of the parties can leave this option blank and the
