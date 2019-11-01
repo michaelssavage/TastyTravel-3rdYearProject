@@ -62,7 +62,7 @@ _SQL Implementation_ <br/>
 Java, HTML, CSS, JavaScript
 
 ## Programming Tool(s):
-Android Studio IDE, Transport For Ireland API, Google Maps API, Javac Compiler, Firebase
+Android Studio IDE, Transport For Ireland API, OpenStreetMap API, Javac Compiler, Firebase
 Database, JUnit Unit testing framework.
 
 
@@ -74,7 +74,7 @@ Database, JUnit Unit testing framework.
     - Developing an android app that is compatible with various android phones, bug testing on and supporting different architectures.
 2. Developing a user login system and account creation.
     - Storing the information securely and easily.
-3. Learning to use Google Maps and TFI API.
+3. Learning to use OpenStreetMap and TFI API.
     - Extracting information and displaying it in a manner that is aesthetically
        pleasing while easy to understand.
 4. Implementing the Search and Sort Algorithm.
