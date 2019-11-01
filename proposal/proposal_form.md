@@ -41,7 +41,7 @@ parties will enjoy. We believe this should simplify the ritual of ‘meeting for
 satisfying the question “where do you want to eat?” which has plagued people since we have
 such a broad range of dining experiences at our reach.
 
-## Division of Work ​:
+## Division of Work:
 Each member will have responsibilities working in front-end and back-end. <br/>
 
 **Michael** <br/>
@@ -58,7 +58,7 @@ _Incorporating with Google Maps and TFI API_ <br/>
 _SQL Implementation_ <br/>
 
 ## Programming Languages:
-Java
+Java, HTML, CSS, JavaScript
 
 ## Programming Tool(s):
 Android Studio IDE, Transport For Ireland API, Google Maps API, Javac Compiler, Firebase
