@@ -1,35 +1,35 @@
 ### Section 1: Introduction
 ------
-1.1 Overview
-1.2 Business Context
-1.3 Glossary
+1.1 Overview  
+1.2 Business Context  
+1.3 Glossary  
 ### Section 2: General Description
 ------
-2.1 Product System Functions
-2.2 User Characteristics and Objectives
-2.3 Operational Scenarios
-2.4 Implementation Constraints
+2.1 Product System Functions  
+2.2 User Characteristics and Objectives  
+2.3 Operational Scenarios  
+2.4 Implementation Constraints  
 ### Section 3: Functional Requirements
 ------
-3.1 Sign Up
-3.2 Create Profile
-3.3 Login
-3.4 Edit Profile
-3.5 Search Location Interface
-3.6 Generate Route
-3.7 Delete Profile
+3.1 Sign Up  
+3.2 Create Profile  
+3.3 Login  
+3.4 Edit Profile  
+3.5 Search Location Interface  
+3.6 Generate Route  
+3.7 Delete Profile  
 ### Section 4: System Architecture
 ------
-4.1 System Architecture Diagram
+4.1 System Architecture Diagram  
 ### Section 5: High-Level Design
 ------
-5.1 Context Diagram
-5.2 Use Case Diagram
-5.3 Higher Level Design Diagram
+5.1 Context Diagram  
+5.2 Use Case Diagram  
+5.3 Higher Level Design Diagram  
 ### Section 6: Preliminary Schedule
 ------
-6.1 Task Table
-6.2 Gantt Chart
+6.1 Task Table  
+6.2 Gantt Chart  
 ### Section 7: Appendix
 ------
 ------
@@ -38,7 +38,7 @@
 ------
 
 ##### _1.1 Overview_
-The product we plan to develop fits in the category of Travel/Dining. We will be developing 
+The product we plan to develop fits in the category of Travel/Dining. We will be developing  
 an Android app using Android Studio version 3.5.1. The main functionality of our app is to  
 help users find locations by journey time rather than physical travel distance. The locations  
 will be customised around personal preference.
@@ -69,7 +69,7 @@ _Demographic_: Our app will be suitable for a wide range of demographics, it wil
 suitable for people of all ages and genders. 
 
 _Geographic Segment_: For this project we will be limiting our area of interest to Dublin  
-only, this will help us fulfill the full functionality of the app and leave it easier to test.
+only, this will help us fulfill the full functionality of the app and leave it easier to test.  
 
 _Unique Selling Point_: We return a meeting point to the user based on travel time and  
 not physical travel distance. This prevents unnecessary waiting for either party to  
@@ -145,11 +145,11 @@ password. The users password will be stored securely using encryption.
 ##### _2.4 Implementation Constraints_
 
 _Time Constraints_
-- The project will need to be completed by April 2020. Unforeseen circumstances could cause project longevity.
+- The project will need to be completed by April 2020. Unforeseen circumstances could cause project longevity.  
 _Group requirements_
-- Will we be able to successfully take advantage of the TFI API and return journeys.
+- Will we be able to successfully take advantage of the TFI API and return journeys.  
 _Financial Constraints_
-- In order for the app to present a live map, there must be a cost-effective service. Billing services might cost too much.
+- In order for the app to present a live map, there must be a cost-effective service. Billing services might cost too much.  
 
 # Section 3: Functional Requirements
 ---
@@ -287,273 +287,136 @@ _Requisites_
 - 
 _Technical concern_
 - User data is not discarded properly causing privacy concerns.
-- 
+
 _Dependencies_
 - User must have logged in.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Section 4: System Architecture
 ___
 
 ##### _4.1 System Architecture Diagram_
 
+![System Architecture](images/systemArchitecture.png "System Architecture") 
+## Fig 4.1
 
-					Fig 4.1
+Fig 4.1 above illustrates the architecture of the product. The diagram highlights the four main  
+elements of our system architecture:
 
-Fig 4.1 above illustrates the architecture of the product. The diagram highlights the four main elements of our system architecture:
+1. _Mapping API_: We’ve decided to use Mapbox mapping service. The app installed on  
+the android device will use API calls to the mapping service to display mapping  
+information on screen as well as computing travel times.
 
-Mapping API: We’ve decided to use Mapbox mapping service. The app installed on the android device will use API calls to the mapping service to display mapping information on screen as well as computing travel times.
+2. _Application installed on Android Device_: This is the front end of the system, what the  
+user sees and interacts with to gain access to the other architectural elements of the 
+product. This will be the least technical element of the product, as it is simply there so 
+the customer can use the functions of the website in an aesthetically pleasing way. 
 
-Application installed on Android Device: This is the front end of the system, what the user sees and interacts with to gain access to the other architectural elements of the product. This will be the least technical element of the product, as it is simply there so the customer can use the functions of the website in an aesthetically pleasing way. 
-
-RESTful Application API
+3. _RESTful Application API_
 Uses HTTP requests such as POST, GET, PUT and DELETE.
 The RESTful API allows the application to communicate with the SQL database.
-It will take information inputted through the GUI in input forms and send this information to be stored in the database through SQL commands.
+It will take information inputted through the GUI in input forms and send this 
+information to be stored in the database through SQL commands.
 
-SQL Database: The Database relates directly to the application RESTful API. It will store the user information sent to it using SQL commands. User data will be read and written to the database. This user information will serve to enrich the user experience of the application.
-Section 5: High-Level Design
+4. _SQL Database_: The Database relates directly to the application RESTful API. It will  
+store the user information sent to it using SQL commands. User data will be read and 
+written to the database. This user information will serve to enrich the user experience 
+of the application.
 
-5.1 Context Diagram
+# Section 5: High-Level Design
+---
 
+##### _5.1 Context Diagram_
 
-Fig 4.2
+![Context Diagram](images/contextDiagram.png "Context Diagram") 
+## Fig 4.2
 
+Fig 4.2 - The context diagram describes the relationship between the system and external 
+entities through data. We can see that the TastyTravel app will receive the name, email 
+address, password upon creating or logging in. 
 
-Fig 4.2 - The context diagram describes the relationship between the system and external entities through data. We can see that the TastyTravel app will receive the name, email address, password upon creating or logging in. 
-
-The app will receive data from API and will return a search result to the user that includes a map and transport routes. Accounts and possibly routes will be sent to the server.
-
-
-
-
-
-
-
-5.2 Use Case Diagram
-
-
-Fig 4.3
+The app will receive data from API and will return a search result to the user that includes a 
+map and transport routes. Accounts and possibly routes will be sent to the server.
 
 
-Fig 4.3 - The use case diagram specifies the expected behaviour and not the exact method of making it happen. In other words, it shows us the ‘what’ and hides the ‘how’.
+##### _5.2 Use Case Diagram_
 
-We can see what a user will want to do when they open the app. Sign in, create an account, or skip the sign in page. We are not concerned with how they will create an account.
+![Use Case Diagram](images/useCase.png "Use Case Diagram") 
+## Fig 4.3
 
-A use case diagram does not summarize relationship between actors and systems nor does it show the order in which steps are performed. It deals with the functional requirements.
+Fig 4.3 - The use case diagram specifies the expected behaviour and not the exact method of  
+making it happen. In other words, it shows us the ‘what’ and hides the ‘how’.
+
+We can see what a user will want to do when they open the app. Sign in, create an account,  
+or skip the sign in page. We are not concerned with how they will create an account.
+
+A use case diagram does not summarize relationship between actors and systems nor does  
+it show the order in which steps are performed. It deals with the functional requirements.
 
 
 
 
 
-5.3 Higher Level Design Diagram
+##### _5.3 Higher Level Design Diagram_
 
-Step 1: Sign Up
+![Higher Level Diagram](images/higherLevel.png "Higher Level Diagram") 
+
+_Step 1: Sign Up_
 Register an email address and choose a password to give the ability to login to the application.
 
-Step 2: Login
+_Step 2: Login_
 Login to the application using the email and address supplied in step one above.
 
-Step 3: Create Profile
+_Step 3: Create Profile_
 Input your name and enter your personal preferences for favourite food and drink when prompted. 
 
-Step 4: Search Location
+_Step 4: Search Location_
 Using the application GUI enter the user location information and their friends location data.
 
-Step 5: Generate Meeting Point
+_Step 5: Generate Meeting Point_
 Once the user has entered both locations of the user and their friend, the application will return suitable meeting points.
 
-Step 6: Edit Profile
+_Step 6: Edit Profile_
 If you want to update existing user data such as password or email address you can do so using the edit profile option.
 
-Step 7: Delete Profile
+_Step 7: Delete Profile_
 If you would like to delete your user profile along with your user data you can choose the option of deleting profile.
 
-Step 8: Log Out
+_Step 8: Log Out_
 Once you have finished exploring the various application    features, you can then log out of your account.
 
-
-
-
-
-
-
-
-
-
-Section 6: Preliminary Schedule
-
-6.1 Task Table
-
-Task Name
-Start Date
-End Date
-Duration (Days)
-Complete Project
-01/10/2019
-06/03/2020
-157
-
-
-
-
-
-
-
-
-Deliverables
-
-
-
-
-
-
-Project Proposal
-11/10/2019
-01/11/2019
-21
-Functional Spec
-25/11/2019
-06/12/2019
-11
-
-
-
-
-
-
-
-
-Implementation Research
-
-
-
-
-
-
-Research and Learning
-07/12/2019
-17/01/2020
-41
-
-
-
-
-
-
-
-
-Development
-
-
-
-
-
-
-Back End Development
-18/01/2020
-01/02/2020
-14
-UI Implementation
-01/02/2020
-15/02/2020
-14
-Code Integration
-15/02/2020
-22/02/2020
-7
-Code Testing
-22/02/2020
-29/02/2020
-7
-Technical Spec and User Manual
-29/02/2020
-06/03/2020
-6
-Project Submission
-06/03/2020
-06/03/2020
-0
-
-
-
-
-
-
-
-
-Project Demonstration
-09/03/2020
-20/03/2020
-11
-
-
-
-
-
-
-
-
-
-
-
-
-
-6.2 Gantt Chart
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-Section 7: Appendix
+# Section 6: Preliminary Schedule
+---
+
+##### _6.1 Task Table_
+--- 
+| Task Name | Start Date | End Date  | Duration (Days) |
+| --------- |:----------:| ---------:|:----------------|
+| Complete Project  | 01/10/2019 | 06/03/2020 | 157  |
+|  | | | |
+| **Deliverables**  |  |  |     |
+| Project Proposal  | 11/10/2019 | 01/11/2019 | 21 |
+| Functional Spec  | 25/11/2019 | 06/12/2019 | 11  |
+|  | | | |
+| **Implementation Research**  |  |  |     |
+| Research and Learning  | 07/12/2019 | 17/01/2020 | 41 |
+|  | | | |
+| **Development**  |  |  |     |
+| Back End Development | 18/01/2020 | 01/02/2020 |14 |
+| UI Implementation | 01/02/2020 | 15/02/2020 | 14 |
+| Code Integration | 15/02/2020 | 22/02/2020 | 7 |
+| Code Testing | 22/02/2020 | 29/02/2020 | 7 |
+| Technical Spec and User Manual | 29/02/2020 | 06/03/2020 | 6 |
+| Project Submission  | 06/03/2020 | 06/03/2020 | 0 |
+|  | | | |
+| Project Demonstration | 09/03/2020 | 20/03/2020 | 11 |
+
+##### _6.2 Gantt Chart_
+
+# Section 7: Appendix
+---
 
 Android Developers. (2019). Documentation  |  Android Developers. [online] Available at: https://developer.android.com/docs/ [Accessed 3 Dec. 2019].
-
 
 Flaskapi.org. (2019). Flask API. [online] Available at: http://www.flaskapi.org/ [Accessed 3 Dec. 2019].
 
 Docs.oracle.com. (2019). Java Platform SE 7. [online] Available at: https://docs.oracle.com/javase/7/docs/api/ [Accessed 3 Dec. 2019].
-
-
-
-
-
-
-
-
-
-
-
