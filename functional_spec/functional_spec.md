@@ -145,11 +145,16 @@ password. The users password will be stored securely using encryption.
 ##### _2.4 Implementation Constraints_
 
 _Time Constraints_
-- The project will need to be completed by April 2020. Unforeseen circumstances could cause project longevity.  
+- The project will need to be completed by April 2020. Unforeseen circumstances  
+could cause project longevity.  
+
 _Group requirements_
-- Will we be able to successfully take advantage of the TFI API and return journeys.  
+- Will we be able to successfully take advantage of the TFI API and return  
+journeys.  
+
 _Financial Constraints_
-- In order for the app to present a live map, there must be a cost-effective service. Billing services might cost too much.  
+- In order for the app to present a live map, there must be a cost-effective  
+service. Billing services might cost too much.  
 
 # Section 3: Functional Requirements
 ---
@@ -200,7 +205,7 @@ information must be linked to a specific account.
 
 ##### _3.3 Login_
 _Description_
-- Located on the same page as the ‘sign up’ option. If the user has accessed 
+- Located on the same page as the ‘sign up’ option. If the user has accessed  
 the service before they will have the opportunity to sign in to their account  
 they had previously created. 
 - The user selects the ‘login’ option.
@@ -254,8 +259,8 @@ _Requisites_
 mapping interface.
 
 _Technical Concerns_
-- Integrating the mapping service map into our application and being able to 
-draw to the map, graphically displaying any meeting points and overlapping of 
+- Integrating the mapping service map into our application and being able to  
+draw to the map, graphically displaying any meeting points and overlapping of  
 locations.
 
 _Dependencies_
@@ -279,7 +284,7 @@ _Dependencies_
 ##### _3.7 Delete Profile_
 _Description_
 - Users who have created accounts must also be able to close such accounts. 
-- All data pertaining to the user will be disposed of. This includes all personal 
+- All data pertaining to the user will be disposed of. This includes all personal  
 information like email address and saved places.
 
 _Requisites_
@@ -307,19 +312,19 @@ the android device will use API calls to the mapping service to display mapping
 information on screen as well as computing travel times.
 
 2. _Application installed on Android Device_: This is the front end of the system, what the  
-user sees and interacts with to gain access to the other architectural elements of the 
-product. This will be the least technical element of the product, as it is simply there so 
+user sees and interacts with to gain access to the other architectural elements of the  
+product. This will be the least technical element of the product, as it is simply there so  
 the customer can use the functions of the website in an aesthetically pleasing way. 
 
 3. _RESTful Application API_
-Uses HTTP requests such as POST, GET, PUT and DELETE.
-The RESTful API allows the application to communicate with the SQL database.
-It will take information inputted through the GUI in input forms and send this 
+Uses HTTP requests such as POST, GET, PUT and DELETE.  
+The RESTful API allows the application to communicate with the SQL database.  
+It will take information inputted through the GUI in input forms and send this  
 information to be stored in the database through SQL commands.
 
 4. _SQL Database_: The Database relates directly to the application RESTful API. It will  
-store the user information sent to it using SQL commands. User data will be read and 
-written to the database. This user information will serve to enrich the user experience 
+store the user information sent to it using SQL commands. User data will be read and  
+written to the database. This user information will serve to enrich the user experience  
 of the application.
 
 # Section 5: High-Level Design
@@ -330,11 +335,11 @@ of the application.
 ![Context Diagram](images/contextDiagram.png "Context Diagram") 
 ## Fig 4.2
 
-Fig 4.2 - The context diagram describes the relationship between the system and external 
-entities through data. We can see that the TastyTravel app will receive the name, email 
+Fig 4.2 - The context diagram describes the relationship between the system and external  
+entities through data. We can see that the TastyTravel app will receive the name, email  
 address, password upon creating or logging in. 
 
-The app will receive data from API and will return a search result to the user that includes a 
+The app will receive data from API and will return a search result to the user that includes a  
 map and transport routes. Accounts and possibly routes will be sent to the server.
 
 
@@ -361,28 +366,35 @@ it show the order in which steps are performed. It deals with the functional req
 ![Higher Level Diagram](images/higherLevel.png "Higher Level Diagram") 
 
 _Step 1: Sign Up_
-Register an email address and choose a password to give the ability to login to the application.
+Register an email address and choose a password to give the ability to login to  
+the application.
 
 _Step 2: Login_
 Login to the application using the email and address supplied in step one above.
 
 _Step 3: Create Profile_
-Input your name and enter your personal preferences for favourite food and drink when prompted. 
+Input your name and enter your personal preferences for favourite food and drink  
+when prompted. 
 
 _Step 4: Search Location_
-Using the application GUI enter the user location information and their friends location data.
+Using the application GUI enter the user location information and their friends  
+location data.
 
 _Step 5: Generate Meeting Point_
-Once the user has entered both locations of the user and their friend, the application will return suitable meeting points.
+Once the user has entered both locations of the user and their friend, the  
+application will return suitable meeting points.
 
 _Step 6: Edit Profile_
-If you want to update existing user data such as password or email address you can do so using the edit profile option.
+If you want to update existing user data such as password or email address you  
+can do so using the edit profile option.
 
 _Step 7: Delete Profile_
-If you would like to delete your user profile along with your user data you can choose the option of deleting profile.
+If you would like to delete your user profile along with your user data you can  
+choose the option of deleting profile.
 
 _Step 8: Log Out_
-Once you have finished exploring the various application    features, you can then log out of your account.
+Once you have finished exploring the various application features, you can then  
+log out of your account.
 
 # Section 6: Preliminary Schedule
 ---
