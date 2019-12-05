@@ -426,10 +426,10 @@ log out of your account.
 
 ##### _6.2 Gantt Chart_
 
-![Gantt Chart](images/ganttChart.png "Gantt Chart")  
+![Gantt Chart](images/ganttChart.PNG "Gantt Chart")  
 ## Fig 4.4
 
-![Gantt Table](images/ganttTable "Gantt Table")  
+![Gantt Table](images/ganttTable.png "Gantt Table")  
 ## Fig 4.5
 
 # Section 7: Appendix
