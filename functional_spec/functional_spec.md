@@ -89,6 +89,8 @@ with peers to use as they like.
 | API      | “Application Programming Interface” |
 | SQL     | “Structured Query Language” |
 | SDK     | “Software Development Kit” |
+| TFI     | "Transport For Ireland"    |
+| GUI     | "Graphical User Interface" |
 
 # Section 2: General Description
 ---
@@ -424,6 +426,12 @@ log out of your account.
 
 ##### _6.2 Gantt Chart_
 
+![Gantt Chart](images/ganttChart.png "Gantt Chart")  
+## Fig 4.4
+
+![Gantt Table](images/ganttTable "Gantt Table")  
+## Fig 4.5
+
 # Section 7: Appendix
 ---
 
@@ -432,3 +440,8 @@ Android Developers. (2019). Documentation  |  Android Developers. [online] Avail
 Flaskapi.org. (2019). Flask API. [online] Available at: http://www.flaskapi.org/ [Accessed 3 Dec. 2019].
 
 Docs.oracle.com. (2019). Java Platform SE 7. [online] Available at: https://docs.oracle.com/javase/7/docs/api/ [Accessed 3 Dec. 2019].
+
+Mapbox. (2019). Introduction. [online] Available at: https://docs.mapbox.com/api/ [Accessed 1 Dec. 2019].
+
+Docs.microsoft.com. (2019). Microsoft SQL documentation - SQL Server. [online] Available at:  
+https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15 [Accessed 1 Dec. 2019].
