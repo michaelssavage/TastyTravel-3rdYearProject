@@ -84,13 +84,13 @@ with peers to use as they like.
 
 ##### _1.3 Glossary_  
 ---
-| Abbreviation        | Phrase         |
+| Acronym        | Defintion         |
 | ------------- |:-------------:|
-| API      | “Application Programming Interface” |
-| SQL     | “Structured Query Language” |
-| SDK     | “Software Development Kit” |
-| TFI     | "Transport For Ireland"    |
-| GUI     | "Graphical User Interface" |
+| API      | “Application Programming Interface” - an interface between different parts of the programme intended to simplify the implementation of software. |
+| SQL     | “Structured Query Language”- a language used for relational database management and data manipulation. |
+| SDK     | “Software Development Kit” - a set of software development tools for the creation of a software platform.  |
+| TFI     | “Transport For Ireland” - Journey Planner and Real Time Transport Information for the island of Ireland.    |
+| GUI     | “Graphical User Interface” - Allows users to interact with electronic devices through an interface. |
 
 # Section 2: General Description
 ---
