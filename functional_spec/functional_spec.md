@@ -38,15 +38,15 @@
 ------
 
 ##### _1.1 Overview_
-The product we plan to develop fits in the category of Travel/Dining. We will be developing  
-an Android app using Android Studio version 3.5.1. The main functionality of our app is to  
-help users find locations by journey time rather than physical travel distance. The locations  
-will be customised around personal preference.
+The product we plan to develop fits in the category of Travel/Dining. We will be developing 
+an Android app using Android Studio. The main functionality of our app is to 
+help a user and a person they want to meet find a meeting location by journey time rather  
+than physical travel distance. The locations will be customised around personal preference.
 
-We plan to incorporate a margin of error of (travel time * 10%). For example location X which  
-is located twenty minutes away on the bus from person A and twenty minutes by walking  
-from person B. Options in the range between 18 minutes and 22 minutes away will still be  
-considered. 
+We plan to incorporate a margin of error of (travel time * 10%) for possible destination  
+locations. For example, for a travel time of twenty minutes, locations X,Y,Z located in the  
+range 18 and 22 minutes away will still be considered no matter what selected transport  
+mode.
 
 We plan to recommend a top three selection of available meeting points for each search.  
 The routes will be ranked according to personal preference of food/drink and travel time. If  
@@ -57,16 +57,17 @@ The locations will be located within an overlap of a variable radius (of a circl
 the distance possible to travel within a given time and supplied mode of transport. In the  
 backend of the app we will have an appropriate algorithm to compute this radius and  
 overlap. When a meeting point is selected the user will be supplied with the option of starting  
-the meeting process, or saving the route for later. 
+the meeting process, or saving the route for later.
 
 Transport details will be returned to the user when the start option is selected. Information  
-returned will include: 
-* the required public transport route, starting point and estimated time of arrival at starting point.
-* navigation details if walking.
+returned will include:
+the required public transport route and starting point.
+or navigation details if walking.
+
 
 ##### _1.2 Business Context_
 _Demographic_: Our app will be suitable for a wide range of demographics, it will be  
-suitable for people of all ages and genders. 
+suitable for people of all genders over the age of 13.
 
 _Geographic Segment_: For this project we will be limiting our area of interest to Dublin  
 only, this will help us fulfill the full functionality of the app and leave it easier to test.  
@@ -111,52 +112,88 @@ open to future additions if necessary.
 - User Log Out
 
 ##### _2.2 User Characteristics and Objectives_
-The application will be installed on an Android device. Since the application will likely be  
-used by all age demographics the user interface will be kept as clutter free and clean as  
-possible to avoid confusion. API calls will help keep the application size, reducing storage  
-space usage. 
+The application will be accessible to anybody with access to an Android device and an  
+Internet connection. The audience includes all genders over the age of 13. This is because  
+Google requires all account users to be above this age. There will be no payment options in  
+the app.
 
-The application requirements from a user perspective focus on providing a meeting point  
-located equally from each party based on travel time.
+The app will be easily accessible with a user-friendly interface that the majority of users can  
+successfully use. Ideally, the app would attract users who enjoy travelling to new places and  
+experiencing new food & drink locations. The app will have a public transport option so it is  
+optimal that the user will have a good level of independence.
 
-Desirable Features:
-- Save previous meeting points.
+Some desirable features that users would enjoy include :
+- The ability to save some previous meeting points.
+- If the user particularly enjoyed a meeting place from the past the app will allow them  
+to save and revisit the location.
+
 
 ##### _2.3 Operational Scenarios_
 We will focus on three user levels for our operational scenarios.  
 
-1.  _Unregistered Users_:
-- The unregistered user has the application installed on their Android device,  
-but have not created a user account. 
-- They can have limited functionality of the application by choosing the option  
-“continue without user account” on the sign up screen.
-- The unregistered user will not be able to: 
-  - save any favourite meeting places
-  - see their recent meeting places
-  - meeting places will be general and not be personalised
-- This limited functionality should encourage the unregistered user to create a  
-user account to gain the full functionality of the application.
-2. _Registering User_:
+1.  _Unregistered Users_:  
 
-- On the sign up screen the user will select “sign up with email”.
-- Here the user will have the option of entering their email address and a  
-password. The users password will be stored securely using encryption.
-3. Registered Users:
-- May be logged in or not
+The unregistered user will have the application installed on their Android device, but will not  
+yet have created a user account related to the app. This user has limited functionality of the  
+application. Users without profiles can select the option, ‘Continue without user account’,  
+on the sign up screen to access the main features of the app. These features focus around  
+the search aspect where the user inputs user locations and selected mode of transport.  
+Meeting locations are then returned to the user which they can choose from.  
+
+The unregistered user will be restricted from operating the app in the following ways:  
+
+- Saving a favourite meeting place.
+- Seeing their meeting places recent history.
+- Having personalised search results according to user data.  
+ 
+This limited functionality should encourage the unregistered user to create a user account to  
+gain the full functionality of the application.
+
+2. _Registering Users_:
+
+A new user will be presented with the option to ‘sign up with email’ at the starting screen.  
+Here the user can enter a valid email address and a password if they want to create an  
+account. The user’s password will be stored securely using encryption. The user will not  
+have to verify their email address to continue using the apps services. When the user  
+account has been successfully created they will automatically logged into the account and  
+directed towards customising their account preferences including favourite food and drink.
+
+3. _Registered Users_:  
+
+Users with profiles will remain logged into the app after registering and customising their  
+profile. Re-entering the app will bypass the starting screen and the main screen will be  
+displayed. Users with accounts will have the full functionality of the app including customised  
+search results according to their profile data. These users can search for meeting points and  
+save those places if they liked the place. The registered user will also be able to view their  
+previous location visit history.
+
 
 ##### _2.4 Implementation Constraints_
 
 _Time Constraints_
-- The project will need to be completed by April 2020. Unforeseen circumstances  
-could cause project longevity.  
+- The project will need to be completed by March 2020. Project planning and time  
+management will be a key concern for successful project completion. Unforeseen  
+circumstances could cause project longevity. We plan to try and avoid any delays by  
+setting realistic goals using a gantt chart and sticking to this rigid schedule.
+ 
 
 _Group requirements_
-- Will we be able to successfully take advantage of the TFI API and return  
-journeys.  
+- Being able to successfully work together to split up the work in the back-end and  
+- front-end. Problems are when we can’t take advantage of the different services like  
+- the TFI API and Mapbox API. 
 
 _Financial Constraints_
 - In order for the app to present a live map, there must be a cost-effective  
-service. Billing services might cost too much.  
+service. Billing services might cost too much, so we will select the mapping service that best  
+meets our needs on both a financial and functionality level.  
+
+_Efficiency of the Application_
+- It is likely that our algorithm will grow in complexity and size. To avoid a large  
+application install size we plan to implement a RESTful API which would allow our  
+main algorithm to be accessed using API calls from the android application. A large  
+application size would likely lead to stagnant performance on an older android  
+device. Keeping the application small will allow our app to be installed on a broader  
+range of devices.
 
 # Section 3: Functional Requirements
 ---
@@ -443,5 +480,4 @@ Docs.oracle.com. (2019). Java Platform SE 7. [online] Available at: https://docs
 
 Mapbox. (2019). Introduction. [online] Available at: https://docs.mapbox.com/api/ [Accessed 1 Dec. 2019].
 
-Docs.microsoft.com. (2019). Microsoft SQL documentation - SQL Server. [online] Available at:  
-https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15 [Accessed 1 Dec. 2019].
+Firebase. (2019). Documentation  |  Firebase. [online] Available at: https://firebase.google.com/docs [Accessed 5 Dec. 2019].
