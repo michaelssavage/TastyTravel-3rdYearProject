@@ -195,7 +195,7 @@ _Technical Concerns_
 _Dependencies_
 * This function is dependent on the sign up and create profile functions.
 
-##### 3.5 Search Location Interface
+##### 3.5 Meeting Point Search
 _Description_
 * This function is available to all users of the app both registered and unregistered. It allows a user to enter their location and the second parties location. The user will also specify the mode of transport being used by each party for the trip. This search utility will be the main means of search used by the user to calculate a meeting point. Once the search function has executed it will return to the user a list consisting of the top three results applicable to the search.
 
@@ -208,7 +208,7 @@ _Technical Concerns_
 _Dependencies_
 * This function depends on the calculate meeting point function for returned search results. 
 
-##### 3.6 Generate Route
+##### 3.6 Calculate Meeting Point
 _Description_
 * This function works in conjunction with the meeting point search function to return possible suitable meeting points based on the input received from the search input boxes.
 
