@@ -15,8 +15,8 @@
 3.2 Create Profile  
 3.3 Login  
 3.4 Edit Profile  
-3.5 Search Location Interface  
-3.6 Generate Route  
+3.5 Meeting Point Search  
+3.6 Calculate Meeting Point  
 3.7 Delete Profile  
 ### Section 4: System Architecture
 ------
@@ -25,7 +25,7 @@
 ------
 5.1 Context Diagram  
 5.2 Use Case Diagram  
-5.3 Higher Level Design Diagram  
+5.3 Higher Level Design Diagram and Description  
 ### Section 6: Preliminary Schedule
 ------
 6.1 Task Table  
@@ -38,32 +38,35 @@
 ------
 
 ##### _1.1 Overview_
-The product we plan to develop fits in the category of Travel/Dining. We will be developing 
-an Android app using Android Studio. The main functionality of our app is to 
-help a user and a person they want to meet find a meeting location by journey time rather  
-than physical travel distance. The locations will be customised around personal preference.
+The product being developed fits in the category of Travel & Dining. 
+The main functionality of our app is to help a user and a person they want 
+to meet find a meeting location by journey time rather than physical 
+travel distance. The locations will be customised around personal preference. 
+The app will be designed for Android devices using Android Studio IDE.
 
-We plan to incorporate a margin of error of (travel time * 10%) for possible destination  
-locations. For example, for a travel time of twenty minutes, locations X,Y,Z located in the  
-range 18 and 22 minutes away will still be considered no matter what selected transport  
-mode.
+The system compares meeting points that are located equidistant from each 
+party based on travel time and not ‘as the crow flies’. We plan to incorporate 
+a margin of error of (travel time * 10%) for possible destination locations. 
+For example, for a travel time of twenty minutes, locations X,Y,Z located in 
+the range between 18 and 22 minutes away will still be considered no matter 
+what mode of transport is selected.
 
-We plan to recommend a top three selection of available meeting points for each search.  
-The routes will be ranked according to personal preference of food/drink and travel time. If  
-the three returned locations are not to the users liking, they can see more search results  
-returned by clicking an option ‘show more’.
+Modes of transport available to the user in the app will include walking, 
+cycling, driving and public transport. We plan to recommend a top three 
+selection of available meeting points for each search. The routes will be 
+ranked according to personal preference of food/drink and travel time. 
+If the three returned locations are not to the users liking, they can see 
+more search results returned by clicking the option ‘show more’.
 
-The locations will be located within an overlap of a variable radius (of a circle), depending on  
-the distance possible to travel within a given time and supplied mode of transport. In the  
-backend of the app we will have an appropriate algorithm to compute this radius and  
-overlap. When a meeting point is selected the user will be supplied with the option of starting  
-the meeting process, or saving the route for later.
+Suitable meeting points will be located within an overlap of two variables 
+‘radius’ (linked to a circle), depending on the distance possible to travel 
+within a given time via the supplied mode of transport from the users 
+starting point. In the backend of the app we will have an appropriate 
+algorithm to compute this radius and overlap. When a meeting point is selected 
+the user will be supplied with the option of starting the meeting process, 
+or saving the route for later.
 
-Transport details will be returned to the user when the start option is selected. Information  
-returned will include:
-the required public transport route and starting point.
-or navigation details if walking.
-
+![Area of Interest](images/areaOfInterest.png "System Architecture")
 
 ##### _1.2 Business Context_
 _Demographic_: Our app will be suitable for a wide range of demographics, it will be  
