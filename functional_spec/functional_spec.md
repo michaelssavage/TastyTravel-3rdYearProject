@@ -108,7 +108,7 @@ Some useful features that users will enjoy include :
 We will focus on three user levels for our operational scenarios.
 
 _Unregistered Users:_  
-* The unregistered user will have the application installed on their Android device, but will not yet have created a user account related to the app. This user has limited functionality of the application. Users without profiles can select the option, ‘Continue without user account’, on the sign up screen to access the main features of the app. These features focus around the meeting point search aspect of the app where the user inputs user locations and selected modes of transport. Meeting locations are then returned to the user which they can choose from.
+* The unregistered user will have the application installed on their Android device, but will not yet have created a user account related to the app. This user has limited functionality of the application. Users without profiles can select the option, **‘Continue without user account’**, on the sign up screen to access the main features of the app. These features focus around the meeting point search aspect of the app where the user inputs user locations and selected modes of transport. Meeting locations are then returned to the user which they can choose from.
 
 * The unregistered user will be restricted from accessing the following features:
     - Saving a favourite meeting place.
