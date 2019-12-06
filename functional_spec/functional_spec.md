@@ -68,6 +68,12 @@ or saving the route for later.
 
 ![Area of Interest](images/areaOfInterest.png "System Architecture")
 
+Transport details will be returned to the user when the start option is selected. 
+Information returned will include:
+* the required transport route and starting point for public transport.
+* expected time of arrival based to meeting point based on mode of transport.
+
+
 ##### _1.2 Business Context_
 _Demographic_: Our app will be suitable for a wide range of demographics, it will be  
 suitable for people of all genders over the age of 13.
