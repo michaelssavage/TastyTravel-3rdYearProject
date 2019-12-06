@@ -291,28 +291,28 @@ A use case diagram does not summarize relationship between actors and systems no
 ![Higher Level Diagram](images/higherLevel.png "Higher Level Diagram") 
 
 
-**Step 1: Sign Up**
+**Step 1: Sign Up**  
 Register an email address and choose a password to give the ability to login to the application.
 
-**Step 2: Login**
+**Step 2: Login**  
 Login to the application using the email and address supplied in step one above.
 
-**Step 3: Create Profile**
+**Step 3: Create Profile**  
 Input your name and enter your personal preferences for favourite food and drink when prompted. 
 
-**Step 4: Search Location**
+**Step 4: Search Location**  
 Using the application GUI enter the user location information and their friends location data. Select the prefered mode of transport from the given list for each party also.
 
-**Step 5: Generate Meeting Point**
+**Step 5: Generate Meeting Point**  
 Once the user has entered both locations of the user and the person they are meeting along with the mode of transport being used by each, the application will return suitable meeting points.
 
-**Step 6: Edit Profile**
+**Step 6: Edit Profile**  
 If you want to update existing user data such as password or email address you can do so using the edit profile option.
 
-**Step 7: Delete Profile**
+**Step 7: Delete Profile**  
 If you would like to delete your user profile along with your user data you can choose the option of deleting profile.
 
-**Step 8: Log Out**
+**Step 8: Log Out**  
 Once you have finished exploring the various application    features, you can then log out of your account.
 
 ----
