@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,8 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignInActivity extends AppCompatActivity {
 
-    Button signInBtn;
-    EditText emailAddress, accountPassword;
+    Button signInButton;
+    EditText emailField, passwordField;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
 
@@ -29,48 +28,36 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        emailAddress = findViewById(R.id.enterEmail);
-        accountPassword = findViewById(R.id.enterPassword);
-        progressBar = findViewById(R.id.progressBar);
-        signInBtn = findViewById(R.id.signInBtn);
+        emailField = findViewById(R.id.enterEmail);
+        passwordField = findViewById(R.id.enterPassword);
+        progressBar = findViewById(R.id.signInProgress);
+        signInButton = findViewById(R.id.signInBtn);
 
-        signInBtn.setOnClickListener(new View.OnClickListener() {
+        mAuth = FirebaseAuth.getInstance();
+
+        signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = emailAddress.getText().toString().trim();
-                String password = accountPassword.getText().toString().trim();
-
-                if(TextUtils.isEmpty(email)){
-                    emailAddress.setError("Email is Required");
-                    return;
-                }
-
-                if(TextUtils.isEmpty(password)) {
-                    accountPassword.setError("Password is Required");
-                    return;
-                }
-
-                if(password.length() < 6){
-                    accountPassword.setError("Password must be 6 characters or greater");
-                    return;
-                }
-
                 progressBar.setVisibility(View.VISIBLE);
+
+                String email = emailField.getText().toString();
+                String password = passwordField.getText().toString();
 
                 // authenticate the user
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            Toast.makeText(SignInActivity.this, "User Successfully Logged in", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            Toast.makeText(SignInActivity.this, "Successfully Logged in", Toast.LENGTH_LONG).show();
+                            Intent mainScreen = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(mainScreen);
                         }
                         else {
                             Toast.makeText(SignInActivity.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
-                });
+                    });
             }
         });
     }

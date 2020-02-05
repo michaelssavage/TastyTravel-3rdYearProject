@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "958072930941",
-    "firebase_url": "https://tastytravel-cb470.firebaseio.com",
-    "project_id": "tastytravel-cb470",
-    "storage_bucket": "tastytravel-cb470.appspot.com"
+    "project_number": "441992741060",
+    "firebase_url": "https://tastytravel-4349f.firebaseio.com",
+    "project_id": "tastytravel-4349f",
+    "storage_bucket": "tastytravel-4349f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:958072930941:android:9461b33622ab494d0b6714",
+        "mobilesdk_app_id": "1:441992741060:android:1b52c9adf3d3016d394991",
         "android_client_info": {
           "package_name": "com.example.tastytravel"
         }
       },
       "oauth_client": [
         {
-          "client_id": "958072930941-ep015cackd7lpm3n14eo0p3pvouvf53c.apps.googleusercontent.com",
+          "client_id": "441992741060-tih1bj2vt1uu452m52cj4a6j6el8k4vn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.tastytravel",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "958072930941-q1ghcbthbmosmupgdg5qccelfeqcu6uc.apps.googleusercontent.com",
+          "client_id": "441992741060-iuaogkl7711dlt6k9q76b4cbivms4259.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCecVpgktq2EgYHeldZwD_p2h0Bk7qWtic"
+          "current_key": "AIzaSyBQxLcYKEO9OgSX4Kuyhqgov41BSsQpq4E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "958072930941-q1ghcbthbmosmupgdg5qccelfeqcu6uc.apps.googleusercontent.com",
+              "client_id": "441992741060-iuaogkl7711dlt6k9q76b4cbivms4259.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

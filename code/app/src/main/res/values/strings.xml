@@ -2,7 +2,7 @@
     <string name="app_name">TastyTravel</string>
     <string name="continue_to_main">Continue Without An Account</string>
     <string name="sign_in">Sign In</string>
-    <string name="sign_up_prompt">Don\'t have an Account? SIGN UP</string>
+    <string name="account_question">Don\'t have an Account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="or">OR</string>
     <string name="title_activity_login">Sign in</string>
@@ -47,9 +47,4 @@
     <string name="log_in_now">Log In Now</string>
     <string name="please_login_to_continue_using_the_app">Please Login to Continue Using the App</string>
     <string name="logout">Logout</string>
-    <string name="how_to_use">How To Use</string>
-    <string name="contact_us">Contact Us</string>
-    <string name="about_paragraph_1">TastyTravel will allow you to search for places to meet. Go for a drink or get some food, as long as it is tasty! Directions for two people will be given to improve your travel.</string>
-    <string name="about_paragraph_2">If you have any questions, please feel free to email us!\n\nGerard: gerard.slowey2@mail.dcu.ie\nMichael: michael.savage7@mail.dcu.ie</string>
-    <string name="about_pizza_background">Pizza background</string>
 </resources>
