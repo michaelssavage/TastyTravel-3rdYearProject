@@ -8,23 +8,39 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class StartActivity extends AppCompatActivity {
+
+    TextView continueText;
+    FirebaseAuth mAuth;
+    Button signInBtn;
+    TextView signUpText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        // Continue without account
-        TextView continueText = findViewById(R.id.continueWithoutAccount);
-        Button signInBtn = findViewById(R.id.signInBtn);
-        TextView signUpText = findViewById(R.id.signUpText);
+        // Continue without account option
+        continueText = findViewById(R.id.continueWithoutAccount);
+        signInBtn = findViewById(R.id.signInBtn);
+        signUpText = findViewById(R.id.signUpText);
+        mAuth = FirebaseAuth.getInstance();
 
+        // checking if user is already logged in
+        if(mAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+        }
+
+        // Continue without account
         continueText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mainScreen = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(mainScreen);
+                Intent notLoggedIn_mainScreen = new Intent(getApplicationContext(), notLoggedIn_MainActivity.class);
+                startActivity(notLoggedIn_mainScreen);
             }
         });
 

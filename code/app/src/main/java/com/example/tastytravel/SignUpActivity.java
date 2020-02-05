@@ -29,20 +29,15 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        emailAddress = findViewById(R.id.signUpEmail);
+        emailAddress    = findViewById(R.id.signUpEmail);
         accountPassword = findViewById(R.id.signUpPassword);
-        signUpBtn = findViewById(R.id.signUpBtn);
+        signUpBtn       = findViewById(R.id.signUpBtn);
 
+        // Get user instance from database
         mAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
 
-        // checking if user is already logged in
-        if(mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        }
-
-
+        // If sign up button clicked
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)) {
+                if(TextUtils.isEmpty(password)){
                     accountPassword.setError("Password is Required");
                     return;
                 }
@@ -84,12 +79,13 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
 
-
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), SignInActivity.class));
             }
         });
+
+
     }
 }

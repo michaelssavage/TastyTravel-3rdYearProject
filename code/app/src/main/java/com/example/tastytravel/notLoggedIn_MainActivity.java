@@ -7,13 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class notLoggedIn_MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_not_logged_in__main);
 
+        // Search Button
         Button searchBtn = findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Settings
         Button settingsBtn = findViewById(R.id.settingsBtn);
         settingsBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -36,14 +38,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button profileButton = findViewById(R.id.profileBtn);
-        profileButton.setOnClickListener(new View.OnClickListener() {
+        // About
+        Button aboutBtn = findViewById(R.id.aboutBtn);
+        aboutBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent profileIntent = new Intent(getApplicationContext(), profileActivity.class);
-                startActivity(profileIntent);
+                Intent aboutScreen = new Intent(getApplicationContext(), AboutActivity.class);
+                // pass info to 2nd screen
+                startActivity(aboutScreen);
             }
         });
+
     }
 }
