@@ -7,94 +7,12 @@
     tools:context=".AboutActivity">
 
     <TextView
-        android:id="@+id/aboutHeading"
-        android:layout_width="285dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="36dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="@color/red_orange"
-        android:textSize="50sp"
-        android:textStyle="bold"
+        android:id="@+id/aboutBlurb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Page"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/about_howto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/how_to_use"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutHeading" />
-
-    <TextView
-        android:id="@+id/about_paragraph"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="32dp"
-        android:background="#80009688"
-        android:elevation="10dp"
-        android:padding="12dp"
-        android:text="@string/about_paragraph_1"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_howto" />
-
-    <TextView
-        android:id="@+id/about_contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/contact_us"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_paragraph" />
-
-    <TextView
-        android:id="@+id/about_paragraph2"
-        android:layout_width="0dp"
-        android:layout_height="156dp"
-        android:layout_marginTop="32dp"
-        android:background="#80009688"
-        android:elevation="10dp"
-        android:padding="12dp"
-        android:text="@string/about_paragraph_2"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_contact" />
-
-    <ImageView
-        android:id="@+id/about_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:alpha=".33"
-        android:contentDescription="@string/about_pizza_background"
-        android:cropToPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/about_img" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

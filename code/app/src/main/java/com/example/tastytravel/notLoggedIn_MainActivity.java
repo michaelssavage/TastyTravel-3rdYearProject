@@ -9,17 +9,13 @@ import android.widget.Button;
 
 public class notLoggedIn_MainActivity extends AppCompatActivity {
 
-    Button searchBtn;
-    Button settingsBtn;
-    Button aboutBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_not_logged_in__main);
 
         // Search Button
-        searchBtn = findViewById(R.id.searchBtn);
+        Button searchBtn = findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -31,7 +27,7 @@ public class notLoggedIn_MainActivity extends AppCompatActivity {
         });
 
         // Settings
-        settingsBtn = findViewById(R.id.settingsBtn);
+        Button settingsBtn = findViewById(R.id.settingsBtn);
         settingsBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -43,7 +39,7 @@ public class notLoggedIn_MainActivity extends AppCompatActivity {
         });
 
         // About
-        aboutBtn = findViewById(R.id.aboutBtn);
+        Button aboutBtn = findViewById(R.id.aboutBtn);
         aboutBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override

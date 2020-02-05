@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,8 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText emailAddress, accountPassword;
-    Button signUpBtn;
+    EditText emailField, passwordField;
+    Button signUpButton;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
 
@@ -29,63 +28,40 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        emailAddress    = findViewById(R.id.signUpEmail);
-        accountPassword = findViewById(R.id.signUpPassword);
-        signUpBtn       = findViewById(R.id.signUpBtn);
+        // Input Fields
+        emailField = findViewById(R.id.signUpEmail);
+        passwordField = findViewById(R.id.signUpPassword);
+        signUpButton = findViewById(R.id.signUpBtn);
+        progressBar = findViewById(R.id.progressBar);
 
         // Get user instance from database
         mAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progressBar);
 
         // If sign up button clicked
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
+        signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = emailAddress.getText().toString().trim();
-                String password = accountPassword.getText().toString().trim();
-
-                if(TextUtils.isEmpty(email)){
-                    emailAddress.setError("Email is Required");
-                    return;
-                }
-
-                if(TextUtils.isEmpty(password)){
-                    accountPassword.setError("Password is Required");
-                    return;
-                }
-
-                if(password.length() < 6){
-                    accountPassword.setError("Password must be 6 characters or greater");
-                    return;
-                }
-
                 progressBar.setVisibility(View.VISIBLE);
 
-                // registering the user in FireBase
+                // Registering Users on a Database
+                String email = emailField.getText().toString();
+                String password = passwordField.getText().toString();
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressBar.setVisibility(View.GONE);
                         if(task.isSuccessful()){
-                            Toast.makeText(SignUpActivity.this, "Profile Successfully Created", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        }
-                        else {
-                            Toast.makeText(SignUpActivity.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignUpActivity.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
+                            Intent mainScreen = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(mainScreen);
+                        } else {
+                            Toast.makeText(SignUpActivity.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
             }
         });
-
-
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SignInActivity.class));
-            }
-        });
-
 
     }
 }
