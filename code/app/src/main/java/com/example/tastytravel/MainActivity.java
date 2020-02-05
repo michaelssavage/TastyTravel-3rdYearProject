@@ -9,12 +9,17 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button searchBtn;
+    Button settingsBtn;
+    Button profileButton;
+    Button aboutBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button searchBtn = findViewById(R.id.searchBtn);
+        searchBtn = findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -25,23 +30,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button settingsBtn = findViewById(R.id.settingsBtn);
+        settingsBtn = findViewById(R.id.settingsBtn);
         settingsBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent settingsIntent = new Intent(getApplicationContext(), SettingsActivity.class);
+                // pass info to 2nd screen
                 startActivity(settingsIntent);
             }
         });
 
-        Button profileButton = findViewById(R.id.profileBtn);
+        profileButton = findViewById(R.id.profileBtn);
         profileButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent profileIntent = new Intent(getApplicationContext(), profileActivity.class);
                 startActivity(profileIntent);
+            }
+        });
+
+        // About
+        aboutBtn = findViewById(R.id.aboutBtn);
+        aboutBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent aboutScreen = new Intent(getApplicationContext(), AboutActivity.class);
+                // pass info to 2nd screen
+                startActivity(aboutScreen);
             }
         });
     }
