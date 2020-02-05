@@ -15,8 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SearchActivity"></activity>
-        <activity android:name=".AboutActivity" />
+        <activity android:name=".AboutActivity"></activity>
         <activity android:name=".notLoggedIn_MainActivity" />
         <activity android:name=".profileActivity" />
         <activity android:name=".SignUpActivity" />
@@ -36,3 +35,4 @@
     </application>
 
 </manifest>
+
