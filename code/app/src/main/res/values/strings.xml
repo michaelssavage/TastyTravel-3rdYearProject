@@ -2,7 +2,7 @@
     <string name="app_name">TastyTravel</string>
     <string name="continue_to_main">Continue Without An Account</string>
     <string name="sign_in">Sign In</string>
-    <string name="account_question">Don\'t have an Account?</string>
+    <string name="sign_up_prompt">Don\'t have an Account? SIGN UP</string>
     <string name="sign_up">Sign Up</string>
     <string name="or">OR</string>
     <string name="title_activity_login">Sign in</string>

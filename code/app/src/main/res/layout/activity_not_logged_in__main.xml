@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainScreenActivity">
+    tools:context=".notLoggedIn_MainActivity">
 
     <Button
         android:id="@+id/searchBtn"
@@ -27,7 +27,7 @@
         android:elevation="10dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/app_name"
-        android:textColor="#F44336"
+        android:textColor="@color/red_orange"
 
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,9 +65,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="#4CAF50"
+        android:background="@color/light_green"
         android:text="@string/about"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settingsBtn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,9 +79,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
-        android:background="#009688"
+        android:background="@color/aqua_blue"
         android:text="@string/settings"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

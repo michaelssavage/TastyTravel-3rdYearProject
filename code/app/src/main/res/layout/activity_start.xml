@@ -8,13 +8,13 @@
     tools:context=".StartActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/app_name"
-        android:textColor="#F44336"
+        android:textColor="@color/red_orange"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,47 +32,28 @@
         android:text="@string/sign_in"
 
         android:textAllCaps="true"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/account_question"
-
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646" />
+        app:layout_constraintTop_toBottomOf="@+id/heading" />
 
     <TextView
         android:id="@+id/signUpText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="54dp"
         android:clickable="true"
         android:focusable="true"
         android:fontFamily="sans-serif-black"
-        android:text="@string/sign_up"
-        android:textAllCaps="true"
-        android:textColor="#009688"
+        android:text="@string/sign_up_prompt"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
+
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.646" />
@@ -86,25 +67,26 @@
         android:text="@string/or"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/continueWithoutAccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/signUpText"
+        app:layout_constraintVertical_bias="0.529" />
 
     <TextView
         android:id="@+id/continueWithoutAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="48dp"
-        android:clickable="true"
+        android:layout_marginTop="44dp"
 
+        android:clickable="true"
         android:focusable="true"
         android:fontFamily="sans-serif"
         android:text="@string/continue_to_main"
-        android:textColor="#009688"
 
+        android:textColor="@color/aqua_blue"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
