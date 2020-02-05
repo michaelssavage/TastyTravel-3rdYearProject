@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "958072930941",
+    "firebase_url": "https://tastytravel-cb470.firebaseio.com",
+    "project_id": "tastytravel-cb470",
+    "storage_bucket": "tastytravel-cb470.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958072930941:android:9461b33622ab494d0b6714",
+        "android_client_info": {
+          "package_name": "com.example.tastytravel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958072930941-ep015cackd7lpm3n14eo0p3pvouvf53c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tastytravel",
+            "certificate_hash": "8ab2337d18ec8fe74564f4d329496654cf93972a"
+          }
+        },
+        {
+          "client_id": "958072930941-q1ghcbthbmosmupgdg5qccelfeqcu6uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCecVpgktq2EgYHeldZwD_p2h0Bk7qWtic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958072930941-q1ghcbthbmosmupgdg5qccelfeqcu6uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
