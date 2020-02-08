@@ -797,10 +797,12 @@ color abc_tint_spinner
 color abc_tint_switch_track
 color accent_material_dark
 color accent_material_light
+color aqua_blue
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color black
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -850,6 +852,8 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_blue
+color light_green
 color mapbox_blue
 color mapbox_gray
 color mapbox_gray_dark
@@ -904,6 +908,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red_orange
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -918,6 +923,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1249,6 +1255,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable about_img
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
@@ -1341,8 +1348,13 @@ id META
 id SHIFT
 id SYM
 id SearchView
-id aboutBlurb
 id aboutBtn
+id aboutHeading
+id about_contact
+id about_howto
+id about_img
+id about_paragraph
+id about_paragraph2
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1462,6 +1474,7 @@ id ghost_view
 id gone
 id group_divider
 id groups
+id heading
 id home
 id homeAsUp
 id hybrid
@@ -1598,8 +1611,6 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView
-id textView2
 id textView4
 id textView5
 id text_input_password_toggle
@@ -1690,6 +1701,7 @@ layout activity_main
 layout activity_map
 layout activity_not_logged_in__main
 layout activity_profile
+layout activity_search
 layout activity_settings
 layout activity_sign_in
 layout activity_sign_up
@@ -1773,8 +1785,10 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string about
+string about_paragraph_1
+string about_paragraph_2
+string about_pizza_background
 string access_token
-string account_question
 string action_sign_in
 string action_sign_in_short
 string app_name
@@ -1803,6 +1817,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string contact_us
 string continue_to_main
 string copy
 string create_a_password
@@ -1821,6 +1836,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
+string how_to_use
 string invalid_password
 string invalid_username
 string log_in_now
@@ -1874,6 +1890,7 @@ string settings
 string sign_in
 string sign_up
 string sign_up_now
+string sign_up_prompt
 string signature_title
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list

@@ -2,6 +2,7 @@ package com.example.tastytravel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,13 +10,17 @@ import android.widget.Button;
 
 public class notLoggedIn_MainActivity extends AppCompatActivity {
 
+    Button searchBtn;
+    Button settingsBtn;
+    Button profileButton;
+    Button aboutBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_not_logged_in__main);
+        setContentView(R.layout.activity_main);
 
-        // Search Button
-        Button searchBtn = findViewById(R.id.searchBtn);
+        searchBtn = findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -26,8 +31,7 @@ public class notLoggedIn_MainActivity extends AppCompatActivity {
             }
         });
 
-        // Settings
-        Button settingsBtn = findViewById(R.id.settingsBtn);
+        settingsBtn = findViewById(R.id.settingsBtn);
         settingsBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -38,8 +42,18 @@ public class notLoggedIn_MainActivity extends AppCompatActivity {
             }
         });
 
+        profileButton = findViewById(R.id.profileBtn);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent signInIntent = new Intent(getApplicationContext(), SignInActivity.class);
+                startActivity(signInIntent);
+            }
+        });
+
         // About
-        Button aboutBtn = findViewById(R.id.aboutBtn);
+        aboutBtn = findViewById(R.id.aboutBtn);
         aboutBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -49,6 +63,5 @@ public class notLoggedIn_MainActivity extends AppCompatActivity {
                 startActivity(aboutScreen);
             }
         });
-
     }
 }
