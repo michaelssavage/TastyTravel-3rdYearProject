@@ -1756,7 +1756,7 @@ id chronometer
 id clear_text
 id clip_horizontal
 id clip_vertical
-id closeBtn
+id closeText
 id collapseActionView
 id compassView
 id confirm_button
@@ -1919,6 +1919,7 @@ id scrollView
 id scrollable
 id searchBtn
 id searchHead
+id searchText
 id search_badge
 id search_bar
 id search_button
