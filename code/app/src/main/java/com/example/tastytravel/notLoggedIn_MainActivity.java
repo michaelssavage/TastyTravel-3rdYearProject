@@ -25,7 +25,7 @@ public class notLoggedIn_MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), MapActivity.class);
+                Intent startIntent = new Intent(getApplicationContext(), SearchActivity.class);
                 // pass info to 2nd screen
                 startActivity(startIntent);
             }

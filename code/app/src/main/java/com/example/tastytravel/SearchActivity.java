@@ -1,24 +1,28 @@
 package com.example.tastytravel;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.TextViewCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class SearchActivity extends AppCompatActivity {
 
-    Button searchBtn;
-    Button closeBtn;
+    TextView searchText;
+    TextView closeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        searchBtn = findViewById(R.id.searchBtn);
-        searchBtn.setOnClickListener(new View.OnClickListener() {
+        searchText = findViewById(R.id.searchText);
+        searchText.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -28,8 +32,8 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        closeBtn = findViewById(R.id.closeBtn);
-        closeBtn.setOnClickListener(new View.OnClickListener() {
+        closeText = findViewById(R.id.closeText);
+        closeText.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

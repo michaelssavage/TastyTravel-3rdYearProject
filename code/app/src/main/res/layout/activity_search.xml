@@ -6,25 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
-    <Button
-        android:id="@+id/searchBtn"
-        android:layout_width="90dp"
-        android:layout_height="35dp"
-        android:text="@android:string/search_go"
-        android:textColor="@color/aqua_blue"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/closeBtn"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@android:drawable/btn_dialog"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/searchHead"
         android:layout_width="wrap_content"
@@ -41,8 +22,8 @@
 
     <EditText
         android:id="@+id/locationText"
-        android:layout_width="320dp"
-        android:layout_height="52dp"
+        android:layout_width="318dp"
+        android:layout_height="44dp"
         android:layout_marginTop="108dp"
         android:ems="10"
         android:hint="@string/enter_your_location"
@@ -53,8 +34,8 @@
 
     <Button
         android:id="@+id/locationBtn"
-        android:layout_width="0dp"
-        android:layout_height="52dp"
+        android:layout_width="318dp"
+        android:layout_height="36dp"
         android:text="@string/current_location"
         android:textColor="@color/aqua_blue"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +45,7 @@
     <EditText
         android:id="@+id/locationText2"
         android:layout_width="320dp"
-        android:layout_height="52dp"
+        android:layout_height="44dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/enter_another_location"
@@ -79,11 +60,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:capitalize="characters"
-        android:text="SUGGESTED PLACES"
+        android:text="@string/suggested_places"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locationText2" />
+
+    <TextView
+        android:id="@+id/closeText"
+        android:layout_width="38dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/searchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@android:string/search_go"
+        android:textColor="@color/aqua_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

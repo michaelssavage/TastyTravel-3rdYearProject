@@ -20,6 +20,7 @@
         <activity android:name=".profileActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SignInActivity" />
+        <activity android:name=".SearchActivity" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
