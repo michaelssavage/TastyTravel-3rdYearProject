@@ -16,7 +16,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".AboutActivity"></activity>
-        <activity android:name=".notLoggedIn_MainActivity" />
         <activity android:name=".profileActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SignInActivity" />

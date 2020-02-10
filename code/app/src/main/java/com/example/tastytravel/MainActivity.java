@@ -1,66 +1,70 @@
 package com.example.tastytravel;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
+    BottomNavigationView bottomNavBar;
+    FirebaseAuth mAuth;
     Button searchBtn;
-    Button settingsBtn;
-    Button profileButton;
-    Button aboutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mAuth = FirebaseAuth.getInstance();
+        bottomNavBar = findViewById(R.id.bottomNavBar);
         searchBtn = findViewById(R.id.searchBtn);
+
+        // If the Settings Button is Clicked
         searchBtn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), SearchActivity.class);
-                // pass info to 2nd screen
-                startActivity(startIntent);
+                Intent searchIntent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(searchIntent);
             }
         });
 
-        settingsBtn = findViewById(R.id.settingsBtn);
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
 
+        // Bottom Nav Bar Setup
+        bottomNavBar.setSelectedItemId(R.id.menu_home);
+        bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                Intent settingsIntent = new Intent(getApplicationContext(), SettingsActivity.class);
-                // pass info to 2nd screen
-                startActivity(settingsIntent);
-            }
-        });
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        profileButton = findViewById(R.id.profileBtn);
-        profileButton.setOnClickListener(new View.OnClickListener() {
+                switch(menuItem.getItemId()) {
+                    case R.id.menu_home:
+                        return true;
 
-            @Override
-            public void onClick(View v) {
-                Intent profileIntent = new Intent(getApplicationContext(), profileActivity.class);
-                startActivity(profileIntent);
-            }
-        });
+                    case R.id.menu_about:
+                        startActivity(new Intent(getApplicationContext(), AboutActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
 
-        // About
-        aboutBtn = findViewById(R.id.aboutBtn);
-        aboutBtn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent aboutScreen = new Intent(getApplicationContext(), AboutActivity.class);
-                // pass info to 2nd screen
-                startActivity(aboutScreen);
+                    case R.id.menu_profile:
+                        // checking if user is already logged in
+                        if(mAuth.getCurrentUser() != null) {
+                            startActivity(new Intent(getApplicationContext(), profileActivity.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+                        }
+                        else{
+                            startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+                        }
+                }
+                return false;
             }
         });
     }

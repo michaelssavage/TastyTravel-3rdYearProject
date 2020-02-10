@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class StartActivity extends AppCompatActivity {
@@ -28,6 +27,7 @@ public class StartActivity extends AppCompatActivity {
 
         // Continue without account option
         continueText = findViewById(R.id.continueWithoutAccount);
+
         signInBtn = findViewById(R.id.signInBtn);
         mAuth = FirebaseAuth.getInstance();
         signUpText = findViewById(R.id.signUpText);
@@ -50,7 +50,7 @@ public class StartActivity extends AppCompatActivity {
         continueText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent notLoggedIn_mainScreen = new Intent(getApplicationContext(), notLoggedIn_MainActivity.class);
+                Intent notLoggedIn_mainScreen = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(notLoggedIn_mainScreen);
             }
         });

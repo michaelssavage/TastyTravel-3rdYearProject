@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\g_slo\\Downloads\\2020-ca326-msavage-tastytravel-master\\2020-ca326-msavage-tastytravel-master\\code\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+            "outputFile": "D:\\g_slo\\Documents\\AndroidStudioProjects\\TastyTravel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
             "map": [
                 {
                     "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\a6ae4030b52671595dfce90719dd71e8\\preference-1.1.0\\res\\values-uz\\values-uz.xml",

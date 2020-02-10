@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\g_slo\\Downloads\\2020-ca326-msavage-tastytravel-master\\2020-ca326-msavage-tastytravel-master\\code\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+            "outputFile": "D:\\g_slo\\Documents\\AndroidStudioProjects\\TastyTravel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\a6ae4030b52671595dfce90719dd71e8\\preference-1.1.0\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",

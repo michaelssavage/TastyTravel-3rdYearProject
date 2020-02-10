@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\g_slo\\Downloads\\2020-ca326-msavage-tastytravel-master\\2020-ca326-msavage-tastytravel-master\\code\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
+            "outputFile": "D:\\g_slo\\Documents\\AndroidStudioProjects\\TastyTravel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
             "map": [
                 {
                     "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\e9ee298407ec571d0b4090132c3d75fd\\jetified-mapbox-android-sdk-8.6.2\\res\\values-lt\\values-lt.xml",

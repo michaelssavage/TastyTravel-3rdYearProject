@@ -1,13 +1,11 @@
 package com.example.tastytravel;
 
 import android.os.Bundle;
-
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,11 +21,11 @@ public class MapActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-// Mapbox access token is configured here. This needs to be called either in your application
-// object or in the same activity which contains the mapview.
+        // Mapbox access token is configured here. This needs to be called either in your application
+        // object or in the same activity which contains the mapview.
         Mapbox.getInstance(this, getString(R.string.access_token));
 
-// This contains the MapView in XML and needs to be called after the access token is configured.
+        // This contains the MapView in XML and needs to be called after the access token is configured.
         setContentView(R.layout.activity_map);
 
         mapView = findViewById(R.id.mapView);
@@ -39,7 +37,7 @@ public class MapActivity extends AppCompatActivity {
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
 
-// Map is set up and the style has loaded. Now you can add data or make other map adjustments.
+                        // Map is set up and the style has loaded. Now you can add data or make other map adjustments.
 
                     }
                 });

@@ -1,15 +1,10 @@
 package com.example.tastytravel;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.TextViewCompat;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -26,9 +21,8 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), MapActivity.class);
-                // pass info to 2nd screen
-                startActivity(startIntent);
+                Intent showMap = new Intent(getApplicationContext(), MapActivity.class);
+                startActivity(showMap);
             }
         });
 
@@ -38,7 +32,6 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
-                // pass info to 2nd screen
                 startActivity(startIntent);
             }
         });
