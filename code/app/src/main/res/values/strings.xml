@@ -41,10 +41,10 @@
     <string name="email_address">email@address.com</string>
     <string name="enter_an_email">Enter an Email</string>
     <string name="create_a_password">Create a Password</string>
-    <string name="password_must_be_at_6_least_6_characters_long">Password must be at 6 least 6 characters long</string>
+    <string name="password_must_be_at_6_least_6_characters_long">Password must be at least 6 characters long</string>
     <string name="sign_up_now">Sign Up Now</string>
     <string name="please_fill_in_the_details_below_to_create_an_account">Please Fill in the Details Below to Create an Account</string>
-    <string name="log_in_now">Log In Now</string>
+    <string name="log_in_now">Sign In Now</string>
     <string name="please_login_to_continue_using_the_app">Please Login to Continue Using the App</string>
     <string name="logout">Logout</string>
     <string name="how_to_use">How To Use</string>
@@ -60,5 +60,5 @@
     <string name="walk">Walk</string>
     <string name="car">Car</string>
     <string name="bus">Bus</string>
-    <string name="delete">Delete</string>
+    <string name="delete">Delete Account</string>
 </resources>

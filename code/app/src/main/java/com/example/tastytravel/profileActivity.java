@@ -1,8 +1,10 @@
 package com.example.tastytravel;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -52,20 +54,14 @@ public class profileActivity extends AppCompatActivity {
             }
         });
 
+
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(profileActivity.this, "Account Successfully Deleted", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), StartActivity.class));
-                        }
-                    }
-                });
+                showAlertDialog(v);
             }
         });
+
         bottomNavBar.setSelectedItemId(R.id.menu_profile);
         bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -88,5 +84,35 @@ public class profileActivity extends AppCompatActivity {
             }
         });
     }
-}
 
+    public void showAlertDialog(View v){
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Account Deletion");
+        alert.setMessage("Do you want to permanently delete your account?");
+
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(profileActivity.this, "Account Successfully Deleted", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), StartActivity.class));
+                        }
+                    }
+                });
+            }
+        });
+
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(profileActivity.this, "Account Deletion Cancelled", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alert.create().show();
+    }
+
+
+}

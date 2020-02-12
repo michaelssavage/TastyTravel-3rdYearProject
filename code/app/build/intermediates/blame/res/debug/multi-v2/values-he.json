@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\micha\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-he\\values-he.xml",
+            "outputFile": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-he\\values-he.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\micha\\.gradle\\caches\\transforms-2\\files-2.1\\a8f8b53e027de28a9a320ceedad8c5ff\\jetified-mapbox-android-sdk-8.6.2\\res\\values-he\\values-he.xml",
+                    "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\e9ee298407ec571d0b4090132c3d75fd\\jetified-mapbox-android-sdk-8.6.2\\res\\values-he\\values-he.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
