@@ -3,10 +3,12 @@ package com.example.tastytravel;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavBar;
     FirebaseAuth mAuth;
     Button searchBtn;
+    ImageView foodCollageImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +28,24 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         bottomNavBar = findViewById(R.id.bottomNavBar);
         searchBtn = findViewById(R.id.searchBtn);
+        foodCollageImage = findViewById(R.id.foodCollageImage);
 
         // If the Settings Button is Clicked
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent searchIntent = new Intent(getApplicationContext(), SearchActivity.class);
-                startActivity(searchIntent);
+            Intent searchIntent = new Intent(getApplicationContext(), SearchActivity.class);
+            startActivity(searchIntent);
             }
         });
 
+        foodCollageImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent savedPlacesIntent = new Intent(getApplicationContext(), SavedPlacesActivity.class);
+                startActivity(savedPlacesIntent);
+            }
+        });
 
         // Bottom Nav Bar Setup
         bottomNavBar.setSelectedItemId(R.id.menu_home);
@@ -42,29 +53,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                switch(menuItem.getItemId()) {
-                    case R.id.menu_home:
-                        return true;
+            switch(menuItem.getItemId()) {
+                case R.id.menu_home:
+                    return true;
 
-                    case R.id.menu_about:
-                        startActivity(new Intent(getApplicationContext(), AboutActivity.class));
+                case R.id.menu_about:
+                    startActivity(new Intent(getApplicationContext(), AboutActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+
+                case R.id.menu_profile:
+                    // checking if user is already logged in
+                    if(mAuth.getCurrentUser() != null) {
+                        startActivity(new Intent(getApplicationContext(), profileActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
-
-                    case R.id.menu_profile:
-                        // checking if user is already logged in
-                        if(mAuth.getCurrentUser() != null) {
-                            startActivity(new Intent(getApplicationContext(), profileActivity.class));
-                            overridePendingTransition(0, 0);
-                            return true;
-                        }
-                        else{
-                            startActivity(new Intent(getApplicationContext(), SignInActivity.class));
-                            overridePendingTransition(0, 0);
-                            return true;
-                        }
-                }
-                return false;
+                    }
+                    else{
+                        startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    }
+            }
+            return false;
             }
         });
     }

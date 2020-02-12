@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2CD9E7E7"
+    android:backgroundTint="#007C7979"
     tools:context=".SearchActivity">
+
+    <SearchView
+        android:id="@+id/SearchView"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:clickable="false"
+        android:elevation="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/locationText"
+        app:layout_constraintStart_toStartOf="@+id/locationText"
+        app:layout_constraintTop_toTopOf="@+id/locationText" />
 
     <TextView
         android:id="@+id/searchHead"
@@ -23,38 +34,55 @@
 
     <EditText
         android:id="@+id/locationText"
-        android:layout_width="318dp"
-        android:layout_height="44dp"
+        android:layout_width="348dp"
+        android:layout_height="42dp"
         android:layout_marginTop="108dp"
+        android:background="@drawable/searchbutton"
         android:ems="10"
         android:hint="@string/enter_your_location"
-        android:inputType="textPersonName"
+        android:inputType="textAutoCorrect|none|textAutoComplete|textPostalAddress"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/locationBtn"
-        android:layout_width="318dp"
-        android:layout_height="36dp"
+        android:layout_width="348dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/locationbtn"
         android:text="@string/current_location"
         android:textColor="@color/aqua_blue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locationText" />
 
+    <SearchView
+        android:id="@+id/SearchView2"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:clickable="false"
+        android:elevation="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/locationText2"
+        app:layout_constraintStart_toStartOf="@+id/locationText2"
+        app:layout_constraintTop_toTopOf="@+id/locationText2" />
+
     <EditText
         android:id="@+id/locationText2"
-        android:layout_width="320dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="348dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/searchbutton"
         android:ems="10"
         android:hint="@string/enter_another_location"
         android:inputType="textPersonName"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/filterText"
@@ -87,5 +115,70 @@
         android:textColor="@color/aqua_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="348dp"
+
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/transportchoicebutton"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationBtn">
+
+        <RadioButton
+            android:id="@+id/walkRadioBtn"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:text="@string/walk" />
+
+        <RadioButton
+            android:id="@+id/CarRadioBtn"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:text="@string/car" />
+
+        <RadioButton
+            android:id="@+id/BusRadioBtn"
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:text="@string/bus" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="348dp"
+
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/transportchoicebutton"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationText2">
+
+        <RadioButton
+            android:id="@+id/walkRadioBtn2"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:text="@string/walk" />
+
+        <RadioButton
+            android:id="@+id/CarRadioBtn2"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:text="@string/car" />
+
+        <RadioButton
+            android:id="@+id/BusRadioBtn2"
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:text="@string/bus" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

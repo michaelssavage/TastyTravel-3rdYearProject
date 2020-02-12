@@ -41,9 +41,6 @@ public class SignInActivity extends AppCompatActivity {
                 String email = emailField.getText().toString();
                 String password = passwordField.getText().toString();
 
-                if(email.length() == 0){
-                    emailField
-                }
                 // authenticate the user
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -58,7 +55,7 @@ public class SignInActivity extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                         }
                     }
-                    });
+                });
             }
         });
     }
