@@ -41,4 +41,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
 
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsBtn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

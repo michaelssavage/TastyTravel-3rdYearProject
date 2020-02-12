@@ -6,19 +6,19 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
+8-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
+9-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:6:5-67
-11-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:6:22-64
+11-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:6:5-67
+11-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:6:22-64
 12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-12-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:7:5-79
-12-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:7:22-76
+12-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:7:5-79
+12-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:7:22-76
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:8:5-79
-13-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:8:22-76
+13-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:8:5-79
+13-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:8:22-76
 14
 15    <uses-feature
 15-->[com.mapbox.mapboxsdk:mapbox-android-sdk:8.6.2] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\e9ee298407ec571d0b4090132c3d75fd\jetified-mapbox-android-sdk-8.6.2\AndroidManifest.xml:9:5-11:35
@@ -47,62 +47,62 @@
 25-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\946a39d7756c6b05aa38a853bdffc128\firebase-iid-20.0.2\AndroidManifest.xml:26:22-79
 26
 27    <application
-27-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:10:5-35:19
+27-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:10:5-35:19
 28        android:allowBackup="true"
-28-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:11:9-35
+28-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:11:9-35
 29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 29-->[androidx.core:core:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\331630a23dfa1f0594bcf54d5352aa36\core-1.1.0\AndroidManifest.xml:24:18-86
 30        android:debuggable="true"
 31        android:icon="@mipmap/ic_launcher"
-31-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:12:9-43
+31-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:12:9-43
 32        android:label="@string/app_name"
-32-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:13:9-41
+32-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:13:9-41
 33        android:roundIcon="@mipmap/ic_launcher_round"
-33-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:14:9-54
+33-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:14:9-54
 34        android:supportsRtl="true"
-34-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:15:9-35
+34-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:15:9-35
 35        android:testOnly="true"
 36        android:theme="@style/AppTheme" >
-36-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:16:9-40
+36-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:16:9-40
 37        <activity android:name="com.example.tastytravel.AboutActivity" />
-37-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:18:9-60
-37-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:18:19-48
+37-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:18:9-60
+37-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:18:19-48
 38        <activity android:name="com.example.tastytravel.profileActivity" />
-38-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:19:9-53
-38-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:19:19-50
+38-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:19:9-53
+38-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:19:19-50
 39        <activity android:name="com.example.tastytravel.SignUpActivity" />
-39-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:20:9-52
-39-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:20:19-49
+39-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:20:9-52
+39-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:20:19-49
 40        <activity android:name="com.example.tastytravel.SignInActivity" />
-40-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:21:9-52
-40-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:21:19-49
+40-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:21:9-52
+40-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:21:19-49
 41        <activity android:name="com.example.tastytravel.SearchActivity" />
-41-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:22:9-52
-41-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:22:19-49
+41-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:22:9-52
+41-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:22:19-49
 42        <activity
-42-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:23:9-25:63
+42-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:23:9-25:63
 43            android:name="com.example.tastytravel.SettingsActivity"
-43-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:24:13-45
+43-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:24:13-45
 44            android:label="@string/title_activity_settings" />
-44-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:25:13-60
+44-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:25:13-60
 45        <activity android:name="com.example.tastytravel.MapActivity" />
-45-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:26:9-49
-45-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:26:19-46
+45-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:26:9-49
+45-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:26:19-46
 46        <activity android:name="com.example.tastytravel.MainActivity" />
-46-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:27:9-50
-46-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:27:19-47
+46-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:27:9-50
+46-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:27:19-47
 47        <activity android:name="com.example.tastytravel.StartActivity" >
-47-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:28:9-34:20
-47-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:28:19-48
+47-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:28:9-34:20
+47-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:28:19-48
 48            <intent-filter>
-48-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:29:13-33:29
+48-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:29:13-33:29
 49                <action android:name="android.intent.action.MAIN" />
-49-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:30:17-69
-49-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:30:25-66
+49-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:30:17-69
+49-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:30:25-66
 50
 51                <category android:name="android.intent.category.LAUNCHER" />
-51-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:32:17-77
-51-->D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:32:27-74
+51-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:32:17-77
+51-->C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:32:27-74
 52            </intent-filter>
 53        </activity>
 54

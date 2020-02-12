@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\g_slo\\Documents\\AndroidStudioProjects\\TastyTravel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
+            "outputFile": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
             "map": [
                 {
                     "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\b1ee8c044be04c7977f5cfcb04a16126\\jetified-play-services-basement-17.0.0\\res\\values-es-rUS\\values.xml",

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-37:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\3f2791d3ecf41ed9e54a91eddcfa2ad3\material-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.preference:preference:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a6ae4030b52671595dfce90719dd71e8\preference-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\fb8f7031ef66b8147647717c2aecca12\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -72,27 +72,27 @@ MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\g
 MERGED from [com.facebook.soloader:soloader:0.8.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\933de61a49762595f92a95b4d38c48fd\soloader-0.8.0\AndroidManifest.xml:2:1-13:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:1.3.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\0ed4e2fc8d8576b034e469d2545488ee\jetified-mapbox-android-core-1.3.0\AndroidManifest.xml:2:1-14:12
 MERGED from [com.facebook.soloader:annotation:0.8.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\9a82db1412dd8ee89dd6ee1d6bed6b95\annotation-0.8.0\AndroidManifest.xml:2:1-13:12
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:4:5-38
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:4:5-38
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:1-37:12
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:1-37:12
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:6:5-67
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:6:5-67
 MERGED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:26:5-67
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:8.6.2] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\e9ee298407ec571d0b4090132c3d75fd\jetified-mapbox-android-sdk-8.6.2\AndroidManifest.xml:16:5-67
@@ -112,17 +112,17 @@ MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\g_slo\.g
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.2] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\08e5ab55bcfafa0ef1249a5090a8d0c4\play-services-measurement-sdk-api-17.2.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.2] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\08e5ab55bcfafa0ef1249a5090a8d0c4\play-services-measurement-sdk-api-17.2.2\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:6:22-64
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:7:5-79
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:7:5-79
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:4.5.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\22b578201b30750fe2ab3da89862e6e8\jetified-mapbox-android-telemetry-4.5.1\AndroidManifest.xml:13:5-79
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:4.5.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\22b578201b30750fe2ab3da89862e6e8\jetified-mapbox-android-telemetry-4.5.1\AndroidManifest.xml:13:5-79
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:1.3.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\0ed4e2fc8d8576b034e469d2545488ee\jetified-mapbox-android-core-1.3.0\AndroidManifest.xml:11:5-79
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:1.3.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\0ed4e2fc8d8576b034e469d2545488ee\jetified-mapbox-android-core-1.3.0\AndroidManifest.xml:11:5-79
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:7:22-76
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:8:5-79
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:8:5-79
 MERGED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:25:5-79
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:8.6.2] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\e9ee298407ec571d0b4090132c3d75fd\jetified-mapbox-android-sdk-8.6.2\AndroidManifest.xml:17:5-79
@@ -144,9 +144,9 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.2] C:
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:1.3.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\0ed4e2fc8d8576b034e469d2545488ee\jetified-mapbox-android-core-1.3.0\AndroidManifest.xml:12:5-79
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:1.3.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\0ed4e2fc8d8576b034e469d2545488ee\jetified-mapbox-android-core-1.3.0\AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:8:22-76
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:8:22-76
 application
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:10:5-35:19
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:10:5-35:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\3f2791d3ecf41ed9e54a91eddcfa2ad3\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\3f2791d3ecf41ed9e54a91eddcfa2ad3\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\81a362b35962fa2496d450cbee5c4ecc\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -206,71 +206,71 @@ MERGED from [com.facebook.soloader:annotation:0.8.0] C:\Users\g_slo\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\331630a23dfa1f0594bcf54d5352aa36\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:13:9-41
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:13:9-41
 	tools:ignore
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:17:9-48
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:17:9-48
 	android:roundIcon
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:14:9-54
 	android:icon
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:12:9-43
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:16:9-40
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:16:9-40
 activity#com.example.tastytravel.AboutActivity
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:18:9-60
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:18:9-60
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:18:19-48
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:18:19-48
 activity#com.example.tastytravel.profileActivity
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:19:9-53
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:19:9-53
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:19:19-50
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:19:19-50
 activity#com.example.tastytravel.SignUpActivity
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:20:9-52
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:20:9-52
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:20:19-49
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:20:19-49
 activity#com.example.tastytravel.SignInActivity
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:21:9-52
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:21:9-52
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:21:19-49
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:21:19-49
 activity#com.example.tastytravel.SearchActivity
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:22:9-52
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:22:9-52
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:22:19-49
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:22:19-49
 activity#com.example.tastytravel.SettingsActivity
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:23:9-25:63
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:23:9-25:63
 	android:label
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:25:13-60
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:25:13-60
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:24:13-45
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:24:13-45
 activity#com.example.tastytravel.MapActivity
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:26:9-49
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:26:9-49
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:26:19-46
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:26:19-46
 activity#com.example.tastytravel.MainActivity
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:27:9-50
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:27:9-50
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:27:19-47
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:27:19-47
 activity#com.example.tastytravel.StartActivity
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:28:9-34:20
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:28:9-34:20
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:28:19-48
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:28:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:29:13-33:29
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:29:13-33:29
 action#android.intent.action.MAIN
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:30:17-69
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:30:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:32:17-77
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml:32:27-74
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:32:27-74
 uses-sdk
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\3f2791d3ecf41ed9e54a91eddcfa2ad3\material-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\3f2791d3ecf41ed9e54a91eddcfa2ad3\material-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.preference:preference:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a6ae4030b52671595dfce90719dd71e8\preference-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -407,16 +407,16 @@ MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:1.3.0] C:\Users\g_slo\.gra
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:1.3.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\0ed4e2fc8d8576b034e469d2545488ee\jetified-mapbox-android-core-1.3.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.soloader:annotation:0.8.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\9a82db1412dd8ee89dd6ee1d6bed6b95\annotation-0.8.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.soloader:annotation:0.8.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\9a82db1412dd8ee89dd6ee1d6bed6b95\annotation-0.8.0\AndroidManifest.xml:7:5-9:41
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
-INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
-		ADDED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
-		INJECTED from D:\g_slo\Documents\AndroidStudioProjects\TastyTravel\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\3d8bed9a53529358f2c71b6407804b7b\play-services-measurement-api-17.2.2\AndroidManifest.xml:27:9-33:19

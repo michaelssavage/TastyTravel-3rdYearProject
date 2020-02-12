@@ -1449,6 +1449,7 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
+id deleteBtn
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1837,6 +1838,8 @@ string copy
 string create_a_password
 string current_location
 string default_web_client_id
+string delete
+string delete_account
 string email_address
 string enter_an_email
 string enter_another_location
