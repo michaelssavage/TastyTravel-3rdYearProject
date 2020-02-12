@@ -68,7 +68,6 @@ public class profileActivity extends AppCompatActivity {
         });
 
 
-
         bottomNavBar.setSelectedItemId(R.id.menu_profile);
         bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
