@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,6 +22,7 @@ public class SignInActivity extends AppCompatActivity {
 
     Button signInButton;
     EditText emailField, passwordField;
+    TextView signUpText;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
 
@@ -30,9 +35,28 @@ public class SignInActivity extends AppCompatActivity {
         passwordField = findViewById(R.id.enterPassword);
         progressBar = findViewById(R.id.signInProgress);
         signInButton = findViewById(R.id.signInBtn);
-
+        signUpText = findViewById(R.id.signUpText);
         mAuth = FirebaseAuth.getInstance();
 
+
+        TextView signUpText = findViewById(R.id.signUpText);
+        Spannable word = new SpannableString("Don't have an account?");
+        word.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, word.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        signUpText.setText(word);
+        Spannable wordTwo = new SpannableString(" SIGN UP");
+        wordTwo.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.aqua_blue)), 0, wordTwo.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        signUpText.append(wordTwo);
+
+        // Sign Up
+        signUpText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signUpScreen = new Intent(getApplicationContext(), SignUpActivity.class);
+                startActivity(signUpScreen);
+            }
+        });
+
+        // Sign In
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
