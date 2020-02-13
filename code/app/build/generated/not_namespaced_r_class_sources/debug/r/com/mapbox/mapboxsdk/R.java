@@ -132,10 +132,10 @@ public final class R {
         public static final int mapbox_gray_dark = 0x7f06006f;
         public static final int mapbox_location_layer_blue = 0x7f060070;
         public static final int mapbox_location_layer_gray = 0x7f060071;
-        public static final int notification_action_color_filter = 0x7f0600bb;
-        public static final int notification_icon_bg_color = 0x7f0600bc;
-        public static final int ripple_material_light = 0x7f0600c8;
-        public static final int secondary_text_default_material_light = 0x7f0600ca;
+        public static final int notification_action_color_filter = 0x7f0600c1;
+        public static final int notification_icon_bg_color = 0x7f0600c2;
+        public static final int ripple_material_light = 0x7f0600cf;
+        public static final int secondary_text_default_material_light = 0x7f0600d1;
     }
     public static final class dimen {
         private dimen() {}
@@ -167,101 +167,101 @@ public final class R {
         public static final int mapbox_minimum_scale_velocity = 0x7f0700ab;
         public static final int mapbox_my_locationview_outer_circle = 0x7f0700ac;
         public static final int mapbox_ninety_two_dp = 0x7f0700ad;
-        public static final int notification_action_icon_size = 0x7f070144;
-        public static final int notification_action_text_size = 0x7f070145;
-        public static final int notification_big_circle_margin = 0x7f070146;
-        public static final int notification_content_margin_start = 0x7f070147;
-        public static final int notification_large_icon_height = 0x7f070148;
-        public static final int notification_large_icon_width = 0x7f070149;
-        public static final int notification_main_column_padding_top = 0x7f07014a;
-        public static final int notification_media_narrow_margin = 0x7f07014b;
-        public static final int notification_right_icon_size = 0x7f07014c;
-        public static final int notification_right_side_padding_top = 0x7f07014d;
-        public static final int notification_small_icon_background_padding = 0x7f07014e;
-        public static final int notification_small_icon_size_as_large = 0x7f07014f;
-        public static final int notification_subtext_size = 0x7f070150;
-        public static final int notification_top_pad = 0x7f070151;
-        public static final int notification_top_pad_large_text = 0x7f070152;
+        public static final int notification_action_icon_size = 0x7f070149;
+        public static final int notification_action_text_size = 0x7f07014a;
+        public static final int notification_big_circle_margin = 0x7f07014b;
+        public static final int notification_content_margin_start = 0x7f07014c;
+        public static final int notification_large_icon_height = 0x7f07014d;
+        public static final int notification_large_icon_width = 0x7f07014e;
+        public static final int notification_main_column_padding_top = 0x7f07014f;
+        public static final int notification_media_narrow_margin = 0x7f070150;
+        public static final int notification_right_icon_size = 0x7f070151;
+        public static final int notification_right_side_padding_top = 0x7f070152;
+        public static final int notification_small_icon_background_padding = 0x7f070153;
+        public static final int notification_small_icon_size_as_large = 0x7f070154;
+        public static final int notification_subtext_size = 0x7f070155;
+        public static final int notification_top_pad = 0x7f070156;
+        public static final int notification_top_pad_large_text = 0x7f070157;
     }
     public static final class drawable {
         private drawable() {}
 
-        public static final int mapbox_compass_icon = 0x7f080096;
-        public static final int mapbox_info_bg_selector = 0x7f080097;
-        public static final int mapbox_info_icon_default = 0x7f080098;
-        public static final int mapbox_info_icon_selected = 0x7f080099;
-        public static final int mapbox_logo_helmet = 0x7f08009a;
-        public static final int mapbox_logo_icon = 0x7f08009b;
-        public static final int mapbox_marker_icon_default = 0x7f08009c;
-        public static final int mapbox_markerview_icon_default = 0x7f08009d;
-        public static final int mapbox_mylocation_bg_shape = 0x7f08009e;
-        public static final int mapbox_mylocation_icon_bearing = 0x7f08009f;
-        public static final int mapbox_mylocation_icon_default = 0x7f0800a0;
-        public static final int mapbox_popup_window_transparent = 0x7f0800a1;
-        public static final int mapbox_rounded_corner = 0x7f0800a2;
-        public static final int mapbox_user_bearing_icon = 0x7f0800a3;
-        public static final int mapbox_user_icon = 0x7f0800a4;
-        public static final int mapbox_user_icon_shadow = 0x7f0800a5;
-        public static final int mapbox_user_icon_stale = 0x7f0800a6;
-        public static final int mapbox_user_puck_icon = 0x7f0800a7;
-        public static final int mapbox_user_stroke_icon = 0x7f0800a8;
-        public static final int notification_action_background = 0x7f0800b7;
-        public static final int notification_bg = 0x7f0800b8;
-        public static final int notification_bg_low = 0x7f0800b9;
-        public static final int notification_bg_low_normal = 0x7f0800ba;
-        public static final int notification_bg_low_pressed = 0x7f0800bb;
-        public static final int notification_bg_normal = 0x7f0800bc;
-        public static final int notification_bg_normal_pressed = 0x7f0800bd;
-        public static final int notification_icon_background = 0x7f0800be;
-        public static final int notification_template_icon_bg = 0x7f0800bf;
-        public static final int notification_template_icon_low_bg = 0x7f0800c0;
-        public static final int notification_tile_bg = 0x7f0800c1;
-        public static final int notify_panel_notification_icon_bg = 0x7f0800c2;
+        public static final int mapbox_compass_icon = 0x7f080099;
+        public static final int mapbox_info_bg_selector = 0x7f0800a0;
+        public static final int mapbox_info_icon_default = 0x7f0800a1;
+        public static final int mapbox_info_icon_selected = 0x7f0800a2;
+        public static final int mapbox_logo_helmet = 0x7f0800a4;
+        public static final int mapbox_logo_icon = 0x7f0800a5;
+        public static final int mapbox_marker_icon_default = 0x7f0800a6;
+        public static final int mapbox_markerview_icon_default = 0x7f0800a7;
+        public static final int mapbox_mylocation_bg_shape = 0x7f0800a8;
+        public static final int mapbox_mylocation_icon_bearing = 0x7f0800a9;
+        public static final int mapbox_mylocation_icon_default = 0x7f0800aa;
+        public static final int mapbox_popup_window_transparent = 0x7f0800ab;
+        public static final int mapbox_rounded_corner = 0x7f0800ac;
+        public static final int mapbox_user_bearing_icon = 0x7f0800ae;
+        public static final int mapbox_user_icon = 0x7f0800af;
+        public static final int mapbox_user_icon_shadow = 0x7f0800b0;
+        public static final int mapbox_user_icon_stale = 0x7f0800b1;
+        public static final int mapbox_user_puck_icon = 0x7f0800b2;
+        public static final int mapbox_user_stroke_icon = 0x7f0800b3;
+        public static final int notification_action_background = 0x7f0800c2;
+        public static final int notification_bg = 0x7f0800c3;
+        public static final int notification_bg_low = 0x7f0800c4;
+        public static final int notification_bg_low_normal = 0x7f0800c5;
+        public static final int notification_bg_low_pressed = 0x7f0800c6;
+        public static final int notification_bg_normal = 0x7f0800c7;
+        public static final int notification_bg_normal_pressed = 0x7f0800c8;
+        public static final int notification_icon_background = 0x7f0800c9;
+        public static final int notification_template_icon_bg = 0x7f0800ca;
+        public static final int notification_template_icon_low_bg = 0x7f0800cb;
+        public static final int notification_tile_bg = 0x7f0800cc;
+        public static final int notify_panel_notification_icon_bg = 0x7f0800cd;
     }
     public static final class id {
         private id() {}
 
-        public static final int action_container = 0x7f09003e;
-        public static final int action_divider = 0x7f090040;
-        public static final int action_image = 0x7f090041;
-        public static final int action_text = 0x7f090047;
-        public static final int actions = 0x7f090048;
-        public static final int async = 0x7f090050;
-        public static final int attributionView = 0x7f090051;
-        public static final int blocking = 0x7f090055;
-        public static final int bottom = 0x7f090056;
-        public static final int chronometer = 0x7f090062;
-        public static final int compassView = 0x7f090069;
-        public static final int end = 0x7f090084;
-        public static final int forever = 0x7f090097;
-        public static final int icon = 0x7f0900a3;
-        public static final int icon_group = 0x7f0900a5;
-        public static final int image = 0x7f0900a8;
-        public static final int info = 0x7f0900a9;
-        public static final int infowindow_description = 0x7f0900aa;
-        public static final int infowindow_title = 0x7f0900ab;
-        public static final int italic = 0x7f0900ad;
-        public static final int left = 0x7f0900b1;
-        public static final int line1 = 0x7f0900b3;
-        public static final int line3 = 0x7f0900b4;
-        public static final int logoView = 0x7f0900bb;
-        public static final int none = 0x7f0900e4;
-        public static final int normal = 0x7f0900e5;
-        public static final int notification_background = 0x7f0900e6;
-        public static final int notification_main_column = 0x7f0900e7;
-        public static final int notification_main_column_container = 0x7f0900e8;
-        public static final int right = 0x7f0900fe;
-        public static final int right_icon = 0x7f0900ff;
-        public static final int right_side = 0x7f090100;
-        public static final int start = 0x7f09013b;
-        public static final int tag_transition_group = 0x7f090146;
-        public static final int tag_unhandled_key_event_manager = 0x7f090147;
-        public static final int tag_unhandled_key_listeners = 0x7f090148;
-        public static final int text = 0x7f09014c;
-        public static final int text2 = 0x7f09014d;
-        public static final int time = 0x7f090159;
-        public static final int title = 0x7f09015a;
-        public static final int top = 0x7f09015d;
+        public static final int action_container = 0x7f09003f;
+        public static final int action_divider = 0x7f090041;
+        public static final int action_image = 0x7f090042;
+        public static final int action_text = 0x7f090048;
+        public static final int actions = 0x7f090049;
+        public static final int async = 0x7f090051;
+        public static final int attributionView = 0x7f090052;
+        public static final int blocking = 0x7f090056;
+        public static final int bottom = 0x7f090057;
+        public static final int chronometer = 0x7f090068;
+        public static final int compassView = 0x7f09006f;
+        public static final int end = 0x7f09008b;
+        public static final int forever = 0x7f0900a0;
+        public static final int icon = 0x7f0900ad;
+        public static final int icon_group = 0x7f0900af;
+        public static final int image = 0x7f0900b2;
+        public static final int info = 0x7f0900b3;
+        public static final int infowindow_description = 0x7f0900b4;
+        public static final int infowindow_title = 0x7f0900b5;
+        public static final int italic = 0x7f0900b7;
+        public static final int left = 0x7f0900bb;
+        public static final int line1 = 0x7f0900bd;
+        public static final int line3 = 0x7f0900be;
+        public static final int logoView = 0x7f0900c6;
+        public static final int none = 0x7f0900f5;
+        public static final int normal = 0x7f0900f6;
+        public static final int notification_background = 0x7f0900f7;
+        public static final int notification_main_column = 0x7f0900f8;
+        public static final int notification_main_column_container = 0x7f0900f9;
+        public static final int right = 0x7f090116;
+        public static final int right_icon = 0x7f090117;
+        public static final int right_side = 0x7f090118;
+        public static final int start = 0x7f09015c;
+        public static final int tag_transition_group = 0x7f090168;
+        public static final int tag_unhandled_key_event_manager = 0x7f090169;
+        public static final int tag_unhandled_key_listeners = 0x7f09016a;
+        public static final int text = 0x7f09016e;
+        public static final int text2 = 0x7f09016f;
+        public static final int time = 0x7f09017d;
+        public static final int title = 0x7f09017e;
+        public static final int top = 0x7f090182;
     }
     public static final class integer {
         private integer() {}
@@ -271,16 +271,16 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int mapbox_attribution_list_item = 0x7f0c0038;
-        public static final int mapbox_infowindow_content = 0x7f0c0039;
-        public static final int mapbox_mapview_internal = 0x7f0c003a;
-        public static final int mapbox_view_image_marker = 0x7f0c003b;
-        public static final int notification_action = 0x7f0c0058;
-        public static final int notification_action_tombstone = 0x7f0c0059;
-        public static final int notification_template_custom_big = 0x7f0c005a;
-        public static final int notification_template_icon_group = 0x7f0c005b;
-        public static final int notification_template_part_chronometer = 0x7f0c005c;
-        public static final int notification_template_part_time = 0x7f0c005d;
+        public static final int mapbox_attribution_list_item = 0x7f0c003a;
+        public static final int mapbox_infowindow_content = 0x7f0c003e;
+        public static final int mapbox_mapview_internal = 0x7f0c0041;
+        public static final int mapbox_view_image_marker = 0x7f0c0046;
+        public static final int notification_action = 0x7f0c0065;
+        public static final int notification_action_tombstone = 0x7f0c0066;
+        public static final int notification_template_custom_big = 0x7f0c006d;
+        public static final int notification_template_icon_group = 0x7f0c006e;
+        public static final int notification_template_part_chronometer = 0x7f0c0072;
+        public static final int notification_template_part_time = 0x7f0c0073;
     }
     public static final class string {
         private string() {}
@@ -297,31 +297,31 @@ public final class R {
         public static final int mapbox_mapActionDescription = 0x7f10006c;
         public static final int mapbox_myLocationViewContentDescription = 0x7f10006d;
         public static final int mapbox_offline_error_region_definition_invalid = 0x7f10006e;
-        public static final int mapbox_style_dark = 0x7f10006f;
-        public static final int mapbox_style_light = 0x7f100070;
-        public static final int mapbox_style_mapbox_streets = 0x7f100071;
-        public static final int mapbox_style_outdoors = 0x7f100072;
-        public static final int mapbox_style_satellite = 0x7f100073;
-        public static final int mapbox_style_satellite_streets = 0x7f100074;
-        public static final int mapbox_style_traffic_day = 0x7f100075;
-        public static final int mapbox_style_traffic_night = 0x7f100076;
-        public static final int mapbox_telemetryImproveMap = 0x7f100077;
-        public static final int mapbox_telemetryLink = 0x7f100078;
-        public static final int mapbox_telemetrySettings = 0x7f100079;
-        public static final int status_bar_notification_info_overflow = 0x7f1000b5;
+        public static final int mapbox_style_dark = 0x7f100079;
+        public static final int mapbox_style_light = 0x7f10007a;
+        public static final int mapbox_style_mapbox_streets = 0x7f10007b;
+        public static final int mapbox_style_outdoors = 0x7f10007c;
+        public static final int mapbox_style_satellite = 0x7f10007d;
+        public static final int mapbox_style_satellite_streets = 0x7f10007e;
+        public static final int mapbox_style_traffic_day = 0x7f10007f;
+        public static final int mapbox_style_traffic_night = 0x7f100080;
+        public static final int mapbox_telemetryImproveMap = 0x7f100081;
+        public static final int mapbox_telemetryLink = 0x7f100082;
+        public static final int mapbox_telemetrySettings = 0x7f100083;
+        public static final int status_bar_notification_info_overflow = 0x7f1000bf;
     }
     public static final class style {
         private style() {}
 
         public static final int TextAppearance_Compat_Notification = 0x7f110174;
         public static final int TextAppearance_Compat_Notification_Info = 0x7f110175;
-        public static final int TextAppearance_Compat_Notification_Line2 = 0x7f110176;
-        public static final int TextAppearance_Compat_Notification_Time = 0x7f110177;
-        public static final int TextAppearance_Compat_Notification_Title = 0x7f110178;
-        public static final int Widget_Compat_NotificationActionContainer = 0x7f110255;
-        public static final int Widget_Compat_NotificationActionText = 0x7f110256;
-        public static final int Widget_Support_CoordinatorLayout = 0x7f1102bd;
-        public static final int mapbox_LocationComponent = 0x7f1102be;
+        public static final int TextAppearance_Compat_Notification_Line2 = 0x7f110177;
+        public static final int TextAppearance_Compat_Notification_Time = 0x7f11017a;
+        public static final int TextAppearance_Compat_Notification_Title = 0x7f11017c;
+        public static final int Widget_Compat_NotificationActionContainer = 0x7f11025a;
+        public static final int Widget_Compat_NotificationActionText = 0x7f11025b;
+        public static final int Widget_Support_CoordinatorLayout = 0x7f1102c2;
+        public static final int mapbox_LocationComponent = 0x7f1102c3;
     }
     public static final class styleable {
         private styleable() {}

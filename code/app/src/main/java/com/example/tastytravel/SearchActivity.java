@@ -20,7 +20,6 @@ public class SearchActivity extends AppCompatActivity {
     TextView searchText;
     TextView closeText;
     Button locationBtn;
-    LocationManager mLocationManager;
     EditText locationText;
 
     @Override

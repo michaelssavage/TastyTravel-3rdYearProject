@@ -4,6 +4,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\e9ee298407ec571d0b4090132c3d75fd\\jetified-mapbox-android-sdk-8.6.2\\res\\drawable-hdpi-v4\\mapbox_compass_icon.png"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\2423a3e8c7d595310e6661cc5002b018\\media-1.0.0\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_checkbox_checked_to_unchecked_mtrl_animation.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable\\btn_checkbox_checked_to_unchecked_mtrl_animation.xml"
     },
@@ -324,6 +328,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\color\\test_mtrl_calendar_day_selected.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_content_place_picker.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_content_place_picker.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\color_material_on_surface_emphasis_medium.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\color\\material_on_surface_emphasis_medium.xml"
     },
@@ -346,6 +354,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_calendar_day_of_week.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\layout\\mtrl_calendar_day_of_week.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_map_default_map_marker.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-hdpi-v4\\map_default_map_marker.png"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
@@ -374,6 +386,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_expand_spec.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\animator\\mtrl_fab_transformation_sheet_expand_spec.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_map_default_map_marker.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-mdpi-v4\\map_default_map_marker.png"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -524,8 +540,16 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_map_default_map_marker_shadow.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-xxxhdpi-v4\\map_default_map_marker_shadow.png"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_action_bar_item_background_material.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_toolbar_place_picker.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_toolbar_place_picker.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -572,6 +596,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\color\\mtrl_calendar_item_stroke_color.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_map_default_map_marker_shadow.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-hdpi-v4\\map_default_map_marker_shadow.png"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_dark.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable\\tooltip_frame_dark.xml"
     },
@@ -596,6 +624,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable\\mapbox_ic_arrow_back.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigation.xml.flat",
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\menu\\navigation.xml"
     },
@@ -606,6 +638,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_mylocation_bg_shape.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\e9ee298407ec571d0b4090132c3d75fd\\jetified-mapbox-android-sdk-8.6.2\\res\\drawable\\mapbox_mylocation_bg_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media_custom.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\2423a3e8c7d595310e6661cc5002b018\\media-1.0.0\\res\\layout\\notification_template_media_custom.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_checkbox_unchecked_mtrl.xml.flat",
@@ -718,6 +754,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_item_search_result.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_item_search_result.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_in.xml.flat",
@@ -892,6 +932,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\e9ee298407ec571d0b4090132c3d75fd\\jetified-mapbox-android-sdk-8.6.2\\res\\drawable-xxhdpi-v4\\mapbox_info_icon_default.png"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_action.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\2423a3e8c7d595310e6661cc5002b018\\media-1.0.0\\res\\layout\\notification_media_action.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_saved_places.xml.flat",
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\layout\\activity_saved_places.xml"
     },
@@ -938,6 +982,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_content_include.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_view_bottom_sheet_container.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_view_bottom_sheet_container.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_user_stroke_icon.png.flat",
@@ -994,6 +1042,14 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_map_default_map_marker.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-xxxhdpi-v4\\map_default_map_marker.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\2423a3e8c7d595310e6661cc5002b018\\media-1.0.0\\res\\layout\\notification_template_big_media_custom.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -1060,6 +1116,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_fragment_autocomplete_card.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_fragment_autocomplete_card.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_checkbox_to_checked_icon_null_animation.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\anim\\btn_checkbox_to_checked_icon_null_animation.xml"
     },
@@ -1078,6 +1138,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_checkbox_to_checked_box_outer_merged_animation.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\anim\\btn_checkbox_to_checked_box_outer_merged_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_view_results.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_view_results.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_menu_profile_icon.xml.flat",
@@ -1230,6 +1294,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_ic_check.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable\\mapbox_ic_check.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -1560,6 +1628,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\color\\mtrl_text_btn_text_color_selector.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_map_default_map_marker_shadow.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-mdpi-v4\\map_default_map_marker_shadow.png"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_about_img.jpg.flat",
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\drawable\\about_img.jpg"
     },
@@ -1634,6 +1706,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\6d206c10dfcd7e4d261b33c292c090cb\\play-services-base-17.1.0\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_activity_autocomplete.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_activity_autocomplete.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
@@ -1756,6 +1832,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\e9ee298407ec571d0b4090132c3d75fd\\jetified-mapbox-android-sdk-8.6.2\\res\\drawable\\mapbox_user_icon_shadow.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_gradient_shadow_up.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable\\mapbox_gradient_shadow_up.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
@@ -1826,6 +1906,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_map_default_map_marker.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-xxhdpi-v4\\map_default_map_marker.png"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
@@ -1984,6 +2068,10 @@
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_ic_offline.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable\\mapbox_ic_offline.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_test_toolbar_surface.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\layout\\test_toolbar_surface.xml"
     },
@@ -2112,6 +2200,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\e9ee298407ec571d0b4090132c3d75fd\\jetified-mapbox-android-sdk-8.6.2\\res\\drawable-hdpi-v4\\mapbox_logo_icon.png"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_map_default_map_marker_shadow.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-xhdpi-v4\\map_default_map_marker_shadow.png"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13_design_layout_snackbar.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     },
@@ -2134,6 +2226,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_list_line_divider.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable\\mapbox_list_line_divider.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_background_color.xml.flat",
@@ -2166,6 +2262,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23_mtrl_popupmenu_background_dark.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\drawable-v23\\mtrl_popupmenu_background_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\2423a3e8c7d595310e6661cc5002b018\\media-1.0.0\\res\\layout\\notification_template_big_media.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_alert_select_dialog_multichoice.xml.flat",
@@ -2244,12 +2344,12 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\331630a23dfa1f0594bcf54d5352aa36\\core-1.1.0\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
-    },
-    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\6d206c10dfcd7e4d261b33c292c090cb\\play-services-base-17.1.0\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\331630a23dfa1f0594bcf54d5352aa36\\core-1.1.0\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_mylocation_icon_bearing.png.flat",
@@ -2260,12 +2360,12 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
-        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
-    },
-    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_user_icon_stale.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\e9ee298407ec571d0b4090132c3d75fd\\jetified-mapbox-android-sdk-8.6.2\\res\\drawable-xxxhdpi-v4\\mapbox_user_icon_stale.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -2274,6 +2374,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\331630a23dfa1f0594bcf54d5352aa36\\core-1.1.0\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_item_offline_message.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_item_offline_message.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -2396,6 +2500,10 @@
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\drawable\\searchbutton.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\2423a3e8c7d595310e6661cc5002b018\\media-1.0.0\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_menu_overflow_material.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
@@ -2426,6 +2534,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_radio.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_activity_place_picker.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_activity_place_picker.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_extended_fab_hide_motion_spec.xml.flat",
@@ -2500,6 +2612,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\e9ee298407ec571d0b4090132c3d75fd\\jetified-mapbox-android-sdk-8.6.2\\res\\drawable-xxhdpi-v4\\mapbox_compass_icon.png"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\2423a3e8c7d595310e6661cc5002b018\\media-1.0.0\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_snackbar_background.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\drawable\\design_snackbar_background.xml"
     },
@@ -2536,8 +2652,16 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\anim\\btn_radio_to_on_mtrl_dot_group_animation.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_ic_clear.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable\\mapbox_ic_clear.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_view_card_results.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_view_card_results.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_dark.xml.flat",
@@ -2574,6 +2698,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_locationbtn.xml.flat",
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\drawable\\locationbtn.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_ic_place.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable\\mapbox_ic_place.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_layout_snackbar_include.xml.flat",
@@ -2634,6 +2762,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_fragment_autocomplete_full.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_fragment_autocomplete_full.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_show_motion_spec.xml.flat",
@@ -2744,6 +2876,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\color\\mtrl_tabs_icon_color_selector_colored.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_color_text_cursor.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable\\mapbox_color_text_cursor.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -2788,12 +2924,12 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit_black_24dp.xml.flat",
-        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\drawable\\ic_edit_black_24dp.xml"
-    },
-    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_outlined_icon_tint.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\color\\mtrl_outlined_icon_tint.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit_black_24dp.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\drawable\\ic_edit_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -2896,6 +3032,10 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_map_default_map_marker_shadow.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-xxhdpi-v4\\map_default_map_marker_shadow.png"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
@@ -2952,12 +3092,20 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\6d206c10dfcd7e4d261b33c292c090cb\\play-services-base-17.1.0\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\2423a3e8c7d595310e6661cc5002b018\\media-1.0.0\\res\\layout\\notification_template_media.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\6d206c10dfcd7e4d261b33c292c090cb\\play-services-base-17.1.0\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\2423a3e8c7d595310e6661cc5002b018\\media-1.0.0\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_outlined_stroke_color.xml.flat",
@@ -2986,6 +3134,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_scroll_shadow.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable\\mapbox_scroll_shadow.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
@@ -3040,6 +3192,10 @@
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\layout\\activity_search.xml"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_view_search.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_view_search.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_btn_colored_text_material.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\color\\abc_btn_colored_text_material.xml"
     },
@@ -3058,6 +3214,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_view_details_bottom_header.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\layout\\mapbox_view_details_bottom_header.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_in.xml.flat",
@@ -3094,6 +3254,10 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_map_default_map_marker.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\454ca144311d2b8f01522a5bcac34e96\\jetified-mapbox-android-plugin-places-v8-0.9.0\\res\\drawable-xhdpi-v4\\map_default_map_marker.png"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\xml_standalone_badge.xml.flat",
@@ -3164,11 +3328,11 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_test_action_chip.xml.flat",
-        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\layout\\test_action_chip.xml"
-    },
-    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_switch_thumb_material.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_test_action_chip.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\layout\\test_action_chip.xml"
     }
 ]
