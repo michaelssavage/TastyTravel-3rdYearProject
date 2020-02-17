@@ -56,9 +56,4 @@ public class SearchActivity extends AppCompatActivity {
         showMap.putExtra(LocationTwo, "-6.2607 , 53.3508");
         startActivity(showMap);
     }
-<<<<<<< HEAD
 }
-
-=======
-}
->>>>>>> 7e32a96ed6e694b8bba3d66ee0a348704a9517e5
