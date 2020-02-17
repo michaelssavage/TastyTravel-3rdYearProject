@@ -16,7 +16,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="find_your_taste">Find your Taste</string>
     <string name="mainbackground">mainbackground</string>
-    <string name="access_token" translatable="false">pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ</string>
+    <string name="mapbox_access_token" translatable="false">pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ</string>
     <string name="saved_places">Saved Places</string>
     <string name="settings">Settings</string>
     <string name="about">About</string>
