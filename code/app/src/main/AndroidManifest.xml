@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SavedPlacesActivity"></activity>
+        <activity android:name=".SavedPlacesActivity"/>
         <activity android:name=".AboutActivity" />
         <activity android:name=".profileActivity" />
         <activity android:name=".SignUpActivity" />
@@ -30,6 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
