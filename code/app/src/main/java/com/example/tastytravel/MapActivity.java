@@ -1,11 +1,14 @@
 package com.example.tastytravel;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
@@ -36,7 +39,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Mapbox.getInstance(this, getString(R.string.access_token));
+        Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
 
         setContentView(R.layout.activity_map);
 
@@ -45,25 +48,42 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
     }
+
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
-                /* Image: An image is loaded and added to the map. */
-                style.addImage(MARKER_IMAGE, BitmapFactory.decodeResource(
-                        MapActivity.this.getResources(), R.drawable.custom_marker));
-                addMarkers(style);
-            }
-        });
-    }
+            /* Image: An image is loaded and added to the map. */
 
-    private void addMarkers(@NonNull Style loadedMapStyle) {
+            Intent intent = getIntent();
+            String locationOne = intent.getStringExtra(SearchActivity.LocationOne);
+            String locationTwo = intent.getStringExtra(SearchActivity.LocationTwo);
+
+            style.addImage(MARKER_IMAGE, BitmapFactory.decodeResource(
+                    MapActivity.this.getResources(), R.drawable.custom_marker));
+
+            addMarkers(style, locationOne, locationTwo);
+        }
+    });
+}
+
+    private void addMarkers(@NonNull Style loadedMapStyle, String locationOne, String locationTwo) {
         List<Feature> features = new ArrayList<>();
-        features.add(Feature.fromGeometry(Point.fromLngLat(-6.2564, 53.3861)));
+
+        /* this is the long lat of location 1*/
+        String[] coordinates1 = locationOne.split(" , ");
+        double long1 = Double.valueOf(coordinates1[0]);
+        double lat1 = Double.valueOf(coordinates1[1]);
+        features.add(Feature.fromGeometry(Point.fromLngLat(long1, lat1)));
+
+        /* this is the long lat of location 2*/
+        String[] coordinates2 = locationTwo.split(" , ");
+        double long2 = Double.valueOf(coordinates2[0]);
+        double lat2 = Double.valueOf(coordinates2[1]);
+        features.add(Feature.fromGeometry(Point.fromLngLat(long2, lat2)));
 
         /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
-
         loadedMapStyle.addSource(new GeoJsonSource(MARKER_SOURCE, FeatureCollection.fromFeatures(features)));
 
         /* Style layer: A style layer ties together the source and image and specifies how they are displayed on the map. */
@@ -75,7 +95,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         // Adjust the second number of the Float array based on the height of your marker image.
                         // This is because the bottom of the marker should be anchored to the coordinate point, rather
                         // than the middle of the marker being the anchor point on the map.
-                        PropertyFactory.iconOffset(new Float[] {0f, -30f})
+                        PropertyFactory.iconOffset(new Float[] {0f, -52f})
                 ));
     }
 
