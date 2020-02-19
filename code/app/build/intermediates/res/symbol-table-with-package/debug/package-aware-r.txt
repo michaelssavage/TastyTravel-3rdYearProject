@@ -1895,7 +1895,7 @@ id logInNow
 id logoView
 id logoutBtn
 id mainbackground
-id mapView
+id map
 id map_view
 id mapbox_place_picker_toolbar_back_button
 id mapbox_plugins_image_view_marker
@@ -2167,7 +2167,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_about
 layout activity_main
-layout activity_map
+layout activity_maps
 layout activity_profile
 layout activity_saved_places
 layout activity_search
@@ -2321,7 +2321,6 @@ string about
 string about_paragraph_1
 string about_paragraph_2
 string about_pizza_background
-string access_token
 string action_sign_in
 string action_sign_in_short
 string app_name
@@ -2379,6 +2378,7 @@ string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
+string google_maps_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string how_to_use
@@ -2389,6 +2389,7 @@ string log_in_now
 string login_failed
 string logout
 string mainbackground
+string mapbox_access_token
 string mapbox_attributionErrorNoBrowser
 string mapbox_attributionTelemetryMessage
 string mapbox_attributionTelemetryNegative
@@ -2487,6 +2488,7 @@ string summary_collapsed_preference_list
 string sync_header
 string sync_title
 string title_activity_login
+string title_activity_maps
 string title_activity_settings
 string v7_preference_off
 string v7_preference_on

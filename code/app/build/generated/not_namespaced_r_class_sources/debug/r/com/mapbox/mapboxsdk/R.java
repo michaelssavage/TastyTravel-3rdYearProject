@@ -285,30 +285,30 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int mapbox_attributionErrorNoBrowser = 0x7f100063;
-        public static final int mapbox_attributionTelemetryMessage = 0x7f100064;
-        public static final int mapbox_attributionTelemetryNegative = 0x7f100065;
-        public static final int mapbox_attributionTelemetryNeutral = 0x7f100066;
-        public static final int mapbox_attributionTelemetryPositive = 0x7f100067;
-        public static final int mapbox_attributionTelemetryTitle = 0x7f100068;
-        public static final int mapbox_attributionsDialogTitle = 0x7f100069;
-        public static final int mapbox_attributionsIconContentDescription = 0x7f10006a;
-        public static final int mapbox_compassContentDescription = 0x7f10006b;
-        public static final int mapbox_mapActionDescription = 0x7f10006c;
-        public static final int mapbox_myLocationViewContentDescription = 0x7f10006d;
-        public static final int mapbox_offline_error_region_definition_invalid = 0x7f10006e;
-        public static final int mapbox_style_dark = 0x7f100079;
-        public static final int mapbox_style_light = 0x7f10007a;
-        public static final int mapbox_style_mapbox_streets = 0x7f10007b;
-        public static final int mapbox_style_outdoors = 0x7f10007c;
-        public static final int mapbox_style_satellite = 0x7f10007d;
-        public static final int mapbox_style_satellite_streets = 0x7f10007e;
-        public static final int mapbox_style_traffic_day = 0x7f10007f;
-        public static final int mapbox_style_traffic_night = 0x7f100080;
-        public static final int mapbox_telemetryImproveMap = 0x7f100081;
-        public static final int mapbox_telemetryLink = 0x7f100082;
-        public static final int mapbox_telemetrySettings = 0x7f100083;
-        public static final int status_bar_notification_info_overflow = 0x7f1000bf;
+        public static final int mapbox_attributionErrorNoBrowser = 0x7f100064;
+        public static final int mapbox_attributionTelemetryMessage = 0x7f100065;
+        public static final int mapbox_attributionTelemetryNegative = 0x7f100066;
+        public static final int mapbox_attributionTelemetryNeutral = 0x7f100067;
+        public static final int mapbox_attributionTelemetryPositive = 0x7f100068;
+        public static final int mapbox_attributionTelemetryTitle = 0x7f100069;
+        public static final int mapbox_attributionsDialogTitle = 0x7f10006a;
+        public static final int mapbox_attributionsIconContentDescription = 0x7f10006b;
+        public static final int mapbox_compassContentDescription = 0x7f10006c;
+        public static final int mapbox_mapActionDescription = 0x7f10006d;
+        public static final int mapbox_myLocationViewContentDescription = 0x7f10006e;
+        public static final int mapbox_offline_error_region_definition_invalid = 0x7f10006f;
+        public static final int mapbox_style_dark = 0x7f10007a;
+        public static final int mapbox_style_light = 0x7f10007b;
+        public static final int mapbox_style_mapbox_streets = 0x7f10007c;
+        public static final int mapbox_style_outdoors = 0x7f10007d;
+        public static final int mapbox_style_satellite = 0x7f10007e;
+        public static final int mapbox_style_satellite_streets = 0x7f10007f;
+        public static final int mapbox_style_traffic_day = 0x7f100080;
+        public static final int mapbox_style_traffic_night = 0x7f100081;
+        public static final int mapbox_telemetryImproveMap = 0x7f100082;
+        public static final int mapbox_telemetryLink = 0x7f100083;
+        public static final int mapbox_telemetrySettings = 0x7f100084;
+        public static final int status_bar_notification_info_overflow = 0x7f1000c0;
     }
     public static final class style {
         private style() {}

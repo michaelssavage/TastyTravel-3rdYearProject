@@ -1016,6 +1016,10 @@
         "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_maps.xml.flat",
+        "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\layout\\activity_maps.xml"
+    },
+    {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_extended_fab_show_motion_spec.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\animator\\mtrl_extended_fab_show_motion_spec.xml"
     },
@@ -1290,10 +1294,6 @@
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_map.xml.flat",
-        "source": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\src\\main\\res\\layout\\activity_map.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_marker.png.flat",

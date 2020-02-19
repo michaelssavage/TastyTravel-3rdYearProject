@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
-
 public class SearchActivity extends AppCompatActivity {
 
     public static final String LocationOne = "searchActivity.locationOne";
@@ -51,7 +49,7 @@ public class SearchActivity extends AppCompatActivity {
         // o'connell street is -6.2607 , 53.3508
         String locationTwo = locationText2.getText().toString();
 
-        Intent showMap = new Intent(getApplicationContext(), MapActivity.class);
+        Intent showMap = new Intent(getApplicationContext(), MapsActivity.class);
         showMap.putExtra(LocationOne, "-6.2564 , 53.3861");
         showMap.putExtra(LocationTwo, "-6.2607 , 53.3508");
         startActivity(showMap);
