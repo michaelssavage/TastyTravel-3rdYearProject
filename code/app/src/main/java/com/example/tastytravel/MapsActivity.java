@@ -2,7 +2,6 @@ package com.example.tastytravel;
 
 import androidx.fragment.app.FragmentActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -19,7 +18,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ArrayList<Place> Places;
-
+    Place yourLocation;
+    Place theirLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +49,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        Place yourLocation = Places.get(0);
-        Place theirLocation = Places.get(1);
+        yourLocation = Places.get(0);
+        theirLocation = Places.get(1);
 
         final LatLng getYourLocationLatLng = yourLocation.getLatLng();
         final LatLng getTheirLocationLatLng = theirLocation.getLatLng();
@@ -62,6 +62,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(yourLocationLatLng).title("Your Location"));
         mMap.addMarker(new MarkerOptions().position(theirLocationLatLng).title("Their Location"));
 //
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(yourLocationLatLng));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(yourLocationLatLng, 12f));
     }
 }
