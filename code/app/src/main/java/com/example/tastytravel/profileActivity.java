@@ -37,6 +37,15 @@ public class profileActivity extends AppCompatActivity {
         deleteBtn = findViewById(R.id.deleteBtn);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
+        // Set up bottom nav bar
+        setUpNavBar();
+
+        // Define Actions for button clicks
+        initialiseViewControls();
+
+    }
+
+    private void initialiseViewControls() {
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,14 +64,15 @@ public class profileActivity extends AppCompatActivity {
             }
         });
 
-
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showAlertDialog(v);
             }
         });
+    }
 
+    private void setUpNavBar() {
         bottomNavBar.setSelectedItemId(R.id.menu_profile);
         bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -114,6 +124,5 @@ public class profileActivity extends AppCompatActivity {
         });
         alert.create().show();
     }
-
 
 }

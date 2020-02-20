@@ -27,11 +27,15 @@ public class StartActivity extends AppCompatActivity {
 
         // Continue without account option
         continueText = findViewById(R.id.continueWithoutAccount);
-
         signInBtn = findViewById(R.id.signInBtn);
         mAuth = FirebaseAuth.getInstance();
         signUpText = findViewById(R.id.signUpText);
 
+        // Define Actions for button clicks
+        initialiseViewControls();
+    }
+
+    private void initialiseViewControls() {
         TextView signUpText = findViewById(R.id.signUpText);
         Spannable word = new SpannableString("Don't have an account?");
         word.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, word.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -73,4 +77,5 @@ public class StartActivity extends AppCompatActivity {
             }
         });
     }
+
 }

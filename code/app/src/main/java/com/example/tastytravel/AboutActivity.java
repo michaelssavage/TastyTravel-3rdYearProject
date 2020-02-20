@@ -20,6 +20,11 @@ public class AboutActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        // Set up bottom nav bar
+        setUpNavBar();
+    }
+
+    private void setUpNavBar() {
         bottomNavBar = findViewById(R.id.bottomNavBar);
         bottomNavBar.setSelectedItemId(R.id.menu_about);
         bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -40,7 +45,7 @@ public class AboutActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), profileActivity.class));
                             overridePendingTransition(0, 0);
                             return true;
-                            }
+                        }
                         else{
                             startActivity(new Intent(getApplicationContext(), SignInActivity.class));
                             overridePendingTransition(0, 0);
@@ -51,4 +56,5 @@ public class AboutActivity extends AppCompatActivity {
             }
         });
     }
+
 }

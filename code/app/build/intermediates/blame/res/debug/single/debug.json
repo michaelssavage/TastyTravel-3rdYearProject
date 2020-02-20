@@ -692,16 +692,16 @@
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
-        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\anim_fragment_close_exit.xml.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\484b5af910242cd924cecd36d2cffcc9\\fragment-1.2.0\\res\\anim\\fragment_close_exit.xml"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_radio_to_off_mtrl_dot_group_animation.xml.flat",
         "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\anim\\btn_radio_to_off_mtrl_dot_group_animation.xml"
     },
     {
-        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\anim_fragment_close_exit.xml.flat",
-        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\484b5af910242cd924cecd36d2cffcc9\\fragment-1.2.0\\res\\anim\\fragment_close_exit.xml"
+        "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "C:\\Users\\g_slo\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
         "merged": "C:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",

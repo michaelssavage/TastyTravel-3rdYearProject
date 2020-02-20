@@ -30,12 +30,53 @@ public class MainActivity extends AppCompatActivity {
         searchBtn = findViewById(R.id.searchBtn);
         foodCollageImage = findViewById(R.id.foodCollageImage);
 
+        // Define Actions for button clicks
+        initialiseViewControls();
+
+        // Set up bottom nav bar
+        setUpNavBar();
+    }
+
+    private void setUpNavBar() {
+        bottomNavBar.setSelectedItemId(R.id.menu_home);
+        bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch(menuItem.getItemId()) {
+                    case R.id.menu_home:
+                        return true;
+
+                    case R.id.menu_about:
+                        startActivity(new Intent(getApplicationContext(), AboutActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+
+                    case R.id.menu_profile:
+                        // checking if user is already logged in
+                        if(mAuth.getCurrentUser() != null) {
+                            startActivity(new Intent(getApplicationContext(), profileActivity.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+                        }
+                        else{
+                            startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+                        }
+                }
+                return false;
+            }
+        });
+    }
+
+    private void initialiseViewControls() {
         // If the Settings Button is Clicked
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent searchIntent = new Intent(getApplicationContext(), SearchActivity.class);
-            startActivity(searchIntent);
+                Intent searchIntent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(searchIntent);
             }
         });
 
@@ -47,36 +88,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Bottom Nav Bar Setup
-        bottomNavBar.setSelectedItemId(R.id.menu_home);
-        bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-            switch(menuItem.getItemId()) {
-                case R.id.menu_home:
-                    return true;
-
-                case R.id.menu_about:
-                    startActivity(new Intent(getApplicationContext(), AboutActivity.class));
-                    overridePendingTransition(0, 0);
-                    return true;
-
-                case R.id.menu_profile:
-                    // checking if user is already logged in
-                    if(mAuth.getCurrentUser() != null) {
-                        startActivity(new Intent(getApplicationContext(), profileActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    }
-                    else{
-                        startActivity(new Intent(getApplicationContext(), SignInActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    }
-            }
-            return false;
-            }
-        });
     }
 }
