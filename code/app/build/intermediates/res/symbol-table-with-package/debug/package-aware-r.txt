@@ -1928,8 +1928,8 @@ drawable transportchoicebutton
 id ALT
 id BOTTOM_END
 id BOTTOM_START
-id BusRadioBtn
-id BusRadioBtn2
+id BikeRadioBtn
+id BikeRadioBtn2
 id CTRL
 id CarRadioBtn
 id CarRadioBtn2
@@ -1940,6 +1940,8 @@ id SYM
 id SearchView
 id TOP_END
 id TOP_START
+id WalkRadioBtn
+id WalkRadioBtn2
 id aboutHeading
 id about_contact
 id about_howto
@@ -2106,7 +2108,6 @@ id linearLayout1
 id linearLayout2
 id listMode
 id list_item
-id locationBtn
 id logInNow
 id logoutBtn
 id mainbackground
@@ -2217,7 +2218,6 @@ id scrollView
 id scrollable
 id searchBtn
 id searchHead
-id searchText
 id search_badge
 id search_bar
 id search_button
@@ -2310,8 +2310,6 @@ id useLogo
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
-id walkRadioBtn
-id walkRadioBtn2
 id wide
 id withText
 id wrap
@@ -2530,8 +2528,8 @@ string appbar_scrolling_view_behavior
 string attachment_summary_off
 string attachment_summary_on
 string attachment_title
+string bike
 string bottom_sheet_behavior
-string bus
 string car
 string character_counter_content_description
 string character_counter_overflowed_content_description

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.common.api.Status;
@@ -24,7 +25,8 @@ public class SearchActivity extends AppCompatActivity {
     public static final String LOCATIONS_TAG = "LOCATIONS";
     private ArrayList<Place> userPlaces;
 
-    TextView searchText, closeText;
+    TextView closeText;
+    Button searchBtn;
     PlacesClient placesClient;
     String api_key;
 
@@ -45,15 +47,15 @@ public class SearchActivity extends AppCompatActivity {
 
     private void initialiseViewControls() {
         // If search button is clicked
-        searchText = findViewById(R.id.searchText);
-        searchText.setOnClickListener(new View.OnClickListener() {
+        searchBtn = findViewById(R.id.searchBtn);
+        searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMap();
             }
         });
 
-        // If close button is clicked
+        // If close text is clicked
         closeText = findViewById(R.id.closeText);
         closeText.setOnClickListener(new View.OnClickListener() {
             @Override

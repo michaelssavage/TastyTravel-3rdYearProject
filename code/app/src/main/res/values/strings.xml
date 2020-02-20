@@ -59,7 +59,7 @@
     <string name="close">Close</string>
     <string name="walk">Walk</string>
     <string name="car">Car</string>
-    <string name="bus">Bus</string>
+    <string name="bike">Bike</string>
     <string name="delete">Delete Account</string>
     <string name="title_activity_maps">Map</string>
 </resources>

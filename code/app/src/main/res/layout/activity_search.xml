@@ -9,24 +9,16 @@
     android:backgroundTint="#007C7979"
     tools:context=".SearchActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="350dp"
-        android:layout_height="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/locationBtn"
+    <Button
+        android:id="@+id/searchBtn"
+        android:layout_width="326dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:text="@android:string/search_go"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchHead"
-        app:layout_constraintVertical_bias="0.892">
-
-        <fragment
-            android:id="@+id/autoCompleteFragment1"
-            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
-            android:layout_width="match_parent"
-            android:layout_height="20sp" />
-
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -37,7 +29,7 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.921">
+        app:layout_constraintVertical_bias="0.938">
 
         <fragment
             android:id="@+id/autoCompleteFragment2"
@@ -61,19 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/locationBtn"
-        android:layout_width="348dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="160dp"
-        android:background="@drawable/locationbtn"
-        android:text="@string/current_location"
-        android:textColor="@color/aqua_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/closeText"
         android:layout_width="38dp"
@@ -84,33 +63,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/searchText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@android:string/search_go"
-        android:textColor="@color/aqua_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="348dp"
         android:layout_height="42dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/transportchoicebutton"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationBtn">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
 
         <RadioButton
-            android:id="@+id/walkRadioBtn"
+            android:id="@+id/WalkRadioBtn"
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:text="@string/walk" />
@@ -122,12 +89,30 @@
             android:text="@string/car" />
 
         <RadioButton
-            android:id="@+id/BusRadioBtn"
+            android:id="@+id/BikeRadioBtn"
             android:layout_width="116dp"
-            android:layout_height="match_parent"
-            android:text="@string/bus" />
+            android:layout_height="wrap_content"
+            android:text="@string/bike" />
 
     </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="350dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="124dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchHead">
+
+        <fragment
+            android:id="@+id/autoCompleteFragment1"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            android:layout_width="match_parent"
+            android:layout_height="20sp" />
+
+    </LinearLayout>
 
     <RadioGroup
         android:id="@+id/radioGroup2"
@@ -143,7 +128,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
-            android:id="@+id/walkRadioBtn2"
+            android:id="@+id/WalkRadioBtn2"
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:text="@string/walk" />
@@ -155,10 +140,10 @@
             android:text="@string/car" />
 
         <RadioButton
-            android:id="@+id/BusRadioBtn2"
+            android:id="@+id/BikeRadioBtn2"
             android:layout_width="116dp"
-            android:layout_height="match_parent"
-            android:text="@string/bus" />
+            android:layout_height="wrap_content"
+            android:text="@string/bike" />
 
     </RadioGroup>
 
