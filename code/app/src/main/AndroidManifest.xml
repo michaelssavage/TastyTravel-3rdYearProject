@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tastytravel">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -15,22 +15,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SavedPlacesActivity"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity android:name=".AboutActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MapsActivity" />
         <activity android:name=".profileActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SignInActivity" />
+        <activity android:name=".SavedPlacesActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".MapActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".SignInActivity" />
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

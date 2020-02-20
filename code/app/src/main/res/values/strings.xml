@@ -61,4 +61,5 @@
     <string name="car">Car</string>
     <string name="bus">Bus</string>
     <string name="delete">Delete Account</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
