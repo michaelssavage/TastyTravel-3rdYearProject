@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-52:12
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [androidx.preference:preference:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a6ae4030b52671595dfce90719dd71e8\preference-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:2:1-23:12
@@ -69,33 +69,33 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\g_slo\.gradle\caches\transform
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.datatransport:transport-api:2.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a91c2e8ac7f3a9f51ee2ac69fb442fc6\transport-api-2.1.0\AndroidManifest.xml:15:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\7189998640d03cd8247a01f86409460d\firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:4:5-38
 		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-52:12
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-52:12
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:10:5-79
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:6:5-79
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:9:5-79
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:10:22-76
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:11:5-67
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:26:5-67
@@ -115,9 +115,9 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.2] C:
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\f210870d143747b203db6f7922c8fb71\transport-backend-cct-2.1.0\AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\f210870d143747b203db6f7922c8fb71\transport-backend-cct-2.1.0\AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:11:22-64
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:7:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:12:5-79
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:8:5-79
 MERGED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:25:5-79
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\82653396968af777fdb1f59f7c3ba8c3\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
@@ -137,9 +137,9 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Us
 MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\8851791e6e862b75f5ea5783f7f5c98c\transport-runtime-2.1.0\AndroidManifest.xml:22:5-79
 MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\8851791e6e862b75f5ea5783f7f5c98c\transport-runtime-2.1.0\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:12:22-76
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:8:22-76
 application
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:14:5-50:19
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:10:5-39:19
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:13:5-21:19
@@ -205,75 +205,75 @@ MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\tran
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\331630a23dfa1f0594bcf54d5352aa36\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:19:9-35
-	android:label
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:17:9-41
-	tools:ignore
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:21:9-48
-	android:roundIcon
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:18:9-54
-	android:icon
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:16:9-43
-	android:allowBackup
 		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:13:9-41
+	tools:ignore
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:17:9-48
+	android:roundIcon
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:14:9-54
+	android:icon
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:12:9-43
+	android:allowBackup
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:20:9-40
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:16:9-40
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:30:9-32:55
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:19:9-21:55
 	android:value
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:32:13-52
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:21:13-52
 	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:31:13-58
-activity#com.example.tastytravel.MapsActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:34:9-50
-	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:34:19-47
-activity#com.example.tastytravel.SavedPlacesActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:35:9-57
-	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:35:19-54
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:20:13-58
 activity#com.example.tastytravel.AboutActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:36:9-51
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:23:9-51
 	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:36:19-48
-activity#com.example.tastytravel.profileActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:37:9-53
-	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:37:19-50
-activity#com.example.tastytravel.SignUpActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:38:9-52
-	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:38:19-49
-activity#com.example.tastytravel.SignInActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:39:9-52
-	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:39:19-49
-activity#com.example.tastytravel.SearchActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:40:9-52
-	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:40:19-49
-activity#com.example.tastytravel.SettingsActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:41:9-54
-	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:41:19-51
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:23:19-48
 activity#com.example.tastytravel.MainActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:42:9-50
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:24:9-50
 	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:42:19-47
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:24:19-47
+activity#com.example.tastytravel.MapsActivity
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:25:9-50
+	android:name
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:25:19-47
+activity#com.example.tastytravel.profileActivity
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:26:9-53
+	android:name
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:26:19-50
+activity#com.example.tastytravel.SavedPlacesActivity
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:27:9-57
+	android:name
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:27:19-54
+activity#com.example.tastytravel.SearchActivity
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:28:9-52
+	android:name
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:28:19-49
+activity#com.example.tastytravel.SettingsActivity
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:29:9-54
+	android:name
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:29:19-51
+activity#com.example.tastytravel.SignUpActivity
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:30:9-52
+	android:name
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:30:19-49
+activity#com.example.tastytravel.SignInActivity
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:31:9-52
+	android:name
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:31:19-49
 activity#com.example.tastytravel.StartActivity
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:43:9-49:20
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:32:9-38:20
 	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:43:19-48
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:32:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:44:13-48:29
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:33:13-37:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:45:17-69
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:45:25-66
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:47:17-77
+ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:47:27-74
+		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:36:27-74
 uses-sdk
 INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
