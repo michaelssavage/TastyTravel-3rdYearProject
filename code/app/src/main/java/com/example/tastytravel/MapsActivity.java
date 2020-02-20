@@ -2,6 +2,7 @@ package com.example.tastytravel;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -10,6 +11,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.libraries.places.api.model.Place;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -19,6 +21,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -39,13 +42,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng dublin = new LatLng(53.3498, -6.2603);
-        LatLng dcu = new LatLng(53.3861, -6.2564);
+        Intent intent = getIntent();
+        Place yourLocation = (Place) intent.getSerializableExtra("Location1");
+        Place theirLocation = (Place) intent.getSerializableExtra("Location2");
 
-        mMap.addMarker(new MarkerOptions().position(dublin).title("Marker in Dublin"));
-        mMap.addMarker(new MarkerOptions().position(dcu).title("Marker in DCU"));
+        final LatLng latLng1 = yourLocation.getLatLng();
+        final LatLng latLng2 = theirLocation.getLatLng();
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(dublin));
+        // Add a marker and move the camera
+        LatLng location1 = new LatLng(latLng1.latitude, latLng1.longitude);
+        LatLng location2 = new LatLng(latLng2.latitude, latLng2.longitude);
+
+        mMap.addMarker(new MarkerOptions().position(location1).title("Your Location"));
+        mMap.addMarker(new MarkerOptions().position(location2).title("Their Location"));
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location1));
     }
 }

@@ -17,9 +17,10 @@ import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements Serializable {
 
     TextView searchText, closeText;
     PlacesClient placesClient;
@@ -71,10 +72,9 @@ public class SearchActivity extends AppCompatActivity {
         autocompleteSupportFragment1.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME));
         autocompleteSupportFragment1.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
-            public void onPlaceSelected(@NonNull Place place) {
-                final LatLng latLng = place.getLatLng();
-
-                Log.i("PlacesApi", "onPlaceSelected: " + latLng.latitude + "\n" + latLng.longitude);
+            public void onPlaceSelected(@NonNull Place yourplace) {
+                Intent intent1 = new Intent(getApplicationContext(), MapsActivity.class);
+                intent1.putExtra("Location1", yourplace);
             }
 
             @Override
@@ -90,10 +90,9 @@ public class SearchActivity extends AppCompatActivity {
         autocompleteSupportFragment2.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME));
         autocompleteSupportFragment2.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
-            public void onPlaceSelected(@NonNull Place place) {
-                final LatLng latLng = place.getLatLng();
-
-                Log.i("PlacesApi", "onPlaceSelected: " + latLng.latitude + "\n" + latLng.longitude);
+            public void onPlaceSelected(@NonNull Place theirplace) {
+                Intent intent2 = new Intent(getApplicationContext(), MapsActivity.class);
+                intent2.putExtra("Location2", theirplace);
             }
 
             @Override
