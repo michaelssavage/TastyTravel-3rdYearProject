@@ -1828,6 +1828,11 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable about_img
+drawable activity_main_white_button
+drawable activity_profile_white_button
+drawable activity_search_bottom_search_button
+drawable activity_search_radio_button
+drawable activity_start_green_button
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
@@ -1858,7 +1863,6 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
-drawable custom_marker
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1882,7 +1886,6 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable locationbtn
 drawable mainbackground
 drawable menu_about_icon
 drawable menu_home_icon
@@ -1918,13 +1921,10 @@ drawable quantum_ic_arrow_back_grey600_24
 drawable quantum_ic_clear_grey600_24
 drawable quantum_ic_cloud_off_vd_theme_24
 drawable quantum_ic_search_grey600_24
-drawable roundedbutton
-drawable searchbutton
 drawable selector
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-drawable transportchoicebutton
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2104,6 +2104,7 @@ id left
 id light
 id line1
 id line3
+id linearLayout
 id linearLayout1
 id linearLayout2
 id listMode
@@ -2197,8 +2198,9 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id radio
-id radioGroup
+id radioGroup1
 id radioGroup2
+id radioText
 id recycler_view
 id right
 id right_icon

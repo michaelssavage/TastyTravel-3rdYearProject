@@ -40,7 +40,7 @@
         android:layout_width="307dp"
         android:layout_height="39dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/searchbutton"
+        android:background="@drawable/activity_main_white_button"
         android:elevation="10dp"
         android:text="@string/find_your_taste"
         android:textColor="@android:color/black"

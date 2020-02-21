@@ -3,12 +3,16 @@ package com.example.tastytravel;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.api.Places;
@@ -23,10 +27,10 @@ import java.util.Arrays;
 public class SearchActivity extends AppCompatActivity {
 
     public static final String LOCATIONS_TAG = "LOCATIONS";
+    public static final String RADIO1 = "radio1";
+    public static final String RADIO2 = "radio2";
     private ArrayList<Place> userPlaces;
 
-    TextView closeText;
-    Button searchBtn;
     PlacesClient placesClient;
     String api_key;
 
@@ -43,19 +47,24 @@ public class SearchActivity extends AppCompatActivity {
 
         // Places Search Feature
         initialisePlaces();
+
     }
 
     private void initialiseViewControls() {
         // If search button is clicked
+        Button searchBtn;
         searchBtn = findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMap();
+                Intent showMap = new Intent(getApplicationContext(), MapsActivity.class);
+                getRadioChoice(v, showMap);
+                openMap(showMap);
             }
         });
 
         // If close text is clicked
+        TextView closeText;
         closeText = findViewById(R.id.closeText);
         closeText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +87,9 @@ public class SearchActivity extends AppCompatActivity {
         final AutocompleteSupportFragment autocompleteSupportFragment1 =
                 (AutocompleteSupportFragment) getSupportFragmentManager().findFragmentById(R.id.autoCompleteFragment1);
 
-        autocompleteSupportFragment1.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME)).setHint("Enter your Location");
+        autocompleteSupportFragment1.setPlaceFields(
+                Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME))
+                .setHint("Enter your Location");
         autocompleteSupportFragment1.setCountries("IE");
         autocompleteSupportFragment1.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
@@ -96,7 +107,9 @@ public class SearchActivity extends AppCompatActivity {
         final AutocompleteSupportFragment autocompleteSupportFragment2 =
                 (AutocompleteSupportFragment) getSupportFragmentManager().findFragmentById(R.id.autoCompleteFragment2);
 
-        autocompleteSupportFragment2.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME)).setHint("Enter their Destination");
+        autocompleteSupportFragment2.setPlaceFields(
+                Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME))
+                .setHint("Enter their Location");
         autocompleteSupportFragment2.setCountries("IE");
         autocompleteSupportFragment2.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
@@ -110,14 +123,73 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
     }
+    public void getRadioChoice(View view, Intent showMap) {
 
-    public void openMap() {
-        //DCU is -6.2564 , 53.3861
-        // o'connell street is -6.2607 , 53.3508
+        RadioButton walkbtn, carBtn, bikeBtn, walkbtn2,carBtn2, bikeBtn2;
 
-        Intent showMap = new Intent(getApplicationContext(), MapsActivity.class);
+        walkbtn = findViewById(R.id.WalkRadioBtn);
+        carBtn = findViewById(R.id.CarRadioBtn);
+        bikeBtn = findViewById(R.id.BikeRadioBtn);
+
+        walkbtn2 = findViewById(R.id.WalkRadioBtn);
+        carBtn2 = findViewById(R.id.CarRadioBtn);
+        bikeBtn2 = findViewById(R.id.BikeRadioBtn);
+
+        String str;
+        switch(view.getId()) {
+            case R.id.WalkRadioBtn:
+                if (walkbtn.isChecked()) {
+                    str = "walking";
+                    showMap.putExtra(RADIO1, str);
+                }
+                break;
+            case R.id.CarRadioBtn:
+                if (carBtn.isChecked()){
+                    str = "driving";
+                    showMap.putExtra(RADIO1, str);
+                }
+                break;
+            case R.id.BikeRadioBtn:
+                if (bikeBtn.isChecked()){
+                    str = "cycling";
+                    showMap.putExtra(RADIO1, str);
+                }
+                break;
+        }
+        switch(view.getId()) {
+            case R.id.WalkRadioBtn:
+                if (walkbtn2.isChecked()) {
+                    str = "walking";
+                    showMap.putExtra(RADIO1, str);
+                }
+                break;
+            case R.id.CarRadioBtn:
+                if (carBtn2.isChecked()){
+                    str = "driving";
+                    showMap.putExtra(RADIO1, str);
+                }
+                break;
+            case R.id.BikeRadioBtn:
+                if (bikeBtn2.isChecked()){
+                    str = "cycling";
+                    showMap.putExtra(RADIO1, str);
+                }
+                break;
+        }
+    }
+    public void openMap(Intent showMap){
+
+
         showMap.putExtra(LOCATIONS_TAG, userPlaces);
-        startActivity(showMap);
+        try {
+            startActivity(showMap);
+        } catch (NullPointerException e ) {
+            Context context = getApplicationContext();
+            CharSequence text = "Please Enter two locations.";
+            int duration = Toast.LENGTH_LONG;
+            Toast.makeText(context, text, duration).show();
+        }
+
     }
 
 }

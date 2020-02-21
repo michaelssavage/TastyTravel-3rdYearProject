@@ -1,7 +1,7 @@
-#Thu Feb 20 15:44:57 GMT 2020
-base.0=C\:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Fri Feb 21 16:18:24 GMT 2020
+base.0=C\:\\Users\\micha\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\g_slo\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=C\:\\Users\\micha\\2020-ca326-msavage-tastytravel\\code\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex

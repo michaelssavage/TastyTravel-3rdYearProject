@@ -2,24 +2,30 @@ package com.example.tastytravel;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
 
+import org.json.JSONObject;
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
     private ArrayList<Place> Places;
+    private ArrayList<String> Radios;
     Place yourLocation;
     Place theirLocation;
 
@@ -35,6 +41,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         Bundle data = getIntent().getExtras();
         Places = data.getParcelableArrayList(SearchActivity.LOCATIONS_TAG);
+
+        String message = data.getString(SearchActivity.RADIO1);
+        TextView radioText = findViewById(R.id.radioText);
+        radioText.setText(message);
     }
 
 
@@ -48,8 +58,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * installed Google Play services and returned to the app.
      */
     @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+    public void onMapReady(GoogleMap mMap) {
 
         yourLocation = Places.get(0);
         theirLocation = Places.get(1);
@@ -65,13 +74,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(theirLocationLatLng).title("Their Location"));
 //
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(yourLocationLatLng, 12f));
-
-        mMap.addCircle(new CircleOptions()
-                .center(new LatLng(getYourLocationLatLng.latitude, getYourLocationLatLng.longitude))
-                .radius(1200)
-                .strokeWidth(10)
-                .strokeColor(Color.GREEN)
-                .clickable(true));
-
     }
+
 }
