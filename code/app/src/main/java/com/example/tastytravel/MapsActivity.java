@@ -2,12 +2,14 @@ package com.example.tastytravel;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
@@ -63,5 +65,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(theirLocationLatLng).title("Their Location"));
 //
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(yourLocationLatLng, 12f));
+
+        mMap.addCircle(new CircleOptions()
+                .center(new LatLng(getYourLocationLatLng.latitude, getYourLocationLatLng.longitude))
+                .radius(1200)
+                .strokeWidth(10)
+                .strokeColor(Color.GREEN)
+                .clickable(true));
+
     }
 }
