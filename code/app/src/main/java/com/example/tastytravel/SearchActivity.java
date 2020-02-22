@@ -29,31 +29,32 @@ public class SearchActivity extends AppCompatActivity {
     public static final String LOCATIONS_TAG = "LOCATIONS";
     public static final String RADIO1 = "radio1";
     public static final String RADIO2 = "radio2";
-    private ArrayList<Place> userPlaces;
 
+    private ArrayList<Place> userPlaces;
     PlacesClient placesClient;
-    String api_key;
+
+    Button searchBtn;
+    TextView closeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        api_key = "AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps";
+
         userPlaces = new ArrayList<>();
+        searchBtn = findViewById(R.id.searchBtn);
+        closeText = findViewById(R.id.closeText);
 
         // Define Actions for button clicks
         initialiseViewControls();
 
         // Places Search Feature
         initialisePlaces();
-
     }
 
     private void initialiseViewControls() {
         // If search button is clicked
-        Button searchBtn;
-        searchBtn = findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,8 +65,6 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         // If close text is clicked
-        TextView closeText;
-        closeText = findViewById(R.id.closeText);
         closeText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,10 +74,10 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-    public void initialisePlaces(){
+    public void initialisePlaces() {
 
-        if(!Places.isInitialized()){
-            Places.initialize(getApplicationContext(), api_key);
+        if (!Places.isInitialized()) {
+            Places.initialize(getApplicationContext(), getString(R.string.google_maps_key));
         }
 
         placesClient = Places.createClient(this);
@@ -90,11 +89,12 @@ public class SearchActivity extends AppCompatActivity {
         autocompleteSupportFragment1.setPlaceFields(
                 Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME))
                 .setHint("Enter your Location");
+
         autocompleteSupportFragment1.setCountries("IE");
         autocompleteSupportFragment1.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
-            public void onPlaceSelected(@NonNull Place yourplace) {
-                userPlaces.add(yourplace);
+            public void onPlaceSelected(@NonNull Place yourLocation) {
+                userPlaces.add(yourLocation);
             }
 
             @Override
@@ -110,11 +110,12 @@ public class SearchActivity extends AppCompatActivity {
         autocompleteSupportFragment2.setPlaceFields(
                 Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME))
                 .setHint("Enter their Location");
+
         autocompleteSupportFragment2.setCountries("IE");
         autocompleteSupportFragment2.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
-            public void onPlaceSelected(@NonNull Place theirplace) {
-                userPlaces.add(theirplace);
+            public void onPlaceSelected(@NonNull Place theirLocation) {
+                userPlaces.add(theirLocation);
             }
 
             @Override
@@ -123,6 +124,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
     }
+
     public void getRadioChoice(View view, Intent showMap) {
 
         RadioButton walkbtn, carBtn, bikeBtn, walkbtn2,carBtn2, bikeBtn2;
@@ -177,20 +179,15 @@ public class SearchActivity extends AppCompatActivity {
                 break;
         }
     }
-    public void openMap(Intent showMap){
 
-
+    public void openMap(Intent showMap) {
         showMap.putExtra(LOCATIONS_TAG, userPlaces);
-        try {
-            startActivity(showMap);
-        } catch (NullPointerException e ) {
-            Context context = getApplicationContext();
-            CharSequence text = "Please Enter two locations.";
-            int duration = Toast.LENGTH_LONG;
-            Toast.makeText(context, text, duration).show();
+        if (userPlaces.size() < 2) {
+            Toast.makeText(this, "Error: 2 locations must be entered to proceed", Toast.LENGTH_SHORT).show();
         }
-
+        if(userPlaces.size() == 2) {
+            startActivity(showMap);
+        }
     }
-
 }
 

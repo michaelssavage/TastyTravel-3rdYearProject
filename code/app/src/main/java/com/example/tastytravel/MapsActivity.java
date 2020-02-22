@@ -2,11 +2,7 @@ package com.example.tastytravel;
 
 import androidx.fragment.app.FragmentActivity;
 
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,16 +12,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
 
-import org.json.JSONObject;
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private ArrayList<Place> Places;
-    private ArrayList<String> Radios;
     Place yourLocation;
     Place theirLocation;
 
@@ -41,12 +32,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         Bundle data = getIntent().getExtras();
         Places = data.getParcelableArrayList(SearchActivity.LOCATIONS_TAG);
-
-        String message = data.getString(SearchActivity.RADIO1);
-        TextView radioText = findViewById(R.id.radioText);
-        radioText.setText(message);
     }
-
 
     /**
      * Manipulates the map once available.
