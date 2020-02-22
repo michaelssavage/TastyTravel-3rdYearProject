@@ -17,6 +17,11 @@ public class SavedPlacesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_saved_places);
 
         closeText2 = findViewById(R.id.closeText2);
+
+        initialiseViewControls();
+    }
+
+    private void initialiseViewControls() {
         closeText2.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -26,4 +31,5 @@ public class SavedPlacesActivity extends AppCompatActivity {
             }
         });
     }
+
 }

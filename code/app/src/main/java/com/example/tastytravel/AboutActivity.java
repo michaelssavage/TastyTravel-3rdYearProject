@@ -10,8 +10,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class AboutActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavBar;
     FirebaseAuth mAuth;
+    BottomNavigationView bottomNavBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +19,13 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
 
         mAuth = FirebaseAuth.getInstance();
+        bottomNavBar = findViewById(R.id.bottomNavBar);
 
         // Set up bottom nav bar
         setUpNavBar();
     }
 
     private void setUpNavBar() {
-        bottomNavBar = findViewById(R.id.bottomNavBar);
         bottomNavBar.setSelectedItemId(R.id.menu_about);
         bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

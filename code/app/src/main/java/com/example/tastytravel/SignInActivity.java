@@ -38,16 +38,35 @@ public class SignInActivity extends AppCompatActivity {
         signUpText = findViewById(R.id.signUpText);
         mAuth = FirebaseAuth.getInstance();
 
+        // Customise signup text to make it clearer
+        customiseSignupText();
 
-        TextView signUpText = findViewById(R.id.signUpText);
+        // Define Actions for button clicks
+        initialiseViewControls();
+    }
+
+    private void customiseSignupText() {
         Spannable word = new SpannableString("Don't have an account?");
         word.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, word.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         signUpText.setText(word);
         Spannable wordTwo = new SpannableString(" SIGN UP");
         wordTwo.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.aqua_blue)), 0, wordTwo.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         signUpText.append(wordTwo);
+    }
 
-        // Sign Up
+    private void initialiseViewControls() {
+        // Sign In Control
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
+
+                // Call the sigin function using email and password provided
+                signUserIn();
+            }
+        });
+
+        // Sign Up Control
         signUpText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,32 +74,28 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(signUpScreen);
             }
         });
+    }
 
-        // Sign In
-        signInButton.setOnClickListener(new View.OnClickListener() {
+    private void signUserIn() {
+
+        String email = emailField.getText().toString();
+        String password = passwordField.getText().toString();
+
+        // authenticate the user
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-
-                String email = emailField.getText().toString();
-                String password = passwordField.getText().toString();
-
-                // authenticate the user
-                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()) {
-                            Toast.makeText(SignInActivity.this, "Successfully Logged in", Toast.LENGTH_LONG).show();
-                            Intent mainScreen = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(mainScreen);
-                        }
-                        else {
-                            Toast.makeText(SignInActivity.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    Toast.makeText(SignInActivity.this, "Successfully Logged in", Toast.LENGTH_LONG).show();
+                    Intent mainScreen = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(mainScreen);
+                }
+                else {
+                    Toast.makeText(SignInActivity.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }
             }
         });
     }
+
 }

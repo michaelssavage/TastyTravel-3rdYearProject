@@ -31,25 +31,33 @@ public class StartActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         signUpText = findViewById(R.id.signUpText);
 
+        // Customise signup text to make it clearer
+        customiseSignupText();
+
+        // Check if the user is already logged in
+        checkIfUserLoggedIn();
+
         // Define Actions for button clicks
         initialiseViewControls();
     }
 
-    private void initialiseViewControls() {
-        TextView signUpText = findViewById(R.id.signUpText);
+    private void customiseSignupText() {
         Spannable word = new SpannableString("Don't have an account?");
         word.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, word.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         signUpText.setText(word);
         Spannable wordTwo = new SpannableString(" SIGN UP");
         wordTwo.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.aqua_blue)), 0, wordTwo.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         signUpText.append(wordTwo);
+    }
 
-        // checking if user is already logged in
-        if(mAuth.getCurrentUser() != null) {
+    private void checkIfUserLoggedIn() {
+        if (mAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }
+    }
 
+    private void initialiseViewControls() {
         // Continue without account
         continueText.setOnClickListener(new View.OnClickListener() {
             @Override

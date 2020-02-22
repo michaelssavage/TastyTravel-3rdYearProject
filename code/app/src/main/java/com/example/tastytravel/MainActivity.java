@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         searchBtn = findViewById(R.id.searchBtn);
         foodCollageImage = findViewById(R.id.foodCollageImage);
 
-        // Define Actions for button clicks
-        initialiseViewControls();
-
         // Set up bottom nav bar
         setUpNavBar();
+
+        // Define Actions for button clicks
+        initialiseViewControls();
     }
 
     private void setUpNavBar() {
@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // If the food collage image is clicked
         foodCollageImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(savedPlacesIntent);
             }
         });
-
     }
+
 }
