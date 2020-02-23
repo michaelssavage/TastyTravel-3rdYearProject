@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void initialiseViewControls() {
         // If the Settings Button is Clicked
         searchBtn.setOnClickListener(new View.OnClickListener() {

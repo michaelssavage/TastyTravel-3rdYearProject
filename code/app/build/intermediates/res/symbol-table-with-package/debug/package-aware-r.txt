@@ -1833,6 +1833,8 @@ drawable activity_profile_white_button
 drawable activity_search_bottom_search_button
 drawable activity_search_radio_button
 drawable activity_start_green_button
+drawable amu_bubble_mask
+drawable amu_bubble_shadow
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
@@ -2006,6 +2008,7 @@ id adjust_width
 id alertTitle
 id all
 id always
+id amu_text
 id async
 id auto
 id autoCompleteFragment1
@@ -2312,7 +2315,9 @@ id useLogo
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
+id webview
 id wide
+id window
 id withText
 id wrap
 id wrap_content
@@ -2387,6 +2392,9 @@ layout activity_settings
 layout activity_sign_in
 layout activity_sign_up
 layout activity_start
+layout amu_info_window
+layout amu_text_bubble
+layout amu_webview
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2491,6 +2499,26 @@ mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw amu_ballon_gx_prefix
+raw amu_basic_folder
+raw amu_basic_placemark
+raw amu_cdata
+raw amu_default_balloon
+raw amu_document_nest
+raw amu_draw_order_ground_overlay
+raw amu_extended_data
+raw amu_ground_overlay
+raw amu_ground_overlay_color
+raw amu_inline_style
+raw amu_multigeometry_placemarks
+raw amu_multiple_placemarks
+raw amu_nested_folders
+raw amu_nested_multigeometry
+raw amu_poly_style_boolean_alpha
+raw amu_poly_style_boolean_numeric
+raw amu_unknwown_folder
+raw amu_unsupported
+raw amu_visibility_ground_overlay
 raw places_keep
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -3380,6 +3408,9 @@ style Widget_MaterialComponents_Toolbar_Primary
 style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_Support_CoordinatorLayout
+style amu_Bubble_TextAppearance_Dark
+style amu_Bubble_TextAppearance_Light
+style amu_ClusterIcon_TextAppearance
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

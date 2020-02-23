@@ -27,10 +27,11 @@ import java.util.Arrays;
 public class SearchActivity extends AppCompatActivity {
 
     public static final String LOCATIONS_TAG = "LOCATIONS";
-    public static final String RADIO1 = "radio1";
-    public static final String RADIO2 = "radio2";
+    public static final String RADIO_BUTTONS = "RADIO_BUTTONS";
 
     private ArrayList<Place> userPlaces;
+//    private ArrayList<String> userButtonChoice;
+
     PlacesClient placesClient;
 
     Button searchBtn;
@@ -41,8 +42,9 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-
         userPlaces = new ArrayList<>();
+//        userButtonChoice = new ArrayList<>();
+
         searchBtn = findViewById(R.id.searchBtn);
         closeText = findViewById(R.id.closeText);
 
@@ -51,6 +53,8 @@ public class SearchActivity extends AppCompatActivity {
 
         // Places Search Feature
         initialisePlaces();
+
+//        getRadioChoice();
     }
 
     private void initialiseViewControls() {
@@ -58,9 +62,7 @@ public class SearchActivity extends AppCompatActivity {
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent showMap = new Intent(getApplicationContext(), MapsActivity.class);
-                getRadioChoice(v, showMap);
-                openMap(showMap);
+                openMap();
             }
         });
 
@@ -125,67 +127,57 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-    public void getRadioChoice(View view, Intent showMap) {
+//    public void getRadioChoice(View view) {
+//
+//        boolean checked = ((RadioButton) view).isChecked();
+//
+//        switch(view.getId()) {
+//            case R.id.WalkRadioBtn:
+//                if (checked) {
+//                    userButtonChoice.add("walking");
+//                }
+//                break;
+//            case R.id.CarRadioBtn:
+//                if (checked) {
+//                    userButtonChoice.add("driving");
+//                }
+//                break;
+//            case R.id.BikeRadioBtn2:
+//                if (checked) {
+//                    userButtonChoice.add("cycling");
+//                }
+//                break;
+//        }
+//
+//        switch(view.getId()) {
+//            case R.id.WalkRadioBtn2:
+//                if (checked) {
+//                    userButtonChoice.add("walking");
+//                }
+//                break;
+//            case R.id.CarRadioBtn2:
+//                if (checked) {
+//                    userButtonChoice.add("driving");
+//                }
+//                break;
+//            case R.id.BikeRadioBtn2:
+//                if (checked) {
+//                    userButtonChoice.add("cycling");
+//                }
+//                break;
+//        }
+//    }
 
-        RadioButton walkbtn, carBtn, bikeBtn, walkbtn2,carBtn2, bikeBtn2;
+    public void openMap() {
+        Intent showMap = new Intent(getApplicationContext(), MapsActivity.class);
 
-        walkbtn = findViewById(R.id.WalkRadioBtn);
-        carBtn = findViewById(R.id.CarRadioBtn);
-        bikeBtn = findViewById(R.id.BikeRadioBtn);
-
-        walkbtn2 = findViewById(R.id.WalkRadioBtn);
-        carBtn2 = findViewById(R.id.CarRadioBtn);
-        bikeBtn2 = findViewById(R.id.BikeRadioBtn);
-
-        String str;
-        switch(view.getId()) {
-            case R.id.WalkRadioBtn:
-                if (walkbtn.isChecked()) {
-                    str = "walking";
-                    showMap.putExtra(RADIO1, str);
-                }
-                break;
-            case R.id.CarRadioBtn:
-                if (carBtn.isChecked()){
-                    str = "driving";
-                    showMap.putExtra(RADIO1, str);
-                }
-                break;
-            case R.id.BikeRadioBtn:
-                if (bikeBtn.isChecked()){
-                    str = "cycling";
-                    showMap.putExtra(RADIO1, str);
-                }
-                break;
-        }
-        switch(view.getId()) {
-            case R.id.WalkRadioBtn:
-                if (walkbtn2.isChecked()) {
-                    str = "walking";
-                    showMap.putExtra(RADIO1, str);
-                }
-                break;
-            case R.id.CarRadioBtn:
-                if (carBtn2.isChecked()){
-                    str = "driving";
-                    showMap.putExtra(RADIO1, str);
-                }
-                break;
-            case R.id.BikeRadioBtn:
-                if (bikeBtn2.isChecked()){
-                    str = "cycling";
-                    showMap.putExtra(RADIO1, str);
-                }
-                break;
-        }
-    }
-
-    public void openMap(Intent showMap) {
         showMap.putExtra(LOCATIONS_TAG, userPlaces);
+//        showMap.putExtra(RADIO_BUTTONS, userButtonChoice);
+
         if (userPlaces.size() < 2) {
             Toast.makeText(this, "Error: 2 locations must be entered to proceed", Toast.LENGTH_SHORT).show();
         }
-        if(userPlaces.size() == 2) {
+        else {
             startActivity(showMap);
         }
     }

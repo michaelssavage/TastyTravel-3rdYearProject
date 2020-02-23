@@ -4,9 +4,10 @@ ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\Andro
 INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
 INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
 INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
+MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.preference:preference:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a6ae4030b52671595dfce90719dd71e8\preference-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:2:1-23:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\fb8f7031ef66b8147647717c2aecca12\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\81a362b35962fa2496d450cbee5c4ecc\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:15:1-38:12
@@ -66,7 +67,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\g_
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\5080ea4c3a94602e590d65de9668e7d9\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a072b7027d050ba4a28e8ed0f5aedf24\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\9a92904b990e3cb14e2f3d12a60bfcf2\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.maps.android:android-maps-utils:0.5] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\c7badf8b6124ba9d74cc4ed8f0d422ec\jetified-android-maps-utils-0.5\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.datatransport:transport-api:2.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a91c2e8ac7f3a9f51ee2ac69fb442fc6\transport-api-2.1.0\AndroidManifest.xml:15:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\7189998640d03cd8247a01f86409460d\firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
 INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:2:1-41:12
@@ -140,10 +141,12 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\
 		ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:8:22-76
 application
 ADDED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml:10:5-39:19
-MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:13:5-21:19
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:13:5-21:19
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\81a362b35962fa2496d450cbee5c4ecc\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\81a362b35962fa2496d450cbee5c4ecc\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-database:19.2.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\40d203d0674822dbdfc1bb4103e3a3d4\firebase-database-19.2.1\AndroidManifest.xml:28:5-36:19
@@ -200,8 +203,8 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\
 MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\8851791e6e862b75f5ea5783f7f5c98c\transport-runtime-2.1.0\AndroidManifest.xml:25:5-39:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\f3d3c9ef953af10d388177573d1cb616\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\f3d3c9ef953af10d388177573d1cb616\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.maps.android:android-maps-utils:0.5] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\c7badf8b6124ba9d74cc4ed8f0d422ec\jetified-android-maps-utils-0.5\AndroidManifest.xml:7:5-11:19
+MERGED from [com.google.maps.android:android-maps-utils:0.5] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\c7badf8b6124ba9d74cc4ed8f0d422ec\jetified-android-maps-utils-0.5\AndroidManifest.xml:7:5-11:19
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\331630a23dfa1f0594bcf54d5352aa36\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
@@ -278,12 +281,14 @@ uses-sdk
 INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\g_slo\2020-ca326-msavage-tastytravel\code\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:7:5-44
+MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:7:5-44
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
 MERGED from [androidx.preference:preference:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a6ae4030b52671595dfce90719dd71e8\preference-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.preference:preference:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a6ae4030b52671595dfce90719dd71e8\preference-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:7:5-44
-MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\057f40c317e073b64370727b743c7168\places-2.2.0\AndroidManifest.xml:7:5-44
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\fb8f7031ef66b8147647717c2aecca12\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\fb8f7031ef66b8147647717c2aecca12\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\81a362b35962fa2496d450cbee5c4ecc\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
@@ -402,8 +407,8 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\g_slo\.gradle\ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a072b7027d050ba4a28e8ed0f5aedf24\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\9a92904b990e3cb14e2f3d12a60bfcf2\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\9a92904b990e3cb14e2f3d12a60bfcf2\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\62e4360fcbddf51d9af94ea9d222bd93\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
+MERGED from [com.google.maps.android:android-maps-utils:0.5] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\c7badf8b6124ba9d74cc4ed8f0d422ec\jetified-android-maps-utils-0.5\AndroidManifest.xml:5:5-43
+MERGED from [com.google.maps.android:android-maps-utils:0.5] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\c7badf8b6124ba9d74cc4ed8f0d422ec\jetified-android-maps-utils-0.5\AndroidManifest.xml:5:5-43
 MERGED from [com.google.android.datatransport:transport-api:2.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a91c2e8ac7f3a9f51ee2ac69fb442fc6\transport-api-2.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-api:2.1.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\a91c2e8ac7f3a9f51ee2ac69fb442fc6\transport-api-2.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\7189998640d03cd8247a01f86409460d\firebase-database-collection-17.0.0\AndroidManifest.xml:5:5-44
@@ -604,6 +609,8 @@ ADDED from [com.google.android.gms:play-services-measurement:17.2.2] C:\Users\g_
 		ADDED from [com.google.android.gms:play-services-measurement:17.2.2] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\ac2605da77983b497481f9e2091aefdd\play-services-measurement-17.2.2\AndroidManifest.xml:49:13-87
 meta-data#com.google.android.gms.version
 ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\b1ee8c044be04c7977f5cfcb04a16126\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.maps.android:android-maps-utils:0.5] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\c7badf8b6124ba9d74cc4ed8f0d422ec\jetified-android-maps-utils-0.5\AndroidManifest.xml:8:9-10:69
+MERGED from [com.google.maps.android:android-maps-utils:0.5] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\c7badf8b6124ba9d74cc4ed8f0d422ec\jetified-android-maps-utils-0.5\AndroidManifest.xml:8:9-10:69
 	android:value
 		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\g_slo\.gradle\caches\transforms-2\files-2.1\b1ee8c044be04c7977f5cfcb04a16126\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 	android:name
