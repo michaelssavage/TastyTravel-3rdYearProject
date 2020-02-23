@@ -26,14 +26,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // ArrayList to store both user locations
     private ArrayList<Place> mPlaces;
-    private MarkerOptions mOptions = new MarkerOptions();
 
-//    private ArrayList<String> radioButtons;
+    private ArrayList<String> radioButtons;
 
     // Instance of our map
     private GoogleMap googleMap;
-
-    private static final int LOCATIONS = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +40,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
 
         // Get objects passed
         Bundle data = getIntent().getExtras();
-        mPlaces = data.getParcelableArrayList(SearchActivity.LOCATIONS_TAG);
-//        radioButtons = data.getStringArrayList(SearchActivity.RADIO_BUTTONS);
+
+        if (data != null) {
+            mPlaces = data.getParcelableArrayList(SearchActivity.LOCATIONS_TAG);
+            Log.d("Locations", String.valueOf(mPlaces));
+        }
+
+        radioButtons = data.getStringArrayList(SearchActivity.RADIO_BUTTONS);
+        Log.d("Radios", String.valueOf(radioButtons));
 
         // Adding the 2 locations on the map
         final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
@@ -101,10 +107,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap mMap) {
         googleMap = mMap;
-        setUpMap();
+        addMarkers();
     }
 
-    private void setUpMap() {
+    private void addMarkers() {
 
         // Adding the 2 locations on the map
         final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
@@ -113,7 +119,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker and move the camera
         LatLng yourLocationLatLng = new LatLng(getYourLocationLatLng.latitude, getYourLocationLatLng.longitude);
         LatLng theirLocationLatLng = new LatLng(getTheirLocationLatLng.latitude, getTheirLocationLatLng.longitude);
-        
+
         googleMap.addMarker(new MarkerOptions().position(yourLocationLatLng).title("Your Location"));
         googleMap.addMarker(new MarkerOptions().position(theirLocationLatLng).title("Their Location"));
 
