@@ -2,8 +2,10 @@ package com.example.tastytravel;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -20,17 +22,19 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.maps.android.data.geojson.GeoJsonLayer;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     public static final String DATA = "DATA";
     public static final String LOCATIONS_TAG = "LOCATIONS";
-    public static final String RADIO_BUTTONS = "RADIO_BUTTONS";
+    public static final String RADIO_BUTTON1 = "RADIO_BUTTON1";
+    public static final String RADIO_BUTTON2 = "RADIO_BUTTON2";
 
     // ArrayList to store both user locations
     private ArrayList<Place> mPlaces;
-    private ArrayList<String> radioButtons;
 
     // Instance of our map
     private GoogleMap googleMap;
@@ -49,14 +53,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Get objects passed
         Bundle data = getIntent().getBundleExtra(DATA);
 
+        Intent buttons = getIntent();
+        String myButtonSelection = buttons.getStringExtra(RADIO_BUTTON1);
+        String theirButtonSelection = buttons.getStringExtra(RADIO_BUTTON2);
+
+
         if (data != null) {
             mPlaces = (ArrayList<Place>) data.getSerializable(LOCATIONS_TAG);
-            radioButtons = (ArrayList<String>) data.getSerializable(RADIO_BUTTONS);
         }
 
         // Checking values using Logging
         Log.d(LOCATIONS_TAG, String.valueOf(mPlaces));
-        Log.d(RADIO_BUTTONS, String.valueOf(radioButtons));
 
 
         // Adding the 2 locations on the map
@@ -64,8 +71,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();
 
         // Build a API url based on passed parameters
-        String myUrl = Url_Builder.getMapboxUrl(new LatLng(getYourLocationLatLng.longitude, getYourLocationLatLng.latitude));
-        String theirUrl = Url_Builder.getMapboxUrl(new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude));
+        String myUrl = Url_Builder.getMapboxUrl(myButtonSelection, new LatLng(getYourLocationLatLng.longitude, getYourLocationLatLng.latitude));
+        String theirUrl = Url_Builder.getMapboxUrl(theirButtonSelection, new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude));
 
         // Async url request
         // Volley library used to reduce typing of boiler plate code

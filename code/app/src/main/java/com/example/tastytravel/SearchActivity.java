@@ -26,11 +26,11 @@ import java.util.Arrays;
 public class SearchActivity extends AppCompatActivity {
 
     public static final String LOCATIONS_TAG = "LOCATIONS";
-    public static final String RADIO_BUTTONS = "RADIO_BUTTONS";
+    public static final String RADIO_BUTTON1 = "RADIO_BUTTON1";
+    public static final String RADIO_BUTTON2 = "RADIO_BUTTON2";
     public static final String DATA = "DATA";
 
     private ArrayList<Place> userPlaces;
-    private ArrayList<String> userButtonChoice;
 
     PlacesClient placesClient;
 
@@ -38,8 +38,6 @@ public class SearchActivity extends AppCompatActivity {
     TextView closeText;
 
     RadioGroup radioGroup1, radioGroup2;
-    RadioButton walkBtn1, driveBtn1, cycleBtn1;
-    RadioButton walkBtn2, driveBtn2, cycleBtn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +45,6 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         userPlaces = new ArrayList<>();
-        userButtonChoice = new ArrayList<>();
 
         radioGroup1 = findViewById(R.id.radioGroup1);
         radioGroup2 = findViewById(R.id.radioGroup2);
@@ -61,7 +58,7 @@ public class SearchActivity extends AppCompatActivity {
         // Places Search Feature
         initialisePlaces();
 
-        getRadioChoice();
+
     }
 
     private void initialiseViewControls() {
@@ -134,59 +131,22 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-    public void getRadioChoice() {
-        walkBtn1 = findViewById(R.id.WalkRadioBtn);
-        driveBtn1 = findViewById(R.id.CarRadioBtn);
-        cycleBtn1 = findViewById(R.id.BikeRadioBtn);
-
-        switch(radioGroup1.getId()) {
-            case R.id.WalkRadioBtn:
-                if (walkBtn1.isChecked()) {
-                    userButtonChoice.add("walking");
-                }
-                break;
-            case R.id.CarRadioBtn:
-                if (driveBtn1.isChecked()) {
-                    userButtonChoice.add("driving");
-                }
-                break;
-            case R.id.BikeRadioBtn2:
-                if (cycleBtn1.isChecked()) {
-                    userButtonChoice.add("cycling");
-                }
-                break;
-        }
-
-        walkBtn2 = findViewById(R.id.WalkRadioBtn2);
-        driveBtn2 = findViewById(R.id.CarRadioBtn2);
-        cycleBtn2 = findViewById(R.id.BikeRadioBtn2);
-
-        switch(radioGroup2.getId()) {
-            case R.id.WalkRadioBtn:
-                if (walkBtn2.isChecked()) {
-                    userButtonChoice.add("walking");
-                }
-                break;
-            case R.id.CarRadioBtn:
-                if (driveBtn2.isChecked()) {
-                    userButtonChoice.add("driving");
-                }
-                break;
-            case R.id.BikeRadioBtn2:
-                if (cycleBtn2.isChecked()) {
-                    userButtonChoice.add("cycling");
-                }
-                break;
-        }
-    }
-
     public void openMap() {
-        Bundle data = new Bundle();
-        data.putSerializable(LOCATIONS_TAG, userPlaces);
-        data.putSerializable(RADIO_BUTTONS, userButtonChoice);
 
         Intent showMap = new Intent(getApplicationContext(), MapsActivity.class);
+
+        //buttons are walk, car, bike
+        String radio1 = ((RadioButton)findViewById(radioGroup1.getCheckedRadioButtonId())).getText().toString();
+        //buttons will be replaced by walking, driving, cycling
+        String radio2 = ((RadioButton)findViewById(radioGroup2.getCheckedRadioButtonId())).getText().toString();
+
+        // bundle the long lat locations
+        Bundle data = new Bundle();
+        data.putSerializable(LOCATIONS_TAG, userPlaces);
+
         showMap.putExtra(DATA, data);
+        showMap.putExtra(RADIO_BUTTON1, radio1);
+        showMap.putExtra(RADIO_BUTTON2, radio2);
 
         // Checking if two locations have been selected
         if (userPlaces.size() < 2) {
