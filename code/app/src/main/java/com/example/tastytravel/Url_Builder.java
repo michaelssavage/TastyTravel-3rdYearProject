@@ -8,8 +8,8 @@ public class Url_Builder {
     private static final String TAG = Url_Builder.class.getSimpleName();
 
     private static final String MAPS_API = "https://api.mapbox.com/isochrone/v1/mapbox/";
-    private static final String AND_CONTOURS_MINUTES = "?contours_minutes=15";
-    private static final String AND_CONTOURS_COLORS = "&contours_colors=6706ce";
+    private static final String AND_CONTOURS_MINUTES = "?contours_minutes=10";
+    private static final String AND_CONTOURS_COLORS = "&contours_colors=009688";
     private static final String AND_POLYGONS_TRUE = "&polygons=true";
     private static final String AND_ACCESS_TOKEN = "&access_token=";
     private static final String ACCESS_TOKEN = "pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ";
