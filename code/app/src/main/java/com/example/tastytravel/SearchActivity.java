@@ -27,6 +27,7 @@ public class SearchActivity extends AppCompatActivity {
 
     public static final String LOCATIONS_TAG = "LOCATIONS";
     public static final String RADIO_BUTTONS = "RADIO_BUTTONS";
+    public static final String DATA = "DATA";
 
     private ArrayList<Place> userPlaces;
     private ArrayList<String> userButtonChoice;
@@ -61,7 +62,6 @@ public class SearchActivity extends AppCompatActivity {
         initialisePlaces();
 
         getRadioChoice();
-
     }
 
     private void initialiseViewControls() {
@@ -181,11 +181,14 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void openMap() {
+        Bundle data = new Bundle();
+        data.putSerializable(LOCATIONS_TAG, userPlaces);
+        data.putSerializable(RADIO_BUTTONS, userButtonChoice);
+
         Intent showMap = new Intent(getApplicationContext(), MapsActivity.class);
+        showMap.putExtra(DATA, data);
 
-        showMap.putExtra(LOCATIONS_TAG, userPlaces);
-        showMap.putExtra(RADIO_BUTTONS, userButtonChoice);
-
+        // Checking if two locations have been selected
         if (userPlaces.size() < 2) {
             Toast.makeText(this, "Error: 2 locations must be entered to proceed", Toast.LENGTH_SHORT).show();
         }

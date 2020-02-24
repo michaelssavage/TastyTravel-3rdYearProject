@@ -24,9 +24,12 @@ import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    public static final String DATA = "DATA";
+    public static final String LOCATIONS_TAG = "LOCATIONS";
+    public static final String RADIO_BUTTONS = "RADIO_BUTTONS";
+
     // ArrayList to store both user locations
     private ArrayList<Place> mPlaces;
-
     private ArrayList<String> radioButtons;
 
     // Instance of our map
@@ -41,34 +44,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        }
+        mapFragment.getMapAsync(this);
 
         // Get objects passed
-        Bundle data = getIntent().getExtras();
+        Bundle data = getIntent().getBundleExtra(DATA);
 
         if (data != null) {
-            mPlaces = data.getParcelableArrayList(SearchActivity.LOCATIONS_TAG);
-            radioButtons = data.getStringArrayList(SearchActivity.RADIO_BUTTONS);
-
-            // Checking values using Logging
-            Log.d("Locations", String.valueOf(mPlaces));
-            Log.d("Radios", String.valueOf(radioButtons));
+            mPlaces = (ArrayList<Place>) data.getSerializable(LOCATIONS_TAG);
+            radioButtons = (ArrayList<String>) data.getSerializable(RADIO_BUTTONS);
         }
+
+        // Checking values using Logging
+        Log.d(LOCATIONS_TAG, String.valueOf(mPlaces));
+        Log.d(RADIO_BUTTONS, String.valueOf(radioButtons));
 
 
         // Adding the 2 locations on the map
         final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
         final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();
 
-        // Add a marker and move the camera
-        LatLng mapboxCoords1 = new LatLng(getYourLocationLatLng.longitude, getYourLocationLatLng.latitude);
-        LatLng mapboxCoords2 = new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude);
-
         // Build a API url based on passed parameters
-        String myUrl = Url_Builder.getMapboxUrl(mapboxCoords1);
-        String theirUrl = Url_Builder.getMapboxUrl(mapboxCoords2);
+        String myUrl = Url_Builder.getMapboxUrl(new LatLng(getYourLocationLatLng.longitude, getYourLocationLatLng.latitude));
+        String theirUrl = Url_Builder.getMapboxUrl(new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude));
 
         // Async url request
         // Volley library used to reduce typing of boiler plate code
@@ -81,35 +78,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     addJsonLayer(response);
                 }
             },
-            new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.i("Error Response", error.toString());
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i("Error Response", error.toString());
+                    }
                 }
-            }
-        );
+            );
 
         // Retrieve geojson data for user 2
         JsonObjectRequest geojson2 = new JsonObjectRequest
-                (Request.Method.GET, theirUrl, null, new Response.Listener<JSONObject>() {
+            (Request.Method.GET, theirUrl, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    addJsonLayer(response);
+                }
+            },
+                new Response.ErrorListener() {
                     @Override
-                    public void onResponse(JSONObject response) {
-                        addJsonLayer(response);
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i("Error Response", error.toString());
                     }
-                },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Log.i("Error Response", error.toString());
-                            }
-                        }
-                );
+                }
+            );
 
+        // A queue of url requests, add both requests
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(geojson1);
         requestQueue.add(geojson2);
     }
-
 
     /**
      * Manipulates the map once available.
@@ -125,9 +122,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         addMarkers();
     }
 
+    // Adding the 2 locations on the map
     private void addMarkers() {
-
-        // Adding the 2 locations on the map
         final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
         final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();
 

@@ -5,10 +5,6 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class Url_Builder {
 
-    public Url_Builder(){
-
-    }
-
     private static final String TAG = Url_Builder.class.getSimpleName();
 
     private static final String MAPS_API = "https://api.mapbox.com/isochrone/v1/mapbox/";
@@ -32,6 +28,7 @@ public class Url_Builder {
     public static String getMapboxUrl(LatLng latLng){
         StringBuilder url = new StringBuilder(MAPS_API);
 
+        // Get string value from radio button
         url.append(WALKING);
         url.append(latLng.toString().substring(9).replace("(", "").replace(")", ""));
 
@@ -42,7 +39,7 @@ public class Url_Builder {
         url.append(AND_ACCESS_TOKEN);
         url.append(ACCESS_TOKEN);
 
-        Log.d("Url", String.valueOf(url));
+        Log.d(TAG + "Url", String.valueOf(url));
 
     return String.valueOf(url);
     }
