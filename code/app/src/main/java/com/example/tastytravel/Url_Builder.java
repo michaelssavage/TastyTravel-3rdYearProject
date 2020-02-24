@@ -1,7 +1,6 @@
 package com.example.tastytravel;
 
 import android.util.Log;
-
 import com.google.android.gms.maps.model.LatLng;
 
 public class Url_Builder {
@@ -37,12 +36,13 @@ public class Url_Builder {
         url.append(latLng.toString().substring(9).replace("(", "").replace(")", ""));
 
         url.append(AND_CONTOURS_MINUTES);
+
         url.append(AND_CONTOURS_COLORS);
         url.append(AND_POLYGONS_TRUE);
         url.append(AND_ACCESS_TOKEN);
         url.append(ACCESS_TOKEN);
 
-        Log.d(TAG, String.valueOf(url));
+        Log.d("Url", String.valueOf(url));
 
     return String.valueOf(url);
     }

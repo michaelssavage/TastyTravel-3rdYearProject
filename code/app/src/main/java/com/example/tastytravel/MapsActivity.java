@@ -50,11 +50,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         if (data != null) {
             mPlaces = data.getParcelableArrayList(SearchActivity.LOCATIONS_TAG);
+            radioButtons = data.getStringArrayList(SearchActivity.RADIO_BUTTONS);
+
+            // Checking values using Logging
             Log.d("Locations", String.valueOf(mPlaces));
+            Log.d("Radios", String.valueOf(radioButtons));
         }
 
-        radioButtons = data.getStringArrayList(SearchActivity.RADIO_BUTTONS);
-        Log.d("Radios", String.valueOf(radioButtons));
 
         // Adding the 2 locations on the map
         final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
@@ -64,35 +66,48 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng mapboxCoords1 = new LatLng(getYourLocationLatLng.longitude, getYourLocationLatLng.latitude);
         LatLng mapboxCoords2 = new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude);
 
-
-        Url_Builder url_builder1 = new Url_Builder();
-        String myUrl = url_builder1.getMapboxUrl(mapboxCoords1);
-
-        Url_Builder url_builder2 = new Url_Builder();
-        String theirUrl = url_builder2.getMapboxUrl(mapboxCoords2);
-
+        // Build a API url based on passed parameters
+        String myUrl = Url_Builder.getMapboxUrl(mapboxCoords1);
+        String theirUrl = Url_Builder.getMapboxUrl(mapboxCoords2);
 
         // Async url request
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        // Volley library used to reduce typing of boiler plate code
 
-        JsonObjectRequest objectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                myUrl,
-                null,
-                new Response.Listener<JSONObject>() {
+        // Retrieve geojson data for user 1
+        JsonObjectRequest geojson1 = new JsonObjectRequest
+            (Request.Method.GET, myUrl, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    addJsonLayer(response);
+                }
+            },
+            new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.i("Error Response", error.toString());
+                }
+            }
+        );
+
+        // Retrieve geojson data for user 2
+        JsonObjectRequest geojson2 = new JsonObjectRequest
+                (Request.Method.GET, theirUrl, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         addJsonLayer(response);
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.i("Error Response", error.toString());
-                    }
-                }
-        );
-        requestQueue.add(objectRequest);
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.i("Error Response", error.toString());
+                            }
+                        }
+                );
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(geojson1);
+        requestQueue.add(geojson2);
     }
 
 
