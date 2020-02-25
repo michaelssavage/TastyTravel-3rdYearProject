@@ -20,6 +20,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.maps.android.data.geojson.GeoJsonLayer;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -81,6 +84,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 @Override
                 public void onResponse(JSONObject response) {
                     addJsonLayer(response);
+                    getCoordinates(response);
                 }
             },
                 new Response.ErrorListener() {
@@ -97,6 +101,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 @Override
                 public void onResponse(JSONObject response) {
                     addJsonLayer(response);
+                    getCoordinates(response);
                 }
             },
                 new Response.ErrorListener() {
@@ -106,7 +111,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     }
                 }
             );
-
         // A queue of url requests, add both requests
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(geojson1);
@@ -141,10 +145,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(yourLocationLatLng, 12f));
     }
-
     private void addJsonLayer(JSONObject response) {
         GeoJsonLayer layer = new GeoJsonLayer(googleMap, response);
         layer.addLayerToMap();
+
     }
 
+    public void getCoordinates(JSONObject response){
+        // isolate coordinates from JSONObject
+        ArrayList<String> coordinateList = new ArrayList<>();
+        try {
+            JSONArray features = response.getJSONArray("features");
+            JSONObject obj = features.getJSONObject(0);
+            JSONObject geometry = obj.getJSONObject("geometry");
+            JSONArray array = geometry.getJSONArray("coordinates");
+            JSONArray coordinates = array.getJSONArray(0);
+            for(int i = 0; i < coordinates.length(); i++){
+                coordinateList.add(coordinates.getString(i));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.d("coordinates", " " + coordinateList);
+    }
 }
