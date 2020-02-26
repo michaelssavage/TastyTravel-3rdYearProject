@@ -46,8 +46,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private JSONObject response;
 
     // Integers to get the midpoint later
-    private Double midLong = 0.0;
-    private Double midLat = 0.0;
+    private double midLong = 0.0;
+    private double midLat = 0.0;
     private ArrayList<LatLng> points = new ArrayList<>();
 
     @Override
@@ -95,7 +95,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     public void onResponse(JSONObject response) {
                         addJsonLayer(response);
                         String one = "one";
-                        plotMidpoint(response, getTheirLocationLatLng, one);
+                        try {
+                            plotMidpoint(response, getTheirLocationLatLng, one);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 },
                         new Response.ErrorListener() {
@@ -113,7 +117,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     public void onResponse(JSONObject response) {
                         addJsonLayer(response);
                         String two = "two";
-                        plotMidpoint(response, getYourLocationLatLng, two);
+                        try {
+                            plotMidpoint(response, getYourLocationLatLng, two);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 },
                         new Response.ErrorListener() {
@@ -162,8 +170,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         layer.addLayerToMap();
     }
 
-    private void plotMidpoint(JSONObject response, LatLng location, String number) {
-        ArrayList<String> coordinatesList = getCoordinates(response);
+    private void plotMidpoint(JSONObject response, LatLng location, String number) throws JSONException {
+        JsonParser jsonParser = new JsonParser();
+        ArrayList<String> coordinatesList = jsonParser.getCoordinates(response);
         getMidpoints(coordinatesList, location);
 
         Log.d("midpoints", "" + midLong + " + " + midLat);
@@ -182,39 +191,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    public ArrayList<String> getCoordinates(JSONObject response) {
-
-        // isolate coordinates from JSONObject into an arraylist
-        ArrayList<String> coordinateList = new ArrayList<>();
-        try {
-            JSONArray features = response.getJSONArray("features");
-            JSONObject obj = features.getJSONObject(0);
-            JSONObject geometry = obj.getJSONObject("geometry");
-            JSONArray array = geometry.getJSONArray("coordinates");
-
-            // coordinates is the JSON list in format like [[1.0,2.0], [3.0,4.0], [ etc...
-            JSONArray coordinates = array.getJSONArray(0);
-            for (int i = 0; i < coordinates.length(); i++) {
-                String point = coordinates.getString(i);
-
-                //remove the '[' and ']' and add to the coordinate list.
-                coordinateList.add(point.substring(1, point.length() - 1));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        Log.d("coordinates", " " + coordinateList);
-        return coordinateList;
-
-    }
     public void getMidpoints(ArrayList<String> coordinateList, LatLng location){
         // find the smallest distance from the coordinates to the opposite point
         String[] closestPoint = new String[2];
         float[] distance1 = new float[2];
         float[] distance2 = new float[2];
         String[] point = coordinateList.get(0).split(",");
-        Double longitude = Double.parseDouble(point[0]);
-        Double latitude = Double.parseDouble(point[1]);
+        double longitude = Double.parseDouble(point[0]);
+        double latitude = Double.parseDouble(point[1]);
 
         // get initial distance with first coordinates and then compare the rest
         Location.distanceBetween(latitude, longitude, location.latitude, location.longitude, distance1);
