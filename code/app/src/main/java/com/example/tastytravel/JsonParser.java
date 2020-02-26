@@ -26,7 +26,7 @@ public class JsonParser {
                 String point = coordinates.getString(i);
 
                 //remove the '[' and ']' and add to the coordinate list.
-                coordinateList.add(point.substring(1, point.length() - 1));
+                coordinateList.add(point.replace("[","").replace("]",""));
             }
         } catch (JSONException e) {
             e.printStackTrace();

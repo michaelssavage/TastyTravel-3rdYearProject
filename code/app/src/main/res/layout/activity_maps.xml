@@ -28,4 +28,89 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/placesText"
+            android:layout_width="364dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Sugested Places To Meet"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/place1"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/activity_search_radio_button"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placesText" />
+
+        <TextView
+            android:id="@+id/place2"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/activity_search_radio_button"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/place1" />
+
+        <TextView
+            android:id="@+id/place3"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/activity_search_radio_button"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/place2" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/togglebutton_selector"
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toEndOf="@+id/place1"
+            app:layout_constraintTop_toBottomOf="@+id/placesText" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/togglebutton_selector"
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toEndOf="@+id/place1"
+            app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/togglebutton_selector"
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toEndOf="@+id/place1"
+            app:layout_constraintTop_toBottomOf="@+id/toggleButton2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.tastytravel;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
@@ -7,6 +8,9 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.CompoundButton;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -43,12 +47,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Instance of our map
     private GoogleMap googleMap;
-    private JSONObject response;
 
     // Integers to get the midpoint later
     private double midLong = 0.0;
     private double midLat = 0.0;
     private ArrayList<LatLng> points = new ArrayList<>();
+
+    //togglebutton for saving map places
+    ToggleButton toggleButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +141,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(geojson1);
         requestQueue.add(geojson2);
+
+        toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
+        toggleButton.setChecked(false);
+        toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_off));
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_on));
+                    Toast.makeText(MapsActivity.this, "Location Saved.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                    toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_off));
+                Toast.makeText(MapsActivity.this, "Location Removed.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     /**
@@ -175,9 +197,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ArrayList<String> coordinatesList = jsonParser.getCoordinates(response);
         getMidpoints(coordinatesList, location);
 
-        Log.d("midpoints", "" + midLong + " + " + midLat);
         //is used already
-        if (number == "one"){
+        if (number.equals("one")){
             LatLng midpoint1 = new LatLng(midLong, midLat);
             points.add(midpoint1);
         }
@@ -185,6 +206,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLng midpoint2 = new LatLng(midLong, midLat);
             points.add(midpoint2);
         }
+        Log.d("midpoints", "" + midLong + " + " + midLat);
         if(points.size() == 2){
             LatLng point = SphericalUtil.interpolate(points.get(0), points.get(1), 0.5);
             googleMap.addMarker(new MarkerOptions().position(point).title("Best point between two"));
@@ -217,7 +239,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
         // Update the coordinates that are closest to the opposite point.
-        midLong = Double.parseDouble(closestPoint[1]);
-        midLat = Double.parseDouble(closestPoint[0]);
+        try {
+            midLong = Double.parseDouble(closestPoint[1]);
+            midLat = Double.parseDouble(closestPoint[0]);
+        } catch (NullPointerException e){
+            e.printStackTrace();
+        }
+
     }
 }
