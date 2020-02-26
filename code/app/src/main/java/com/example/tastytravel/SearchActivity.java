@@ -132,7 +132,6 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void openMap() {
-
         Intent showMap = new Intent(getApplicationContext(), MapsActivity.class);
 
         //buttons are walk, car, bike
@@ -143,8 +142,9 @@ public class SearchActivity extends AppCompatActivity {
         // bundle the long lat locations
         Bundle data = new Bundle();
         data.putSerializable(LOCATIONS_TAG, userPlaces);
-
         showMap.putExtra(DATA, data);
+
+        // Put the radio button selections
         showMap.putExtra(RADIO_BUTTON1, radio1);
         showMap.putExtra(RADIO_BUTTON2, radio2);
 

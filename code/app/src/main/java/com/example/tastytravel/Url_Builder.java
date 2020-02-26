@@ -23,7 +23,6 @@ public class Url_Builder {
     // &access_token=
     // pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ";
 
-
     public static String getMapboxUrl(String transportMethod, LatLng latLng){
         StringBuilder url = new StringBuilder(MAPS_API);
 

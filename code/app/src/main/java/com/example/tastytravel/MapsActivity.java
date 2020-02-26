@@ -54,6 +54,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Get objects passed
         Bundle data = getIntent().getBundleExtra(DATA);
 
+        // Get strings passed
         Intent buttons = getIntent();
         String myButtonSelection = buttons.getStringExtra(RADIO_BUTTON1);
         String theirButtonSelection = buttons.getStringExtra(RADIO_BUTTON2);
