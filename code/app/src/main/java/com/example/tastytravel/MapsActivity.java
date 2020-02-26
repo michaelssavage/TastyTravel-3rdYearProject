@@ -3,6 +3,8 @@ package com.example.tastytravel;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -18,7 +20,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.libraries.places.api.model.Place;
+import com.google.maps.android.SphericalUtil;
 import com.google.maps.android.data.geojson.GeoJsonLayer;
 
 import org.json.JSONArray;
@@ -39,6 +43,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Instance of our map
     private GoogleMap googleMap;
+    private JSONObject response;
+
+    // Integers to get the midpoint later
+    private Double midLong = 0.0;
+    private Double midLat = 0.0;
+    private ArrayList<LatLng> points = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +64,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Get objects passed
         Bundle data = getIntent().getBundleExtra(DATA);
 
-        // Get strings passed
         Intent buttons = getIntent();
         String myButtonSelection = buttons.getStringExtra(RADIO_BUTTON1);
         String theirButtonSelection = buttons.getStringExtra(RADIO_BUTTON2);
@@ -81,37 +90,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Retrieve geojson data for user 1
         JsonObjectRequest geojson1 = new JsonObjectRequest
-            (Request.Method.GET, myUrl, null, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    addJsonLayer(response);
-                    getCoordinates(response);
-                }
-            },
-                new Response.ErrorListener() {
+                (Request.Method.GET, myUrl, null, new Response.Listener<JSONObject>() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.i("Error Response", error.toString());
+                    public void onResponse(JSONObject response) {
+                        addJsonLayer(response);
+                        String one = "one";
+                        plotMidpoint(response, getTheirLocationLatLng, one);
                     }
-                }
-            );
+                },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.i("Error Response", error.toString());
+                            }
+                        }
+                );
 
         // Retrieve geojson data for user 2
         JsonObjectRequest geojson2 = new JsonObjectRequest
-            (Request.Method.GET, theirUrl, null, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    addJsonLayer(response);
-                    getCoordinates(response);
-                }
-            },
-                new Response.ErrorListener() {
+                (Request.Method.GET, theirUrl, null, new Response.Listener<JSONObject>() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.i("Error Response", error.toString());
+                    public void onResponse(JSONObject response) {
+                        addJsonLayer(response);
+                        String two = "two";
+                        plotMidpoint(response, getYourLocationLatLng, two);
                     }
-                }
-            );
+                },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.i("Error Response", error.toString());
+                            }
+                        }
+                );
         // A queue of url requests, add both requests
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(geojson1);
@@ -149,24 +160,80 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void addJsonLayer(JSONObject response) {
         GeoJsonLayer layer = new GeoJsonLayer(googleMap, response);
         layer.addLayerToMap();
-
     }
 
-    public void getCoordinates(JSONObject response){
-        // isolate coordinates from JSONObject
+    private void plotMidpoint(JSONObject response, LatLng location, String number) {
+        ArrayList<String> coordinatesList = getCoordinates(response);
+        getMidpoints(coordinatesList, location);
+
+        Log.d("midpoints", "" + midLong + " + " + midLat);
+        //is used already
+        if (number == "one"){
+            LatLng midpoint1 = new LatLng(midLong, midLat);
+            points.add(midpoint1);
+        }
+        else{
+            LatLng midpoint2 = new LatLng(midLong, midLat);
+            points.add(midpoint2);
+        }
+        if(points.size() == 2){
+            LatLng point = SphericalUtil.interpolate(points.get(0), points.get(1), 0.5);
+            googleMap.addMarker(new MarkerOptions().position(point).title("Best point between two"));
+        }
+    }
+
+    public ArrayList<String> getCoordinates(JSONObject response) {
+
+        // isolate coordinates from JSONObject into an arraylist
         ArrayList<String> coordinateList = new ArrayList<>();
         try {
             JSONArray features = response.getJSONArray("features");
             JSONObject obj = features.getJSONObject(0);
             JSONObject geometry = obj.getJSONObject("geometry");
             JSONArray array = geometry.getJSONArray("coordinates");
+
+            // coordinates is the JSON list in format like [[1.0,2.0], [3.0,4.0], [ etc...
             JSONArray coordinates = array.getJSONArray(0);
-            for(int i = 0; i < coordinates.length(); i++){
-                coordinateList.add(coordinates.getString(i));
+            for (int i = 0; i < coordinates.length(); i++) {
+                String point = coordinates.getString(i);
+
+                //remove the '[' and ']' and add to the coordinate list.
+                coordinateList.add(point.substring(1, point.length() - 1));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         Log.d("coordinates", " " + coordinateList);
+        return coordinateList;
+
+    }
+    public void getMidpoints(ArrayList<String> coordinateList, LatLng location){
+        // find the smallest distance from the coordinates to the opposite point
+        String[] closestPoint = new String[2];
+        float[] distance1 = new float[2];
+        float[] distance2 = new float[2];
+        String[] point = coordinateList.get(0).split(",");
+        Double longitude = Double.parseDouble(point[0]);
+        Double latitude = Double.parseDouble(point[1]);
+
+        // get initial distance with first coordinates and then compare the rest
+        Location.distanceBetween(latitude, longitude, location.latitude, location.longitude, distance1);
+
+        for(int i = 1; i < coordinateList.size() ; i++) {
+
+            point = coordinateList.get(i).split(",");
+            longitude = Double.parseDouble(point[0]);
+            latitude = Double.parseDouble(point[1]);
+            Location.distanceBetween(latitude, longitude, location.latitude, location.longitude, distance2);
+
+            // if distance is more, then update with smaller distance.
+            if (distance1[0] > distance2[0]) {
+                distance1[0] = distance2[0];
+                closestPoint = point;
+            }
+        }
+        // Update the coordinates that are closest to the opposite point.
+        midLong = Double.parseDouble(closestPoint[1]);
+        midLat = Double.parseDouble(closestPoint[0]);
     }
 }
