@@ -33,6 +33,30 @@ public class JsonParser {
         }
         Log.d("coordinates", " " + coordinateList);
         return coordinateList;
-
     }
+
+    public ArrayList<String> getPlaces(JSONObject response) throws JSONException{
+
+        // isolate places from JSONObject into an arraylist
+        ArrayList<String> placesList = new ArrayList<>();
+        try {
+            JSONArray results = response.getJSONArray("results");
+            JSONObject obj = results.getJSONObject(0);
+            JSONObject geometry = obj.getJSONObject("geometry");
+            JSONArray names = geometry.getJSONArray("name");
+
+            JSONArray places = names.getJSONArray(0);
+            for (int i = 0; i < places.length(); i++) {
+                String place = places.getString(i);
+
+                //remove the '[' and ']' and add to the coordinate list.
+                placesList.add(place);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.d("places", " " + placesList);
+        return placesList;
+    }
+
 }

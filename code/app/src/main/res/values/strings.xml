@@ -25,6 +25,13 @@
     <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->
+    <string-array name="spinner_items">
+        <item>Bar</item>
+        <item>Cafe</item>
+        <item>Restaurant</item>
+    </string-array>
+
+    <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
 
