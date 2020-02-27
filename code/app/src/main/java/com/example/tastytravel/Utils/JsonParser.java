@@ -1,4 +1,4 @@
-package com.example.tastytravel;
+package com.example.tastytravel.Utils;
 
 import android.util.Log;
 

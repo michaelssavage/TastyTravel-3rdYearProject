@@ -1,4 +1,4 @@
-package com.example.tastytravel;
+package com.example.tastytravel.Utils;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
+import com.example.tastytravel.R;
 
 import java.util.List;
 

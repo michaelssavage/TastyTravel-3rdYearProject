@@ -1,9 +1,7 @@
-package com.example.tastytravel;
+package com.example.tastytravel.Utils;
 
 import android.util.Log;
 import com.google.android.gms.maps.model.LatLng;
-
-import java.util.List;
 
 public class Url_Builder {
 
@@ -26,7 +24,7 @@ public class Url_Builder {
     // &access_token=
     // pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ;
 
-    static String getMapboxUrl(String transportMethod, LatLng latLng){
+    public static String getMapboxUrl(String transportMethod, LatLng latLng){
         StringBuilder url = new StringBuilder(MAPBOX_MAPS_API);
 
         // Get string value from radio button
@@ -63,7 +61,7 @@ public class Url_Builder {
     // &type=bar
     // &key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps
 
-    static String getGooglePlacesUrl(String placeType, LatLng latLng) {
+    public static String getGooglePlacesUrl(String placeType, LatLng latLng) {
         StringBuilder url = new StringBuilder(GOOGLE_MAPS_API + PLACE_NEARBYSEARCH + JSON + LOCATION_EQUALS);
 
         // Coordinates next in form Long lat
