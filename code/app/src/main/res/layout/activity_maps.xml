@@ -33,7 +33,7 @@
             android:layout_width="364dp"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
-            android:text="Sugested Places To Meet"
+            android:text="Suggested Places To Meet"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"

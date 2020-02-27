@@ -25,11 +25,11 @@
 
     <ImageView
         android:id="@+id/mainbackground"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="414dp"
+        android:layout_height="274dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/mainbackground"
-        android:scaleType="fitStart"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -37,16 +37,16 @@
 
     <Button
         android:id="@+id/searchBtn"
-        android:layout_width="307dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="306dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/activity_main_white_button"
         android:elevation="10dp"
         android:text="@string/find_your_taste"
         android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/mainbackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <SearchView
         android:id="@+id/SearchView"
@@ -60,32 +60,34 @@
         app:layout_constraintStart_toStartOf="@+id/searchBtn"
         app:layout_constraintTop_toTopOf="@+id/searchBtn" />
 
+
     <TextView
         android:id="@+id/saveplacesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/saved_places"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainbackground" />
 
     <ImageView
         android:id="@+id/foodCollageImage"
-        android:layout_width="0dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="413dp"
+        android:layout_height="221dp"
+        android:layout_marginTop="24dp"
         android:adjustViewBounds="true"
         android:clickable="true"
         android:contentDescription="@string/food_collage"
+        android:cropToPadding="false"
         android:focusable="true"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saveplacesText"
         app:srcCompat="@drawable/foodcollage" />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"

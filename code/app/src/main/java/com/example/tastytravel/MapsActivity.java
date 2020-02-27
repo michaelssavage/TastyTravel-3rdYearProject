@@ -4,7 +4,6 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,16 +23,15 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.maps.android.SphericalUtil;
 import com.google.maps.android.data.geojson.GeoJsonLayer;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -41,17 +39,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public static final String LOCATIONS_TAG = "LOCATIONS";
     public static final String RADIO_BUTTON1 = "RADIO_BUTTON1";
     public static final String RADIO_BUTTON2 = "RADIO_BUTTON2";
+    public static final String PLACE_TYPE_TAG = "PLACE_TYPE";
 
+    private String placeType;
     // ArrayList to store both user locations
     private ArrayList<Place> mPlaces;
 
     // Instance of our map
     private GoogleMap googleMap;
+    private JSONObject response;
 
     // Integers to get the midpoint later
     private double midLong = 0.0;
     private double midLat = 0.0;
     private ArrayList<LatLng> points = new ArrayList<>();
+    private List<String> placesTypeList;
 
     //togglebutton for saving map places
     ToggleButton toggleButton;
@@ -70,10 +72,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Get objects passed
         Bundle data = getIntent().getBundleExtra(DATA);
 
-        Intent buttons = getIntent();
-        String myButtonSelection = buttons.getStringExtra(RADIO_BUTTON1);
-        String theirButtonSelection = buttons.getStringExtra(RADIO_BUTTON2);
+        Intent parameters = getIntent();
+        String myButtonSelection = parameters.getStringExtra(RADIO_BUTTON1);
+        String theirButtonSelection = parameters.getStringExtra(RADIO_BUTTON2);
 
+        placeType = parameters.getStringExtra(PLACE_TYPE_TAG);
 
         if (data != null) {
             mPlaces = (ArrayList<Place>) data.getSerializable(LOCATIONS_TAG);
@@ -152,9 +155,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_on));
                     Toast.makeText(MapsActivity.this, "Location Saved.", Toast.LENGTH_SHORT).show();
                 }
-                else
+                else {
                     toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_off));
-                Toast.makeText(MapsActivity.this, "Location Removed.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MapsActivity.this, "Location Removed.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -197,8 +201,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ArrayList<String> coordinatesList = jsonParser.getCoordinates(response);
         getMidpoints(coordinatesList, location);
 
+        Log.d("midpoints", "" + midLong + " + " + midLat);
         //is used already
-        if (number.equals("one")){
+        if (number.equals("one")) {
             LatLng midpoint1 = new LatLng(midLong, midLat);
             points.add(midpoint1);
         }
@@ -206,10 +211,36 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLng midpoint2 = new LatLng(midLong, midLat);
             points.add(midpoint2);
         }
+
         Log.d("midpoints", "" + midLong + " + " + midLat);
         if(points.size() == 2){
-            LatLng point = SphericalUtil.interpolate(points.get(0), points.get(1), 0.5);
-            googleMap.addMarker(new MarkerOptions().position(point).title("Best point between two"));
+            LatLng bestMidpoint = SphericalUtil.interpolate(points.get(0), points.get(1), 0.5);
+            googleMap.addMarker(new MarkerOptions().position(bestMidpoint).title("Best point between two"));
+
+            String googleMapsUrl = Url_Builder.getGooglePlacesUrl(placeType, bestMidpoint);
+
+            JsonObjectRequest googleGeojsonPlaces = new JsonObjectRequest
+                    (Request.Method.GET, googleMapsUrl, null, new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            JsonParser jsonParser1 = new JsonParser();
+                            try {
+                                jsonParser1.getPlaces(response);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    Log.i("Error Response", error.toString());
+                                }
+                            }
+                    );
+            // A queue of url requests, add both requests
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            requestQueue.add(googleGeojsonPlaces);
         }
     }
 
@@ -245,6 +276,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } catch (NullPointerException e){
             e.printStackTrace();
         }
-
     }
 }
