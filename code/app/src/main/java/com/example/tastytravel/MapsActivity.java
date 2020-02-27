@@ -1,14 +1,13 @@
 package com.example.tastytravel;
 
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.CompoundButton;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.android.volley.Request;
@@ -35,6 +34,9 @@ import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+
     public static final String DATA = "DATA";
     public static final String LOCATIONS_TAG = "LOCATIONS";
     public static final String RADIO_BUTTON1 = "RADIO_BUTTON1";
@@ -47,21 +49,37 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Instance of our map
     private GoogleMap googleMap;
-    private JSONObject response;
 
     // Integers to get the midpoint later
     private double midLong = 0.0;
     private double midLat = 0.0;
     private ArrayList<LatLng> points = new ArrayList<>();
-    private List<String> placesTypeList;
 
     //togglebutton for saving map places
     ToggleButton toggleButton;
 
+    private List<ListItem> listItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        recyclerView = findViewById(R.id.resultsRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        listItems = new ArrayList<>();
+
+        for(int i=0; i<=10; i++){
+            ListItem listItem = new ListItem(
+                    "heading" + i+1
+            );
+            listItems.add(listItem);
+        }
+
+        adapter = new MyAdapter(listItems, this);
+
+        recyclerView.setAdapter(adapter);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -144,23 +162,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(geojson1);
         requestQueue.add(geojson2);
-
-        toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
-        toggleButton.setChecked(false);
-        toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_off));
-        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_on));
-                    Toast.makeText(MapsActivity.this, "Location Saved.", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_off));
-                    Toast.makeText(MapsActivity.this, "Location Removed.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     /**
@@ -172,7 +173,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * installed Google Play services and returned to the app.
      */
     @Override
-    public void onMapReady(GoogleMap mMap) {
+    public void onMapReady(final GoogleMap mMap) {
         googleMap = mMap;
         addMarkers();
     }

@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="#2CD9E7E7"
     android:backgroundTint="#007C7979"
     tools:context=".SearchActivity">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/mapLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="300sp"
-            android:layout_weight="1.0"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal">
 
                 <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/map"
@@ -25,92 +22,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:context=".MapsActivity" />
-
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/placesText"
-            android:layout_width="364dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="20dp"
-            android:text="Suggested Places To Meet"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        <LinearLayout
+            android:id="@+id/textLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/mapLinearLayout"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/place1"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="60dp"
-            android:background="@drawable/activity_search_radio_button"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/placesText" />
+                <TextView
+                    android:id="@+id/placesText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:text="Suggested Places To Meet"
+                    android:gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/place2"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/activity_search_radio_button"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/place1" />
+        <LinearLayout
+            android:id="@+id/resultsLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textLinearLayout" >
 
-        <TextView
-            android:id="@+id/place3"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/activity_search_radio_button"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/place2" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resultsRecyclerView"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent" >
+                </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
 
-        <ToggleButton
-            android:id="@+id/toggleButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="60dp"
-            android:background="@drawable/togglebutton_selector"
-            android:textOff=""
-            android:textOn=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toEndOf="@+id/place1"
-            app:layout_constraintTop_toBottomOf="@+id/placesText" />
-
-        <ToggleButton
-            android:id="@+id/toggleButton2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/togglebutton_selector"
-            android:textOff=""
-            android:textOn=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toEndOf="@+id/place1"
-            app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
-
-        <ToggleButton
-            android:id="@+id/toggleButton3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/togglebutton_selector"
-            android:textOff=""
-            android:textOn=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toEndOf="@+id/place1"
-            app:layout_constraintTop_toBottomOf="@+id/toggleButton2" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
