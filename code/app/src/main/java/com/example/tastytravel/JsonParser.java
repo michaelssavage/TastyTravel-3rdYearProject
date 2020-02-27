@@ -58,5 +58,4 @@ public class JsonParser {
         Log.d("places", " " + placesList);
         return placesList;
     }
-
 }

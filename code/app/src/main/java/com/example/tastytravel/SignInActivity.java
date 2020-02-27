@@ -91,7 +91,7 @@ public class SignInActivity extends AppCompatActivity {
                     startActivity(mainScreen);
                 }
                 else {
-                    Toast.makeText(SignInActivity.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignInActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }

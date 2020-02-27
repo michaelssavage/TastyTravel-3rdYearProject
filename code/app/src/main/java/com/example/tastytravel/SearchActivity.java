@@ -81,7 +81,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         placesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(parent.getItemAtPosition(position).equals("Choose a Meeting Point Type")){
+                if(parent.getItemAtPosition(position).equals("Choose the type of Meeting Point")){
                     // Do nothing
                 } else {
                     String item = parent.getItemAtPosition(position).toString();

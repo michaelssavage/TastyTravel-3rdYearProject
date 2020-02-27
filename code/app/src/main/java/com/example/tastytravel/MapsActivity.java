@@ -4,7 +4,6 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,12 +23,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.maps.android.SphericalUtil;
 import com.google.maps.android.data.geojson.GeoJsonLayer;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -158,9 +155,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_on));
                     Toast.makeText(MapsActivity.this, "Location Saved.", Toast.LENGTH_SHORT).show();
                 }
-                else
+                else {
                     toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.togglebutton_off));
-                Toast.makeText(MapsActivity.this, "Location Removed.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MapsActivity.this, "Location Removed.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
