@@ -66,7 +66,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         placesSpinner.setOnItemSelectedListener(this);
 
         List<String> categories = new ArrayList<>();
-        categories.add(0, "Choose a Meeting Point Type");
+        categories.add(0, "Select The Type Of Meeting Place");
         categories.add("Bar");
         categories.add("Cafe");
         categories.add("Restaurant");
@@ -81,7 +81,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         placesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(parent.getItemAtPosition(position).equals("Choose the type of Meeting Point")){
+                if(parent.getItemAtPosition(position).equals("Select The Type Of Meeting Place")){
                     // Do nothing
                 } else {
                     String item = parent.getItemAtPosition(position).toString();
@@ -94,7 +94,6 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
             }
         });
-
 
         // Define Actions for button clicks
         initialiseViewControls();
@@ -164,7 +163,6 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
             public void onPlaceSelected(@NonNull Place theirLocation) {
                 userPlaces.add(theirLocation);
             }
-
             @Override
             public void onError(@NonNull Status status) {
                 Log.i("TAG", "An error occurred: " + status);

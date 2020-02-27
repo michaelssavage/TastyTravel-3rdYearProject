@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2CD9E7E7"
+    android:background="#FD4D5353"
     android:backgroundTint="#007C7979"
-    tools:context=".SearchActivity">
+    android:clickable="true"
+    tools:context=".SearchActivity"
+    android:focusable="true">
 
     <Button
         android:id="@+id/searchBtn"
@@ -34,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
         app:layout_constraintVertical_bias="0.85">
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/autoCompleteFragment2"
             android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
             android:layout_width="match_parent"
@@ -111,7 +112,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchHead">
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/autoCompleteFragment1"
             android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
             android:layout_width="match_parent"
@@ -153,14 +154,30 @@
 
     <Spinner
         android:id="@+id/placeTypeSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="348dp"
+        android:layout_height="42dp"
         android:layout_margin="20dp"
+        android:background="@drawable/activity_search_placetype_btn"
         android:entries="@array/spinner_items"
         app:layout_constraintBottom_toTopOf="@+id/searchBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
         app:layout_constraintVertical_bias="0.261" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/placeTypeSpinner"
+        app:layout_constraintEnd_toEndOf="@+id/placeTypeSpinner"
+        app:layout_constraintTop_toTopOf="@+id/placeTypeSpinner"
+        app:layout_constraintVertical_bias="0.483"
+        app:srcCompat="@android:drawable/arrow_down_float" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
