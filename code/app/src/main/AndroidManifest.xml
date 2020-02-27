@@ -39,7 +39,7 @@
         <activity android:name=".AboutActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MapsActivity" />
-        <activity android:name=".profileActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".SignUpActivity" />

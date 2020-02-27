@@ -42,7 +42,7 @@ public class AboutActivity extends AppCompatActivity {
                     case R.id.menu_profile:
                         // checking if user is already logged in
                         if(mAuth.getCurrentUser() != null) {
-                            startActivity(new Intent(getApplicationContext(), profileActivity.class));
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                             overridePendingTransition(0, 0);
                             return true;
                         }

@@ -3,7 +3,6 @@ package com.example.tastytravel;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_profile:
                         // checking if user is already logged in
                         if(mAuth.getCurrentUser() != null) {
-                            startActivity(new Intent(getApplicationContext(), profileActivity.class));
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                             overridePendingTransition(0, 0);
                             return true;
                         }

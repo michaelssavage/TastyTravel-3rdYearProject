@@ -18,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class profileActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavBar;
     Button settingsBtn;
@@ -58,7 +58,7 @@ public class profileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Toast.makeText(profileActivity.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileActivity.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), StartActivity.class));
                 finish();
             }
@@ -108,7 +108,7 @@ public class profileActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(profileActivity.this, "Account Successfully Deleted", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ProfileActivity.this, "Account Successfully Deleted", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), StartActivity.class));
                         }
                     }
@@ -119,7 +119,7 @@ public class profileActivity extends AppCompatActivity {
         alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(profileActivity.this, "Account Deletion Cancelled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileActivity.this, "Account Deletion Cancelled", Toast.LENGTH_SHORT).show();
             }
         });
         alert.create().show();
