@@ -74,16 +74,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         listItems = new ArrayList<>();
 
-        for(int i=0; i<=10; i++){
-            ListItem listItem = new ListItem(
-                    "heading" + i+1
-            );
-            listItems.add(listItem);
-        }
-
-        adapter = new MyAdapter(listItems, this);
-
-        recyclerView.setAdapter(adapter);
+        showListItems();
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -168,6 +159,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         requestQueue.add(geojson2);
     }
 
+    private void showListItems() {
+
+    }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -233,6 +228,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             JsonParser jsonParser1 = new JsonParser();
                             try {
                                 ArrayList<String> placeList = jsonParser1.getPlaces(response);
+                                displayResults(placeList);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -248,6 +244,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // A queue of url requests, add both requests
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(googleGeojsonPlaces);
+        }
+    }
+
+    private void displayResults(ArrayList placeList) {
+        for (int i = 0; i < placeList.size(); i++) {
+            ListItem listItem = new ListItem(
+                    (i + 1) + ". " + placeList.get(i)
+            );
+            listItems.add(listItem);
+
+            adapter = new MyAdapter(listItems, this);
+
+            recyclerView.setAdapter(adapter);
         }
     }
 
