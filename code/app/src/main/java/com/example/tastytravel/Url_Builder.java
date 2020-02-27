@@ -17,34 +17,14 @@ public class Url_Builder {
     private static final String AND_ACCESS_TOKEN = "&access_token=";
     private static final String ACCESS_TOKEN = "pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ";
 
-    // "https://api.mapbox.com/isochrone/v1/mapbox/
+    // https://api.mapbox.com/isochrone/v1/mapbox/
     // walking, driving, cycling/
     // -6.2767,53.4070
     // ?contours_minutes=5,10,15
     // &contours_colors=6706ce,04e813,4286f4
     // &polygons=true
     // &access_token=
-    // pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ";
-
-
-    // Google maps url variables
-    private static final String GOOGLE_MAPS_API = "https://maps.googleapis.com/maps/api/";
-    private static final String PLACE_NEARBYSEARCH = "place/nearbysearch/";
-    private static final String JSON = "json";
-    private static final String LOCATION_EQUALS = "?location=";
-    private static final String RANK_BY_DISTANCE = "&rankby=distance";
-    private static final String TYPE_EQUALS = "&type=";
-    private static final String KEY = "&key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps";
-    private static final String BAR = "|";
-
-
-    // https://maps.googleapis.com/maps/api/
-    // place/nearbysearch/
-    // json
-    // ?location=-33.8670522,151.1957362
-    // &rankby=distance
-    // &type=food
-    // &key=YOUR_API_KEY
+    // pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ;
 
     static String getMapboxUrl(String transportMethod, LatLng latLng){
         StringBuilder url = new StringBuilder(MAPBOX_MAPS_API);
@@ -66,6 +46,22 @@ public class Url_Builder {
 
         return String.valueOf(url);
     }
+
+    // Google maps url variables
+    private static final String GOOGLE_MAPS_API = "https://maps.googleapis.com/maps/api/";
+    private static final String PLACE_NEARBYSEARCH = "place/nearbysearch/";
+    private static final String JSON = "json";
+    private static final String LOCATION_EQUALS = "?location=";
+    private static final String RANK_BY_DISTANCE = "&rankby=distance";
+    private static final String TYPE_EQUALS = "&type=";
+    private static final String KEY = "&key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps";
+    private static final String BAR = "|";
+
+    // https://maps.googleapis.com/maps/api/place/nearbysearch/json
+    // ?location= 53.386841,-6.256248
+    // &rankby=distance
+    // &type=bar
+    // &key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps
 
     static String getGooglePlacesUrl(String placeType, LatLng latLng) {
         StringBuilder url = new StringBuilder(GOOGLE_MAPS_API + PLACE_NEARBYSEARCH + JSON + LOCATION_EQUALS);

@@ -214,6 +214,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         Log.d("midpoints", "" + midLong + " + " + midLat);
         if(points.size() == 2){
+
+            // gets the midpoint we use to search for places.
             LatLng bestMidpoint = SphericalUtil.interpolate(points.get(0), points.get(1), 0.5);
             googleMap.addMarker(new MarkerOptions().position(bestMidpoint).title("Best point between two"));
 
@@ -225,7 +227,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         public void onResponse(JSONObject response) {
                             JsonParser jsonParser1 = new JsonParser();
                             try {
-                                jsonParser1.getPlaces(response);
+                                ArrayList<String> placeList = jsonParser1.getPlaces(response);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

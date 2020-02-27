@@ -41,16 +41,11 @@ public class JsonParser {
         ArrayList<String> placesList = new ArrayList<>();
         try {
             JSONArray results = response.getJSONArray("results");
-            JSONObject obj = results.getJSONObject(0);
-            JSONObject geometry = obj.getJSONObject("geometry");
-            JSONArray names = geometry.getJSONArray("name");
+            for (int i = 0; i < results.length(); i++) {
 
-            JSONArray places = names.getJSONArray(0);
-            for (int i = 0; i < places.length(); i++) {
-                String place = places.getString(i);
-
+                JSONObject nameArray = results.getJSONObject(i);
                 //remove the '[' and ']' and add to the coordinate list.
-                placesList.add(place);
+                placesList.add(nameArray.getString("name"));
             }
         } catch (JSONException e) {
             e.printStackTrace();

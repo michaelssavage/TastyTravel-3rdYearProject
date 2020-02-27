@@ -88,13 +88,10 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
                     showMap.putExtra(PLACE_TYPE_TAG, item);
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
-
         // Define Actions for button clicks
         initialiseViewControls();
 
@@ -172,24 +169,31 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
     public void openMap() {
 
-        //buttons are walk, car, bike
-        String radio1 = ((RadioButton)findViewById(radioGroup1.getCheckedRadioButtonId())).getText().toString();
-        //buttons will be replaced by walking, driving, cycling
-        String radio2 = ((RadioButton)findViewById(radioGroup2.getCheckedRadioButtonId())).getText().toString();
+        try {
+            //buttons are walk, car, bike
+            String radio1 = ((RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId())).getText().toString();
+            //buttons will be replaced by walking, driving, cycling
+            String radio2 = ((RadioButton) findViewById(radioGroup2.getCheckedRadioButtonId())).getText().toString();
 
+            // Put the radio button selections
+            showMap.putExtra(RADIO_BUTTON1, radio1);
+            showMap.putExtra(RADIO_BUTTON2, radio2);
+
+        }catch (NullPointerException e){
+            Toast.makeText(this, "Error: Did you enter the mode of transport?", Toast.LENGTH_SHORT).show();
+        }
         // bundle the long lat locations
         Bundle data = new Bundle();
         data.putSerializable(LOCATIONS_TAG, userPlaces);
 
         showMap.putExtra(DATA, data);
 
-        // Put the radio button selections
-        showMap.putExtra(RADIO_BUTTON1, radio1);
-        showMap.putExtra(RADIO_BUTTON2, radio2);
-
         // Checking if two locations have been selected
         if (userPlaces.size() < 2) {
-            Toast.makeText(this, "Error: 2 locations must be entered to proceed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error: Did you enter the locations?", Toast.LENGTH_SHORT).show();
+        }
+        else if(!(showMap.hasExtra(PLACE_TYPE_TAG))){
+            Toast.makeText(this, "Error: Did you enter where you want to meet?", Toast.LENGTH_SHORT).show();
         }
         else {
             startActivity(showMap);
@@ -198,12 +202,10 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }
 
