@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ToggleButton;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -58,9 +57,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private double midLong = 0.0;
     private double midLat = 0.0;
     private ArrayList<LatLng> points = new ArrayList<>();
-
-    //togglebutton for saving map places
-    ToggleButton toggleButton;
 
     private List<ListItem> listItems;
     @Override
