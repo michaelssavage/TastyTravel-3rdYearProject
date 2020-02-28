@@ -9,6 +9,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.android.volley.Request;
@@ -42,7 +43,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, RecyclerViewAdapter.OnPlaceListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, RecyclerViewAdapter.OnPlaceListener {
 
     private RecyclerView recyclerView;
 
@@ -60,7 +61,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap googleMap;
 
     private ToggleButton toggleButton;
-    private DatabaseReference mDatabase;
 
     // Integers to get the midpoint later
     private double midLong = 0.0;
@@ -78,8 +78,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listItems = new ArrayList<>();
-
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -177,6 +175,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+
     @Override
     public void onMapReady(final GoogleMap mMap) {
         googleMap = mMap;
@@ -263,7 +263,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for (Map.Entry<String, String> entry : placeList.entrySet()) {
             String name = entry.getKey();
             String coordinates = entry.getValue();
-            ListItem listItem = new ListItem((i) + ". " + name);
+
+            ListItem listItem = new ListItem(name, coordinates);
             listItems.add(listItem);
             adapter = new RecyclerViewAdapter(listItems, this);
             recyclerView.setAdapter(adapter);
@@ -271,7 +272,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    
     public void getMidpoints(ArrayList<String> coordinateList, LatLng location){
         // find the smallest distance from the coordinates to the opposite point
         String[] closestPoint = new String[2];
@@ -307,12 +307,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void onClick(View v) {
-
-    }
-
-    @Override
     public void OnPlaceClick(int position) {
-        Log.d("onPlaceClicked: ", String.valueOf(position));
+        Log.d("onClicked", String.valueOf(position));
+//        googleMap.addMarker(new MarkerOptions().position().title(name));
     }
+
 }

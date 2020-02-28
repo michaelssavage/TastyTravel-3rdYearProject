@@ -3,16 +3,14 @@ package com.example.tastytravel;
 public class PlaceInformation {
 
     public String placeName;
-    public double longitude;
-    public double latitude;
+    public String coordinates;
 
     public PlaceInformation() {
 
     }
 
-    public PlaceInformation(String placeName, double longitude, double latitude) {
+    public PlaceInformation(String placeName, String coordinates) {
         this.placeName = placeName;
-        this.longitude = longitude;
-        this.latitude = latitude;
+        this.coordinates = coordinates;
     }
 }
