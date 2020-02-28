@@ -7,7 +7,8 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 
-
+import com.example.tastytravel.PlaceInformation;
+import com.example.tastytravel.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -57,6 +58,8 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        // Focus mapview on Ireland
         LatLng ireland = new LatLng(53.4239,-7.9407);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ireland,6.5f));
         mMap.setOnMarkerClickListener(this);

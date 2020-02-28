@@ -1,6 +1,5 @@
 package com.example.tastytravel.Utils;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,23 +12,22 @@ import com.example.tastytravel.R;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<ListItem> listItems;
-    private Context context;
+    private OnPlaceListener mOnPlaceListener;
 
-    public MyAdapter(List<ListItem> listItems, Context context) {
+    public RecyclerViewAdapter(List<ListItem> listItems, OnPlaceListener onPlaceListener) {
         this.listItems = listItems;
-        this.context = context;
+        this.mOnPlaceListener = onPlaceListener;
     }
-
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.activity_maps_results_layout, parent, false);
-        return new ViewHolder(v);
+        return new ViewHolder(v, mOnPlaceListener);
     }
 
     @Override
@@ -44,14 +42,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return listItems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView textViewHead;
+        OnPlaceListener onPlaceListener;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, OnPlaceListener onPlaceListener) {
             super(itemView);
-
             textViewHead = itemView.findViewById(R.id.textViewHead);
+            this.onPlaceListener = onPlaceListener;
+
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onPlaceListener.OnPlaceClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnPlaceListener {
+        void OnPlaceClick(int position);
     }
 }
