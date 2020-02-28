@@ -7,6 +7,8 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 
+
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -55,7 +57,8 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        LatLng ireland = new LatLng(53.4239,-7.9407);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ireland,6.5f));
         mMap.setOnMarkerClickListener(this);
         mUsers.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -63,7 +66,10 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
                 for(DataSnapshot s : dataSnapshot.getChildren()){
                     PlaceInformation user = s.getValue(PlaceInformation.class);
                     LatLng location = new LatLng(user.latitude, user.longitude);
-                    mMap.addMarker(new MarkerOptions().position(location).title(user.placeName)).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                    mMap.addMarker(new MarkerOptions()
+                            .position(location)
+                            .title(user.placeName))
+                            .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                 }
             }
 
