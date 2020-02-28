@@ -2,17 +2,12 @@ package com.example.tastytravel.Utils;
 
 import android.util.Log;
 
-import com.example.tastytravel.Pair;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.regex.MatchResult;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.LinkedHashMap;
 
 public class JsonParser {
 
@@ -41,11 +36,11 @@ public class JsonParser {
         return coordinateList;
     }
 
-    public ArrayList<String> getPlaces(JSONObject response) throws JSONException{
+    public LinkedHashMap<String,String> getPlaces(JSONObject response) throws JSONException{
 
         // isolate places from JSONObject into an arraylist
         ArrayList<String> placesList = new ArrayList<>();
-        HashMap<String,String> place_LocationMap =new HashMap<>();
+        LinkedHashMap<String,String> place_LocationMap =new LinkedHashMap<>();
         try {
             JSONArray results = response.getJSONArray("results");
             for (int i = 0; i < results.length(); i++) {
@@ -61,6 +56,7 @@ public class JsonParser {
                 String[] location = longLatString.split(",");
                 String lat = location[0].substring(7) + ",";
                 String lng = location[1].substring(6);
+                lng = lng.substring(0,lng.length()-1);
                 place_LocationMap.put(name, lat + lng);
             }
         } catch (JSONException e) {
@@ -70,8 +66,7 @@ public class JsonParser {
         Log.d("locationlist", " " + place_LocationMap);
 
         // this is a class that holds the ordered arrayList then the unordered Map.
-        Pair<ArrayList<String>,HashMap<String,String>> place_List_Map = new Pair<>(placesList,place_LocationMap);
 
-        return placesList;
+        return place_LocationMap;
     }
 }

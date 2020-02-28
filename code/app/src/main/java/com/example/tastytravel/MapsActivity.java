@@ -34,7 +34,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -231,7 +233,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         public void onResponse(JSONObject response) {
                             JsonParser jsonParser1 = new JsonParser();
                             try {
-                                ArrayList<String> placeList = jsonParser1.getPlaces(response);
+                                LinkedHashMap<String,String> placeList = jsonParser1.getPlaces(response);
                                 displayResults(placeList);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -251,16 +253,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    private void displayResults(ArrayList placeList) {
-        for (int i = 0; i < placeList.size(); i++) {
-            ListItem listItem = new ListItem(
-                    (i + 1) + ". " + placeList.get(i)
-            );
+    private void displayResults(LinkedHashMap<String,String> placeList) {
+        int i = 1;
+        for (Map.Entry<String, String> entry : placeList.entrySet()) {
+            String name = entry.getKey();
+            String coordinates = entry.getValue();
+            ListItem listItem = new ListItem((i) + ". " + name);
             listItems.add(listItem);
-
             adapter = new MyAdapter(listItems, this);
-
             recyclerView.setAdapter(adapter);
+            i += 1;
         }
     }
 
