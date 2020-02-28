@@ -268,23 +268,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             adapter = new RecyclerViewAdapter(listItems, this);
             recyclerView.setAdapter(adapter);
             i += 1;
-
-            toggleButton = findViewById(R.id.button_favorite);
-            toggleButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-//                    savePlaceInformation();
-                }
-            });
         }
     }
 
-    //    private void savePlaceInformation() {
-//        String placeName =
-//        double longitude =
-//        double latitude =
-//    }
-
+    
     public void getMidpoints(ArrayList<String> coordinateList, LatLng location){
         // find the smallest distance from the coordinates to the opposite point
         String[] closestPoint = new String[2];
