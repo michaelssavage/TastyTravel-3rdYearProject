@@ -3,9 +3,9 @@ package com.example.tastytravel.Utils;
 import android.util.Log;
 import com.google.android.gms.maps.model.LatLng;
 
-public class Url_Builder {
+public class UrlBuilder {
 
-    private static final String TAG = Url_Builder.class.getSimpleName();
+    private static final String TAG = UrlBuilder.class.getSimpleName();
 
     // Mapbox url variables
     private static final String MAPBOX_MAPS_API = "https://api.mapbox.com/isochrone/v1/mapbox/";

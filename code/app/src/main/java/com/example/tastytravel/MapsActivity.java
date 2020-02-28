@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ToggleButton;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -17,8 +19,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tastytravel.Utils.JsonParser;
 import com.example.tastytravel.Utils.ListItem;
-import com.example.tastytravel.Utils.MyAdapter;
-import com.example.tastytravel.Utils.Url_Builder;
+import com.example.tastytravel.Utils.RecyclerViewAdapter;
+import com.example.tastytravel.Utils.UrlBuilder;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -29,6 +31,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.maps.android.SphericalUtil;
 import com.google.maps.android.data.geojson.GeoJsonLayer;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,7 +42,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, RecyclerViewAdapter.OnPlaceListener {
 
     private RecyclerView recyclerView;
 
@@ -54,6 +58,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Instance of our map
     private GoogleMap googleMap;
+
+    private ToggleButton toggleButton;
+    private DatabaseReference mDatabase;
 
     // Integers to get the midpoint later
     private double midLong = 0.0;
@@ -72,7 +79,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listItems = new ArrayList<>();
 
-        showListItems();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -105,10 +112,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         assert myButtonSelection != null;
         assert getYourLocationLatLng != null;
-        String myUrl = Url_Builder.getMapboxUrl(myButtonSelection, new LatLng(getYourLocationLatLng.longitude, getYourLocationLatLng.latitude));
+        String myUrl = UrlBuilder.getMapboxUrl(myButtonSelection, new LatLng(getYourLocationLatLng.longitude, getYourLocationLatLng.latitude));
         assert theirButtonSelection != null;
         assert getTheirLocationLatLng != null;
-        String theirUrl = Url_Builder.getMapboxUrl(theirButtonSelection, new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude));
+        String theirUrl = UrlBuilder.getMapboxUrl(theirButtonSelection, new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude));
 
         // Async url request
         // Volley library used to reduce typing of boiler plate code
@@ -162,8 +169,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         requestQueue.add(geojson2);
     }
 
-    private void showListItems() {
-    }
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -225,7 +230,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     .title("Best point between two")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
-            String googleMapsUrl = Url_Builder.getGooglePlacesUrl(placeType, bestMidpoint);
+            String googleMapsUrl = UrlBuilder.getGooglePlacesUrl(placeType, bestMidpoint);
 
             JsonObjectRequest googleGeojsonPlaces = new JsonObjectRequest
                     (Request.Method.GET, googleMapsUrl, null, new Response.Listener<JSONObject>() {
@@ -260,11 +265,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             String coordinates = entry.getValue();
             ListItem listItem = new ListItem((i) + ". " + name);
             listItems.add(listItem);
-            adapter = new MyAdapter(listItems, this);
+            adapter = new RecyclerViewAdapter(listItems, this);
             recyclerView.setAdapter(adapter);
             i += 1;
+
+            toggleButton = findViewById(R.id.button_favorite);
+            toggleButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+//                    savePlaceInformation();
+                }
+            });
         }
     }
+
+    //    private void savePlaceInformation() {
+//        String placeName =
+//        double longitude =
+//        double latitude =
+//    }
 
     public void getMidpoints(ArrayList<String> coordinateList, LatLng location){
         // find the smallest distance from the coordinates to the opposite point
@@ -298,5 +317,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } catch (NullPointerException e){
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    @Override
+    public void OnPlaceClick(int position) {
+        Log.d("onPlaceClicked: ", String.valueOf(position));
     }
 }
