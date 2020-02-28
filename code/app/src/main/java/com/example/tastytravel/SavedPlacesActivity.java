@@ -7,8 +7,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 
-import com.example.tastytravel.PlaceInformation;
-import com.example.tastytravel.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -17,6 +15,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,9 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
-
-    private ChildEventListener mChildEventListener;
-    private DatabaseReference mUsers;
+    private ChildEventListener childEventListener;
+    private DatabaseReference mPlaces;
     Marker marker;
 
     @Override
@@ -41,9 +40,10 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        ChildEventListener mChildEventListener;
-        mUsers = FirebaseDatabase.getInstance().getReference("Users");
-        mUsers.push().setValue(marker);
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+        mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid());
+        mPlaces.push().setValue(marker);
+
     }
 
     /**
@@ -59,20 +59,31 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        googleMap.setOnMarkerClickListener(this);
+
         // Focus mapview on Ireland
         LatLng ireland = new LatLng(53.4239,-7.9407);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ireland,6.5f));
+
         mMap.setOnMarkerClickListener(this);
-        mUsers.addListenerForSingleValueEvent(new ValueEventListener() {
+        mPlaces.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot s : dataSnapshot.getChildren()){
-                    PlaceInformation user = s.getValue(PlaceInformation.class);
-                    LatLng location = new LatLng(user.latitude, user.longitude);
+                    PlaceInformation place = s.getValue(PlaceInformation.class);
+
+                    String strLocation = place.coordinates;
+
+                    String[] latlong =  strLocation.split(",");
+                    double latitude = Double.parseDouble(latlong[0]);
+                    double longitude = Double.parseDouble(latlong[1]);
+
+                    LatLng location = new LatLng(latitude, longitude);
+
                     mMap.addMarker(new MarkerOptions()
                             .position(location)
-                            .title(user.placeName))
-                            .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                            .title(place.placeName))
+                            .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
                 }
             }
 
