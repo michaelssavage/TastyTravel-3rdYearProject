@@ -33,9 +33,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".SavedPlacesActivity"
-            android:label="@string/title_activity_map_saved_places"></activity>
+        <activity android:name=".SavedPlacesActivity"/>
         <activity android:name=".AboutActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MapsActivity" />

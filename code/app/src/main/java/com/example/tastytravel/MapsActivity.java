@@ -23,6 +23,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
@@ -38,7 +39,6 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
 
     public static final String DATA = "DATA";
     public static final String LOCATIONS_TAG = "LOCATIONS";
@@ -58,6 +58,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private double midLat = 0.0;
     private ArrayList<LatLng> points = new ArrayList<>();
 
+    RecyclerView.Adapter adapter;
     private List<ListItem> listItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         recyclerView = findViewById(R.id.resultsRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         listItems = new ArrayList<>();
 
         showListItems();
@@ -100,7 +100,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();
 
         // Build a API url based on passed parameters
+
+        assert myButtonSelection != null;
+        assert getYourLocationLatLng != null;
         String myUrl = Url_Builder.getMapboxUrl(myButtonSelection, new LatLng(getYourLocationLatLng.longitude, getYourLocationLatLng.latitude));
+        assert theirButtonSelection != null;
+        assert getTheirLocationLatLng != null;
         String theirUrl = Url_Builder.getMapboxUrl(theirButtonSelection, new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude));
 
         // Async url request
@@ -156,9 +161,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void showListItems() {
-
     }
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -179,7 +182,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();
 
         // Add a marker and move the camera
+        assert getYourLocationLatLng != null;
         LatLng yourLocationLatLng = new LatLng(getYourLocationLatLng.latitude, getYourLocationLatLng.longitude);
+        assert getTheirLocationLatLng != null;
         LatLng theirLocationLatLng = new LatLng(getTheirLocationLatLng.latitude, getTheirLocationLatLng.longitude);
 
         googleMap.addMarker(new MarkerOptions().position(yourLocationLatLng).title("Your Location"));
@@ -213,7 +218,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             // gets the midpoint we use to search for places.
             LatLng bestMidpoint = SphericalUtil.interpolate(points.get(0), points.get(1), 0.5);
-            googleMap.addMarker(new MarkerOptions().position(bestMidpoint).title("Best point between two"));
+            googleMap.addMarker(new MarkerOptions()
+                    .position(bestMidpoint)
+                    .title("Best point between two")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
             String googleMapsUrl = Url_Builder.getGooglePlacesUrl(placeType, bestMidpoint);
 

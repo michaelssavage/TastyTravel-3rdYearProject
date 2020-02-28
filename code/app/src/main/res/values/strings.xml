@@ -56,8 +56,32 @@
     <string name="logout">Logout</string>
     <string name="how_to_use">How To Use</string>
     <string name="contact_us">Contact Us</string>
-    <string name="about_paragraph_1">TastyTravel will allow you to search for places to meet. Go for a drink or get some food, as long as it is tasty! Directions for two people will be given to improve your travel.</string>
-    <string name="about_paragraph_2">If you have any questions, please feel free to email us!\n\nGerard: gerard.slowey2@mail.dcu.ie\nMichael: michael.savage7@mail.dcu.ie</string>
+    <string name="contact_Paragraph"> If you have any questions feel free to ask us by email.\n
+        \n
+        Gerard: gerard.slowey2@mail.dcu.ie\n
+        Michael: michael.savage7@mail.dcu.ie
+    </string>
+    <string name="howToUse_Paragraph"> 1. Click the SEARCH FOR A TASTE button to begin your search.\n
+        \n
+        2. Enter your location. Google auto suggest will help you pick your location as you type.\n
+        \n
+        3. Choose your mode of transport. You can choose between Walking, Driving, or Cycling.\n
+        \n
+        4. Repeat the steps for your friend. Enter their location and their mode of transport.\n
+        \n
+        5. Add the type of place you want to meet. You can pick between Bars, Cafes, or Restaurants.\n
+        \n
+        6. click SEARCH to see your map.\n
+        \n
+        \n
+        Your map will show your location and your friend\'s location as RED markers. You can click on
+        them to see which one is which.\n
+        \n
+        Our algorithm will pick the best spot to start searching from. It is a BLUE marker.\n
+        \n
+        The black lines around the RED markers represent how far a person can go depending on the
+        mode of transport.
+    </string>
     <string name="about_pizza_background">Pizza background</string>
     <string name="suggested_places">Suggested Places</string>
     <string name="enter_another_location">Enter Another Location</string>

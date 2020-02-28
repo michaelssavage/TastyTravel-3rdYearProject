@@ -2,11 +2,17 @@ package com.example.tastytravel.Utils;
 
 import android.util.Log;
 
+import com.example.tastytravel.Pair;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class JsonParser {
 
@@ -39,18 +45,33 @@ public class JsonParser {
 
         // isolate places from JSONObject into an arraylist
         ArrayList<String> placesList = new ArrayList<>();
+        HashMap<String,String> place_LocationMap =new HashMap<>();
         try {
             JSONArray results = response.getJSONArray("results");
             for (int i = 0; i < results.length(); i++) {
 
-                JSONObject nameArray = results.getJSONObject(i);
-                //remove the '[' and ']' and add to the coordinate list.
-                placesList.add(nameArray.getString("name"));
+                // add the name of each place to the list.
+                JSONObject array = results.getJSONObject(i);
+                String name = array.getString("name");
+                placesList.add(name);
+
+                // store the coordinates of each place in a map.
+                JSONObject geometry = array.getJSONObject("geometry");
+                String longLatString = geometry.getString("location");
+                String[] location = longLatString.split(",");
+                String lat = location[0].substring(7) + ",";
+                String lng = location[1].substring(6);
+                place_LocationMap.put(name, lat + lng);
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         Log.d("places", " " + placesList);
+        Log.d("locationlist", " " + place_LocationMap);
+
+        // this is a class that holds the ordered arrayList then the unordered Map.
+        Pair<ArrayList<String>,HashMap<String,String>> place_List_Map = new Pair<>(placesList,place_LocationMap);
+
         return placesList;
     }
 }

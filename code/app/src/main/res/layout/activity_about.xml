@@ -21,78 +21,104 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/about_howto"
+    <ScrollView
+        android:id="@+id/aboutTextLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/how_to_use"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutHeading" />
+        app:layout_constraintStart_toStartOf="@+id/about_img"
+        app:layout_constraintTop_toBottomOf="@+id/aboutHeading">
 
-    <TextView
-        android:id="@+id/about_paragraph"
-        android:layout_width="wrap_content"
-        android:layout_height="199dp"
-        android:layout_marginTop="4dp"
-        android:elevation="10dp"
-        android:padding="12dp"
-        android:text="1. Click the 'Search For a Taste' button to begin your search.\n2. Enter two locations into each text box and choose the mode of transport from those locations. \n3. Add the type of place you want to meet and click 'SEARCH' to see your map. "
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_howto" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp">
 
-    <TextView
-        android:id="@+id/about_contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/contact_us"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_paragraph" />
+            <TextView
+                android:id="@+id/about_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:elevation="10dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/contact_us"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.082"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/howToUse_paragraph" />
 
-    <TextView
-        android:id="@+id/about_paragraph2"
-        android:layout_width="0dp"
-        android:layout_height="156dp"
-        android:layout_marginTop="8dp"
-        android:elevation="10dp"
-        android:padding="12dp"
-        android:text="@string/about_paragraph_2"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_contact" />
+            <TextView
+                android:id="@+id/Contact_paragraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/about_contact"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="0dp"
+                android:elevation="10dp"
+                android:padding="12dp"
+                android:text="@string/contact_Paragraph"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/about_howto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Contact_paragraph"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:elevation="10dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/how_to_use"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/Contact_paragraph" />
+
+            <TextView
+                android:id="@+id/howToUse_paragraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/about_howto"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="0dp"
+                android:elevation="10dp"
+                android:padding="12dp"
+                android:text="@string/howToUse_Paragraph"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/about_howto" />
+
+        </RelativeLayout>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/about_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:alpha=".15"
         android:contentDescription="@string/about_pizza_background"
         android:cropToPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/aboutTextLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutHeading"
         app:srcCompat="@drawable/about_img" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
