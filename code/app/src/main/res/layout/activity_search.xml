@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     android:background="#FD4D5353"
     android:backgroundTint="#007C7979"
-    android:clickable="true"
-    tools:context=".SearchActivity"
-    android:focusable="true">
+    android:clickable="false"
+    tools:context=".SearchActivity">
 
     <Button
         android:id="@+id/searchBtn"

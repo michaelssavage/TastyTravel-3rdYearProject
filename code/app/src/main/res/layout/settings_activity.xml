@@ -58,7 +58,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="0dp"
-                android:checked="false"
+                android:checked="true"
                 android:elevation="10dp"
                 android:paddingStart="28sp"
                 android:paddingEnd="28sp"
@@ -95,6 +95,7 @@
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent" />
+
             <Switch
                 android:id="@+id/midpointSwitch"
                 android:layout_width="match_parent"
@@ -103,7 +104,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="16dp"
-                android:checked="false"
+                android:checked="true"
                 android:paddingStart="28sp"
                 android:paddingEnd="28sp"
                 android:text="Best Midpoint Marker Switch"

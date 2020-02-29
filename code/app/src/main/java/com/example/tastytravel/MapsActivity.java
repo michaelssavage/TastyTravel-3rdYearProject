@@ -4,12 +4,12 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -34,8 +34,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.maps.android.SphericalUtil;
 import com.google.maps.android.data.geojson.GeoJsonLayer;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -190,6 +188,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(final GoogleMap mMap) {
         googleMap = mMap;
         addMarkers();
+    }
+    //if back button pressed, start new Search Activity
+    @Override
+    public void onBackPressed() {
+        finish();
+        Intent newSearch = new Intent(MapsActivity.this, SearchActivity.class);
+        startActivity(newSearch);
     }
 
     // Adding the 2 locations on the map
