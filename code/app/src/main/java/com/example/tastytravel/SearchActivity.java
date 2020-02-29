@@ -112,8 +112,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         closeText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(startIntent);
+                onBackPressed();
             }
         });
     }
@@ -206,6 +205,14 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    //if back button pressed, start new Main Activity
+    @Override
+    public void onBackPressed() {
+        finish();
+        Intent intent = new Intent(SearchActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
 
