@@ -77,10 +77,11 @@
         Your map will show your location and your friend\'s location as RED markers. You can click on
         them to see which one is which.\n
         \n
-        Our algorithm will pick the best spot to start searching from. It is a BLUE marker.\n
+        Our algorithm will pick the best spot to start searching from. By default this spot is hidden.
+        It is a BLUE marker and you can toggle it ON/OFF in the settings.\n
         \n
-        The black lines around the RED markers represent how far a person can go depending on the
-        mode of transport.
+        There is also a setting to draw black lines that enclose each RED marker. These lines
+        represent how far a person can reach depending on the mode of transport.
     </string>
     <string name="about_pizza_background">Pizza background</string>
     <string name="suggested_places">Suggested Places</string>
@@ -95,13 +96,13 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_map_saved_places">Saved Places On Map</string>
     <string name="settings_explanation_isochrone">The isochrone is made up of coordinates that join together
-        to form a perimeter around the locations.\n
-        \nThey represent how far a person can walk within a certain amount of time (15 minutes).\n
-        \nTurn it ON/OFF depending on your preference.
+        to form a perimeter around the locations.They represent how far a person can reach within a
+        certain amount of time (15 minutes). Turn it ON/OFF depending on your preference.
     </string>
     <string name="settings_explanation_midpoint">\'Your location\' and \'Their location\' are shown as red
-        markers. The best midpoint is shown as a blue marker. If you do not want to see the best midpoint
-        marker, you can turn it ON/OFF depending on your preference.
+        markers. The best midpoint is shown as a blue marker. If you do not want to
+        see the best meeting place marker, you can turn it ON/OFF depending on your preference.
     </string>
+    <string name="clear_favs">Clear Favourites</string>
 
 </resources>

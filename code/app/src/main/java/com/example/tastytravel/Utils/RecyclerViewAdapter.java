@@ -24,7 +24,7 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private DatabaseReference mDatabase;
-
+    private FirebaseUser currentFirebaseUser;
     private List<ListItem> listItems;
     private OnPlaceListener mOnPlaceListener;
 
@@ -37,12 +37,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_maps_results_layout, parent, false);
+        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        View v;
 
-        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-        mDatabase = FirebaseDatabase.getInstance().getReference().child(currentFirebaseUser.getUid());
+        if (currentFirebaseUser == null) {
+            v = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.activity_maps_results_layout_not_logged_in, parent, false);
+        } else {
+            mDatabase = FirebaseDatabase.getInstance().getReference().child(currentFirebaseUser.getUid());
 
+            v = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.activity_maps_results_layout, parent, false);
+
+        }
         return new ViewHolder(v, mOnPlaceListener);
     }
 
@@ -51,14 +58,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         final ListItem listItem = listItems.get(position);
         holder.textViewHead.setText(listItem.getHead());
 
-        holder.toggleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // IMPLEMENT LOGIC HERE TO SAVE PLACE
-                PlaceInformation place = new PlaceInformation(listItem.getHead(), listItem.getCoordinates());
-                mDatabase.child(listItem.getHead()).setValue(place);
-            }
-        });
+        if(currentFirebaseUser != null) {
+            holder.toggleButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // IMPLEMENT LOGIC HERE TO SAVE PLACE
+                    PlaceInformation place = new PlaceInformation(listItem.getHead(), listItem.getCoordinates());
+                    mDatabase.child(listItem.getHead()).setValue(place);
+                }
+            });
+        }
     }
 
     @Override
@@ -68,7 +77,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView textViewHead;
+        TextView textViewHead;
         OnPlaceListener onPlaceListener;
         ToggleButton toggleButton;
 

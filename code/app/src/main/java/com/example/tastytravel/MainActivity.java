@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     Button searchBtn;
     ImageView foodCollageImage;
+    TextView saveplacesText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavBar = findViewById(R.id.bottomNavBar);
         searchBtn = findViewById(R.id.searchBtn);
         foodCollageImage = findViewById(R.id.foodCollageImage);
+        saveplacesText = findViewById(R.id.saveplacesText);
 
         // Set up bottom nav bar
         setUpNavBar();
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                switch(menuItem.getItemId()) {
+                switch (menuItem.getItemId()) {
                     case R.id.menu_home:
                         return true;
 
@@ -53,12 +56,11 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.menu_profile:
                         // checking if user is already logged in
-                        if(mAuth.getCurrentUser() != null) {
+                        if (mAuth.getCurrentUser() != null) {
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                             overridePendingTransition(0, 0);
                             return true;
-                        }
-                        else{
+                        } else {
                             startActivity(new Intent(getApplicationContext(), SignInActivity.class));
                             overridePendingTransition(0, 0);
                             return true;
@@ -68,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
     private void initialiseViewControls() {
         // If the Settings Button is Clicked
@@ -85,10 +85,24 @@ public class MainActivity extends AppCompatActivity {
         foodCollageImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent savedPlacesIntent = new Intent(getApplicationContext(), SavedPlacesActivity.class);
-                startActivity(savedPlacesIntent);
+                startSavedPlaces();
+            }
+        });
+        saveplacesText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSavedPlaces();
             }
         });
     }
 
+    public void startSavedPlaces() {
+        if (mAuth.getCurrentUser() != null) {
+            Intent savedPlacesIntent = new Intent(getApplicationContext(), SavedPlacesActivity.class);
+            startActivity(savedPlacesIntent);
+        } else {
+            Intent signIn = new Intent(getApplicationContext(), SignInActivity.class);
+            startActivity(signIn);
+        }
+    }
 }
