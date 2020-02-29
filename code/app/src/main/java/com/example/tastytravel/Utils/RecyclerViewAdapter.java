@@ -31,6 +31,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RecyclerViewAdapter(List<ListItem> listItems, OnPlaceListener onPlaceListener) {
         this.listItems = listItems;
         this.mOnPlaceListener = onPlaceListener;
+
     }
 
     @NonNull

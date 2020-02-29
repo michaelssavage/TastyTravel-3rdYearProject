@@ -28,6 +28,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.maps.android.SphericalUtil;
@@ -266,6 +267,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             ListItem listItem = new ListItem(name, coordinates);
             listItems.add(listItem);
+
+            // Recycler View Adapter Initialisation
             adapter = new RecyclerViewAdapter(listItems, this);
             recyclerView.setAdapter(adapter);
             i += 1;
@@ -306,10 +309,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    Marker currentMarker = null;
+
     @Override
     public void OnPlaceClick(int position) {
-        Log.d("onClicked", String.valueOf(position));
-//        googleMap.addMarker(new MarkerOptions().position().title(name));
+        Log.d("onPlaceClicked","" + listItems.get(position).getHead());
+
+        String selectedPlaceName = listItems.get(position).getHead();
+        String selectedPlaceCoordinates = listItems.get(position).getCoordinates();
+
+        String[] latlong =  selectedPlaceCoordinates.split(",");
+        double latitude = Double.parseDouble(latlong[0]);
+        double longitude = Double.parseDouble(latlong[1]);
+
+        LatLng markerPos = new LatLng(latitude, longitude);
+        if(currentMarker != null){
+            currentMarker.remove();
+        }
+        MarkerOptions markerOptions = new MarkerOptions()
+                .position(markerPos)
+                .title(selectedPlaceName);
+
+        currentMarker = googleMap.addMarker(markerOptions);
+        currentMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(markerPos, 15));
+
     }
 
 }
