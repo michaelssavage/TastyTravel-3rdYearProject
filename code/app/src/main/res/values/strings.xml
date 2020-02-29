@@ -94,4 +94,14 @@
     <string name="delete">Delete Account</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_map_saved_places">Saved Places On Map</string>
+    <string name="settings_explanation_isochrone">The isochrone is made up of coordinates that join together
+        to form a perimeter around the locations.\n
+        \nThey represent how far a person can walk within a certain amount of time (15 minutes).\n
+        \nTurn it ON/OFF depending on your preference.
+    </string>
+    <string name="settings_explanation_midpoint">\'Your location\' and \'Their location\' are shown as red
+        markers. The best midpoint is shown as a blue marker. If you do not want to see the best midpoint
+        marker, you can turn it ON/OFF depending on your preference.
+    </string>
+
 </resources>
