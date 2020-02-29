@@ -17,13 +17,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ProfileActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavBar;
-    Button settingsBtn;
-    Button logoutBtn;
-    Button deleteBtn;
+    Button settingsBtn, logoutBtn, deleteBtn, clearFavouritesBtn;
     FirebaseUser user;
 
     @Override
@@ -35,6 +35,8 @@ public class ProfileActivity extends AppCompatActivity {
         logoutBtn = findViewById(R.id.logoutBtn);
         settingsBtn = findViewById(R.id.settingsBtn);
         deleteBtn = findViewById(R.id.deleteBtn);
+        clearFavouritesBtn = findViewById(R.id.deleteFavsBtn);
+
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         // Set up bottom nav bar
@@ -46,6 +48,17 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void initialiseViewControls() {
+        clearFavouritesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference userFavs = FirebaseDatabase.getInstance().getReference(user.getUid());
+                userFavs.removeValue();
+
+                Toast.makeText(ProfileActivity.this, "Favourite Places Cleared", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +83,9 @@ public class ProfileActivity extends AppCompatActivity {
                 showAlertDialog(v);
             }
         });
+    }
+
+    private void deleteUserData() {
     }
 
     private void setUpNavBar() {

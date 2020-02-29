@@ -7,16 +7,28 @@
     tools:context=".ProfileActivity">
 
     <Button
+        android:id="@+id/deleteFavsBtn"
+        android:layout_width="170dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/activity_profile_white_button"
+        android:text="@string/clear_favs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/settingsBtn"
         android:layout_width="144dp"
         android:layout_height="42dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/activity_profile_white_button"
         android:text="@string/settings"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/deleteFavsBtn" />
 
     <Button
         android:id="@+id/logoutBtn"
@@ -26,7 +38,7 @@
         android:background="@drawable/activity_profile_white_button"
         android:text="@string/logout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settingsBtn" />
 

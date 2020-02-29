@@ -103,5 +103,6 @@
         markers. The best midpoint is shown as a blue marker. If you do not want to see the best midpoint
         marker, you can turn it ON/OFF depending on your preference.
     </string>
+    <string name="clear_favs">Clear Favourites</string>
 
 </resources>
