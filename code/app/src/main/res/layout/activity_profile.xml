@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
+
+    <Button
+        android:id="@+id/deleteFavsBtn"
+        android:layout_width="170dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/activity_profile_white_button"
+        android:text="@string/clear_favs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/deleteFavsBtn"
         android:layout_width="170dp"

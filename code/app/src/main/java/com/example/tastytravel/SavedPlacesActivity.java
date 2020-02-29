@@ -88,13 +88,12 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
                                 .title(place.placeName))
                                 .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
                     }
-                }
-                else{
+                } else {
                     Toast.makeText(SavedPlacesActivity.this, "You Have No Saved Places", Toast.LENGTH_SHORT).show();
                 }
             }
 
-            @Override
+                @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }

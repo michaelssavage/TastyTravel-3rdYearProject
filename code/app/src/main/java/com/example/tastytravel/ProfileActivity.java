@@ -36,7 +36,6 @@ public class ProfileActivity extends AppCompatActivity {
         settingsBtn = findViewById(R.id.settingsBtn);
         deleteBtn = findViewById(R.id.deleteBtn);
         clearFavouritesBtn = findViewById(R.id.deleteFavsBtn);
-
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         // Set up bottom nav bar
@@ -57,7 +56,6 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(ProfileActivity.this, "Favourite Places Cleared", Toast.LENGTH_SHORT).show();
             }
         });
-
 
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +81,8 @@ public class ProfileActivity extends AppCompatActivity {
                 showAlertDialog(v);
             }
         });
+    }
+    private void deleteUserData() {
     }
 
     private void deleteUserData() {

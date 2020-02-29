@@ -53,6 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
 
 
+        }
         return new ViewHolder(v, mOnPlaceListener);
     }
 
@@ -80,7 +81,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView textViewHead;
+        TextView textViewHead;
         OnPlaceListener onPlaceListener;
         ToggleButton toggleButton;
 
