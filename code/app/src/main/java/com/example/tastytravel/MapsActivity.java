@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,6 +54,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public static final String RADIO_BUTTON1 = "RADIO_BUTTON1";
     public static final String RADIO_BUTTON2 = "RADIO_BUTTON2";
     public static final String PLACE_TYPE_TAG = "PLACE_TYPE";
+    public static final String ISOCHRONE_PREF = "isochroneSwitch";
+    public static final String MIDPOINT_PREF = "midpointSwitch";
 
     private String placeType;
     // ArrayList to store both user locations
@@ -116,6 +119,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         assert getTheirLocationLatLng != null;
         String theirUrl = UrlBuilder.getMapboxUrl(theirButtonSelection, new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude));
 
+        // shared preferences created in settings.
+        SharedPreferences myPrefs = getSharedPreferences("myPref", 0);
+        final Boolean isochroneSwitcher = myPrefs.getBoolean(ISOCHRONE_PREF, false);
+        final Boolean midpointSwitcher = myPrefs.getBoolean(MIDPOINT_PREF, false);
+
         // Async url request
         // Volley library used to reduce typing of boiler plate code
 
@@ -124,10 +132,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 (Request.Method.GET, myUrl, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        addJsonLayer(response);
+                        addJsonLayer(response,isochroneSwitcher);
                         String one = "one";
                         try {
-                            plotMidpoint(response, getTheirLocationLatLng, one);
+                            plotMidpoint(response, getTheirLocationLatLng, midpointSwitcher, one);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -146,10 +154,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 (Request.Method.GET, theirUrl, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        addJsonLayer(response);
+                        addJsonLayer(response,isochroneSwitcher);
                         String two = "two";
                         try {
-                            plotMidpoint(response, getYourLocationLatLng, two);
+                            plotMidpoint(response, getYourLocationLatLng, midpointSwitcher, two);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -200,12 +208,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(yourLocationLatLng, 12f));
     }
-    private void addJsonLayer(JSONObject response) {
-        GeoJsonLayer layer = new GeoJsonLayer(googleMap, response);
-        layer.addLayerToMap();
+    private void addJsonLayer(JSONObject response, Boolean isochroneOn) {
+        if(isochroneOn) {
+            GeoJsonLayer layer = new GeoJsonLayer(googleMap, response);
+            layer.addLayerToMap();
+        }
     }
 
-    private void plotMidpoint(JSONObject response, LatLng location, String number) throws JSONException {
+
+    private void plotMidpoint(JSONObject response, LatLng location, Boolean midPointMarkerOn, String number) throws JSONException {
         JsonParser jsonParser = new JsonParser();
         ArrayList<String> coordinatesList = jsonParser.getCoordinates(response);
         getMidpoints(coordinatesList, location);
@@ -226,10 +237,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             // gets the midpoint we use to search for places.
             LatLng bestMidpoint = SphericalUtil.interpolate(points.get(0), points.get(1), 0.5);
-            googleMap.addMarker(new MarkerOptions()
-                    .position(bestMidpoint)
-                    .title("Best point between two")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            if(midPointMarkerOn) {
+                googleMap.addMarker(new MarkerOptions()
+                        .position(bestMidpoint)
+                        .title("Best point between two")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+            }
 
             String googleMapsUrl = UrlBuilder.getGooglePlacesUrl(placeType, bestMidpoint);
 
@@ -240,6 +253,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             JsonParser jsonParser1 = new JsonParser();
                             try {
                                 LinkedHashMap<String,String> placeList = jsonParser1.getPlaces(response);
+                                if(placeList.size() == 0){
+                                    Toast.makeText(MapsActivity.this,
+                                            "There are no Results. Try some different parameters.", Toast.LENGTH_LONG).show();
+                                }
                                 displayResults(placeList);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -260,7 +277,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void displayResults(LinkedHashMap<String,String> placeList) {
-        int i = 1;
         for (Map.Entry<String, String> entry : placeList.entrySet()) {
             String name = entry.getKey();
             String coordinates = entry.getValue();
@@ -271,7 +287,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // Recycler View Adapter Initialisation
             adapter = new RecyclerViewAdapter(listItems, this);
             recyclerView.setAdapter(adapter);
-            i += 1;
         }
     }
 
@@ -331,7 +346,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .title(selectedPlaceName);
 
         currentMarker = googleMap.addMarker(markerOptions);
-        currentMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+        currentMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
 
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(markerPos, 15));
 

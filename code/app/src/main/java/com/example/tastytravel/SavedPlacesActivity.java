@@ -83,7 +83,7 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
                     mMap.addMarker(new MarkerOptions()
                             .position(location)
                             .title(place.placeName))
-                            .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                            .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
                 }
             }
 
