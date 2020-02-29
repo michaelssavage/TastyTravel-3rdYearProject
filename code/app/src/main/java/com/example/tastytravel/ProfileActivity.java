@@ -85,9 +85,6 @@ public class ProfileActivity extends AppCompatActivity {
     private void deleteUserData() {
     }
 
-    private void deleteUserData() {
-    }
-
     private void setUpNavBar() {
         bottomNavBar.setSelectedItemId(R.id.menu_profile);
         bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

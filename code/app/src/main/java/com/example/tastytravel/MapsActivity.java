@@ -246,7 +246,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 googleMap.addMarker(new MarkerOptions()
                         .position(bestMidpoint)
                         .title("Best point between two")
-                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             }
 
             String googleMapsUrl = UrlBuilder.getGooglePlacesUrl(placeType, bestMidpoint);
@@ -351,7 +351,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .title(selectedPlaceName);
 
         currentMarker = googleMap.addMarker(markerOptions);
-        currentMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+        currentMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
 
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(markerPos, 15));
 

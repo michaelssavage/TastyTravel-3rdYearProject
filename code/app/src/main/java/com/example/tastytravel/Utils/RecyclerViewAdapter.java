@@ -31,7 +31,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RecyclerViewAdapter(List<ListItem> listItems, OnPlaceListener onPlaceListener) {
         this.listItems = listItems;
         this.mOnPlaceListener = onPlaceListener;
-
     }
 
     @NonNull
@@ -50,9 +49,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             v = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.activity_maps_results_layout, parent, false);
-        }
-
-
         }
         return new ViewHolder(v, mOnPlaceListener);
     }
@@ -75,11 +71,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public int getItemCount() {
-        return listItems.size();
-    }
+    public int getItemCount() { return listItems.size(); }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView textViewHead;
         OnPlaceListener onPlaceListener;
@@ -101,7 +95,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     // Interface when a location result is clicked
-    public interface OnPlaceListener {
-        void OnPlaceClick(int position);
-    }
+    public interface OnPlaceListener { void OnPlaceClick(int position);}
 }
