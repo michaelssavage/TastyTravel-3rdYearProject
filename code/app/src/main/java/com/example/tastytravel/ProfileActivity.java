@@ -47,7 +47,6 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void initialiseViewControls() {
-
         clearFavouritesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +82,9 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
     }
+    private void deleteUserData() {
+    }
+
     private void deleteUserData() {
     }
 

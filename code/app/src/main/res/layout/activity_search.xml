@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FD4D5353"
     android:backgroundTint="#007C7979"
-    android:clickable="false"
     tools:context=".SearchActivity">
 
     <Button

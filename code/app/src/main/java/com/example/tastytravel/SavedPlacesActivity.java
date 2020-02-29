@@ -3,6 +3,7 @@ package com.example.tastytravel;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
@@ -42,9 +43,9 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
         mapFragment.getMapAsync(this);
 
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-        mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid());
-        mPlaces.push().setValue(marker);
 
+            mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid());
+            mPlaces.push().setValue(marker);
     }
 
     /**

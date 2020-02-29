@@ -197,7 +197,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         startActivity(newSearch);
     }
 
-    // Adding the 2 locations on the map
+        // Adding the 2 locations on the map
     private void addMarkers() {
         final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
         final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();

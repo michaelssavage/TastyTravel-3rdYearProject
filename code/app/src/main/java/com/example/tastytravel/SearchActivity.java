@@ -81,13 +81,14 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         placesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(parent.getItemAtPosition(position).equals("Select The Type Of Meeting Place")){
+                if (parent.getItemAtPosition(position).equals("Select The Type Of Meeting Place")) {
                     // Do nothing
                 } else {
                     String item = parent.getItemAtPosition(position).toString();
                     showMap.putExtra(PLACE_TYPE_TAG, item);
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -159,6 +160,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
             public void onPlaceSelected(@NonNull Place theirLocation) {
                 userPlaces.add(theirLocation);
             }
+
             @Override
             public void onError(@NonNull Status status) {
                 Log.i("TAG", "An error occurred: " + status);
@@ -178,7 +180,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
             showMap.putExtra(RADIO_BUTTON1, radio1);
             showMap.putExtra(RADIO_BUTTON2, radio2);
 
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             Toast.makeText(this, "Error: Did you enter the mode of transport?", Toast.LENGTH_SHORT).show();
         }
         // bundle the long lat locations
@@ -190,11 +192,9 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         // Checking if two locations have been selected
         if (userPlaces.size() < 2) {
             Toast.makeText(this, "Error: Did you enter the locations?", Toast.LENGTH_SHORT).show();
-        }
-        else if(!(showMap.hasExtra(PLACE_TYPE_TAG))){
+        } else if (!(showMap.hasExtra(PLACE_TYPE_TAG))) {
             Toast.makeText(this, "Error: Did you enter where you want to meet?", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             startActivity(showMap);
         }
     }

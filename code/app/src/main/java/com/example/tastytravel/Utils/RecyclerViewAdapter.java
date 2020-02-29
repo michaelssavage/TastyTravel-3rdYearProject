@@ -37,17 +37,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         View v;
 
-        if (currentFirebaseUser == null) {
+        if(currentFirebaseUser == null){
             v = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.activity_maps_results_layout_not_logged_in, parent, false);
-        } else {
+        }
+        else{
             mDatabase = FirebaseDatabase.getInstance().getReference().child(currentFirebaseUser.getUid());
 
             v = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.activity_maps_results_layout, parent, false);
+        }
+
 
         }
         return new ViewHolder(v, mOnPlaceListener);
