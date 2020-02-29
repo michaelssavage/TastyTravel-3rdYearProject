@@ -1,17 +1,14 @@
 package com.example.tastytravel.Utils;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tastytravel.MapsActivity;
 import com.example.tastytravel.PlaceInformation;
 import com.example.tastytravel.R;
 import com.google.firebase.auth.FirebaseAuth;

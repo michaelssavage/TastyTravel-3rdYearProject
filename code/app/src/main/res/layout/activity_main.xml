@@ -42,7 +42,7 @@
         android:layout_marginBottom="48dp"
         android:background="@drawable/activity_main_white_button"
         android:elevation="10dp"
-        android:text="@string/find_your_taste"
+        android:text="@string/find_places_to_meet"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="@+id/mainbackground"
         app:layout_constraintEnd_toEndOf="parent"
