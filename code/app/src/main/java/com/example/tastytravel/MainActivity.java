@@ -85,8 +85,13 @@ public class MainActivity extends AppCompatActivity {
         foodCollageImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent savedPlacesIntent = new Intent(getApplicationContext(), SavedPlacesActivity.class);
-                startActivity(savedPlacesIntent);
+                if(mAuth.getCurrentUser() != null) {
+                    Intent savedPlacesIntent = new Intent(getApplicationContext(), SavedPlacesActivity.class);
+                    startActivity(savedPlacesIntent);
+                } else {
+                    Intent signIn = new Intent(getApplicationContext(), SignInActivity.class);
+                    startActivity(signIn);
+                }
             }
         });
     }

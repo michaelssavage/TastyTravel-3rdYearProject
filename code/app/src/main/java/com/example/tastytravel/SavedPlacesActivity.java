@@ -3,9 +3,11 @@ package com.example.tastytravel;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -41,9 +43,9 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
         mapFragment.getMapAsync(this);
 
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-        mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid());
-        mPlaces.push().setValue(marker);
 
+            mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid());
+            mPlaces.push().setValue(marker);
     }
 
     /**
@@ -69,21 +71,26 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
         mPlaces.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot s : dataSnapshot.getChildren()){
-                    PlaceInformation place = s.getValue(PlaceInformation.class);
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot s : dataSnapshot.getChildren()) {
+                        PlaceInformation place = s.getValue(PlaceInformation.class);
 
-                    String strLocation = place.coordinates;
+                        String strLocation = place.coordinates;
 
-                    String[] latlong =  strLocation.split(",");
-                    double latitude = Double.parseDouble(latlong[0]);
-                    double longitude = Double.parseDouble(latlong[1]);
+                        String[] latlong = strLocation.split(",");
+                        double latitude = Double.parseDouble(latlong[0]);
+                        double longitude = Double.parseDouble(latlong[1]);
 
-                    LatLng location = new LatLng(latitude, longitude);
+                        LatLng location = new LatLng(latitude, longitude);
 
-                    mMap.addMarker(new MarkerOptions()
-                            .position(location)
-                            .title(place.placeName))
-                            .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
+                        mMap.addMarker(new MarkerOptions()
+                                .position(location)
+                                .title(place.placeName))
+                                .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
+                    }
+                }
+                else{
+                    Toast.makeText(SavedPlacesActivity.this, "You Have No Saved Places", Toast.LENGTH_SHORT).show();
                 }
             }
 
