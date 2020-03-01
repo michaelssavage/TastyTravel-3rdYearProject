@@ -12,10 +12,6 @@
 <br/><br/>
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
 **Michael Savage** - michaelsavage7@mail.dcu.ie • **Gerard Slowey** - gerard.slowey2@mail.dcu.ie
 ---
 </div>
@@ -23,16 +19,12 @@
 
 # Table Of Contents
 
-[Preface](# The Aim Of Our App)  
-[Creating An Account](# Creating An Account)  
-[Signing In](# Signing In)  
-[Navigation](# Navigation)  
-[Searching for Places](# Searching For A Place To Meet)  
-[Saving Places](# Saving Places)  
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
+[Preface](# The Aim Of Our App)                                       <div align = "right"> 1. </div>
+[Creating An Account](# Creating An Account)                          <div align = "right"> 2. </div>
+[Signing In](# Signing In)                                            <div align = "right"> 3. </div>
+[Navigation](# Navigation)                                            <div align = "right"> 4. </div>
+[Searching for Places](# Searching For A Place To Meet)               <div align = "right"> 5. </div>
+[Saving Places](# Saving Places)                                      <div align = "right"> 6. </div>
 <br/><br/>
 <br/><br/>
 <br/><br/>
@@ -97,24 +89,24 @@ If you do not have an account at the sign in page, you can create an account by 
 
 There are three main screens that the user can switch between using the bottom navigation bar.
 
-1.  The home page is the screen that you will first see after signing in. Here you can find the search function and saved places.
+1.  The home page is the screen that you will first see after signing in. Here you can find the search function and saved places.  
+Start the search function by pressing on the white search bar that says FIND PLACES TO MEET.  
+Refer to the guide with images below to learn how to search.  
+Look at your saved places by pressing the text 'Saved Places' or the image underneath it.  
 <img alt = "home page" src="images/homePage.png"  width="220" height="400">  
 
-Start the search function by pressing on the white search bar that says FIND PLACES TO MEET. 
-Refer to the guide with images below to learn how to search.
-Look at your saved places by pressing the text 'Saved Places' or the image underneath it.
 
 2.  The about page will help you learn how to use the map and provides contact information. We recommend reading it before searching to  
-get a good understanding of the app.
+get a good understanding of the app.  
+This page is scrollable. Follow the steps to get a successful result.  
 <img alt = "about page" src="images/aboutPage.png"  width="220" height="400">  
 
-This page is scrollable. Follow the steps to get a successful result.
 
-3.  The profile page contains a clear saved places button, sign out button and delete account button. Don't worry if you press them by mistake, there  
-will be a prompt asking are you sure.  
+
+3.  The profile page contains a clear saved places button, sign out button and delete account button.  
+Don't worry if you press them by mistake, there will be a prompt asking are you sure.  
+The profile page also links to our settings page. It will be explained later.  
 <img alt = "profile page" src="images/profilePage.png"  width="220" height="400">  
-
-The profile page also links to our settings page. It will be explained later.
 
 # Searching For A Place To Meet
 
@@ -128,7 +120,6 @@ When you open the search page there will be five parameters that you must fill o
 Start by pressing the first box with the text 'Enter Your Location'. As you type, the search box will auto-suggest places for you.
 
 <img alt = "search box" src="images/searchBox.png"  width="220" height="400">  
-
 
 When you have all the parameters entered, press the search button to see your map.
 
