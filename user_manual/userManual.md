@@ -8,7 +8,14 @@
 ## How to use the TastyTravel Android app.
 
 ### <em>Version 1 • March 2020</em>
-
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
 **Michael Savage** - michaelsavage7@mail.dcu.ie • **Gerard Slowey** - gerard.slowey2@mail.dcu.ie
 </div>
 
@@ -22,5 +29,12 @@
 ### Navigation
 ### Searching for Places
 ### Saving Places
-
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
 </div>
