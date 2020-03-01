@@ -41,11 +41,11 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
     PlacesClient placesClient;
 
     Intent showMap;
-
     Spinner placesSpinner;
     Button searchBtn;
     TextView closeText;
 
+    Place yourSelectedPlace, theirSelectedPlace;
     RadioGroup radioGroup1, radioGroup2;
 
     @Override
@@ -138,7 +138,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         autocompleteSupportFragment1.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(@NonNull Place yourLocation) {
-                userPlaces.add(yourLocation);
+                yourSelectedPlace = yourLocation;
             }
 
             @Override
@@ -159,7 +159,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         autocompleteSupportFragment2.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(@NonNull Place theirLocation) {
-                userPlaces.add(theirLocation);
+                theirSelectedPlace = theirLocation;
             }
 
             @Override
@@ -176,6 +176,9 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
             String radio1 = ((RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId())).getText().toString();
             //buttons will be replaced by walking, driving, cycling
             String radio2 = ((RadioButton) findViewById(radioGroup2.getCheckedRadioButtonId())).getText().toString();
+
+            userPlaces.add(yourSelectedPlace);
+            userPlaces.add(theirSelectedPlace);
 
             // Put the radio button selections
             showMap.putExtra(RADIO_BUTTON1, radio1);
