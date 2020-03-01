@@ -19,12 +19,12 @@
 
 # Table Of Contents
 
-[Preface](# The Aim Of Our App)                                       <div align = "right"> 1. </div>
-[Creating An Account](# Creating An Account)                          <div align = "right"> 2. </div>
-[Signing In](# Signing In)                                            <div align = "right"> 3. </div>
-[Navigation](# Navigation)                                            <div align = "right"> 4. </div>
-[Searching for Places](# Searching For A Place To Meet)               <div align = "right"> 5. </div>
-[Saving Places](# Saving Places)                                      <div align = "right"> 6. </div>
+[Preface](#The Aim Of Our App)                                        <div align = "right"> 1. </div>
+[Creating An Account](#Creating An Account)                           <div align = "right"> 2. </div>
+[Signing In](#Signing In)                                             <div align = "right"> 3. </div>
+[Navigation](#Navigation)                                             <div align = "right"> 4. </div>
+[Searching for Places](#Searching For A Place To Meet)                <div align = "right"> 5. </div>
+[Saving Places](#Saving Places)                                       <div align = "right"> 6. </div>
 <br/><br/>
 <br/><br/>
 <br/><br/>
@@ -65,16 +65,16 @@ The map will show the two locations inputted as well as the names of some Places
 On opening the app, you will be met with the start screen. Here, you can sign in, sign up, or continue without an account.  
 Creating an account is easy and allows you to save places that you find when searching the map.
 
-    <img style="float: right;" alt="start screen" src="images/startScreen.png" width="220" height="400">
+<img style="float: right;"  alt="start screen" src="images/startScreen.png" width="220" height="400">
 </div>
 
+<div>
 Creating an account requires you to enter an email and password of your choice. The email address must be valid like the following:  
 **example@gmail.com**
 
 The password must be at least 6 characters long.
 
-<div align="right">
-    <img alt = "sign up page" src="images/signUP.png"  width="220" height="400">  
+<img alt = "sign up page" src="images/signUP.png"  width="220" height="400">  
 </div>
 
 
@@ -82,11 +82,11 @@ Pressing the ‘SIGN UP’ button will successfully log you in and bring you to 
 
 # Signing In
 
+<div>
 You can sign back into the app if you have already created an account. Press the SIGN IN button on the start page and  
 enter the email and password you used.
 
-<div align="right">
-    <img alt = "sign in page" src="images/signIN.png"  width="220" height="400">  
+<img alt = "sign in page" src="images/signIN.png"  width="220" height="400">  
 </div>
 
 If you do not have an account at the sign in page, you can create an account by pressing the SIGN UP button.
@@ -95,67 +95,66 @@ If you do not have an account at the sign in page, you can create an account by 
 
 There are three main screens that the user can switch between using the bottom navigation bar.
 
+<div>
 1.  The home page is the screen that you will first see after signing in. Here you can find the search function and saved places.  
 Start the search function by pressing on the white search bar that says FIND PLACES TO MEET.  
 Refer to the guide with images below to learn how to search.  
 Look at your saved places by pressing the text 'Saved Places' or the image underneath it.  
 
-<div align="right">
-    <img alt = "home page" src="images/homePage.png"  width="220" height="400">  
+<img alt = "home page" src="images/homePage.png"  width="220" height="400">  
 </div>
 
+<div>
 2.  The about page will help you learn how to use the map and provides contact information. We recommend reading it before searching to  
 get a good understanding of the app.  
 This page is scrollable. Follow the steps to get a successful result.  
 
-<div align="right">
-    <img alt = "about page" src="images/aboutPage.png"  width="220" height="400">  
+<img alt = "about page" src="images/aboutPage.png"  width="220" height="400">  
 </div>
 
-
+<div>
 3.  The profile page contains a clear saved places button, sign out button and delete account button.  
 Don't worry if you press them by mistake, there will be a prompt asking are you sure.  
 The profile page also links to our settings page. It will be explained later.  
 
-<div align="right">
-    <img alt = "profile page" src="images/profilePage.png"  width="220" height="400">  
+<img alt = "profile page" src="images/profilePage.png"  width="220" height="400">  
 </div>
 
 # Searching For A Place To Meet
 
+<div>
 When you open the search page there will be five parameters that you must fill out. You can not progress to the map without filling them all in.
 *  You must enter your location and the mode of transport you will take.
 *  Then enter your friend's location and mode of transport.
 *  Finally, choose the type of place you want to meet from the dropdown menu. You have the option between either a bar, cafe, or restaurant.
 
-<div align="right">
-    <img alt = "search page" src="images/searchPage.png"  width="220" height="400">  
+<img alt = "search page" src="images/searchPage.png"  width="220" height="400">  
 </div>
 
+<div>
 Start by pressing the first box with the text 'Enter Your Location'. As you type, the search box will auto-suggest places for you.
 
-<div align="right">
-    <img alt = "search box" src="images/searchBox.png"  width="220" height="400">  
+<img alt = "search box" src="images/searchBox.png"  width="220" height="400">  
 </div>
 
+<div>
 When you have all the parameters entered, press the search button to see your map.
 
-<div align="right">
-    <img alt = "search parameters" src="images/searchParameters.png"  width="220" height="400">  
+<img alt = "search parameters" src="images/searchParameters.png"  width="220" height="400">  
 </div>
 
 # Understanding The Map
 
+<div>
 The map will show you two red markers on the map that represent the locations you entered. You can press on the markers to see which is your location and their location.  
 
-<div align="right">
-    <img alt = "map results" src="images/mapResult.png"  width="220" height="400">  
+<img alt = "map results" src="images/mapResult.png"  width="220" height="400">  
 </div>
 
+<div>
 The results will show a list of places based on your parameters. It is a scrollable list that will give you maximum 20 meeting points.
 You can press on the names of the results to show it pop up as a violet coloured marker.  
 If you like one of the places, you can save it by pressing the red heart.
 
-<div align="right">
-    <img alt = "marker results" src="images/showMarker.png"  width="220" height="400">  
+<img alt = "marker results" src="images/showMarker.png"  width="220" height="400">  
 </div>
