@@ -1,4 +1,4 @@
-package com.example.tastytravel;
+package com.example.tastytravel.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.tastytravel.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -50,10 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
         clearFavouritesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference userFavs = FirebaseDatabase.getInstance().getReference(user.getUid());
-                userFavs.removeValue();
-
-                Toast.makeText(ProfileActivity.this, "Favourite Places Cleared", Toast.LENGTH_SHORT).show();
+                showClearFavsAlertDialog();
             }
         });
 
@@ -68,21 +66,16 @@ public class ProfileActivity extends AppCompatActivity {
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(ProfileActivity.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), StartActivity.class));
-                finish();
+                showLogoutAlertDialog();
             }
         });
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAlertDialog(v);
+                showDeleteAlertDialog();
             }
         });
-    }
-    private void deleteUserData() {
     }
 
     private void setUpNavBar() {
@@ -109,7 +102,7 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
-    public void showAlertDialog(View v){
+    public void showDeleteAlertDialog(){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Account Deletion");
         alert.setMessage("Do you want to permanently delete your account?");
@@ -133,6 +126,54 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(ProfileActivity.this, "Account Deletion Cancelled", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alert.create().show();
+    }
+
+    public void showLogoutAlertDialog(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Account Sign Out");
+        alert.setMessage("Do you want to sign out of your account?");
+
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(ProfileActivity.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), StartActivity.class));
+                finish();
+            }
+        });
+
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(ProfileActivity.this, "Log Out Cancelled", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alert.create().show();
+    }
+
+    public void showClearFavsAlertDialog(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Favourites Deletion");
+        alert.setMessage("Do you want to permanently delete your saved places?");
+
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DatabaseReference userFavs = FirebaseDatabase.getInstance().getReference(user.getUid());
+                userFavs.removeValue();
+
+                Toast.makeText(ProfileActivity.this, "Favourite Places Cleared", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(ProfileActivity.this, "Favourites Deletion Cancelled", Toast.LENGTH_SHORT).show();
             }
         });
         alert.create().show();
