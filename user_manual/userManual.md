@@ -2,7 +2,7 @@
 
 # TastyTravel User Manual
 
-![TastyTravel logo](/images/96.png)
+![TastyTravel logo](images/96.png)
 
 
 ## How to use the TastyTravel Android app.
