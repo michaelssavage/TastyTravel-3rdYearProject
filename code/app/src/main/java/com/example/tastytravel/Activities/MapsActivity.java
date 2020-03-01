@@ -23,6 +23,7 @@ import com.example.tastytravel.R;
 import com.example.tastytravel.Utils.JsonParser;
 import com.example.tastytravel.Models.ListItem;
 import com.example.tastytravel.Adapters.RecyclerViewAdapter;
+import com.example.tastytravel.Utils.MapsWorker;
 import com.example.tastytravel.Utils.UrlBuilder;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -62,6 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Instance of our map
     private GoogleMap googleMap;
+    Marker currentMarker = null;
 
     private ToggleButton toggleButton;
 
@@ -101,19 +103,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mPlaces = (ArrayList<Place>) data.getSerializable(LOCATIONS_TAG);
         }
 
-        // Checking values using Logging
-        Log.d(LOCATIONS_TAG, String.valueOf(mPlaces));
-
-
         // Adding the 2 locations on the map
         final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
         final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();
 
         // Build a API url based on passed parameters
-
         assert myButtonSelection != null;
         assert getYourLocationLatLng != null;
         String myUrl = UrlBuilder.getMapboxUrl(myButtonSelection, new LatLng(getYourLocationLatLng.longitude, getYourLocationLatLng.latitude));
+
         assert theirButtonSelection != null;
         assert getTheirLocationLatLng != null;
         String theirUrl = UrlBuilder.getMapboxUrl(theirButtonSelection, new LatLng(getTheirLocationLatLng.longitude, getTheirLocationLatLng.latitude));
@@ -125,13 +123,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Async url request
         // Volley library used to reduce typing of boiler plate code
-
         // Retrieve geojson data for user 1
         JsonObjectRequest geojson1 = new JsonObjectRequest
                 (Request.Method.GET, myUrl, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        addJsonLayer(response,isochroneSwitcher);
+                        MapsWorker.addJsonLayer(googleMap, response,isochroneSwitcher);
                         String one = "one";
                         try {
                             plotMidpoint(response, getTheirLocationLatLng, midpointSwitcher, one);
@@ -153,7 +150,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 (Request.Method.GET, theirUrl, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        addJsonLayer(response,isochroneSwitcher);
+                        MapsWorker.addJsonLayer(googleMap, response, isochroneSwitcher);
                         String two = "two";
                         try {
                             plotMidpoint(response, getYourLocationLatLng, midpointSwitcher, two);
@@ -184,12 +181,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * installed Google Play services and returned to the app.
      */
 
-
     @Override
     public void onMapReady(final GoogleMap mMap) {
         googleMap = mMap;
-        addMarkers();
+        MapsWorker.addMarkers(mPlaces, mMap);
     }
+
     //if back button pressed, start new Search Activity
     @Override
     public void onBackPressed() {
@@ -198,30 +195,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         startActivity(newSearch);
     }
 
-        // Adding the 2 locations on the map
-    private void addMarkers() {
-        final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
-        final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();
+    @Override
+    public void OnPlaceClick(int position) {
+        Log.d("onPlaceClicked","" + listItems.get(position).getHead());
 
-        // Add a marker and move the camera
-        assert getYourLocationLatLng != null;
-        LatLng yourLocationLatLng = new LatLng(getYourLocationLatLng.latitude, getYourLocationLatLng.longitude);
-        assert getTheirLocationLatLng != null;
-        LatLng theirLocationLatLng = new LatLng(getTheirLocationLatLng.latitude, getTheirLocationLatLng.longitude);
+        String selectedPlaceName = listItems.get(position).getHead();
+        String selectedPlaceCoordinates = listItems.get(position).getCoordinates();
 
-        googleMap.addMarker(new MarkerOptions().position(yourLocationLatLng).title("Your Location"));
-        googleMap.addMarker(new MarkerOptions().position(theirLocationLatLng).title("Their Location"));
+        String[] latlong =  selectedPlaceCoordinates.split(",");
+        double latitude = Double.parseDouble(latlong[0]);
+        double longitude = Double.parseDouble(latlong[1]);
 
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(yourLocationLatLng, 12f));
-    }
-    private void addJsonLayer(JSONObject response, Boolean isochroneOn) {
-        if(isochroneOn) {
-            GeoJsonLayer layer = new GeoJsonLayer(googleMap, response);
-            layer.addLayerToMap();
+        LatLng markerPos = new LatLng(latitude, longitude);
+        if(currentMarker != null){
+            currentMarker.remove();
         }
+        MarkerOptions markerOptions = new MarkerOptions()
+                .position(markerPos)
+                .title(selectedPlaceName);
+
+        currentMarker = googleMap.addMarker(markerOptions);
+        currentMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
+
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(markerPos, 15));
+
     }
 
-
+    // Try and move this to maps worker
     private void plotMidpoint(JSONObject response, LatLng location, Boolean midPointMarkerOn, String number) throws JSONException {
         JsonParser jsonParser = new JsonParser();
         ArrayList<String> coordinatesList = jsonParser.getCoordinates(response);
@@ -330,32 +330,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    Marker currentMarker = null;
 
-    @Override
-    public void OnPlaceClick(int position) {
-        Log.d("onPlaceClicked","" + listItems.get(position).getHead());
 
-        String selectedPlaceName = listItems.get(position).getHead();
-        String selectedPlaceCoordinates = listItems.get(position).getCoordinates();
-
-        String[] latlong =  selectedPlaceCoordinates.split(",");
-        double latitude = Double.parseDouble(latlong[0]);
-        double longitude = Double.parseDouble(latlong[1]);
-
-        LatLng markerPos = new LatLng(latitude, longitude);
-        if(currentMarker != null){
-            currentMarker.remove();
-        }
-        MarkerOptions markerOptions = new MarkerOptions()
-                .position(markerPos)
-                .title(selectedPlaceName);
-
-        currentMarker = googleMap.addMarker(markerOptions);
-        currentMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
-
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(markerPos, 15));
-
-    }
 
 }
