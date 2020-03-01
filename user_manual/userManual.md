@@ -74,12 +74,14 @@ On opening the app, you will be met with the start screen. Here, you can sign in
 Creating an account is easy and allows you to save places that you find when searching the map.
 
 <img alt = "start screen" src="images/startScreen.png"  width="220" height="400">  
+
 Creating an account requires you to enter an email and password of your choice. The email address must be valid like the following:  
 **example@gmail.com**
 
 The password must be at least 6 characters long.
 
 <img alt = "sign up page" src="images/signUP.png"  width="220" height="400">  
+
 Pressing the ‘SIGN UP’ button will successfully log you in and bring you to the home page.
 
 # Signing In
@@ -97,6 +99,7 @@ There are three main screens that the user can switch between using the bottom n
 
 1.  The home page is the screen that you will first see after signing in. Here you can find the search function and saved places.
 <img alt = "home page" src="images/homePage.png"  width="220" height="400">  
+
 Start the search function by pressing on the white search bar that says FIND PLACES TO MEET. 
 Refer to the guide with images below to learn how to search.
 Look at your saved places by pressing the text 'Saved Places' or the image underneath it.
@@ -104,11 +107,13 @@ Look at your saved places by pressing the text 'Saved Places' or the image under
 2.  The about page will help you learn how to use the map and provides contact information. We recommend reading it before searching to  
 get a good understanding of the app.
 <img alt = "about page" src="images/aboutPage.png"  width="220" height="400">  
+
 This page is scrollable. Follow the steps to get a successful result.
 
 3.  The profile page contains a clear saved places button, sign out button and delete account button. Don't worry if you press them by mistake, there  
 will be a prompt asking are you sure.  
 <img alt = "profile page" src="images/profilePage.png"  width="220" height="400">  
+
 The profile page also links to our settings page. It will be explained later.
 
 # Searching For A Place To Meet
