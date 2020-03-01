@@ -1,4 +1,4 @@
-package com.example.tastytravel.Utils;
+package com.example.tastytravel.Models;
 
 public class ListItem {
 

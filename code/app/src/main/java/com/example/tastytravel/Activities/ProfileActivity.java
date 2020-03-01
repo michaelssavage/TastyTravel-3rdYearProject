@@ -1,4 +1,4 @@
-package com.example.tastytravel;
+package com.example.tastytravel.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;

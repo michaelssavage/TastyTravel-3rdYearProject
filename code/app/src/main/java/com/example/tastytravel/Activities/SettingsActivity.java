@@ -1,4 +1,4 @@
-package com.example.tastytravel;
+package com.example.tastytravel.Activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tastytravel.R;
 
 public class SettingsActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.tastytravel;
+package com.example.tastytravel.Activities;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,9 +19,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.tastytravel.R;
 import com.example.tastytravel.Utils.JsonParser;
-import com.example.tastytravel.Utils.ListItem;
-import com.example.tastytravel.Utils.RecyclerViewAdapter;
+import com.example.tastytravel.Models.ListItem;
+import com.example.tastytravel.Adapters.RecyclerViewAdapter;
 import com.example.tastytravel.Utils.UrlBuilder;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;

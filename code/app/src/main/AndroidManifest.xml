@@ -33,16 +33,16 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".SavedPlacesActivity"/>
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".MapsActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".StartActivity">
+        <activity android:name=".Activities.SavedPlacesActivity"/>
+        <activity android:name=".Activities.AboutActivity" />
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.MapsActivity" />
+        <activity android:name=".Activities.ProfileActivity" />
+        <activity android:name=".Activities.SearchActivity" />
+        <activity android:name=".Activities.SettingsActivity" />
+        <activity android:name=".Activities.SignUpActivity" />
+        <activity android:name=".Activities.SignInActivity" />
+        <activity android:name=".Activities.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

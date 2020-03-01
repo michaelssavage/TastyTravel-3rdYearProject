@@ -1,4 +1,4 @@
-package com.example.tastytravel.Utils;
+package com.example.tastytravel.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,8 @@ import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tastytravel.PlaceInformation;
+import com.example.tastytravel.Models.ListItem;
+import com.example.tastytravel.Activities.PlaceInformation;
 import com.example.tastytravel.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

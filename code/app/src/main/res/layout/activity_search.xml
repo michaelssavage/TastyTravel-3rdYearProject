@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FD4D5353"
     android:backgroundTint="#007C7979"
-    tools:context=".SearchActivity">
+    tools:context=".Activities.SearchActivity">
 
     <Button
         android:id="@+id/searchBtn"

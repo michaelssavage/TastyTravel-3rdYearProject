@@ -1,14 +1,14 @@
-package com.example.tastytravel;
+package com.example.tastytravel.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
-import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.tastytravel.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

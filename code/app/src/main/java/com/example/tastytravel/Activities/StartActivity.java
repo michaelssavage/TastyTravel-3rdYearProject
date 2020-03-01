@@ -1,4 +1,4 @@
-package com.example.tastytravel;
+package com.example.tastytravel.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.tastytravel.Activities.MainActivity;
+import com.example.tastytravel.Activities.SignInActivity;
+import com.example.tastytravel.Activities.SignUpActivity;
+import com.example.tastytravel.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class StartActivity extends AppCompatActivity {
