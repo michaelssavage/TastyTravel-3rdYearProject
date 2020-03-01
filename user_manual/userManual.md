@@ -74,6 +74,7 @@ On opening the app, you will be met with the start screen. Here, you can sign in
 Creating an account is easy and allows you to save places that you find when searching the map.
 
 ![start screen](images/startScreen.png)
+<img src="images/startScreen.png"  width="90" height="120">
 
 Creating an account requires you to enter an email and password of your choice. The email address must be valid like the following:
 **example@gmail.com**
