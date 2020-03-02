@@ -63,7 +63,7 @@ The map will show the two locations inputted as well as the names of some Places
 
 <div>
 On opening the app, you will be met with the start screen. Here, you can sign in, sign up, or continue without an account.  
-Creating an account is easy and allows you to save places that you find when searching the map.
+Creating an account is easy and allows you to save places that you find when searching the map.  
 
 <img style="float: right;"  alt="start screen" src="images/startScreen.png" width="220" height="400">
 </div>
