@@ -6,7 +6,12 @@ public class ListItem {
     private String coordinates;
 
     public ListItem(String head, String coordinates) {
-        this.head = head;
+        this.head = head
+                .replace(".", "")
+                .replace("#", "")
+                .replace("$", "")
+                .replace("[", "")
+                .replace("]", "");
         this.coordinates = coordinates;
     }
 
