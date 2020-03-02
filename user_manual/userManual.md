@@ -60,8 +60,8 @@ The user will pick their friend’s chosen mode of transport.
 The user will pick the type of meeting place from the dropdown menu. They can select either Bar, Cafe, or Restaurant.
 
 ### Step 6
-When the user is happy with all the choices, they can press ‘SEARCH’ to arrive at their unique map. The map will show the two locations inputted as well as the names of some  
-Places Of Interest.
+When the user is happy with all the choices, they can press ‘SEARCH’ to arrive at their unique map. The map will show the two locations inputted as well as the names of some Places  
+Of Interest.
 
 <br/><br/>
 <br/><br/>
@@ -71,8 +71,8 @@ Places Of Interest.
 <a name="creating-an-account"></a>
 # Creating An Account 
 
-On opening the app, you will be met with the start screen. Here, you can sign in, sign up, or continue without an account. Creating an account is easy and allows  
-you to save places that you find when searching the map.  
+On opening the app, you will be met with the start screen. Here, you can sign in, sign up, or continue without an account. Creating an account is easy and allows you to save places  
+that you find when searching the map.  
 
 <div align="center">
 <img alt="start screen" src="images/startScreen.png" width="220" height="400">
@@ -113,9 +113,9 @@ If you do not have an account at the sign in page, you can create an account by 
 
 There are three main screens that the user can switch between using the bottom navigation bar.
 
-1.  The home page is the screen that you will first see after signing in. Here you can find the search function and saved places. Start the search function by pressing on the  
-white search bar that says FIND PLACES TO MEET. Refer to the guide with images below to learn how to search. Look at your saved places by pressing the text 'Saved Places'  
-or the image underneath it.  
+1.  The home page is the screen that you will first see after signing in. Here you can find the search function and saved places. Start the search function by pressing on the white  
+search bar that says FIND PLACES TO MEET. Refer to the guide with images below to learn how to search. Look at your saved places by pressing the text 'Saved Places' or the image  
+underneath it.  
 
 <div align="center">
 <img alt="home page" src="images/homePage.png"  width="220" height="400">  
@@ -128,8 +128,8 @@ This page is scrollable. Follow the steps to get a successful result.
 <img alt = "about page" src="images/aboutPage.png"  width="220" height="400">  
 </div>
 
-3.  The profile page contains a clear saved places button, sign out button and delete account button. Don't worry if you press them by mistake, there will be a prompt  
-asking are you sure. The profile page also links to our settings page. It will be explained later.  
+3.  The profile page contains a clear saved places button, sign out button and delete account button. Don't worry if you press them by mistake, there will be a prompt asking are  
+you sure. The profile page also links to our settings page. It will be explained later.  
 
 <div align="center">
 <img alt = "profile page" src="images/profilePage.png"  width="220" height="400">  
@@ -178,8 +178,8 @@ The map will show you two red markers on the map that represent the locations yo
 <img alt = "map results" src="images/mapResult.png"  width="220" height="400">  
 </div>
 
-The results will show a list of places based on your parameters. It is a scrollable list that will give you maximum 20 meeting points. You can press on the names of the  
-results to show it pop up as a violet coloured marker. If you like one of the places, you can save it by pressing the red heart.
+The results will show a list of places based on your parameters. It is a scrollable list that will give you maximum 20 meeting points. You can press on the names of the results to  
+show it pop up as a violet coloured marker. If you like one of the places, you can save it by pressing the red heart.
 
 <div align="center">
 <img alt = "marker results" src="images/showMarker.png"  width="220" height="400">  
@@ -201,11 +201,11 @@ There are two toggle buttons that can alter the appearance of the map. They are 
 <img alt = "map results" src="images/settings.png"  width="220" height="400">  
 </div>
 
-1. The first toggle button will draw an isochrone around the two inputted locations. An isochrone is a group of coordinates that are joined by black lines. They represent the  
-area that you can travel to in 15 minutes depending on your mode of transport. 
+1. The first toggle button will draw an isochrone around the two inputted locations. An isochrone is a group of coordinates that are joined by black lines. They represent the area  
+that you can travel to in 15 minutes depending on your mode of transport. 
 
-2. The second toggle button will show you where the best meeting point is. It is a blue marker and the places returned to you when you search are ranked by their distance  
-to this point.
+2. The second toggle button will show you where the best meeting point is. It is a blue marker and the places returned to you when you search are ranked by their distance to this  
+point.
 
 <br/><br/>
 <br/><br/>
@@ -215,8 +215,8 @@ to this point.
 <a name="saved"></a>
 # Looking At Saved Places
 
-You can find all your saved places by going to the home page and pressing the image of food. The map stores all the points you ever saved as violet markers. You can click on  
-those markers to see the names and you can open Google Maps to get directions to those points.
+You can find all your saved places by going to the home page and pressing the image of food. The map stores all the points you ever saved as violet markers. You can click on those  
+markers to see the names and you can open Google Maps to get directions to those points.
 
 <div align="center">
 <img alt = "map results" src="images/savedPlaces.png"  width="220" height="400">  
