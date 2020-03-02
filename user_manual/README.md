@@ -33,8 +33,7 @@
 [Understanding The Map](#map)                                                                                                               <div align="right"> 6. </div>
 [Styling The Map](#style)                                                                                                                   <div align="right"> 7. </div>
 [Looking At Saved Places](#saved)                                                                                                           <div align="right"> 8. </div>
-<br/><br/>
-<br/><br/>
+
 <br/><br/>
 <br/><br/>
 ---
@@ -67,8 +66,6 @@ Of Interest.
 
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/><br/>
 ---
 <a name="creating-an-account"></a>
 # Creating An Account 
@@ -91,8 +88,6 @@ Pressing the ‘SIGN UP’ button will successfully log you in and bring you to 
 
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/><br/>
 ---
 <a name="signing-in"></a>
 # Signing In
@@ -105,8 +100,6 @@ You can sign back into the app if you have already created an account. Press the
 
 If you do not have an account at the sign in page, you can create an account by pressing the SIGN UP button.
 
-<br/><br/>
-<br/><br/>
 <br/><br/>
 <br/><br/>
 ---
@@ -139,8 +132,6 @@ you sure. The profile page also links to our settings page. It will be explained
 
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/><br/>
 ---
 <a name="search-page"></a>
 # Searching For A Place To Meet
@@ -168,8 +159,6 @@ When you have all the parameters entered, press the search button to see your ma
 
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/><br/>
 ---
 <a name="map"></a>
 # Understanding The Map
@@ -191,8 +180,6 @@ The map can be styled differently by returning to the profile page and going to 
 
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/><br/>
 ---
 <a name="style"></a>
 # Styling The Map
@@ -211,8 +198,6 @@ point.
 
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/><br/>
 ---
 <a name="saved"></a>
 # Looking At Saved Places
@@ -223,3 +208,7 @@ markers to see the names and you can open Google Maps to get directions to those
 <div align="center">
 <img alt = "map results" src="images/savedPlaces.png"  width="220" height="400">  
 </div>
+
+<br/><br/>
+<br/><br/>
+---
