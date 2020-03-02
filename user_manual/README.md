@@ -12,7 +12,9 @@
 <br/><br/>
 <br/><br/>
 <br/><br/>
-**Michael Savage** - michaelsavage7@mail.dcu.ie • **Gerard Slowey** - gerard.slowey2@mail.dcu.ie
+**Michael Savage** - michaelsavage7@mail.dcu.ie  
+•  
+**Gerard Slowey** - gerard.slowey2@mail.dcu.ie  
 ---
 </div>
 <div>
