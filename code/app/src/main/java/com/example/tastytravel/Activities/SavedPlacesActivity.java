@@ -44,7 +44,7 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
 
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
 
-            mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid());
+            mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid()).child("Favourites");
             mPlaces.push().setValue(marker);
     }
 

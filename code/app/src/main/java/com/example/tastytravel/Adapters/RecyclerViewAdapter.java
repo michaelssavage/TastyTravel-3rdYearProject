@@ -49,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     .inflate(R.layout.activity_maps_results_layout_not_logged_in, parent, false);
         }
         else{
-            mDatabase = FirebaseDatabase.getInstance().getReference().child(currentFirebaseUser.getUid());
+            mDatabase = FirebaseDatabase.getInstance().getReference().child(currentFirebaseUser.getUid()).child("Favourites");
 
             v = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.activity_maps_results_layout, parent, false);

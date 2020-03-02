@@ -265,6 +265,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Log.d("radioscore", "" + score);
         return score;
     }
+
     // Try and move this to maps worker
     private void plotMidpoint(JSONObject response, LatLng location, Boolean midPointMarkerOn) throws JSONException {
         JsonParser jsonParser = new JsonParser();
