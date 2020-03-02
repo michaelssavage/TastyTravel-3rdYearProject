@@ -65,8 +65,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap googleMap;
     Marker currentMarker = null;
 
-    private ToggleButton toggleButton;
-
     // Integers to get the midpoint later
     private double midLong = 0.0;
     private double midLat = 0.0;
@@ -74,6 +72,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     RecyclerView.Adapter adapter;
     private List<ListItem> listItems;
+
+    // radio buttons are walk, car, bike
+    String myButtonSelection;
+    String theirButtonSelection;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,8 +97,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Bundle data = getIntent().getBundleExtra(DATA);
 
         Intent parameters = getIntent();
-        String myButtonSelection = parameters.getStringExtra(RADIO_BUTTON1);
-        String theirButtonSelection = parameters.getStringExtra(RADIO_BUTTON2);
+        myButtonSelection = parameters.getStringExtra(RADIO_BUTTON1);
+        theirButtonSelection = parameters.getStringExtra(RADIO_BUTTON2);
 
         placeType = parameters.getStringExtra(PLACE_TYPE_TAG);
 
@@ -129,9 +132,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     @Override
                     public void onResponse(JSONObject response) {
                         MapsWorker.addJsonLayer(googleMap, response,isochroneSwitcher);
-                        String one = "one";
                         try {
-                            plotMidpoint(response, getTheirLocationLatLng, midpointSwitcher, one);
+                            plotMidpoint(response, getTheirLocationLatLng, midpointSwitcher);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -151,9 +153,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     @Override
                     public void onResponse(JSONObject response) {
                         MapsWorker.addJsonLayer(googleMap, response, isochroneSwitcher);
-                        String two = "two";
                         try {
-                            plotMidpoint(response, getYourLocationLatLng, midpointSwitcher, two);
+                            plotMidpoint(response, getYourLocationLatLng, midpointSwitcher);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -221,28 +222,65 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    private double getRadioButtonScore(String radio1, String radio2){
+
+        double score = 0.5;
+
+        switch (radio1) {
+            case "Walk":
+                // you walk + they drive = 0.8
+                if (radio2.equals("Car")) {
+                    score = 0.8;
+                }
+                //you walk + they bike = 0.7
+                else if (radio2.equals("Bike")) {
+                    score = 0.7;
+                }
+                break;
+            case "Bike":
+                //you bike + they drive = 0.6
+                if (radio2.equals("Car")) {
+                    score = 0.6;
+                }
+                //you bike + they walk = 0.3
+                else if (radio2.equals("Walk")) {
+                    score = 0.3;
+                }
+                break;
+            case "Car":
+                // you drive = they walk = 0.2
+                if (radio2.equals("Walk")) {
+                    score = 0.2;
+                }
+                //you drive + they bike = 0.4
+                else if (radio2.equals("Bike")) {
+                    score = 0.4;
+                }
+                break;
+        }
+
+        //if they are the same = 0.5
+        Log.d("radioscore", "" + score);
+        return score;
+    }
     // Try and move this to maps worker
-    private void plotMidpoint(JSONObject response, LatLng location, Boolean midPointMarkerOn, String number) throws JSONException {
+    private void plotMidpoint(JSONObject response, LatLng location, Boolean midPointMarkerOn) throws JSONException {
         JsonParser jsonParser = new JsonParser();
         ArrayList<String> coordinatesList = jsonParser.getCoordinates(response);
         getMidpoints(coordinatesList, location);
 
         Log.d("midpoints", "" + midLong + " + " + midLat);
-        //is used already
-        if (number.equals("one")) {
-            LatLng midpoint1 = new LatLng(midLong, midLat);
-            points.add(midpoint1);
-        }
-        else{
-            LatLng midpoint2 = new LatLng(midLong, midLat);
-            points.add(midpoint2);
-        }
+
+        //Add the points from each midpoint to the array.
+        LatLng midpoint = new LatLng(midLong, midLat);
+        points.add(midpoint);
 
         Log.d("midpoints", "" + midLong + " + " + midLat);
         if(points.size() == 2){
 
-            // gets the midpoint we use to search for places.
-            LatLng bestMidpoint = SphericalUtil.interpolate(points.get(0), points.get(1), 0.5);
+            double score = getRadioButtonScore(myButtonSelection, theirButtonSelection);
+            LatLng bestMidpoint = SphericalUtil.interpolate(points.get(0), points.get(1), score);
+
             if(midPointMarkerOn) {
                 googleMap.addMarker(new MarkerOptions()
                         .position(bestMidpoint)
