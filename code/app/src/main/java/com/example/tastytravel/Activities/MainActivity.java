@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     Button searchBtn;
     ImageView foodCollageImage;
-    TextView saveplacesText;
+    Button saveplacesText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,16 +85,11 @@ public class MainActivity extends AppCompatActivity {
         // If the food collage image is clicked
         foodCollageImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if(mAuth.getCurrentUser() != null) {
-                    Intent savedPlacesIntent = new Intent(getApplicationContext(), SavedPlacesActivity.class);
-                    startActivity(savedPlacesIntent);
-                } else {
-                    Intent signIn = new Intent(getApplicationContext(), SignInActivity.class);
-                    startActivity(signIn);
-                }
-            }
-        });
+            public void onClick(View v) { startSavedPlaces(); }});
+
+        saveplacesText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { startSavedPlaces(); }});
     }
 
     public void startSavedPlaces() {
