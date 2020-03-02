@@ -63,6 +63,10 @@ The user will pick the type of meeting place from the dropdown menu. They can se
 When the user is happy with all the choices, they can press ‘SEARCH’ to arrive at their unique map. The map will show the two locations inputted as well as the names of some  
 Places Of Interest.
 
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
 ---
 <a name="creating-an-account"></a>
 # Creating An Account 
@@ -83,6 +87,11 @@ following:  **example@gmail.com**
 
 Pressing the ‘SIGN UP’ button will successfully log you in and bring you to the home page.
 
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+---
 <a name="signing-in"></a>
 # Signing In
 
@@ -94,6 +103,11 @@ You can sign back into the app if you have already created an account. Press the
 
 If you do not have an account at the sign in page, you can create an account by pressing the SIGN UP button.
 
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+---
 <a name="navigation"></a>
 # Navigation
 
@@ -121,6 +135,11 @@ asking are you sure. The profile page also links to our settings page. It will b
 <img alt = "profile page" src="images/profilePage.png"  width="220" height="400">  
 </div>
 
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+---
 <a name="search-page"></a>
 # Searching For A Place To Meet
 
@@ -145,6 +164,11 @@ When you have all the parameters entered, press the search button to see your ma
 <img alt = "search parameters" src="images/searchParameters.png"  width="220" height="400">  
 </div>
 
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+---
 <a name="map"></a>
 # Understanding The Map
 
@@ -163,6 +187,11 @@ results to show it pop up as a violet coloured marker. If you like one of the pl
 
 The map can be styled differently by returning to the profile page and going to the settings page.
 
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+---
 <a name="style"></a>
 # Styling The Map
 
@@ -178,6 +207,11 @@ area that you can travel to in 15 minutes depending on your mode of transport.
 2. The second toggle button will show you where the best meeting point is. It is a blue marker and the places returned to you when you search are ranked by their distance  
 to this point.
 
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+---
 <a name="saved"></a>
 # Looking At Saved Places
 
