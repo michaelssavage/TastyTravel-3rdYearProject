@@ -19,12 +19,12 @@
 
 # Table Of Contents
 
-[The Aim Of Our App](#The Aim Of Our App)                             <div align = "right"> 1. </div>
-[Creating An Account](#Creating An Account)                           <div align = "right"> 2. </div>
-[Signing In](#Signing In)                                             <div align = "right"> 3. </div>
-[Navigation](#Navigation)                                             <div align = "right"> 4. </div>
-[Searching for Places](#Searching For A Place To Meet)                <div align = "right"> 5. </div>
-[Saving Places](#Saving Places)                                       <div align = "right"> 6. </div>
+[The Aim Of Our App](#the-aim-of-our-app)                             <div align="right"> 1. </div>
+[Creating An Account](#creating-an-account)                           <div align="right"> 2. </div>
+[Signing In](#signing-in)                                             <div align="right"> 3. </div>
+[Navigation](#navigation)                                             <div align="right"> 4. </div>
+[Searching for Places](#searching-for-a-place-to-meet)                <div align="right"> 5. </div>
+[Saving Places](#saving-places)                                       <div align="right"> 6. </div>
 <br/><br/>
 <br/><br/>
 <br/><br/>
@@ -61,29 +61,22 @@ The map will show the two locations inputted as well as the names of some Places
 
 # Creating An Account
 
-<div>
-<img align="left"  alt="start screen" src="images/startScreen.png" width="220" height="400">
+<img align="right" alt="start screen" src="images/startScreen.png" width="220" height="400">
 On opening the app, you will be met with the start screen. Here, you can sign in, sign up, or continue without an account.
 Creating an account is easy and allows you to save places that you find when searching the map.  
-</div>
 
-<div>
-<img align="left" alt="sign up page" src="images/signUP.png" width="220" height="400">  
+<img align="right" alt="sign up page" src="images/signUP.png" width="220" height="400">  
 Creating an account requires you to enter an email and password of your choice. The email address must be valid like the following:  
 **example@gmail.com**
 The password must be at least 6 characters long.
 
 Pressing the ‘SIGN UP’ button will successfully log you in and bring you to the home page.
-</div>
 
 # Signing In
 
-<div>
+<img align="right" alt="sign in page" src="images/signIN.png" width="220" height="400">  
 You can sign back into the app if you have already created an account. Press the SIGN IN button on the start page and  
 enter the email and password you used.
-
-<img alt = "sign in page" src="images/signIN.png"  width="220" height="400">  
-</div>
 
 If you do not have an account at the sign in page, you can create an account by pressing the SIGN UP button.
 
