@@ -134,7 +134,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
                 Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME))
                 .setHint("Enter your Location");
 
-        autocompleteSupportFragment1.setCountries("IE");
+//        autocompleteSupportFragment1.setCountries("IE");
         autocompleteSupportFragment1.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(@NonNull Place yourLocation) {
@@ -155,7 +155,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
                 Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME))
                 .setHint("Enter their Location");
 
-        autocompleteSupportFragment2.setCountries("IE");
+//        autocompleteSupportFragment2.setCountries("IE");
         autocompleteSupportFragment2.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(@NonNull Place theirLocation) {
