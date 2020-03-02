@@ -1,5 +1,6 @@
 package com.example.tastytravel.Adapters;
 
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private FirebaseUser currentFirebaseUser;
     private List<ListItem> listItems;
     private OnPlaceListener mOnPlaceListener;
+    private SparseBooleanArray mStateButtons = new SparseBooleanArray();
+
 
     public RecyclerViewAdapter(List<ListItem> listItems, OnPlaceListener onPlaceListener) {
         this.listItems = listItems;
@@ -53,14 +56,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+
+        final int currentPosition = holder.getAdapterPosition();
+        ToggleButton button = holder.toggleButton;
+
+        if(mStateButtons.valueAt(currentPosition)) {
+            button.setChecked(true);
+        } else {
+            button.setChecked(false);
+        }
+
         final ListItem listItem = listItems.get(position);
         holder.textViewHead.setText(listItem.getHead());
 
         if(currentFirebaseUser != null) {
-            holder.toggleButton.setOnClickListener(new View.OnClickListener() {
+            button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // IMPLEMENT LOGIC HERE TO SAVE PLACE
+                    mStateButtons.put(currentPosition, true);
+
                     PlaceInformation place = new PlaceInformation(listItem.getHead(), listItem.getCoordinates());
                     mDatabase.child(listItem.getHead()).setValue(place);
                 }
@@ -79,7 +93,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public ViewHolder(@NonNull View itemView, OnPlaceListener onPlaceListener) {
             super(itemView);
+
             toggleButton = itemView.findViewById(R.id.button_favorite);
+
             textViewHead = itemView.findViewById(R.id.textViewHead);
             this.onPlaceListener = onPlaceListener;
 
