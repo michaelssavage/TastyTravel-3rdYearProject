@@ -28,7 +28,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private OnPlaceListener mOnPlaceListener;
     private SparseBooleanArray mStateButtons = new SparseBooleanArray();
 
-
     public RecyclerViewAdapter(List<ListItem> listItems, OnPlaceListener onPlaceListener) {
         this.listItems = listItems;
         this.mOnPlaceListener = onPlaceListener;
@@ -55,25 +54,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
-        final int currentPosition = holder.getAdapterPosition();
-        ToggleButton button = holder.toggleButton;
-
-        if(mStateButtons.valueAt(currentPosition)) {
-            button.setChecked(true);
-        } else {
-            button.setChecked(false);
-        }
+        holder.toggleButton.setChecked(mStateButtons.get(position, false));
 
         final ListItem listItem = listItems.get(position);
         holder.textViewHead.setText(listItem.getHead());
 
         if(currentFirebaseUser != null) {
-            button.setOnClickListener(new View.OnClickListener() {
+            holder.toggleButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mStateButtons.put(currentPosition, true);
+                    if(holder.toggleButton.isChecked()){
+                        mStateButtons.put(position, true);
+                    }
+                    else   {
+                        mStateButtons.put(position, false);
+                    }
 
                     PlaceInformation place = new PlaceInformation(listItem.getHead(), listItem.getCoordinates());
                     mDatabase.child(listItem.getHead()).setValue(place);
