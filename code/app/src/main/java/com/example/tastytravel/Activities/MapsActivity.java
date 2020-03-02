@@ -228,33 +228,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         switch (radio1) {
             case "Walk":
-                // you walk + they drive = 0.8
+                // you walk + they drive
                 if (radio2.equals("Car")) {
-                    score = 0.8;
+                    score = 0.2;
                 }
-                //you walk + they bike = 0.7
+                //you walk + they bike
                 else if (radio2.equals("Bike")) {
-                    score = 0.7;
-                }
-                break;
-            case "Bike":
-                //you bike + they drive = 0.6
-                if (radio2.equals("Car")) {
-                    score = 0.6;
-                }
-                //you bike + they walk = 0.3
-                else if (radio2.equals("Walk")) {
                     score = 0.3;
                 }
                 break;
-            case "Car":
-                // you drive = they walk = 0.2
-                if (radio2.equals("Walk")) {
-                    score = 0.2;
-                }
-                //you drive + they bike = 0.4
-                else if (radio2.equals("Bike")) {
+
+            case "Bike":
+                //you bike + they drive
+                if (radio2.equals("Car")) {
                     score = 0.4;
+                }
+                //you bike + they walk
+                else if (radio2.equals("Walk")) {
+                    score = 0.7;
+                }
+                break;
+
+            case "Car":
+                //you drive + they bike
+                if (radio2.equals("Bike")) {
+                    score = 0.6;
+                }
+                // you drive = they walk
+                else if (radio2.equals("Walk")) {
+                    score = 0.8;
                 }
                 break;
         }
