@@ -61,22 +61,22 @@ The map will show the two locations inputted as well as the names of some Places
 
 # Creating An Account
 
-<img align="right" alt="start screen" src="images/startScreen.png" width="220" height="400">
 On opening the app, you will be met with the start screen. Here, you can sign in, sign up, or continue without an account.
 Creating an account is easy and allows you to save places that you find when searching the map.  
+<img align="center" alt="start screen" src="images/startScreen.png" width="220" height="400">
 
-<img align="right" alt="sign up page" src="images/signUP.png" width="220" height="400">  
 Creating an account requires you to enter an email and password of your choice. The email address must be valid like the following:  
-**example@gmail.com**
-The password must be at least 6 characters long.
+**example@gmail.com**  
+The password must be at least 6 characters long.  
+<img align="center" alt="sign up page" src="images/signUP.png" width="220" height="400">  
 
 Pressing the ‘SIGN UP’ button will successfully log you in and bring you to the home page.
 
 # Signing In
 
-<img align="right" alt="sign in page" src="images/signIN.png" width="220" height="400">  
 You can sign back into the app if you have already created an account. Press the SIGN IN button on the start page and  
 enter the email and password you used.
+<img align="center" alt="sign in page" src="images/signIN.png" width="220" height="400">  
 
 If you do not have an account at the sign in page, you can create an account by pressing the SIGN UP button.
 
