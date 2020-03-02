@@ -169,7 +169,7 @@ If you like one of the places, you can save it by pressing the red heart.
 The map can be styled differently by returning to the profile page and going to the settings page.
 
 <a name="style"></a>
-# Stying The Map
+# Styling The Map
 
 There are two toggle buttons that can alter the appearance of the map. They are off by default.  
 
