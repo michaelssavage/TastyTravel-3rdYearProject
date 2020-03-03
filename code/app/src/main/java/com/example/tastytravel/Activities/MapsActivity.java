@@ -192,8 +192,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onBackPressed() {
         finish();
-        Intent newSearch = new Intent(MapsActivity.this, SearchActivity.class);
-        startActivity(newSearch);
+        Intent mainScreen = new Intent(MapsActivity.this, MainActivity.class);
+        startActivity(mainScreen);
     }
 
     @Override

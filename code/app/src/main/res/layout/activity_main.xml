@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -40,7 +39,7 @@
         android:layout_width="306dp"
         android:layout_height="45dp"
         android:layout_marginBottom="48dp"
-        android:background="@drawable/activity_main_white_button"
+        android:background="@drawable/activity_main_search_button"
         android:elevation="10dp"
         android:text="@string/find_places_to_meet"
         android:textColor="@android:color/black"
@@ -60,75 +59,6 @@
         app:layout_constraintStart_toStartOf="@+id/searchBtn"
         app:layout_constraintTop_toTopOf="@+id/searchBtn" />
 
-    <ScrollView
-        android:id="@+id/settingsScrollable"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainbackground">
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="parent">
-
-            <ImageView
-                android:id="@+id/foodCollageImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="0dp"
-                android:adjustViewBounds="true"
-                android:clickable="true"
-                android:contentDescription="@string/food_collage"
-                android:cropToPadding="false"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.333"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/saveplacesText"
-                app:srcCompat="@drawable/foodcollage" />
-
-            <Button
-                android:id="@+id/saveplacesText"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:layout_alignTop="@+id/foodCollageImage"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="-1dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/activity_main_saved_places_button"
-                android:elevation="10dp"
-                android:text="@string/saved_places"
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/historyBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/foodCollageImage"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="116dp"
-                android:layout_marginBottom="35dp"
-                android:background="@drawable/activity_profile_white_button"
-                android:text="Searched Places History"
-                android:textAlignment="center" />
-        </RelativeLayout>
-    </ScrollView>
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
@@ -140,5 +70,79 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
 
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainbackground">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/savedPlacesBtn"
+                android:layout_width="381dp"
+                android:layout_height="126dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/activity_main_food_button"
+                android:contentDescription="@string/image_of_coffees"
+                android:scaleType="fitXY"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:srcCompat="@drawable/activity_main_coffee" />
+
+            <TextView
+                android:id="@+id/savedPlacesText"
+                android:layout_width="179dp"
+                android:layout_height="31dp"
+                android:layout_alignStart="@id/savedPlacesBtn"
+                android:layout_alignTop="@id/savedPlacesBtn"
+                android:layout_alignEnd="@id/savedPlacesBtn"
+                android:layout_alignBottom="@id/savedPlacesBtn"
+                android:layout_marginStart="202dp"
+                android:layout_marginTop="97dp"
+                android:background="@drawable/text_border"
+                android:gravity="bottom|center"
+                android:text="@string/my_saved_places"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/historyBtn"
+                android:layout_width="381dp"
+                android:layout_height="126dp"
+                android:layout_below="@+id/savedPlacesBtn"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/activity_main_food_button"
+                android:contentDescription="@string/image_of_beers"
+                android:scaleType="fitXY"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:srcCompat="@drawable/activity_main_beer" />
+
+            <TextView
+                android:id="@+id/historyText"
+                android:layout_width="179dp"
+                android:layout_height="31dp"
+                android:layout_alignStart="@id/historyBtn"
+                android:layout_alignTop="@id/historyBtn"
+                android:layout_alignEnd="@id/historyBtn"
+                android:layout_alignBottom="@id/historyBtn"
+                android:layout_marginStart="202dp"
+                android:layout_marginTop="97dp"
+                android:background="@drawable/text_border"
+                android:gravity="bottom|center"
+                android:text="@string/my_history"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

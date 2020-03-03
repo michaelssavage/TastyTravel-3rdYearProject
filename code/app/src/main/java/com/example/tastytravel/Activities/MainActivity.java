@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavBar;
     FirebaseAuth mAuth;
     Button searchBtn;
-    ImageView foodCollageImage;
-    Button saveplacesText;
+    ImageView savedPlacesBtn, historyBtn;
+    TextView savedPlacesText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +32,13 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         bottomNavBar = findViewById(R.id.bottomNavBar);
         searchBtn = findViewById(R.id.searchBtn);
-        foodCollageImage = findViewById(R.id.foodCollageImage);
-        saveplacesText = findViewById(R.id.saveplacesText);
+        savedPlacesBtn = findViewById(R.id.savedPlacesBtn);
+        historyBtn = findViewById(R.id.historyBtn);
+        savedPlacesText = findViewById(R.id.savedPlacesText);
+
+        // makes the two images rounded.
+        savedPlacesBtn.setClipToOutline(true);
+        historyBtn.setClipToOutline(true);
 
         // Set up bottom nav bar
         setUpNavBar();
@@ -106,11 +111,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // If the food collage image is clicked
-        foodCollageImage.setOnClickListener(new View.OnClickListener() {
+        savedPlacesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { startSavedPlaces(); }});
 
-        saveplacesText.setOnClickListener(new View.OnClickListener() {
+        savedPlacesText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { startSavedPlaces(); }});
     }

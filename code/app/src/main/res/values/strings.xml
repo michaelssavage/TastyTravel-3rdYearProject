@@ -55,12 +55,12 @@
     <string name="logout">Logout</string>
     <string name="how_to_use">How To Use</string>
     <string name="contact_us">Contact Us</string>
-    <string name="contact_Paragraph"> If you have any questions feel free to ask us by email.\n
+    <string name="contact_Paragraph"> If you have any questions feel free to send us an email or check out our
+        gitlab repository for user manuals and more information.\n
         \n
         Gerard: gerard.slowey2@mail.dcu.ie\n
-        Michael: michael.savage7@mail.dcu.ie
     </string>
-    <string name="howToUse_Paragraph"> 1. Click the SEARCH FOR A TASTE button to begin your search.\n
+    <string name="howToUse_Paragraph"> 1. Press the FIND PLACES TO MEET button to begin your search.\n
         \n
         2. Enter your location. Google auto suggest will help you pick your location as you type.\n
         \n
@@ -70,16 +70,16 @@
         \n
         5. Add the type of place you want to meet. You can pick between Bars, Cafes, or Restaurants.\n
         \n
-        6. click SEARCH to see your map.\n
+        6. press SEARCH to see your map.\n
         \n
         \n
-        Your map will show your location and your friend\'s location as RED markers. You can click on
+        Your map will show your location and your friend\'s location as RED markers. You can press on
         them to see which one is which.\n
         \n
         Our algorithm will pick the best spot to start searching from. By default this spot is hidden.
         It is a BLUE marker and you can toggle it ON/OFF in the settings.\n
         \n
-        There is also a setting to draw black lines that enclose each RED marker. These lines
+        There is also a settings toggle to draw black lines that enclose each RED marker. These lines
         represent how far a person can reach depending on the mode of transport.
     </string>
     <string name="about_pizza_background">Pizza background</string>
@@ -95,14 +95,18 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_map_saved_places">Saved Places On Map</string>
     <string name="settings_explanation_isochrone">The isochrone is made up of coordinates that join together
-        to form a perimeter around the locations.They represent how far a person can reach within a
-        certain amount of time (15 minutes). Turn it ON/OFF depending on your preference.
+        to form a perimeter around the locations. They represent how far a person can reach within a
+        certain amount of time. Turn it ON/OFF depending on your preference.
     </string>
-    <string name="settings_explanation_midpoint">\'Your location\' and \'Their location\' are shown as red
-        markers. The best midpoint is shown as a blue marker. If you do not want to
-        see the best meeting place marker, you can turn it ON/OFF depending on your preference.
+    <string name="settings_explanation_midpoint">Your location and Their location are shown as red
+        markers. The best meeting point is shown as a blue marker. If you do not want to
+        see the best meeting place marker, you can also turn it ON/OFF depending on your preference.
     </string>
     <string name="clear_favs">Clear Favourites</string>
     <string name="find_places_to_meet">FIND PLACES TO MEET</string>
+    <string name="my_saved_places">My Saved Places</string>
+    <string name="my_history">My History</string>
+    <string name="image_of_beers">image of beers.</string>
+    <string name="image_of_coffees">image of coffees.</string>
 
 </resources>
