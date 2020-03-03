@@ -16,17 +16,27 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tastytravel.Models.HistoryItem;
 import com.example.tastytravel.R;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class SearchActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -37,6 +47,8 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
     public static final String PLACE_TYPE_TAG = "PLACE_TYPE";
 
     private ArrayList<Place> userPlaces;
+    private DatabaseReference userHistory;
+    FirebaseUser currentFirebaseUser;
 
     PlacesClient placesClient;
 
@@ -53,6 +65,12 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+
+        // User History Segment
+        userHistory = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid()).child("History");
+
+        // User Places
         userPlaces = new ArrayList<>();
 
         showMap = new Intent(getApplicationContext(), MapsActivity.class);
@@ -66,6 +84,17 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         placesSpinner = findViewById(R.id.placeTypeSpinner);
         placesSpinner.setOnItemSelectedListener(this);
 
+        // Setup dropdown menu
+        setupSpinnerDropdown();
+
+        // Define Actions for button clicks
+        initialiseViewControls();
+
+        // Places Search Feature
+        initialisePlaces();
+    }
+
+    private void setupSpinnerDropdown() {
         List<String> categories = new ArrayList<>();
         categories.add(0, "Select The Type Of Meeting Place");
         categories.add("Bar");
@@ -92,13 +121,9 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
-        // Define Actions for button clicks
-        initialiseViewControls();
-
-        // Places Search Feature
-        initialisePlaces();
     }
 
     private void initialiseViewControls() {
@@ -171,6 +196,8 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
     public void openMap() {
 
+        savePlacestoHistory();
+
         try {
             //buttons are walk, car, bike
             String radio1 = ((RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId())).getText().toString();
@@ -197,10 +224,22 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         if (userPlaces.size() < 2) {
             Toast.makeText(this, "Error: Did you enter the locations?", Toast.LENGTH_SHORT).show();
         } else if (!(showMap.hasExtra(PLACE_TYPE_TAG))) {
-            Toast.makeText(this, "Error: Did you enter where you want to meet?", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error: Did you enter the type of meeting place you would like?", Toast.LENGTH_SHORT).show();
         } else {
             startActivity(showMap);
         }
+    }
+
+    private void savePlacestoHistory() {
+
+        String placeName = yourSelectedPlace.getName();
+        LatLng coords = theirSelectedPlace.getLatLng();
+        String coordinates = String.valueOf(coords.latitude + "," + coords.longitude);
+
+        String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+
+        final HistoryItem place = new HistoryItem(placeName, coordinates, date);
+        userHistory.child(placeName).setValue(place);
     }
 
     @Override
