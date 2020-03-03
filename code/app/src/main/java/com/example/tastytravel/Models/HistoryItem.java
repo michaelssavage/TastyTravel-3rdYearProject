@@ -2,16 +2,15 @@ package com.example.tastytravel.Models;
 
 public class HistoryItem {
 
-    private String head;
+    private String placeName;
     private String accessDate;
-    public String coordinates;
+    private String coordinates;
 
     public HistoryItem(){
-
     }
 
-    public HistoryItem(String head, String coordinates, String accessDate) {
-        this.head = head
+    public HistoryItem(String placeName, String coordinates, String accessDate) {
+        this.placeName = placeName
                 .replace(".", "")
                 .replace("#", "")
                 .replace("$", "")
@@ -21,8 +20,8 @@ public class HistoryItem {
         this.coordinates = coordinates;
     }
 
-    public String getHead() {
-        return head;
+    public String getPlaceName() {
+        return placeName;
     }
 
     public String getCoordinates() {
@@ -32,6 +31,5 @@ public class HistoryItem {
     public String getAccessDate() {
         return accessDate;
     }
-
 
 }

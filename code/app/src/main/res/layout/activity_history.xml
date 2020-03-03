@@ -46,11 +46,10 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/textLinearLayout" >
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/historyRecyclerView"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent" >
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
+        <ListView
+            android:id="@+id/historyItems"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        </LinearLayout>
 
 </RelativeLayout>

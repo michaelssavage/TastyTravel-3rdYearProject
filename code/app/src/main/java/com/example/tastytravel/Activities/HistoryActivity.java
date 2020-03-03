@@ -2,18 +2,19 @@ package com.example.tastytravel.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tastytravel.Adapters.RecyclerViewAdapter;
 import com.example.tastytravel.Models.HistoryItem;
-import com.example.tastytravel.Models.ListItem;
 import com.example.tastytravel.R;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseListOptions;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -28,48 +29,76 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
 public class HistoryActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener {
 
-    private RecyclerView historyRecyclerView;
     private GoogleMap mMap;
     private DatabaseReference mPlaces;
     Marker marker;
 
-    private List<HistoryItem> historyItems;
-    RecyclerView.Adapter adapter;
-
+    private ListView historyListView;
+    private FirebaseUser currentFirebaseUser;
+    private FirebaseListAdapter<HistoryItem> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
+        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid()).child("History");
+        mPlaces.push().setValue(marker);
+
+        historyListView = findViewById(R.id.historyItems);
+
+        Query query = FirebaseDatabase.getInstance()
+                .getReference(currentFirebaseUser.getUid()).child("History")
+                .orderByKey();
+
+        FirebaseListOptions<HistoryItem> options = new FirebaseListOptions.Builder<HistoryItem>()
+                .setLayout(R.layout.activity_history_item)
+                .setLifecycleOwner(this)
+                .setQuery(query, HistoryItem.class)
+                .build();
+
+        adapter = new FirebaseListAdapter<HistoryItem>(options) {
+            @Override
+            protected void populateView(@NonNull View v, @NonNull HistoryItem model, int position) {
+                TextView placeName = v.findViewById(R.id.placeName);
+                TextView lastSearched = v.findViewById(R.id.lastSearched);
+
+                HistoryItem historyItem = (HistoryItem) model;
+                placeName.setText("Location Name: " + historyItem.getPlaceName());
+                lastSearched.setText("Search Date: " + historyItem.getAccessDate());
+            }
+        };
+    historyListView.setAdapter(adapter);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        historyRecyclerView = findViewById(R.id.historyRecyclerView);
-        historyRecyclerView.setHasFixedSize(true);
-        historyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+    // Firebase list adapter overrides
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
 
-        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid()).child("History");
-        mPlaces.push().setValue(marker);
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        googleMap.setOnMarkerClickListener(this);
+        mMap.setOnMarkerClickListener(this);
 
         // Focus mapview on Ireland
         LatLng ireland = new LatLng(53.4239,-7.9407);
@@ -84,7 +113,7 @@ public class HistoryActivity extends AppCompatActivity implements OnMapReadyCall
                     for (DataSnapshot s : dataSnapshot.getChildren()) {
                         HistoryItem place = s.getValue(HistoryItem.class);
 
-                        String placeName = place.getHead();
+                        String placeName = place.getPlaceName();
                         String strLocation = place.getCoordinates();
 
                         String[] latlong = strLocation.split(",");
@@ -134,4 +163,5 @@ public class HistoryActivity extends AppCompatActivity implements OnMapReadyCall
     public boolean onMarkerClick(Marker marker) {
         return false;
     }
+
 }

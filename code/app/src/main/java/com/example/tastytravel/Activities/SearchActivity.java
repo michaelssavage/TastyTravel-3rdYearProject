@@ -196,8 +196,6 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
     public void openMap() {
 
-        savePlacestoHistory();
-
         try {
             //buttons are walk, car, bike
             String radio1 = ((RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId())).getText().toString();
@@ -207,6 +205,9 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
             userPlaces.add(yourSelectedPlace);
             userPlaces.add(theirSelectedPlace);
 
+            for(Place userPlace : userPlaces){
+                savePlacestoHistory(userPlace);
+            }
             // Put the radio button selections
             showMap.putExtra(RADIO_BUTTON1, radio1);
             showMap.putExtra(RADIO_BUTTON2, radio2);
@@ -230,12 +231,11 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         }
     }
 
-    private void savePlacestoHistory() {
+    private void savePlacestoHistory(Place userPlace) {
 
-        String placeName = yourSelectedPlace.getName();
-        LatLng coords = theirSelectedPlace.getLatLng();
+        String placeName = userPlace.getName();
+        LatLng coords = userPlace.getLatLng();
         String coordinates = String.valueOf(coords.latitude + "," + coords.longitude);
-
         String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
         final HistoryItem place = new HistoryItem(placeName, coordinates, date);
