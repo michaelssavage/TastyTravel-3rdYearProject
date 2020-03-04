@@ -93,7 +93,8 @@ We use _Firebase_ for account authentication and we store saved places and searc
 <a name="high-level"></a>
 # 3. High Level Design
 <a name="class-diagram"></a>
-##Context Data Flow Diagrams
+## Context Data Flow Diagrams
+
 
 
 ## Object Models
@@ -118,9 +119,16 @@ We use _Firebase_ for account authentication and we store saved places and searc
 <br>We realised that if a place was searched for and selected using the maps AutoCompleteFragment and the user chaged their mind and searched for a new location the old location remained selected and saved to the ArrayList. 
 To solve this problem, instead of immediately saving the place to the ArrayList of places we assigned the Place object to a temporary Place object yourSelectedLocation and theirSelectedLocation.
 Only when the user was happy with their choosen search parameters when they hit the SEARCH button was the Place objects saved in the list and passed to the next activity.
-THis allowed the user to change the locations multiple times and only the final choosen place would be used.
+This allowed the user to change the locations multiple times and only the final choosen place would be used.
 
+**Search Results Save Icon in Recycler View Falsely Showing Checked Toggle Button**
+<br> Due to the nature of the Android RecyclerView it doesn't save the scroll position of the items being displyed. 
+If a toggle button was clicked on one of the cardviews being displayed in the recycler view this resulted in every 8th toggle button after that cardview showing as selected also, when in fact this was not the case.
+To overcome this we used a SparseBooleanArray to keep track of the states of the toggle buttons attached to each card in the recyler view.
+The SparseBooleanArray simpy mapped the integer representing the position of the card in the recyler view to a boolean (true 0r false) indicating whether the toggle was checked or not.
+When the toggle button onClickListener received an onClick request it updated the toggle switches state to 'true' in the boolean array and vica versa.
 <br></br>
+
 <a name="install"></a>
 # 5. Installation Guide
 **Foreword**
