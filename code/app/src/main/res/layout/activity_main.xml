@@ -15,10 +15,9 @@
         android:fontFamily="sans-serif-black"
         android:text="@string/app_name"
         android:textColor="@color/red_orange"
-
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,11 +84,13 @@
 
             <ImageView
                 android:id="@+id/savedPlacesBtn"
-                android:layout_width="381dp"
+                android:layout_width="match_parent"
                 android:layout_height="126dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="24dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:background="@drawable/activity_main_food_button"
                 android:contentDescription="@string/image_of_coffees"
                 android:scaleType="fitXY"
@@ -98,13 +99,13 @@
 
             <TextView
                 android:id="@+id/savedPlacesText"
-                android:layout_width="179dp"
+                android:layout_width="wrap_content"
                 android:layout_height="31dp"
                 android:layout_alignStart="@id/savedPlacesBtn"
                 android:layout_alignTop="@id/savedPlacesBtn"
                 android:layout_alignEnd="@id/savedPlacesBtn"
                 android:layout_alignBottom="@id/savedPlacesBtn"
-                android:layout_marginStart="202dp"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="97dp"
                 android:background="@drawable/text_border"
                 android:gravity="bottom|center"
@@ -115,10 +116,12 @@
 
             <ImageView
                 android:id="@+id/historyBtn"
-                android:layout_width="381dp"
+                android:layout_width="match_parent"
                 android:layout_height="126dp"
                 android:layout_below="@+id/savedPlacesBtn"
                 android:layout_marginTop="24dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:background="@drawable/activity_main_food_button"
                 android:contentDescription="@string/image_of_beers"
                 android:scaleType="fitXY"
@@ -127,7 +130,7 @@
 
             <TextView
                 android:id="@+id/historyText"
-                android:layout_width="179dp"
+                android:layout_width="wrap_content"
                 android:layout_height="31dp"
                 android:layout_alignStart="@id/historyBtn"
                 android:layout_alignTop="@id/historyBtn"

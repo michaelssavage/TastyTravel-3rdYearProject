@@ -19,7 +19,6 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +28,6 @@ import com.google.firebase.database.ValueEventListener;
 public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
-    private ChildEventListener childEventListener;
     private DatabaseReference mPlaces;
     Marker marker;
 
@@ -44,29 +42,19 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
 
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
 
-            mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid()).child("Favourites");
-            mPlaces.push().setValue(marker);
+        mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid()).child("Favourites");
+        mPlaces.push().setValue(marker);
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        googleMap.setOnMarkerClickListener(this);
 
         // Focus mapview on Ireland
         LatLng ireland = new LatLng(53.4239,-7.9407);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ireland,6.5f));
 
+        // Plotting points on map
         mMap.setOnMarkerClickListener(this);
         mPlaces.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -86,10 +74,10 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
                         mMap.addMarker(new MarkerOptions()
                                 .position(location)
                                 .title(place.placeName))
-                                .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
+                                .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
                     }
                 } else {
-                    Toast.makeText(SavedPlacesActivity.this, "You Have No Saved Places", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SavedPlacesActivity.this, "You Have No Saved Places", Toast.LENGTH_LONG).show();
                 }
             }
 

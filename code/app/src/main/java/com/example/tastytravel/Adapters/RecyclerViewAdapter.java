@@ -69,7 +69,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.toggleButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    final PlaceInformation place = new PlaceInformation(listItem.getHead().trim(), listItem.getCoordinates());
+                    final PlaceInformation place = new PlaceInformation(listItem.getHead(), listItem.getCoordinates());
 
                     if(holder.toggleButton.isChecked()){
                         mStateButtons.put(position, true);

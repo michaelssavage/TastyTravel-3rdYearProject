@@ -47,7 +47,6 @@ import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, RecyclerViewAdapter.OnPlaceListener {
 
-    private RecyclerView recyclerView;
 
     public static final String DATA = "DATA";
     public static final String LOCATIONS_TAG = "LOCATIONS";
@@ -57,6 +56,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public static final String ISOCHRONE_PREF = "isochroneSwitch";
     public static final String MIDPOINT_PREF = "midpointSwitch";
 
+    private RecyclerView recyclerView;
     private String placeType;
     // ArrayList to store both user locations
     private ArrayList<Place> mPlaces;
@@ -211,6 +211,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if(currentMarker != null){
             currentMarker.remove();
         }
+
         MarkerOptions markerOptions = new MarkerOptions()
                 .position(markerPos)
                 .title(selectedPlaceName);

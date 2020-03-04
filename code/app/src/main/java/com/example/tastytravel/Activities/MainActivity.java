@@ -101,6 +101,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initialiseViewControls() {
+
+        historyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent historyIntent = new Intent(getApplicationContext(), HistoryActivity.class);
+                startActivity(historyIntent);
+            }
+        });
+
         // If the Settings Button is Clicked
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
