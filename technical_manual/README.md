@@ -164,7 +164,7 @@ devices running Android *version 5.0 (SDK version 21) or newer*.
 please read [this](https://www.howtogeek.com/129728/how-to-access-the-developer-options-menu-and-enable-usb-debugging-on-android-4.2/) article.
 
 <div align="center">
-<img alt="debugging option" src="images/debug.JFIF">
+<img alt="debug photo" src="images/debug.png" width="300">
 </div>
 
 ### Installation Instructions
