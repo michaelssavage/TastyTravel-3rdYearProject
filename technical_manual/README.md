@@ -105,11 +105,16 @@ We use _Firebase_ for account authentication and we store saved places and searc
 <br></br>
 <br></br>
 <a name="problems-resolutions"></a>
+
 # 4. Problems and Resolutions
-<br></br>
+**Selected Place Not Updated When User Selected a New Location**
+<br>We realised that if a place was searched for and selected using the maps AutoCompleteFragment and the user chaged their mind and searched for a new location the old location remained selected and saved to the ArrayList. 
+To solve this problem, instead of immediately saving the place to the ArrayList of places we assigned the Place object to a temporary Place object yourSelectedLocation and theirSelectedLocation.
+Only when the user was happy with their choosen search parameters when they hit the SEARCH button was the Place objects saved in the list and passed to the next activity.
+THis allowed the user to change the locations multiple times and only the final choosen place would be used.
+
 <br></br>
 <a name="install"></a>
-
 # 5. Installation Guide
 **Foreword**
 <br>An active internet connection is required to use this application.
