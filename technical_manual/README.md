@@ -109,6 +109,28 @@ We use _Firebase_ for account authentication and we store saved places and searc
 <br></br>
 <br></br>
 <a name="install"></a>
+
 # 5. Installation Guide
-<br></br>
+**Foreword**
+<br>An active internet connection is required to use this application.
+
+**APK Version:** 1.0
+
+### Software and Hardware Requirements ###
+- This application is designed to run on the *Android* mobile operating system and is only compatible with devices running Android *version 5.0 (SDK version 21) or newer*.
+- Since the application will be installed on the internal storage of the Android device, some free space will be required. Installation size is roughly around 6 MB.
+
+**Installation Preconditions:**
+* An Android device will be required to install the TastyTravel application on. This device must have USB debugging enabled. 
+* USB debugging is a setting available under the 'Developer Options' menu. If you are unfamililar with enabling developer options please read [this](https://www.howtogeek.com/129728/how-to-access-the-developer-options-menu-and-enable-usb-debugging-on-android-4.2/) article.
+
+### Installation Instructions
+1. To open the Android Studio code files and install the application on an Android device, a laptop or computer with Android Studio installed will be required.
+    * The application source code can be accessed and downloaded from [here](https://gitlab.computing.dcu.ie/savagem7/2020-ca326-msavage-tastytravel).
+2. Once you have a local copy of the source code import it into Android Studio.
+3. Next, connect your Android device with USB debugging enable using a suitable USB cable.
+4. When Android Studio has loaded the project files an detected the connected device, click the green 'Run' button making sure to select the correct device for application deployment. The application will now be installed on the connected device. 
+    * More details can be found at this [link](https://developer.android.com/studio/run/device) if you are encountering difficulties.
+5. A confirmation message should be displayed when Android Studio has installed the application onto the device successfully.
+    * The application can now be used and it's functionality explored.
 <br></br>
