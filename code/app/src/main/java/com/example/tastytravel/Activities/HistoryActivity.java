@@ -7,6 +7,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +54,17 @@ public class HistoryActivity extends AppCompatActivity implements OnMapReadyCall
 
         historyListView = findViewById(R.id.historyItems);
 
+        initiateListView();
+
+
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+    }
+
+    private void initiateListView() {
         Query query = FirebaseDatabase.getInstance()
                 .getReference(currentFirebaseUser.getUid()).child("History")
                 .orderByKey();
@@ -69,19 +81,33 @@ public class HistoryActivity extends AppCompatActivity implements OnMapReadyCall
                 TextView placeName = v.findViewById(R.id.placeName);
                 TextView lastSearched = v.findViewById(R.id.lastSearched);
 
-                HistoryItem historyItem = (HistoryItem) model;
-                placeName.setText("Location Name: " + historyItem.getPlaceName());
-                lastSearched.setText("Search Date: " + historyItem.getAccessDate());
+                placeName.setText("Location Name: " + model.getPlaceName());
+                lastSearched.setText("Search Date: " + model.getAccessDate());
             }
         };
-    historyListView.setAdapter(adapter);
+        historyListView.setAdapter(adapter);
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        historyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HistoryItem historyItem = (HistoryItem) parent.getItemAtPosition(position);
+
+                String coords = historyItem.getCoordinates();
+                String[] coordinates = coords.split(",");
+                String lats = coordinates[0];
+                String longs = coordinates[1];
+
+                Double latsDouble = Double.parseDouble(lats);
+                Double longsDouble = Double.parseDouble(longs);
+
+                LatLng markerPos = new LatLng(latsDouble, longsDouble);
+
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(markerPos, 12));
+            }
+        });
 
     }
+
     // Firebase list adapter overrides
     @Override
     protected void onStart() {
