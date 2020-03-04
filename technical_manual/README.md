@@ -28,9 +28,11 @@
 <div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.</div>                       [Glossary](#glossary)  
 <div align="left"> 2.</div>                                                             [System Architecture](#architecture)
 <div align="left"> 3.</div>                                                             [High Level Design](#high-level)
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.</div>                       [Class Diagram](#class-diagram)  
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.</div>                       [Sequence Diagram](#sequence-diagram)  
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.</div>                       [Data Flow Diagram](#data-flow-diagram)  
+<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.</div>                       [Object Models](#objects)  
+<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.</div>                       [Class Diagram](#class-diagram)  
+<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.</div>                       [Sequence Diagram](#sequence-diagram)  
+<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4.</div>                       [Data Flow Diagram](#data-flow-diagram)  
+<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.</div>                       [Context Data Flow Diagrams](#context-diagram)  
 <div align="left"> 4.</div>                                                             [Problems and Resolutions](#problems-resolutions)  
 <div align="left"> 5.</div>                                                             [Installation Guide](#install)
 
@@ -92,43 +94,58 @@ We use _Firebase_ for account authentication and we store saved places and searc
 <br></br>
 <a name="high-level"></a>
 # 3. High Level Design
-<a name="class-diagram"></a>
-## Context Data Flow Diagrams
+
+<a name="objects"></a>
+## 3.1. Object Models
+
+<div align="center">
+<img alt="History and List Item Object" src="images/HistoryandListItem.PNG">
+</div>
 
 
-
-## Object Models
-![History and List Item Object](images/HistoryandListItem.PNG)
-
-
-## 3.1. Class Diagram
+## 3.2. Class Diagram
 <br></br>
 <br></br>
 <a name="sequence-diagram"></a>
-## 3.2. Sequence Diagram
+## 3.3. Sequence Diagram
+
+<div align="center">
+<img alt="Sequence Diagram" src="images/sequence-diagram.png" width="800">
+</div>
+
 <br></br>
 <br></br>
 <a name="data-flow-diagram"></a>
-## 3.3. Data Flow Diagram
-<br></br>
-<br></br>
-<a name="problems-resolutions"></a>
+## 3.4. Data Flow Diagram
 
+
+<br></br>
+<br></br>
+
+<a name="context-diagram"></a>
+## 3.5. Context Data Flow Diagrams
+
+<a name="problems-resolutions"></a>
 # 4. Problems and Resolutions
 **Selected Place Not Updated When User Selected a New Location**
-<br>We realised that if a place was searched for and selected using the maps AutoCompleteFragment and the user chaged their mind and searched for a new location the old location remained selected and saved to the ArrayList. 
-To solve this problem, instead of immediately saving the place to the ArrayList of places we assigned the Place object to a temporary Place object yourSelectedLocation and theirSelectedLocation.
-Only when the user was happy with their choosen search parameters when they hit the SEARCH button was the Place objects saved in the list and passed to the next activity.
-This allowed the user to change the locations multiple times and only the final choosen place would be used.
+We realised that if a place was searched for and selected using the maps AutoCompleteFragment and 
+the user changed their mind and searched for a new location the old location remained selected and saved to the ArrayList. 
+To solve this problem, instead of immediately saving the place to the ArrayList of places we assigned the Place 
+object to a temporary Place object yourSelectedLocation and theirSelectedLocation.
+Only when the user was happy with their chosen search parameters when they hit the `SEARCH` button was the 
+Place objects saved in the list and passed to the next activity.
+This allowed the user to change the locations multiple times and only the final chosen place would be used.
 
 **Search Results Save Icon in Recycler View Falsely Showing Checked Toggle Button**
-<br> Due to the nature of the Android RecyclerView it doesn't save the scroll position of the items being displyed. 
-If a toggle button was clicked on one of the cardviews being displayed in the recycler view this resulted in every 8th toggle button after that cardview showing as selected also, when in fact this was not the case.
+<br> Due to the nature of the Android RecyclerView it doesn't save the scroll position of the items being displayed. 
+If a toggle button was clicked on one of the cardviews being displayed in the recycler view this resulted in every 8th 
+toggle button after that cardview showing as selected also, when in fact this was not the case.
 To overcome this we used a SparseBooleanArray to keep track of the states of the toggle buttons attached to each card in the recyler view.
-The SparseBooleanArray simpy mapped the integer representing the position of the card in the recyler view to a boolean (true 0r false) indicating whether the toggle was checked or not.
-When the toggle button onClickListener received an onClick request it updated the toggle switches state to 'true' in the boolean array and vica versa.
-<br></br>
+The SparseBooleanArray simply mapped the integer representing the position of the card in the recyler view to a boolean (true or false) 
+indicating whether the toggle was checked or not.
 
+<br></br>
+<br></br>
 <a name="install"></a>
 # 5. Installation Guide
 **Foreword**
@@ -137,20 +154,33 @@ When the toggle button onClickListener received an onClick request it updated th
 **APK Version:** 1.0
 
 ### Software and Hardware Requirements ###
-- This application is designed to run on the *Android* mobile operating system and is only compatible with devices running Android *version 5.0 (SDK version 21) or newer*.
+- This application is designed to run on the *Android* mobile operating system and is only compatible with 
+devices running Android *version 5.0 (SDK version 21) or newer*.
 - Since the application will be installed on the internal storage of the Android device, some free space will be required. Installation size is roughly around 6 MB.
 
 **Installation Preconditions:**
 * An Android device will be required to install the TastyTravel application on. This device must have USB debugging enabled. 
-* USB debugging is a setting available under the 'Developer Options' menu. If you are unfamililar with enabling developer options please read [this](https://www.howtogeek.com/129728/how-to-access-the-developer-options-menu-and-enable-usb-debugging-on-android-4.2/) article.
+* USB debugging is a setting available under the 'Developer Options' menu. If you are unfamililar with enabling developer options 
+please read [this](https://www.howtogeek.com/129728/how-to-access-the-developer-options-menu-and-enable-usb-debugging-on-android-4.2/) article.
+
+<div align="center">
+<img alt="debugging option" src="images/debug.JFIF">
+</div>
 
 ### Installation Instructions
 1. To open the Android Studio code files and install the application on an Android device, a laptop or computer with Android Studio installed will be required.
     * The application source code can be accessed and downloaded from [here](https://gitlab.computing.dcu.ie/savagem7/2020-ca326-msavage-tastytravel).
 2. Once you have a local copy of the source code import it into Android Studio.
 3. Next, connect your Android device with USB debugging enable using a suitable USB cable.
-4. When Android Studio has loaded the project files an detected the connected device, click the green 'Run' button making sure to select the correct device for application deployment. The application will now be installed on the connected device. 
+4. When Android Studio has loaded the project files and detected the connected device, click the green triangle button making sure to 
+select the correct device for application deployment. The application will now be installed on the connected device. 
     * More details can be found at this [link](https://developer.android.com/studio/run/device) if you are encountering difficulties.
 5. A confirmation message should be displayed when Android Studio has installed the application onto the device successfully.
     * The application can now be used and it's functionality explored.
+
+<div align="center">
+<img alt="install photo" src="images/install.png" width="800">
+</div>
+
+<br></br>
 <br></br>
