@@ -93,6 +93,13 @@ We use _Firebase_ for account authentication and we store saved places and searc
 <a name="high-level"></a>
 # 3. High Level Design
 <a name="class-diagram"></a>
+##Context Data Flow Diagrams
+
+
+## Object Models
+![History and List Item Object](images/HistoryandListItem.PNG)
+
+
 ## 3.1. Class Diagram
 <br></br>
 <br></br>
