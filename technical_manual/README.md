@@ -129,6 +129,11 @@ We use _Firebase_ for account authentication and we store saved places and searc
 
 <a name="context-diagram"></a>
 ## 3.5. Context Data Flow Diagrams
+Items external to the system but vitally important.
+
+<div align="center">
+<img alt="COntext Data FLow Diagram" src="images/Context_Data_Flow.jpg">
+</div>
 
 <a name="problems-resolutions"></a>
 # 4. Problems and Resolutions
