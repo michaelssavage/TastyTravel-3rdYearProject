@@ -60,7 +60,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
-        holder.toggleButton.setChecked(mStateButtons.get(position, false));
+        if(currentFirebaseUser != null){
+            holder.toggleButton.setChecked(mStateButtons.get(position, false));
+        }
+        else{}
 
         final ListItem listItem = listItems.get(position);
         holder.textViewHead.setText(listItem.getHead());

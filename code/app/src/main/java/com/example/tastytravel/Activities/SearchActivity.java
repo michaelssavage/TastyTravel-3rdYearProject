@@ -68,7 +68,9 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
 
         // User History Segment
-        userHistory = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid()).child("History");
+        if(currentFirebaseUser != null){
+            userHistory = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid()).child("History");
+        }
 
         // User Places
         userPlaces = new ArrayList<>();
@@ -205,9 +207,12 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
             userPlaces.add(yourSelectedPlace);
             userPlaces.add(theirSelectedPlace);
 
-            for(Place userPlace : userPlaces){
-                savePlacestoHistory(userPlace);
+            if(currentFirebaseUser != null){
+                for(Place userPlace : userPlaces){
+                    savePlacestoHistory(userPlace);
+                }
             }
+
             // Put the radio button selections
             showMap.putExtra(RADIO_BUTTON1, radio1);
             showMap.putExtra(RADIO_BUTTON2, radio2);

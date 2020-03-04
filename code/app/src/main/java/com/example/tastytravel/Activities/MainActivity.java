@@ -15,11 +15,13 @@ import android.widget.Toast;
 import com.example.tastytravel.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavBar;
     FirebaseAuth mAuth;
+    FirebaseUser currentFirebaseUser;
     Button searchBtn;
     ImageView savedPlacesBtn, historyBtn;
     TextView savedPlacesText;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         savedPlacesBtn = findViewById(R.id.savedPlacesBtn);
         historyBtn = findViewById(R.id.historyBtn);
         savedPlacesText = findViewById(R.id.savedPlacesText);
+
+        currentFirebaseUser = mAuth.getCurrentUser();
 
         // makes the two images rounded.
         savedPlacesBtn.setClipToOutline(true);
@@ -105,8 +109,13 @@ public class MainActivity extends AppCompatActivity {
         historyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent historyIntent = new Intent(getApplicationContext(), HistoryActivity.class);
-                startActivity(historyIntent);
+                if(currentFirebaseUser != null){
+                    Intent historyIntent = new Intent(getApplicationContext(), HistoryActivity.class);
+                    startActivity(historyIntent);
+                } else{
+                    Intent signInIntent = new Intent(getApplicationContext(), SignInActivity.class);
+                    startActivity(signInIntent);
+                }
             }
         });
 
