@@ -83,6 +83,11 @@ map using the coordinates list.
 
 <a name="architecture"></a>
 # 2. System Architecture
+
+<div align="center">
+<img alt="System Architecture Diagram" src="images/System_Architecture_Diagram.jpg">
+</div>
+
 In this section we will show the shared understanding that we have of the system design in a diagram. Our app uses _Mapbox_ APIs to get isochrone coordinates. 
 _Mapbox_ is a REST API called via the Android Volley http handler library.
 
@@ -146,6 +151,7 @@ indicating whether the toggle was checked or not.
 
 <br></br>
 <br></br>
+
 <a name="install"></a>
 # 5. Installation Guide
 **Foreword**
