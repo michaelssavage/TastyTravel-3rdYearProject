@@ -248,7 +248,7 @@ You can find all your saved places by going to the _home page_ and pressing on t
 ---
 <a name="history"></a>
 # My Search History
-You can locate your search history by returning to the _home page_ and pressing on the image of beers labelled `My History`. Here you can find the places you inputted into the search boxes at any time. The location name and date of entry are shown for your convenience. If you want to delete your search history go to the _profile page_ and press on `CLEAR HISTORY`.
+You can locate your search history by returning to the _home page_ and pressing on the image of beers labelled `My History`. Here you can find the places you searched for at any time. The location names come in pairs and date of entry are shown for your convenience. If you want to delete your search history go to the _profile page_ and press on `CLEAR HISTORY`.
 
 <br/><br/>
 
