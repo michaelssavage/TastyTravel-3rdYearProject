@@ -40,8 +40,6 @@ public class UrlBuilder {
         url.append(AND_ACCESS_TOKEN);
         url.append(ACCESS_TOKEN);
 
-        Log.d(TAG + "Mapbox", String.valueOf(url));
-
         return String.valueOf(url);
     }
 
@@ -55,11 +53,7 @@ public class UrlBuilder {
     private static final String KEY = "&key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps";
     private static final String BAR = "|";
 
-    // https://maps.googleapis.com/maps/api/place/nearbysearch/json
-    // ?location= 53.386841,-6.256248
-    // &rankby=distance
-    // &type=bar
-    // &key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps
+    // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location= 53.386841,-6.256248&rankby=distance&type=bar&key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps
 
     public static String getGooglePlacesUrl(String placeType, LatLng latLng) {
         StringBuilder url = new StringBuilder(GOOGLE_MAPS_API + PLACE_NEARBYSEARCH + JSON + LOCATION_EQUALS);
@@ -78,8 +72,6 @@ public class UrlBuilder {
                 .replace("Cafe", "cafe"));
 
         url.append(KEY);
-
-        Log.d(TAG + "Google", String.valueOf(url));
 
         return String.valueOf(url);
     }
