@@ -85,15 +85,17 @@ map using the coordinates list.
 # 2. System Architecture
 
 <div align="center">
-<img alt="System Architecture Diagram" src="images/System_Architecture_Diagram.jpg">
+<img alt="System Architecture Diagram" src="images/System_Architecture_Diagram.jpg" width="800">
 </div>
 
-In this section we will show the shared understanding that we have of the system design in a diagram. Our app uses _Mapbox_ APIs to get isochrone coordinates. 
+<br></br>
+Our app uses _Mapbox_ APIs to get isochrone coordinates. 
 _Mapbox_ is a REST API called via the Android Volley http handler library.
 
 We use _Google’s Maps_ SDK to make REST API calls to add markers and line overlays to the map, and to change the user's view of a particular map area.
+The user also uses Google Maps Places API to search for locations. We benefitted greatly from this because of the auto-suggest function.
 
-We use _Firebase_ for account authentication and we store saved places and search history locations in _Firebase_’s real-time database and it uses a NoSQL database approach.
+We use _Firebase_ for account authentication and we store saved places and search history locations in _Firebase_’s real-time database. It uses a NoSQL database approach.
 
 <br></br>
 <br></br>
@@ -117,6 +119,16 @@ We use _Firebase_ for account authentication and we store saved places and searc
 <div align="center">
 <img alt="Sequence Diagram" src="images/sequence-diagram.png" width="800">
 </div>
+<br></br>
+
+In this Sequence Diagram, we show the interaction between objects whenever the user wants to save one of the results they received 
+from searching. First the user will open the search page and straight away the activity will prepare the parameters for input.
+When the user presses `SEARCH` it starts the openMap() function adding the markers and running the algorithm. When the results are 
+returned into a list, they are put into Cards that the user can scroll through. The map calls the recyclerView and checks if the user
+is signed in. If they are then, the card view is different as it includes a heart favourite button that gives the user the option to 
+save locations.
+
+Whenever all the cards are intialised they are displayed for the user and they can then favourite a place if they choose to.
 
 <br></br>
 <br></br>
@@ -129,11 +141,13 @@ We use _Firebase_ for account authentication and we store saved places and searc
 
 <a name="context-diagram"></a>
 ## 3.5. Context Data Flow Diagrams
+
 Items external to the system but vitally important.
 
+<br></br>
 <div align="center">
-<img alt="COntext Data FLow Diagram" src="images/Context_Data_Flow.jpg">
-</div>
+<img alt="COntext Data FLow Diagram" src="images/Context_Data_Flow.jpg" width="800">
+<br></br>
 
 <a name="problems-resolutions"></a>
 # 4. Problems and Resolutions
