@@ -33,6 +33,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class HistoryActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
@@ -67,7 +70,7 @@ public class HistoryActivity extends AppCompatActivity implements OnMapReadyCall
     private void initiateListView() {
         Query query = FirebaseDatabase.getInstance()
                 .getReference(currentFirebaseUser.getUid()).child("History")
-                .orderByKey();
+                .orderByChild("accessDate");
 
         FirebaseListOptions<HistoryItem> options = new FirebaseListOptions.Builder<HistoryItem>()
                 .setLayout(R.layout.activity_history_item)
@@ -81,8 +84,10 @@ public class HistoryActivity extends AppCompatActivity implements OnMapReadyCall
                 TextView placeName = v.findViewById(R.id.placeName);
                 TextView lastSearched = v.findViewById(R.id.lastSearched);
 
-                placeName.setText("Location Name: " + model.getPlaceName());
-                lastSearched.setText("Search Date: " + model.getAccessDate());
+                String name = "Location Name: " + model.getPlaceName();
+                String date = "Search Date: " + model.getAccessDate();
+                placeName.setText(name);
+                lastSearched.setText(date);
             }
         };
         historyListView.setAdapter(adapter);
