@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ProfileActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavBar;
-    Button settingsBtn, logoutBtn, deleteBtn, clearFavouritesBtn;
+    Button settingsBtn, logoutBtn, deleteBtn, clearFavouritesBtn, clearHistoryBtn;
     FirebaseUser user;
 
     @Override
@@ -37,6 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
         settingsBtn = findViewById(R.id.settingsBtn);
         deleteBtn = findViewById(R.id.deleteBtn);
         clearFavouritesBtn = findViewById(R.id.deleteFavsBtn);
+        clearHistoryBtn = findViewById(R.id.clearHistoryBtn);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         // Set up bottom nav bar
@@ -52,6 +53,13 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showClearFavsAlertDialog();
+            }
+        });
+
+        clearHistoryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showClearHistoryAlertDialog();
             }
         });
 
@@ -163,7 +171,7 @@ public class ProfileActivity extends AppCompatActivity {
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                DatabaseReference userFavs = FirebaseDatabase.getInstance().getReference(user.getUid());
+                DatabaseReference userFavs = FirebaseDatabase.getInstance().getReference(user.getUid()).child("Favourites");
                 userFavs.removeValue();
 
                 Toast.makeText(ProfileActivity.this, "Favourite Places Cleared", Toast.LENGTH_SHORT).show();
@@ -174,6 +182,29 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(ProfileActivity.this, "Favourites Deletion Cancelled", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alert.create().show();
+    }
+    public void showClearHistoryAlertDialog(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Search History Deletion");
+        alert.setMessage("Do you want to permanently delete your search history?");
+
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DatabaseReference userHistory = FirebaseDatabase.getInstance().getReference(user.getUid()).child("History");
+                userHistory.removeValue();
+
+                Toast.makeText(ProfileActivity.this, "Search History Cleared", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(ProfileActivity.this, "Search History Deletion Cancelled", Toast.LENGTH_SHORT).show();
             }
         });
         alert.create().show();
