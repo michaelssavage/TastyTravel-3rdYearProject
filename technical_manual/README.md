@@ -85,7 +85,7 @@ map using the coordinates list.
 # 2. System Architecture
 
 <div align="center">
-<img alt="System Architecture Diagram" src="images/System_Architecture_Diagram.jpg" width="800">
+<img alt="System Architecture Diagram" src="images/System_Architecture_Diagram.jpg" width="700">
 </div>
 
 <br></br>
@@ -117,7 +117,7 @@ We use _Firebase_ for account authentication and we store saved places and searc
 ## 3.3. Sequence Diagram
 
 <div align="center">
-<img alt="Sequence Diagram" src="images/sequence-diagram.png" width="800">
+<img alt="Sequence Diagram" src="images/sequence-diagram.png" width="700">
 </div>
 <br></br>
 
@@ -135,6 +135,9 @@ Whenever all the cards are intialised they are displayed for the user and they c
 <a name="data-flow-diagram"></a>
 ## 3.4. Data Flow Diagram
 
+<div align="center">
+<img alt="data flow diagram" src="images/dataFlow.png" width="700">
+</div>
 
 <br></br>
 <br></br>
@@ -146,12 +149,13 @@ Items external to the system but vitally important.
 
 <br></br>
 <div align="center">
-<img alt="COntext Data FLow Diagram" src="images/Context_Data_Flow.jpg" width="800">
+<img alt="COntext Data FLow Diagram" src="images/Context_Data_Flow.jpg" width="700">
+</div>
 <br></br>
 
 <a name="problems-resolutions"></a>
 # 4. Problems and Resolutions
-**Selected Place Not Updated When User Selected a New Location**
+**Selected Place Not Updated When User Selected a New Location**  
 We realised that if a place was searched for and selected using the maps AutoCompleteFragment and 
 the user changed their mind and searched for a new location the old location remained selected and saved to the ArrayList. 
 To solve this problem, instead of immediately saving the place to the ArrayList of places we assigned the Place 
@@ -160,8 +164,8 @@ Only when the user was happy with their chosen search parameters when they hit t
 Place objects saved in the list and passed to the next activity.
 This allowed the user to change the locations multiple times and only the final chosen place would be used.
 
-**Search Results Save Icon in Recycler View Falsely Showing Checked Toggle Button**
-<br> Due to the nature of the Android RecyclerView it doesn't save the scroll position of the items being displayed. 
+**Search Results Save Icon in Recycler View Falsely Showing Checked Toggle Button**  
+Due to the nature of the Android RecyclerView it doesn't save the scroll position of the items being displayed. 
 If a toggle button was clicked on one of the cardviews being displayed in the recycler view this resulted in every 8th 
 toggle button after that cardview showing as selected also, when in fact this was not the case.
 To overcome this we used a SparseBooleanArray to keep track of the states of the toggle buttons attached to each card in the recyler view.
@@ -173,17 +177,19 @@ indicating whether the toggle was checked or not.
 
 <a name="install"></a>
 # 5. Installation Guide
-**Foreword**
-<br>An active internet connection is required to use this application.
 
-**APK Version:** 1.0
+### Foreword  
+An active internet connection is required to use this application.
 
-### Software and Hardware Requirements ###
-- This application is designed to run on the *Android* mobile operating system and is only compatible with 
-devices running Android *version 5.0 (SDK version 21) or newer*.
-- Since the application will be installed on the internal storage of the Android device, some free space will be required. Installation size is roughly around 6 MB.
+### APK Version:  
+1.0
 
-**Installation Preconditions:**
+### Software and Hardware Requirements
+This application is designed to run on the *Android* mobile operating system and is only compatible with 
+devices running Android *version 5.0 (SDK version 21) or newer*.  
+Since the application will be installed on the internal storage of the Android device, some free space will be required. Installation size is roughly around 6 MB.
+
+### Installation Preconditions:
 * An Android device will be required to install the TastyTravel application on. This device must have USB debugging enabled. 
 * USB debugging is a setting available under the 'Developer Options' menu. If you are unfamililar with enabling developer options 
 please read [this](https://www.howtogeek.com/129728/how-to-access-the-developer-options-menu-and-enable-usb-debugging-on-android-4.2/) article.
@@ -194,17 +200,17 @@ please read [this](https://www.howtogeek.com/129728/how-to-access-the-developer-
 
 ### Installation Instructions
 1. To open the Android Studio code files and install the application on an Android device, a laptop or computer with Android Studio installed will be required.
-    * The application source code can be accessed and downloaded from [here](https://gitlab.computing.dcu.ie/savagem7/2020-ca326-msavage-tastytravel).
+The application source code can be accessed and downloaded from [here](https://gitlab.computing.dcu.ie/savagem7/2020-ca326-msavage-tastytravel).
 2. Once you have a local copy of the source code import it into Android Studio.
 3. Next, connect your Android device with USB debugging enable using a suitable USB cable.
 4. When Android Studio has loaded the project files and detected the connected device, click the green triangle button making sure to 
 select the correct device for application deployment. The application will now be installed on the connected device. 
-    * More details can be found at this [link](https://developer.android.com/studio/run/device) if you are encountering difficulties.
+More details can be found at this [link](https://developer.android.com/studio/run/device) if you are encountering difficulties.
 5. A confirmation message should be displayed when Android Studio has installed the application onto the device successfully.
-    * The application can now be used and it's functionality explored.
+The application can now be used and it's functionality explored.
 
 <div align="center">
-<img alt="install photo" src="images/install.png" width="800">
+<img alt="install photo" src="images/install.png" width="700">
 </div>
 
 <br></br>
