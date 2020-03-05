@@ -170,7 +170,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
             @Override
             public void onError(@NonNull Status status) {
-                Log.i("TAG", "An error occurred: " + status);
+                Log.i("autocomplete1", "Autocomplete error occurred: " + status);
             }
         });
 
@@ -191,7 +191,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
             @Override
             public void onError(@NonNull Status status) {
-                Log.i("TAG", "An error occurred: " + status);
+                Log.i("autocomplete2", "Autocomplete error occurred: " + status);
             }
         });
     }
@@ -204,8 +204,11 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
             //buttons will be replaced by walking, driving, cycling
             String radio2 = ((RadioButton) findViewById(radioGroup2.getCheckedRadioButtonId())).getText().toString();
 
+            //json object with name and latlng
             userPlaces.add(yourSelectedPlace);
             userPlaces.add(theirSelectedPlace);
+            Log.d("yourplace", "" + yourSelectedPlace);
+            Log.d("theirplace", "" + theirSelectedPlace);
 
             if(currentFirebaseUser != null){
                 for(Place userPlace : userPlaces){
@@ -239,6 +242,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
     private void savePlacestoHistory(Place userPlace) {
 
         String placeName = userPlace.getName();
+        Log.d("place location", placeName);
         LatLng coords = userPlace.getLatLng();
         String coordinates = String.valueOf(coords.latitude + "," + coords.longitude);
         String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
