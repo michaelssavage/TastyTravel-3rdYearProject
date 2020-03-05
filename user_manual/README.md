@@ -15,44 +15,31 @@
 **Michael Savage** - michaelsavage7@mail.dcu.ie  
 •  
 **Gerard Slowey** - gerard.slowey2@mail.dcu.ie  
----
+
 </div>
 
-<div align="center">
 <br/><br/>
 <br/><br/>
-
+---
 # Table Of Contents 
-<div align="left"> 1.</div>                      
-<div align="left"> 2.</div>                      
-<div align="left"> 3.</div>                      
-<div align="left"> 4.</div>                    
-<div align="left"> 5.</div>                      
-<div align="left"> 6.</div>                      
-<div align="left"> 7.</div>                      
-<div align="left"> 8.</div>                      
-<div align="left"> 9.</div>                    
-
+    
+<br/>            
 <div align="left">
-1. [Overview](#overview)<br/>
-2. [Creating An Account](#creating-an-account)<br/>
-3. [Signing In](#signing-in)<br/><br/>
-4. [Navigation](#navigation)<br/><br/>
-5. [Searching For A Place To Meet](#search-page)<br/>
-6. [Understanding The Map](#map)<br/>
-7. [Styling The Map](#style)<br/>
-8. [My Saved Places](#saved)<br/>
-9. [My Search History](#history)<br/>
+1. [**Overview**](#overview)<br/><br/>
+2. [**Creating An Account**](#creating-an-account)<br/><br/>
+3. [**Signing In**](#signing-in)<br/><br/>
+4. [**Navigation**](#navigation)<br/><br/>
+5. [**Searching For A Place To Meet**](#search-page)<br/><br/>
+6. [**Understanding The Map**](#map)<br/><br/>
+7. [**Styling The Map**](#style)<br/><br/>
+8. [**My Saved Places**](#saved)<br/><br/>
+9. [**My Search History**](#history)<br/><br/>
 </div>
 
-<br/><br/>
-<br/><br/>
 ---
-</div>
-<div align="justify"> 
-
-<a name="overview"></a>
+<div align="justify"><a name="overview"></a>  
 # Overview 
+
 TastyTravel aims to allow the user to search for either restaurants, bars, or cafes 
 that two people could meet at all over the world. The app works best for urban areas 
 and cities where the availablity of these social places is higher. For this manual, 
