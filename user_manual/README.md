@@ -23,15 +23,27 @@
 <br/><br/>
 
 # Table Of Contents 
-<div align="left"> 1.</div>                    [Overview](#overview)  
-<div align="left"> 2.</div>                    [Creating An Account](#creating-an-account)  
-<div align="left"> 3.</div>                    [Signing In](#signing-in)  
-<div align="left"> 4.</div>                    [Navigation](#navigation)
-<div align="left"> 5.</div>                    [Searching For A Place To Meet](#search-page)  
-<div align="left"> 6.</div>                    [Understanding The Map](#map)  
-<div align="left"> 7.</div>                    [Styling The Map](#style)  
-<div align="left"> 8.</div>                    [My Saved Places](#saved)  
-<div align="left"> 9.</div>                    [My Search History](#history)
+<div align="left"> 1.</div>                      
+<div align="left"> 2.</div>                      
+<div align="left"> 3.</div>                      
+<div align="left"> 4.</div>                    
+<div align="left"> 5.</div>                      
+<div align="left"> 6.</div>                      
+<div align="left"> 7.</div>                      
+<div align="left"> 8.</div>                      
+<div align="left"> 9.</div>                    
+
+<div align="left">
+1. [Overview](#overview)<br/>
+2. [Creating An Account](#creating-an-account)<br/>
+3. [Signing In](#signing-in)<br/><br/>
+4. [Navigation](#navigation)<br/><br/>
+5. [Searching For A Place To Meet](#search-page)<br/>
+6. [Understanding The Map](#map)<br/>
+7. [Styling The Map](#style)<br/>
+8. [My Saved Places](#saved)<br/>
+9. [My Search History](#history)<br/>
+</div>
 
 <br/><br/>
 <br/><br/>
