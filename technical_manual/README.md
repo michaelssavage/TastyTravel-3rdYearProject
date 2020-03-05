@@ -30,7 +30,7 @@
 2. [**System Architecture**](#architecture)<br/><br/>
 3. [**High Level Design**](#high-level)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1. [Object Models](#objects)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2. [Class Diagram](#class-diagram)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2. [Package Diagram](#package)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3. [Sequence Diagram](#sequence-diagram)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4. [Data Flow Diagram](#data-flow-diagram)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5. [Context Data Flow Diagrams](#context-diagram)<br/><br/>
@@ -108,7 +108,7 @@ We use _Google’s Maps_ API to display a map to the user in various activities.
 The API is called customise the map such as adding markers and line overlays to the map, and to change the user's view of a particular map area.
 
 The user also uses _Google Places API_ to search for locations. 
-The `AutoCompleteFragment` simplified the user of input of locations, suggesting locations to them based on input. 
+The *AutoCompleteFragment* simplified the user of input of locations, suggesting locations to them based on input. 
 
 We use _Firebase_ for account authentication and for the storage of saved places and search history locations. 
 Data in _Firebase_’s real-time database is updated when the user saves search results or makes a search. 
@@ -126,12 +126,31 @@ Firebase uses a NoSQL database approach so all reading and writing of data is do
 <div align="center">
 <img alt="History and List Item Object" src="images/HistoryandListItem.PNG">
 </div>
-
-
-## 3.2. Class Diagram
 <br></br>
+
+The History and List Items are Card Views that the RecyclerView uses to show results. The List Item initialises the name of the place 
+and the coordinates of each location. It only displays the text to the user when searching while the coordinates are used when the List
+Item is selected.  
+
+The History Item initialises the access date as well as the name and coordinates so that the user can quickly find
+when they searched for a location.
+
+<a name="package"></a>
+## 3.2. Package Diagram
+
+<div align="center">
+<img alt="Package Diagram" src="images/packageDiagram.png" width="700">
+</div>
 <br></br>
-<a name="sequence-diagram"></a>
+
+Initially, we thought about creating a class diagram but felt this would be a waste of time since we have 18 Classes. We used a package diagram
+to show the relationships between the types of classes. There are 11 activities in our app that represent the different screens. The activities 
+work by using the Utils package which includes the JsonParser, UrlBuilder, and MapsWorker which adds the markers to the map.
+
+The activities make use of the RecyclerView which is inside the adapter package. This class needs to be used to get access to the List Item and
+History Item.
+
+<a name="sequence-diagram"></a>  
 ## 3.3. Sequence Diagram
 
 <div align="center">
@@ -156,24 +175,27 @@ Whenever all the cards are intialised they are displayed for the user and they c
 <div align="center">
 <img alt="data flow diagram" src="images/dataFlow.png" width="700">
 </div>
+<br></br>
 
-<br></br>
-<br></br>
+The data flow diagram shows how the signed in user and the app can interact at a high level. The user can perform tasks like searching for a meeting place
+which then in turn can generate a map, create recommended search results and present the search history and saved places.  
+
+The search history is stored automatically while the saved places relies on the users manual control. The data is stored in Firebase under different headings.
+The _History_ child or the _Saved Places_ child.
 
 <a name="context-diagram"></a>
 ## 3.5. Context Data Flow Diagrams
 
-The following context flow diagram describes the entities external to the system but vitally important.
-Each entity is contained within a rectangle and has the entity name in the middle.
-The TastyTravel application is contained within a round cornered triangle.
-The users interaction with the application causes information to sent to each of these entities which in turn causes a response.
-
-
-<br></br>
 <div align="center">
 <img alt="Context Data Flow Diagram" src="images/Context_Data_Flow.jpg" width="700">
 </div>
 <br></br>
+
+The following context flow diagram describes the relationship between the system and entities external to the system. They are vitally important.
+Each entity is contained within a rectangle and has the entity name in the middle.
+The TastyTravel application is contained within a round cornered triangle.
+The users interaction with the application causes information to sent to each of these entities which in turn causes a response.
+
 
 <a name="problems-resolutions"></a>
 # 4. Problems and Resolutions
@@ -194,7 +216,7 @@ To overcome this we used a SparseBooleanArray to keep track of the states of the
 The SparseBooleanArray simply mapped the integer representing the position of the card in the recyler view to a boolean (true or false) 
 indicating whether the toggle was checked or not.
 
-**Search Result Would Return Empty List Because The First Index Wasn't Considered**
+**Search Result Would Return Empty List Because The First Index Wasn't Considered**  
 There was a bug that was caught late in development where a string was initialised to the first coordinates in a list. The string was
 supposed to be used as a comparison against all the other coordinates. Instead, we had reassigned the second coordinates onto the
 first coordinates meaning the first coordinates were never used. We spent an hour going through logs to find the error. A simple change
