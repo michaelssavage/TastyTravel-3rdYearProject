@@ -1,12 +1,16 @@
 package com.example.tastytravel.Models;
 
-public class ListItem {
+public class PlaceInformation {
 
-    private String head;
+    private String placeName;
     private String coordinates;
 
-    public ListItem(String head, String coordinates) {
-        this.head = head
+    public PlaceInformation() {
+
+    }
+
+    public PlaceInformation(String head, String coordinates) {
+        this.placeName = placeName
                 .replace(".", "")
                 .replace("#", "")
                 .replace("$", "")
@@ -15,8 +19,8 @@ public class ListItem {
         this.coordinates = coordinates;
     }
 
-    public String getHead() {
-        return head;
+    public String getPlaceName() {
+        return placeName;
     }
 
     public String getCoordinates() {

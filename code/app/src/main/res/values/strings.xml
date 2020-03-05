@@ -105,6 +105,7 @@
         see the best meeting place marker, you can also turn it ON/OFF depending on your preference.
     </string>
     <string name="clear_favs">Clear Favourites</string>
+    <string name="clear_history">Clear History</string>
     <string name="find_places_to_meet">FIND PLACES TO MEET</string>
     <string name="my_saved_places">My Saved Places</string>
     <string name="my_history">My History</string>

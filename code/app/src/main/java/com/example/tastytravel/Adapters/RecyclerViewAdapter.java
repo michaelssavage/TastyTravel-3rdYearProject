@@ -5,14 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tastytravel.Models.ListItem;
-import com.example.tastytravel.Activities.PlaceInformation;
+import com.example.tastytravel.Models.PlaceInformation;
 import com.example.tastytravel.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,11 +26,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private DatabaseReference mDatabase;
     private FirebaseUser currentFirebaseUser;
-    private List<ListItem> listItems;
+    private List<PlaceInformation> listItems;
     private OnPlaceListener mOnPlaceListener;
     private SparseBooleanArray mStateButtons = new SparseBooleanArray();
 
-    public RecyclerViewAdapter(List<ListItem> listItems, OnPlaceListener onPlaceListener) {
+    public RecyclerViewAdapter(List<PlaceInformation> listItems, OnPlaceListener onPlaceListener) {
         this.listItems = listItems;
         this.mOnPlaceListener = onPlaceListener;
     }
@@ -65,25 +63,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
         else{}
 
-        final ListItem listItem = listItems.get(position);
-        holder.textViewHead.setText(listItem.getHead());
+        final PlaceInformation listItem = listItems.get(position);
+        holder.textViewHead.setText(listItem.getPlaceName());
 
         if(currentFirebaseUser != null) {
             holder.toggleButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    final PlaceInformation place = new PlaceInformation(listItem.getHead(), listItem.getCoordinates());
+                    final PlaceInformation place = new PlaceInformation(listItem.getPlaceName(), listItem.getCoordinates());
 
                     if(holder.toggleButton.isChecked()){
                         mStateButtons.put(position, true);
-                        mDatabase.child(listItem.getHead()).setValue(place);
+                        mDatabase.child(listItem.getPlaceName()).setValue(place);
                     }
                     else   {
                         mStateButtons.put(position, false);
-                        mDatabase.child(listItem.getHead()).addListenerForSingleValueEvent(new ValueEventListener() {
+                        mDatabase.child(listItem.getPlaceName()).addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                mDatabase.child(listItem.getHead()).removeValue();
+                                mDatabase.child(listItem.getPlaceName()).removeValue();
                             }
 
                             @Override

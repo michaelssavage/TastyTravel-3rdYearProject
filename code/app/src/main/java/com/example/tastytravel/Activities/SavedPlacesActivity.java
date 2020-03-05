@@ -6,8 +6,10 @@ import androidx.fragment.app.FragmentActivity;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.example.tastytravel.Models.PlaceInformation;
 import com.example.tastytravel.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -40,7 +42,7 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         mPlaces = FirebaseDatabase.getInstance().getReference(currentFirebaseUser.getUid()).child("Favourites");
         mPlaces.push().setValue(marker);
@@ -63,7 +65,8 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
                     for (DataSnapshot s : dataSnapshot.getChildren()) {
                         PlaceInformation place = s.getValue(PlaceInformation.class);
 
-                        String strLocation = place.coordinates;
+                        String strLocation = place.getCoordinates();
+                        Log.d("strLocation", "" + strLocation);
 
                         String[] latlong = strLocation.split(",");
                         double latitude = Double.parseDouble(latlong[0]);
@@ -73,7 +76,7 @@ public class SavedPlacesActivity extends FragmentActivity implements OnMapReadyC
 
                         mMap.addMarker(new MarkerOptions()
                                 .position(location)
-                                .title(place.placeName))
+                                .title(place.getPlaceName()))
                                 .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
                     }
                 } else {

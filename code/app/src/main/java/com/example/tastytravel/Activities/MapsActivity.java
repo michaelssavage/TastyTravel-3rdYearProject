@@ -11,7 +11,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,7 +20,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tastytravel.R;
 import com.example.tastytravel.Utils.JsonParser;
-import com.example.tastytravel.Models.ListItem;
+import com.example.tastytravel.Models.PlaceInformation;
 import com.example.tastytravel.Adapters.RecyclerViewAdapter;
 import com.example.tastytravel.Utils.MapsWorker;
 import com.example.tastytravel.Utils.UrlBuilder;
@@ -35,7 +34,6 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.maps.android.SphericalUtil;
-import com.google.maps.android.data.geojson.GeoJsonLayer;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,7 +44,6 @@ import java.util.List;
 import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, RecyclerViewAdapter.OnPlaceListener {
-
 
     public static final String DATA = "DATA";
     public static final String LOCATIONS_TAG = "LOCATIONS";
@@ -71,7 +68,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private ArrayList<LatLng> points = new ArrayList<>();
 
     RecyclerView.Adapter adapter;
-    private List<ListItem> listItems;
+    private List<PlaceInformation> listItems;
 
     // radio buttons are walk, car, bike
     String myButtonSelection;
@@ -198,9 +195,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void OnPlaceClick(int position) {
-        Log.d("onPlaceClicked","" + listItems.get(position).getHead());
+        Log.d("onPlaceClicked","" + listItems.get(position).getPlaceName());
 
-        String selectedPlaceName = listItems.get(position).getHead();
+        String selectedPlaceName = listItems.get(position).getPlaceName();
         String selectedPlaceCoordinates = listItems.get(position).getCoordinates();
 
         String[] latlong =  selectedPlaceCoordinates.split(",");
@@ -274,6 +271,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         getMidpoints(coordinatesList, location);
 
         Log.d("midpoints", "" + midLong + " + " + midLat);
+        Log.d("midpoints", "" + midLong + " + " + midLat);
 
         //Add the points from each midpoint to the array.
         LatLng midpoint = new LatLng(midLong, midLat);
@@ -329,7 +327,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             String name = entry.getKey();
             String coordinates = entry.getValue();
 
-            ListItem listItem = new ListItem(name, coordinates);
+            PlaceInformation listItem = new PlaceInformation(name, coordinates);
             listItems.add(listItem);
 
             // Recycler View Adapter Initialisation

@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TastyTravel.iml" filepath="$PROJECT_DIR$/TastyTravel.iml" group="TastyTravel" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="TastyTravel/app" />
+      <module fileurl="file://$PROJECT_DIR$/code-TastyTravel.iml" filepath="$PROJECT_DIR$/code-TastyTravel.iml" group="TastyTravel" />
+      <module fileurl="file://$PROJECT_DIR$/app/code-app.iml" filepath="$PROJECT_DIR$/app/code-app.iml" group="TastyTravel/app" />
     </modules>
   </component>
 </project>
