@@ -182,7 +182,7 @@ if you press them by mistake, a prompt will pop up asking are you sure.
 When you open the _search page_ there will be five parameters that you must fill out. 
 You can not progress to the map without filling them all in.
 *  You must enter your location and the mode of transport you will take.
-*  You must then enter your friend's location and mode of transport.
+*  You must then enter your friend's location and mode of transport they will take to the meet point.
 *  Finally, choose the type of place you want to meet from the dropdown menu. You 
 have the option between either a Bar, Cafe, or Restaurant.
 
@@ -196,7 +196,8 @@ have the option between either a Bar, Cafe, or Restaurant.
 <br/><br/>
 
 Start by pressing the first box with the text `Enter Your Location`. As you type, 
-the search box will auto-suggest places for you.
+the search box will auto-suggest places for you. To select a place just click on 
+the most suitable search result.
 
 <br/><br/>
 
@@ -206,7 +207,8 @@ the search box will auto-suggest places for you.
 
 <br/><br/>
 
-When you have all the parameters entered, press the search button to see your map.
+When you have all the parameters entered, press the large green search button to see your map
+and a list of suitable meeting places.
 
 <br/><br/>
 
@@ -235,6 +237,8 @@ The results will show a list of places based on your parameters. It is a scrolla
 list that will give you maximum 20 meeting points. You can press on the names of the 
 results to show it pop up on the map as a violet coloured marker. If you like one of 
 the places, you can save it by pressing the red heart.
+
+Don't worry about losing saved places if you uninstall the app or log out, they are saved to your account.
 
 <br/><br/>
 
