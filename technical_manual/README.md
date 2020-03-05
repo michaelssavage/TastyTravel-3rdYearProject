@@ -1,6 +1,6 @@
 <div align="center">
 
-# TastyTravel User Manual
+# TastyTravel Technical Manual
 
 ![TastyTravel logo](images/96.png)
 
@@ -15,30 +15,30 @@
 **Michael Savage** - michaelsavage7@mail.dcu.ie  
 •  
 **Gerard Slowey** - gerard.slowey2@mail.dcu.ie  
----
 </div>
 
 <div align="center">
 <br/><br/>
 <br/><br/>
 
-# Table Of Contents 
-<div align="left"> 1.</div>                                                             [Introduction](#introduction)
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1.</div>                       [Overview](#overview) 
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.</div>                       [Glossary](#glossary)  
-<div align="left"> 2.</div>                                                             [System Architecture](#architecture)
-<div align="left"> 3.</div>                                                             [High Level Design](#high-level)
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.</div>                       [Object Models](#objects)  
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.</div>                       [Class Diagram](#class-diagram)  
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.</div>                       [Sequence Diagram](#sequence-diagram)  
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4.</div>                       [Data Flow Diagram](#data-flow-diagram)  
-<div align="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.</div>                       [Context Data Flow Diagrams](#context-diagram)  
-<div align="left"> 4.</div>                                                             [Problems and Resolutions](#problems-resolutions)  
-<div align="left"> 5.</div>                                                             [Installation Guide](#install)
-
-<br/><br/>
-<br/><br/>
 ---
+# Table Of Contents 
+<div align="left">
+1. [**Introduction** ](#introduction)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1. [Overview](#overview)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2. [Glossary](#glossary)<br/><br/>
+2. [**System Architecture**](#architecture)<br/><br/>
+3. [**High Level Design**](#high-level)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1. [Object Models](#objects)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2. [Class Diagram](#class-diagram)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3. [Sequence Diagram](#sequence-diagram)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4. [Data Flow Diagram](#data-flow-diagram)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5. [Context Data Flow Diagrams](#context-diagram)<br/><br/>
+4. [**Problems and Resolutions**](#problems-resolutions)<br/><br/>
+5. [**Installation Guide**](#install)  
+</div>
+
+<br/>
 </div>
 <div align="justify"> 
 
@@ -62,9 +62,14 @@ and delete their saved places in the app too.
 The app finds recommended locations by using Mapbox isochrones and the SphericalUtil class from Google. When the user presses search, 
 the app builds a URL that takes in the mode of transport (Walk, Car, or Bike) and requests the JSONObject from MapBox. 
 The JSONObject contains information on the properties and geometry of the isochrone, but most importantly we parse the 
-coordinates from the URL into a list and use our algorithm to find suitable meeting places. By default, the app does 
-not draw the isochrone onto the app but a toggle can be switched on. This switch will add a Google GeoJsonLayer to the 
-map using the coordinates list. 
+coordinates from the URL into a list and use our algorithm to find suitable meeting places. We do this by iterating through the coordinates
+list of your location and finding the shortest distance to their location. Then we do the vice versa until we end up with two locations. We then
+use interpolation to get a midpoint between those locations where the midpoint is a given score that is influenced by the modes of transport.
+The score is a fraction between 0 and 1. The score favours people who walk, then cycle, and finally driving. If the modes of transport are the
+same then the fraction will be neutral at 0.5.
+
+By default, the app does not draw the isochrone onto the app but a toggle can be switched on. This switch will add a Google 
+GeoJsonLayer to the map using the coordinates list. 
 <br></br>
 <br></br>
 <a name="glossary"></a>
@@ -171,6 +176,9 @@ toggle button after that cardview showing as selected also, when in fact this wa
 To overcome this we used a SparseBooleanArray to keep track of the states of the toggle buttons attached to each card in the recyler view.
 The SparseBooleanArray simply mapped the integer representing the position of the card in the recyler view to a boolean (true or false) 
 indicating whether the toggle was checked or not.
+
+**Search Result Would Return Empty List Because The First Index Wasn't Considered**
+
 
 <br></br>
 <br></br>
