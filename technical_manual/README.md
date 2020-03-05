@@ -110,7 +110,7 @@ The API is called customise the map such as adding markers and line overlays to 
 The user also uses _Google Places API_ to search for locations. 
 The `AutoCompleteFragment` simplified the user of input of locations, suggesting locations to them based on input. 
 
-We use _Firebase_ for account authentication and for the storage of saved places and search history locations
+We use _Firebase_ for account authentication and for the storage of saved places and search history locations. 
 Data in _Firebase_’s real-time database is updated when the user saves search results or makes a search. 
 This data is completely under the control of the user and can be deleted in their profile options.
 Firebase uses a NoSQL database approach so all reading and writing of data is done through API function calls.
@@ -164,7 +164,7 @@ Whenever all the cards are intialised they are displayed for the user and they c
 ## 3.5. Context Data Flow Diagrams
 
 The following context flow diagram describes the entities external to the system but vitally important.
-Each emtity is contained within a rectangle and has the entity name in the middle.
+Each entity is contained within a rectangle and has the entity name in the middle.
 The TastyTravel application is contained within a round cornered triangle.
 The users interaction with the application causes information to sent to each of these entities which in turn causes a response.
 
@@ -195,7 +195,10 @@ The SparseBooleanArray simply mapped the integer representing the position of th
 indicating whether the toggle was checked or not.
 
 **Search Result Would Return Empty List Because The First Index Wasn't Considered**
-
+There was a bug that was caught late in development where a string was initialised to the first coordinates in a list. The string was
+supposed to be used as a comparison against all the other coordinates. Instead, we had reassigned the second coordinates onto the
+first coordinates meaning the first coordinates were never used. We spent an hour going through logs to find the error. A simple change
+to the variable names.
 
 <br></br>
 <br></br>
