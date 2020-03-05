@@ -340,19 +340,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void getMidpoints(ArrayList<String> coordinateList, LatLng location){
         // find the smallest distance from the coordinates to the opposite point
-        String[] closestPoint = new String[2];
+
         float[] distance1 = new float[2];
         float[] distance2 = new float[2];
-        String[] point = coordinateList.get(0).split(",");
-        double longitude = Double.parseDouble(point[0]);
-        double latitude = Double.parseDouble(point[1]);
+        String[] closestPoint = coordinateList.get(0).split(",");
+        double longitude = Double.parseDouble(closestPoint[0]);
+        double latitude = Double.parseDouble(closestPoint[1]);
 
         // get initial distance with first coordinates and then compare the rest
         Location.distanceBetween(latitude, longitude, location.latitude, location.longitude, distance1);
 
         for(int i = 1; i < coordinateList.size() ; i++) {
 
-            point = coordinateList.get(i).split(",");
+            String[] point = coordinateList.get(i).split(",");
             longitude = Double.parseDouble(point[0]);
             latitude = Double.parseDouble(point[1]);
             Location.distanceBetween(latitude, longitude, location.latitude, location.longitude, distance2);
@@ -371,8 +371,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             e.printStackTrace();
         }
     }
-
-
-
-
 }
