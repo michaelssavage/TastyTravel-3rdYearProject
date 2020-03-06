@@ -50,6 +50,4 @@ public class UrlBuilderTest {
                 UrlBuilder.getGooglePlacesUrl("Bar", new LatLng(51.4467841,-7.45249)));
     }
 
-
-
 }
