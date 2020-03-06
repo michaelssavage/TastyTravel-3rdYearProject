@@ -102,7 +102,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (data != null) {
             mPlaces = (ArrayList<Place>) data.getSerializable(LOCATIONS_TAG);
         }
-
+        Log.e("mplaces", "" + mPlaces);
         // Adding the 2 locations on the map
         final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
         final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();
@@ -327,8 +327,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             String name = entry.getKey();
             String coordinates = entry.getValue();
 
-            PlaceInformation listItem = new PlaceInformation(name, coordinates);
-            listItems.add(listItem);
+           PlaceInformation listItem = new PlaceInformation(name, coordinates);
+           listItems.add(listItem);
 
             // Recycler View Adapter Initialisation
             adapter = new RecyclerViewAdapter(listItems, this);

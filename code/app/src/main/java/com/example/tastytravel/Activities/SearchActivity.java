@@ -226,6 +226,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         // bundle the long lat locations
         Bundle data = new Bundle();
         data.putSerializable(LOCATIONS_TAG, userPlaces);
+        Log.d("userPlaces1", "" + userPlaces);
 
         showMap.putExtra(DATA, data);
 
