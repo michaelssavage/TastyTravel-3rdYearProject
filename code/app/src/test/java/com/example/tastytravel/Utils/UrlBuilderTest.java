@@ -1,127 +1,55 @@
 package com.example.tastytravel.Utils;
 
 import com.google.android.gms.maps.model.LatLng;
-
-import org.junit.After;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class UrlBuilderTest {
 
-    @After
-    public void tearDown(){
-        System.out.println("Finished Testing");
+    private static final String TAG = UrlBuilderTest.class.getSimpleName();
+
+    private LatLng coords = new LatLng(-6.2767, 53.407);
+    private LatLng coords2 = new LatLng(-5.2347, 52.147);
+
+    private LatLng coordsGoogle = new LatLng(53.386841,-6.256248);
+
+    // Mapbox Isochrone Url Builder Tests
+    @Test
+    public void urlsAreEqual_MapboxIsochroneWalk() {
+        assertEquals("https://api.mapbox.com/isochrone/v1/mapbox/walking/-6.2767,53.407?contours_minutes=10&contours_colors=009688&polygons=true&access_token=pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ",
+                UrlBuilder.getMapboxUrl("Walk", coords));
     }
 
     @Test
-    public void getMapboxUrl_CorrectMonaghan() {
-        // Input that would usually be given to the app
-        String inputTransportMethod = "Car";
-        LatLng inputLatLng = new LatLng(-6.9683, 54.2492);
-
-        // What the test actually returns
-        String output;
-
-        // Our expected result, set by us
-        String expected = "https://api.mapbox.com/isochrone/v1/mapbox/driving/-6.9683,54.2492?contours_minutes=10&contours_colors=009688&polygons=true&access_token=pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ";
-
-        UrlBuilder urlBuilder = new UrlBuilder();
-        output = urlBuilder.getMapboxUrl(inputTransportMethod, inputLatLng);
-
-        assertEquals(expected, output);
+    public void urlsAreNotEqual_MapboxIsochroneDrive() {
+        assertNotEquals("https://api.mapbox.com/isochrone/v1/mapbox/walking/-54.3456,6.7890?contours_minutes=10&contours_colors=009688&polygons=true&access_token=pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ",
+                UrlBuilder.getMapboxUrl("Car", coords));
     }
 
     @Test
-    public void getMapboxUrl_CorrectCavan() {
-        // Input that would usually be given to the app
-        String inputTransportMethod = "Bike";
-        LatLng inputLatLng = new LatLng(-7.3633, 53.9897);
+    public void urlsAreNotEqual_MapboxIsochroneEmpty() {
+        assertNotEquals("", UrlBuilder.getMapboxUrl("Bike", coords2));
+    }
 
-        // What the test actually returns
-        String output;
-
-        // Our expected result, set by us
-        String expected = "https://api.mapbox.com/isochrone/v1/mapbox/cycling/-7.3633,53.9897?contours_minutes=10&contours_colors=009688&polygons=true&access_token=pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ";
-
-        UrlBuilder urlBuilder = new UrlBuilder();
-        output = urlBuilder.getMapboxUrl(inputTransportMethod, inputLatLng);
-
-        assertEquals(expected, output);
+    // Google Places Url Builder Tests
+    @Test
+    public void urlsAreEqual_googlePlacesUrl() {
+        assertEquals("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=53.386841,-6.256248&rankby=distance&type=restaurant&key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps",
+                UrlBuilder.getGooglePlacesUrl("Restaurant", coordsGoogle));
     }
 
     @Test
-    public void getMapboxUrl_IncorrectTyrone() {
-        // Input that would usually be given to the app
-        String inputTransportMethod = "Bike";
-
-        // DCU Coordinates
-        LatLng inputLatLng = new LatLng(-6.2564, 53.3861);
-
-        // What the test actually returns
-        String output;
-
-        // Our expected result, set by us
-        String expected = "https://api.mapbox.com/isochrone/v1/mapbox/cycling/-7.3633,53.9897?contours_minutes=10&contours_colors=009688&polygons=true&access_token=pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ";
-
-        UrlBuilder urlBuilder = new UrlBuilder();
-        output = urlBuilder.getMapboxUrl(inputTransportMethod, inputLatLng);
-
-        assertNotEquals(expected, output);
-    }
-
-
-    @Test
-    public void getGooglePlacesUrl_Correct() {
-        // Input that would usually be given to the app
-        String inputPlaceType = "Bar";
-        LatLng inputLatLng = new LatLng(53.386841, -6.256248);
-
-        // What the test actually returns
-        String output;
-
-        // Our expected result, set by us
-        String expected = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=53.386841,-6.256248&rankby=distance&type=bar&key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps";
-
-        UrlBuilder urlBuilder = new UrlBuilder();
-        output = urlBuilder.getGooglePlacesUrl(inputPlaceType, inputLatLng);
-
-        assertEquals(expected, output);
+    public void urlsAreNotEqual_googleMapsGeocodeLatLngUrl() {
+        assertNotEquals("", UrlBuilder.getGooglePlacesUrl("Cafe", new LatLng(53.3704523, -6.1952533)));
     }
 
     @Test
-    public void getGooglePlacesUrl_IncorrectPlaceType() {
-        // Input that would usually be given to the app
-        String inputPlaceType = "Cafe";
-        LatLng inputLatLng = new LatLng(53.386841, -6.256248);
-
-        // What the test actually returns
-        String output;
-
-        // Our expected result, set by us
-        String expected = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=53.386841,-6.256248&rankby=distance&type=bar&key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps";
-
-        UrlBuilder urlBuilder = new UrlBuilder();
-        output = urlBuilder.getGooglePlacesUrl(inputPlaceType, inputLatLng);
-
-        assertNotEquals(expected, output);
+    public void urlsAreEqual_googleMapsGeocodeLatLngUrl() {
+        assertEquals("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.4467841,-7.45249&rankby=distance&type=bar&key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps",
+                UrlBuilder.getGooglePlacesUrl("Bar", new LatLng(51.4467841,-7.45249)));
     }
 
-    @Test
-    public void getGooglePlacesUrl_IncorrectCoordinates() {
-        // Input that would usually be given to the app
-        String inputPlaceType = "Cafe";
-        LatLng inputLatLng = new LatLng(53.3067, -6.2210);
 
-        // What the test actually returns
-        String output;
 
-        // Our expected result, set by us
-        String expected = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=53.386841,-6.256248&rankby=distance&type=bar&key=AIzaSyChmDeOaON5gqRFAR3o27HHKaojDenZ0ps";
-
-        UrlBuilder urlBuilder = new UrlBuilder();
-        output = urlBuilder.getGooglePlacesUrl(inputPlaceType, inputLatLng);
-
-        assertNotEquals(expected, output);
-    }
 }

@@ -3,6 +3,7 @@ package com.example.tastytravel.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseUser currentFirebaseUser;
     Button searchBtn;
     ImageView savedPlacesBtn, historyBtn;
-    TextView savedPlacesText;
+    TextView savedPlacesText, appName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +38,16 @@ public class MainActivity extends AppCompatActivity {
         savedPlacesBtn = findViewById(R.id.savedPlacesBtn);
         historyBtn = findViewById(R.id.historyBtn);
         savedPlacesText = findViewById(R.id.savedPlacesText);
+        appName = findViewById(R.id.appName);
 
         currentFirebaseUser = mAuth.getCurrentUser();
 
         // makes the two images rounded.
         savedPlacesBtn.setClipToOutline(true);
         historyBtn.setClipToOutline(true);
+
+        // set app title to bold
+        appName.setTypeface(null, Typeface.BOLD);
 
         // Set up bottom nav bar
         setUpNavBar();
