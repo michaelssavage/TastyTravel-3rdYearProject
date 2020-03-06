@@ -1,4 +1,4 @@
-package com.example.tastytravel.Activities;
+package com.example.tastytravel.Models;
 
 public class PlaceInformation {
 

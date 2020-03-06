@@ -8,6 +8,7 @@ import android.location.LocationListener;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.tastytravel.Models.PlaceInformation;
 import com.example.tastytravel.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
