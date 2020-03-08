@@ -20,7 +20,6 @@ import com.example.tastytravel.Models.HistoryItem;
 import com.example.tastytravel.R;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.PlacesClient;
@@ -97,12 +96,15 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void setupSpinnerDropdown() {
+
+        // Structuring the dropdown menu for meeting place types
         List<String> categories = new ArrayList<>();
         categories.add(0, "Select The Type Of Meeting Place");
         categories.add("Bar");
         categories.add("Cafe");
         categories.add("Restaurant");
 
+        // Set up the adapter for the spinner menu
         ArrayAdapter<String> dataAdapter;
         dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
 
@@ -116,6 +118,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
                 if (parent.getItemAtPosition(position).equals("Select The Type Of Meeting Place")) {
                     // Do nothing
                 } else {
+                    // Put the data to be transferred to maps activity
                     String item = parent.getItemAtPosition(position).toString();
                     showMap.putExtra(PLACE_TYPE_TAG, item);
                 }
@@ -128,6 +131,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         });
     }
 
+    // Initialise the button and text controls
     private void initialiseViewControls() {
         // If search button is clicked
         searchBtn.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +150,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         });
     }
 
+    // Setup the AutocompleteFragments for location search and entry
     public void initialisePlaces() {
         if (!Places.isInitialized()) {
             Places.initialize(getApplicationContext(), getString(R.string.google_maps_key));
@@ -197,19 +202,17 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     public void openMap() {
-
         try {
             //buttons are walk, car, bike
             String radio1 = ((RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId())).getText().toString();
             //buttons will be replaced by walking, driving, cycling
             String radio2 = ((RadioButton) findViewById(radioGroup2.getCheckedRadioButtonId())).getText().toString();
 
-            //json object with name and latlng
+            // Save the Place Object
             userPlaces.add(yourSelectedPlace);
             userPlaces.add(theirSelectedPlace);
-            Log.d("yourplace", "" + yourSelectedPlace);
-            Log.d("theirplace", "" + theirSelectedPlace);
 
+            // Save the history items
             if(currentFirebaseUser != null){
                 for(Place userPlace : userPlaces){
                     savePlacestoHistory(userPlace);
@@ -223,10 +226,10 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         } catch (NullPointerException e) {
             Toast.makeText(this, "Error: Did you enter the mode of transport?", Toast.LENGTH_SHORT).show();
         }
+
         // bundle the long lat locations
         Bundle data = new Bundle();
         data.putSerializable(LOCATIONS_TAG, userPlaces);
-        Log.d("userPlaces1", "" + userPlaces);
 
         showMap.putExtra(DATA, data);
 
@@ -241,14 +244,13 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void savePlacestoHistory(Place userPlace) {
-
         String placeName = userPlace.getName();
-        Log.d("place location", placeName);
         LatLng coords = userPlace.getLatLng();
         String coordinates = String.valueOf(coords.latitude + "," + coords.longitude);
-        String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        String accessDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
-        final HistoryItem place = new HistoryItem(placeName, coordinates, date);
+        final HistoryItem place = new HistoryItem(placeName, coordinates, accessDate);
+        // Store the object in the database
         userHistory.child(placeName).setValue(place);
     }
 
@@ -260,7 +262,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
     public void onNothingSelected(AdapterView<?> parent) {
     }
 
-    //if back button pressed, start new Main Activity
+    // If back button pressed, start new Main Activity
     @Override
     public void onBackPressed() {
         finish();

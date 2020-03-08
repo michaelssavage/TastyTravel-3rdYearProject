@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ProfileActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavBar;
-    Button settingsBtn, logoutBtn, deleteBtn, clearFavouritesBtn, clearHistoryBtn;
+    Button settingsBtn, logoutBtn, deleteAccountBtn, clearFavouritesBtn, clearHistoryBtn;
     FirebaseUser user;
 
     @Override
@@ -32,10 +32,11 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        // Identify the page components
         bottomNavBar = findViewById(R.id.bottomNavBar);
         logoutBtn = findViewById(R.id.logoutBtn);
         settingsBtn = findViewById(R.id.settingsBtn);
-        deleteBtn = findViewById(R.id.deleteBtn);
+        deleteAccountBtn = findViewById(R.id.deleteBtn);
         clearFavouritesBtn = findViewById(R.id.deleteFavsBtn);
         clearHistoryBtn = findViewById(R.id.clearHistoryBtn);
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -45,24 +46,28 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Define Actions for button clicks
         initialiseViewControls();
-
     }
 
     private void initialiseViewControls() {
+        // Clear favourites button action
         clearFavouritesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Show the confirmation alert dialog
                 showClearFavsAlertDialog();
             }
         });
 
+        // Clear history button action
         clearHistoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Show the confirmation alert dialog
                 showClearHistoryAlertDialog();
             }
         });
 
+        // Settings button action
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,16 +76,20 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        // Logout button action
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Show the confirmation alert dialog
                 showLogoutAlertDialog();
             }
         });
 
-        deleteBtn.setOnClickListener(new View.OnClickListener() {
+        // Delete button action
+        deleteAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Show the confirmation alert dialog
                 showDeleteAlertDialog();
             }
         });
@@ -110,6 +119,7 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    // Delete Alert Dialog Properties
     public void showDeleteAlertDialog(){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Account Deletion");
@@ -139,6 +149,7 @@ public class ProfileActivity extends AppCompatActivity {
         alert.create().show();
     }
 
+    // Logout Alert Dialog Properties
     public void showLogoutAlertDialog(){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Account Sign Out");
@@ -163,6 +174,7 @@ public class ProfileActivity extends AppCompatActivity {
         alert.create().show();
     }
 
+    // Clear Favourites Alert Dialog Properties
     public void showClearFavsAlertDialog(){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Favourites Deletion");
@@ -186,6 +198,8 @@ public class ProfileActivity extends AppCompatActivity {
         });
         alert.create().show();
     }
+
+    // Clear History Alert Dialog Properties
     public void showClearHistoryAlertDialog(){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Search History Deletion");

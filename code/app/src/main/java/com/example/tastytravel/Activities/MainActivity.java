@@ -32,15 +32,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Current firebase user
         mAuth = FirebaseAuth.getInstance();
+        currentFirebaseUser = mAuth.getCurrentUser();
+
+        // Identify the activity objects
         bottomNavBar = findViewById(R.id.bottomNavBar);
         searchBtn = findViewById(R.id.searchBtn);
         savedPlacesBtn = findViewById(R.id.savedPlacesBtn);
         historyBtn = findViewById(R.id.historyBtn);
         savedPlacesText = findViewById(R.id.savedPlacesText);
         appName = findViewById(R.id.appName);
-
-        currentFirebaseUser = mAuth.getCurrentUser();
 
         // makes the two images rounded.
         savedPlacesBtn.setClipToOutline(true);
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Defining custom behaviour for onBackPressed actions on main screen
     boolean doubleBackToExitPressedOnce = false;
 
     @Override
@@ -100,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
 
+        // Add a delay for double back press
         new Handler().postDelayed(new Runnable() {
 
             @Override
@@ -109,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
         }, 2000);
     }
 
+    // Controlling access to favourites and history buttons
     private void initialiseViewControls() {
-
         historyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // If the food collage image is clicked
+        // If the food collage image or text is clicked
         savedPlacesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { startSavedPlaces(); }});

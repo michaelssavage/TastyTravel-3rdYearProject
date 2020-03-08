@@ -4,14 +4,12 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,6 +21,7 @@ import com.example.tastytravel.R;
 import com.example.tastytravel.Utils.JsonParser;
 import com.example.tastytravel.Models.ListItem;
 import com.example.tastytravel.Adapters.RecyclerViewAdapter;
+import com.example.tastytravel.Utils.LatLngParser;
 import com.example.tastytravel.Utils.MapsWorker;
 import com.example.tastytravel.Utils.UrlBuilder;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,7 +34,6 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.maps.android.SphericalUtil;
-import com.google.maps.android.data.geojson.GeoJsonLayer;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,7 +45,7 @@ import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, RecyclerViewAdapter.OnPlaceListener {
 
-
+    // Final strings used multiple times
     public static final String DATA = "DATA";
     public static final String LOCATIONS_TAG = "LOCATIONS";
     public static final String RADIO_BUTTON1 = "RADIO_BUTTON1";
@@ -56,7 +54,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public static final String ISOCHRONE_PREF = "isochroneSwitch";
     public static final String MIDPOINT_PREF = "midpointSwitch";
 
+    // Recycler view for search results
     private RecyclerView recyclerView;
+    // Recycler view control adapter
+    RecyclerView.Adapter adapter;
+    private List<ListItem> listItems;
+
     private String placeType;
     // ArrayList to store both user locations
     private ArrayList<Place> mPlaces;
@@ -70,10 +73,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private double midLat = 0.0;
     private ArrayList<LatLng> points = new ArrayList<>();
 
-    RecyclerView.Adapter adapter;
-    private List<ListItem> listItems;
-
-    // radio buttons are walk, car, bike
+    // Radio buttons are walk, car, bike for transport method
     String myButtonSelection;
     String theirButtonSelection;
 
@@ -93,9 +93,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mapFragment.getMapAsync(this);
 
-        // Get objects passed
+        // Get objects passed using DATA tag
         Bundle data = getIntent().getBundleExtra(DATA);
 
+        // Get the rest of data passed
+        // The transport buttons selection and meeting place type
         Intent parameters = getIntent();
         myButtonSelection = parameters.getStringExtra(RADIO_BUTTON1);
         theirButtonSelection = parameters.getStringExtra(RADIO_BUTTON2);
@@ -103,9 +105,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         placeType = parameters.getStringExtra(PLACE_TYPE_TAG);
 
         if (data != null) {
+            // Get both places selected using the AutoCompleteFragment
+            // Items are Place objects
             mPlaces = (ArrayList<Place>) data.getSerializable(LOCATIONS_TAG);
         }
-        Log.e("mplaces", "" + mPlaces);
+
         // Adding the 2 locations on the map
         final LatLng getYourLocationLatLng = mPlaces.get(0).getLatLng();
         final LatLng getTheirLocationLatLng = mPlaces.get(1).getLatLng();
@@ -181,14 +185,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-
     @Override
     public void onMapReady(final GoogleMap mMap) {
         googleMap = mMap;
         MapsWorker.addMarkers(mPlaces, mMap);
     }
 
-    //if back button pressed, start new Search Activity
+    // if back button pressed, start new Search Activity
     @Override
     public void onBackPressed() {
         finish();
@@ -196,18 +199,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         startActivity(mainScreen);
     }
 
+    // Action caused by place clicked in the recycler view
     @Override
     public void OnPlaceClick(int position) {
-        Log.d("onPlaceClicked","" + listItems.get(position).getHead());
-
         String selectedPlaceName = listItems.get(position).getHead();
         String selectedPlaceCoordinates = listItems.get(position).getCoordinates();
 
-        String[] latlong =  selectedPlaceCoordinates.split(",");
-        double latitude = Double.parseDouble(latlong[0]);
-        double longitude = Double.parseDouble(latlong[1]);
+        // Parse a LatLng from the listItem String
+        LatLng markerPos = LatLngParser.stringToLatLng(selectedPlaceCoordinates);
 
-        LatLng markerPos = new LatLng(latitude, longitude);
+        // Remove the old marker before adding a new marker
         if(currentMarker != null){
             currentMarker.remove();
         }
@@ -218,11 +219,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         currentMarker = googleMap.addMarker(markerOptions);
         currentMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
-
+        // Move the map focus
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(markerPos, 15));
-
     }
 
+    // Scoring algorithm that affects the positioning of the base locality marker
     private double getRadioButtonScore(String radio1, String radio2){
 
         double score = 0.5;
@@ -262,49 +263,50 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 break;
         }
 
-        //if they are the same = 0.5
-        Log.d("radioscore", "" + score);
+        // If they are the same the score is 0.5
         return score;
     }
 
-    // Try and move this to maps worker
     private void plotMidpoint(JSONObject response, LatLng location, Boolean midPointMarkerOn) throws JSONException {
-        JsonParser jsonParser = new JsonParser();
-        ArrayList<String> coordinatesList = jsonParser.getCoordinates(response);
+        // Parse the coordinates from the JSONObject
+        ArrayList<String> coordinatesList = JsonParser.getCoordinates(response);
+        // Get the midpoints between the coordinates and a given location
         getMidpoints(coordinatesList, location);
 
-        Log.d("midpoints", "" + midLong + " + " + midLat);
-
-        //Add the points from each midpoint to the array.
+        // Add the points from each midpoint to the array.
         LatLng midpoint = new LatLng(midLong, midLat);
         points.add(midpoint);
 
-        Log.d("midpoints", "" + midLong + " + " + midLat);
         if(points.size() == 2){
-
+            // Scoring the button selection
             double score = getRadioButtonScore(myButtonSelection, theirButtonSelection);
+            // Set the base point locality
             LatLng bestMidpoint = SphericalUtil.interpolate(points.get(0), points.get(1), score);
 
+            // Check settings if the user wants the blue locality marker plotted
             if(midPointMarkerOn) {
                 googleMap.addMarker(new MarkerOptions()
                         .position(bestMidpoint)
-                        .title("Best point between two")
+                        .title("Best Midpoint Locality")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             }
 
-            String googleMapsUrl = UrlBuilder.getGooglePlacesUrl(placeType, bestMidpoint);
+            // Build the Google Places URL
+            String googlePlacesUrl = UrlBuilder.getGooglePlacesUrl(placeType, bestMidpoint);
 
+            // Use the url to make an asynchronous JSON request to the google places API
             JsonObjectRequest googleGeojsonPlaces = new JsonObjectRequest
-                    (Request.Method.GET, googleMapsUrl, null, new Response.Listener<JSONObject>() {
+                    (Request.Method.GET, googlePlacesUrl, null, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
-                            JsonParser jsonParser1 = new JsonParser();
                             try {
-                                LinkedHashMap<String,String> placeList = jsonParser1.getPlaces(response);
+                                LinkedHashMap<String,String> placeList = JsonParser.getPlaces(response);
+                                // No nearby places results returned, tell the user
                                 if(placeList.size() == 0){
                                     Toast.makeText(MapsActivity.this,
                                             "There are no Results. Try some different parameters.", Toast.LENGTH_LONG).show();
                                 }
+                                // Otherwise display the search results using the RecyclerView
                                 displayResults(placeList);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -324,12 +326,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    // Show the results on the recycler view
     private void displayResults(LinkedHashMap<String,String> placeList) {
         for (Map.Entry<String, String> entry : placeList.entrySet()) {
             String name = entry.getKey();
             String coordinates = entry.getValue();
 
+            // Create ListItem Objects from the data
             ListItem listItem = new ListItem(name, coordinates);
+            // Add these to the array list
             listItems.add(listItem);
 
             // Recycler View Adapter Initialisation
@@ -340,7 +345,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void getMidpoints(ArrayList<String> coordinateList, LatLng location){
         // find the smallest distance from the coordinates to the opposite point
-
         float[] distance1 = new float[2];
         float[] distance2 = new float[2];
         String[] closestPoint = coordinateList.get(0).split(",");
@@ -351,10 +355,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Location.distanceBetween(latitude, longitude, location.latitude, location.longitude, distance1);
 
         for(int i = 1; i < coordinateList.size() ; i++) {
-
             String[] point = coordinateList.get(i).split(",");
             longitude = Double.parseDouble(point[0]);
             latitude = Double.parseDouble(point[1]);
+
             Location.distanceBetween(latitude, longitude, location.latitude, location.longitude, distance2);
 
             // if distance is more, then update with smaller distance.

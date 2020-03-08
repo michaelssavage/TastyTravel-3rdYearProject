@@ -11,7 +11,7 @@ import java.util.LinkedHashMap;
 
 public class JsonParser {
 
-    public ArrayList<String> getCoordinates(JSONObject response) throws JSONException{
+    public static ArrayList<String> getCoordinates(JSONObject response) throws JSONException{
 
         // isolate coordinates from JSONObject into an arraylist
         ArrayList<String> coordinateList = new ArrayList<>();
@@ -36,7 +36,7 @@ public class JsonParser {
         return coordinateList;
     }
 
-    public LinkedHashMap<String,String> getPlaces(JSONObject response) throws JSONException{
+    public static LinkedHashMap<String,String> getPlaces(JSONObject response) throws JSONException{
 
         // isolate places from JSONObject into an arraylist
         ArrayList<String> placesList = new ArrayList<>();

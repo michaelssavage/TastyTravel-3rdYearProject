@@ -24,10 +24,12 @@ public class UrlBuilder {
     // &access_token=
     // pk.eyJ1Ijoiam9obmRvd2F0ZXIiLCJhIjoiY2szcWNjdHIyMDA3cDNlcGlseWt3cjRiNiJ9.Bu2jIzXSGZNcxQBtGCrwbQ;
 
+    // Build the mapbox url based on passed parameters
     public static String getMapboxUrl(String transportMethod, LatLng latLng){
         StringBuilder url = new StringBuilder(MAPBOX_MAPS_API);
 
         // Get string value from radio button
+        // Fix mode of transport to suit url
         url.append(transportMethod.replace("Car", "driving/").replace("Walk","walking/").replace("Bike","cycling/"));
         url.append(latLng.toString().substring(9)
                 .replace("(", "")
