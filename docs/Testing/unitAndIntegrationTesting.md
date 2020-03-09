@@ -23,7 +23,7 @@ Next, we expanded on the sign in test by getting the logged in user to navigate 
 
 Next we tested if a logged in user could access their saved places and history. This involved navigating the saved places map and history page list view.
 
-![](images/UserFavsandHistory.png)
+![](images/UseFavsandHistory.png)
 
 Next we tested if a user could login and clear any saved data they had on their account such as saved places and their search history.
 
